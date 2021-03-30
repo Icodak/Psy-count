@@ -10,7 +10,9 @@ try{
 
       $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-      $req =  $dbco->prepare('SELECT motDePasse FROM users WHERE Email =:Email ');
+      $req =  $dbco->prepare(
+      'SELECT motDePasse FROM utilisateur where Email=:Email'
+      );
 
       $req->execute(array('Email' => $Email));
 
@@ -18,21 +20,19 @@ try{
 
       $isPasswordCorrect = password_verify($Password, $resultat['motDePasse']);
 
-      $req2 =  $dbco->prepare('SELECT type FROM users WHERE Email =:Email ');
+      $req2 =  $dbco->prepare(
+      'SELECT permission_lvl FROM utilisateur where Email=:Email');
 
       $req2->execute(array('Email' => $Email));
 
-      $resultat = $req2->fetch();
+      $resultat3 = $req2->fetch();
 
-      $req3 =  $dbco->prepare('SELECT ID FROM users WHERE Email =:Email ');
+      $req3 =  $dbco->prepare(
+      'SELECT ID_Utilisateur FROM utilisateur where Email=:Email ');
 
       $req3->execute(array('Email' => $Email));
 
       $resultat2 = $req3->fetch();
-
-    
-
-
 
       if (!$resultat)
       {
@@ -43,7 +43,7 @@ try{
       else
       {
       if ($isPasswordCorrect) {
-        $_SESSION['type']=$resultat['type'];
+        $_SESSION['type']=$resultat3['permission_lvl'];
         $_SESSION['connexion']='1';
         $_SESSION['ID']=$resultat2['ID'];
         header('Location: accueil.php');
@@ -58,8 +58,6 @@ try{
         echo "Erreur : " . $e->getMessage();
       }  
       }  
-      //jesuishenri@gmail.com > motdepasse
-      //jacqueshenri@gmail.com> motdepasse2  compte Medecin
-      //kevintheodore@gmail.com>motdepasse  compte admin
+
 
 ?>

@@ -9,7 +9,8 @@ body{
 	background-image: url("images_css/new_background.png");
 	background-size: cover;
 	background-position: center;
-	width:100%
+	width:100%;
+
 }
 
 .latoType{
@@ -35,6 +36,7 @@ body{
 	border: none;
 	height: 40px;
 	width: 40px;
+	cursor:pointer;
 }
 
 ::-webkit-input-placeholder {
@@ -69,6 +71,7 @@ body{
   padding-left: 30%;
   padding-bottom: 2%;
   padding-top: 2%;
+  cursor:pointer;
 
 }
 li{
@@ -77,6 +80,7 @@ li{
 }
 a{
 	text-decoration-line: none;
+	cursor:pointer;
 }
 input{
 	 border: none;
@@ -124,7 +128,13 @@ button:focus {
 	vertical-align:middle;
 	padding-left: 2%;
 	background-color: white;
+	min-height: 400px;
+	min-width: 280px;
 }
 #accountText{
 	margin-left: 5%;
 }
+
+
+
+

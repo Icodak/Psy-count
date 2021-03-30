@@ -15,6 +15,14 @@ session_start(); // On démarre la session AVANT toute chose
      $Password_verify = $_POST['password_verify'];
      $type=$_POST['type'];
 
+     if($_POST['type']=='patient'){
+        $dateOfBirth=$_POST['dateDeNaissance'];
+     }else{
+        $PostalCode=$_POST['codePostal'];
+        $PhoneNumber=$_POST['telephone']; 
+        $speciality=$_POST['specialite']; 
+     }
+     
 
      if( password_verify($Password_verify, $Password)){
       if(filter_var($Email, FILTER_VALIDATE_EMAIL)){
@@ -26,7 +34,7 @@ session_start(); // On démarre la session AVANT toute chose
                 $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
-                $req =  $dbco->prepare('SELECT Email FROM users');
+                $req =  $dbco->prepare('SELECT Email FROM utilisateur');
                 $req->execute();
                 $resultat = $req->fetchAll();
 
@@ -40,10 +48,27 @@ session_start(); // On démarre la session AVANT toute chose
                   header('Location: signUp.php');
                 }
                 else{
+                  if($_POST['type']=='patient'){
 
-                $sql = "INSERT INTO users(motDePasse,nom,prenom,Email,type)
+                $sql = "INSERT INTO utilisateur(motDePasse,nom,prenom,Email,permission_lvl)
                         VALUES('$Password','$LastName','$FirstName','$Email','$type')"; 
                 $dbco->exec($sql);
+
+                $sql = "INSERT INTO patient(dateDeNaissance,ID_Utilisateur)
+                        VALUES('$dateOfBirth',(SELECT ID_Utilisateur from utilisateur where Email='$Email'))"; 
+                $dbco->exec($sql);
+
+              }else{
+                $sql = "INSERT INTO utilisateur(motDePasse,nom,prenom,Email,permission_lvl)
+                        VALUES('$Password','$LastName','$FirstName','$Email','$type')"; 
+                $dbco->exec($sql);
+
+
+                $sql = "INSERT INTO Medecin(codePostalCabinet,specialite,telephonePortable,ID_Utilisateur)
+                        VALUES('$PostalCode','$speciality','$PhoneNumber',(SELECT ID_Utilisateur from utilisateur where Email='$Email'))"; 
+                $dbco->exec($sql);
+
+              }
                 echo "Transfert vers la base de données";
                 }
               }

@@ -1,5 +1,5 @@
 #Menu{
-margin-bottom: 6%;
+margin-bottom: 4%;
 display: flex;
 justify-content: center;
 }
@@ -48,6 +48,7 @@ a
   font-size: 20px;
   margin: 4px 2px;
   margin-left: 1%;
+  cursor:pointer;
 }
 nav{
   border: none;

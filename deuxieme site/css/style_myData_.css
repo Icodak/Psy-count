@@ -1,0 +1,143 @@
+
+
+html, body {
+ margin:0;
+ padding:0;
+ }
+
+
+#doctorPage{
+	background-color: rgba(177, 88, 158,0.45);
+	width: 100%;
+	margin-right: 5%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	max-width: 600px;
+
+}
+
+h1{
+	margin: 0px;
+}
+
+
+#consultButton{
+	margin-right: 2%;
+	margin-left: 2%;
+	display: flex;
+	justify-content: space-between;
+}
+
+header{
+	text-align: center;
+	padding-top: 3%;
+}
+
+.graph{
+	margin-left: 10%;
+	text-align: center;
+
+}
+#myDataPage{
+	display: flex;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+li{
+	list-style: none;
+}
+
+#graphPage{
+
+	display: flex;
+	flex-direction: column;
+}
+
+.subgraphPage{
+	display: flex;
+	flex-direction: row;
+}
+
+a{
+	text-decoration-line: none;
+	cursor:pointer;
+}
+
+
+
+.button4 {
+  border-radius: 20px;
+  background-color: #B1589E;
+  border: none;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor:pointer;
+}
+
+
+.subgraphPage img{
+	max-width: 70%;
+
+}
+
+#doctorData img {
+	max-height: 60%;
+	max-width: 100%;
+}
+
+
+#doctorData{
+	display: flex;
+	flex-direction: row;
+	margin-top: 5%;
+	justify-content: space-around;
+}
+
+#sepator1{
+  color: white;
+  background-color: white;
+  width: 100px; 
+  margin-bottom: 40px;
+  border:none;
+}
+
+#graphPage h1{
+	padding-top 15%;
+}
+
+
+
+
+@media only screen and (max-width: 1300px) {
+
+#myDataPage{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+
+}
+
+#graphPage{
+	display: flex;
+	justify-content: center;
+}
+
+.graph{
+	margin-left: 0%;
+}
+
+
+#doctorPage{
+	margin-right: 0%;
+
+}
+
+#graphPage{
+	margin-top: 10%;
+}

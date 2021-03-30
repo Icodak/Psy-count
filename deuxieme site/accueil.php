@@ -1,9 +1,7 @@
-
-
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home</title>
   <link rel="icon" type="image/png" href="images/psy-fi.png" />
   <link rel="stylesheet" href="css/styleAccueil.css">
@@ -14,11 +12,11 @@
 
 		<?php include("menuBar.php") ?>
 		<li><h2 id="headerText"> PSY-Count</h2></li>
-		<li> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed<br>
+
+		<li class="headerDdescription">  <h5 id="headerPresentation">  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed<br>
 		 do eiusmod tempor incididunt ut labore et dolore magna<br>
 			 aliqua.
-		
-
+		</h4>
 		</li>
 
 		<li><button class="button button4">Découvrir</button></li>
@@ -42,8 +40,12 @@
 
 <div id=column1>
 <li><img src="images/Placement_Area_ASSETsmallSIZED.png" alt="" /></li>
-<li><h2> bilan de santé </h2></li>
-<li><p> blabla blabla blabla blabla blabla blabla<br>
+<li class="abstractText"><h2> votre bilan de santé </h2></li>
+<li class="abstractText2"><h2> votre bilan de santé </h2></li>
+<li class="abstractText3"><h2> votre bilan de santé </h2></li>
+<li class="abstractText4"><h2>   votre santé </h2></li>
+<li class="abstractText5"><h2>    santé </h2></li>
+<p> blabla blabla blabla blabla blabla blabla<br>
  blabla blabla blabla blabla blabla blabla blabla <br>
  blabla blabla blabla blabla blabla blabla blabla
 </p><li><button class="button button4">En savoir plus</button></li>
@@ -56,8 +58,12 @@
 
 
 <li><img src="images/Placement_Area_ASSETsmallSIZED_di.png" alt="" /></li>
-<li><h2> soutien des hopitaux </h2></li>
-<li><p> blabla blabla blabla blabla blabla blabla<br>
+<li class="abstractText"><h2> soutien des hopitaux </h2></li>
+<li class="abstractText2"><h2> soutien des hopitaux </h2></li>
+<li class="abstractText3"><h2> les hopitaux </h2></li>
+<li class="abstractText4"><h2> les hopitaux </h2></li>
+<li class="abstractText5"><h2>  hopitaux </h2></li>
+<p> blabla blabla blabla blabla blabla blabla<br>
  blabla blabla blabla blabla blabla blabla blabla <br>
  blabla blabla blabla blabla blabla blabla blabla
 </p></li>
@@ -71,7 +77,11 @@
 <div id=column3>
 
 <li><img src="images/Placement_Area_ASSETsmallSIZED_dy.png" alt="" /></li>
-<li><h2> suivi des personnes agées </h2></li>
+<li class="abstractText"><h2> suivi des personnes agées </h2></li>
+<li class="abstractText2"><h2>  les personnes agées </h2></li>
+<li class="abstractText3"><h2>  les personnes agées </h2></li>
+<li class="abstractText4"><h2>  les personnes </h2></li>
+<li class="abstractText5"><h2> personnes</h2></li>
 <li><p> blabla blabla blabla blabla blabla blabla<br>
  blabla blabla blabla blabla blabla blabla blabla <br>
  blabla blabla blabla blabla blabla blabla blabla
@@ -87,7 +97,6 @@
 
 <div id="container2">
 		<video id="video1" controls  poster="images/Placement_Area_ASSETpanelSTATE@2x.png"   src="video/SEP_V0_P1.mp4"  type="video/mp4"></video>
-
 </div>
 
 <div id="container3">
@@ -154,7 +163,7 @@
 		</div>
 
 
-		<div>
+		<div id="groupeSettings">
 		    <span style="color:white">
 			<li>  <h2> Accessibilité </h2></li>
 			<li>  Thème</li>
@@ -192,7 +201,7 @@
 		</div>
 
 		<div>
-		  Conditions d'utilisation	
+		 <a href="TermsOfUse.php">Conditions d'utilisation	</a>
 		</div>
 
 	</div>
