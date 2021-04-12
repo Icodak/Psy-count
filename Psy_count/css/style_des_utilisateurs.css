@@ -7,6 +7,10 @@ html, body {
  }
 
 
+#actionButton{
+  display: flex;
+  flex-direction: row;
+}
 
 .button4 {
   background-color: #BB66BF;
@@ -38,6 +42,7 @@ table{
   border-spacing: 0px 30px;
   border: 2px solid black;
   background-color: white;
+  margin-bottom: 20px;;
 
 }
 #gestionUtilisateur{
