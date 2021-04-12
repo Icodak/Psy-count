@@ -16,7 +16,7 @@ session_start();
 	$Password=password_hash('motdepasse', PASSWORD_DEFAULT);
 
 
-	$dbco = new PDO("mysql:host=localhost;dbname=serveur_psy_fi",'user','root');
+	$dbco = new PDO("mysql:host=localhost;dbname=serveur_psy_fi",'root','');
                 $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     $sql = "INSERT INTO utilisateur(motDePasse,nom,prenom,Email,permission_lvl)

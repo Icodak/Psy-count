@@ -1,15 +1,17 @@
+
 <?php
 
+	function maSuperFonction(){
+
+		echo 'hello world ';
+	}
+
+	function maSuperFonctionDeux(){
+		echo 'bonjour monde <br>';
+	}
+
+
+  ?>
 
 
 
-
-function hello_World($person){
-	echo  $person,' said hello world';
-}
-
-
-hello_World('Nicolas');
-
-
-?>

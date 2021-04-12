@@ -3,7 +3,8 @@ session_start();
 ?>
 
 <link rel="stylesheet" href="css/styleMenu.css">
-
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
 
 
 
@@ -26,7 +27,7 @@ session_start();
       if(isset($_SESSION['type'])){
         if($_SESSION['type']=='Admin'){
     ?>
-    <a href="test.php" class="menuText" > gestion des utilisateurs </a>  
+    <a href="gestionDesUtilisateurs.php" class="menuText" > gestion des utilisateurs </a>  
     <?php
      }
      }
@@ -42,7 +43,7 @@ session_start();
     ?>
     
 		<a href="faq.php" class="menuText"> FAQ </a> 
-		<a href="" class="menuText"> A propos </a>  
+		<a href="accueil.php#menuBarAnchor" class="menuText"> A propos </a>  
 		<a href="" class="menuText"> Support </a> 
 
        	<?php

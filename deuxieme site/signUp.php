@@ -7,9 +7,9 @@ session_start(); // On démarre la session AVANT toute chose
   <meta charset="utf-8">
   <title>signUp</title>
   <link rel="icon" type="image/png" href="images/psy-fi.png" />
-  <link rel="stylesheet" href="css/style_Sign_Up.css">
+  <link rel="stylesheet" href="css/style_Sign_Up_.css">
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
-  <script type="text/javascript" src="javaScript//javaScriptCode.js"></script>
+  <script type="text/javascript" src="javaScript//javaScriptCode_.js"></script>
 </head>
 
 
@@ -24,11 +24,11 @@ session_start(); // On démarre la session AVANT toute chose
 		<div id="signUp">
 			<div id="accountText" >
 				<div id="titleText">
-				<span class="latoType title">Create An account</span><br>
+				<span class="latoType title">Create A account</span><br>
 				<a href="accueil.php"> <button id="closeButton2">  X  </button> </a>
 				</div>
 				<div>
-				<span class="latoType">Already an user ? </span> <a href="signIn.php"><span style="color:#1968FF" class="latoType">Sign In </span></a>
+				<span class="latoType">Already a user ? </span> <a href="signIn.php"><span style="color:#1968FF" class="latoType">Sign In </span></a>
 				</div>
 			</div>
 
@@ -39,8 +39,8 @@ session_start(); // On démarre la session AVANT toute chose
 
 
 						<li ><input  size=45% name="dateDeNaissance" type="date" ></li>
-						<li ><input required pattern="[A-Za-zÀ-ÖØ-öø-ÿ-]+{4,255}" title="votre prenom ne doit contenir que des lettres" name="FirstName"  placeholder="First Name" required minlength="4" >
-							 <input  required pattern="[A-Za-zÀ-ÖØ-öø-ÿ-]+{4,255}" title="votre nom ne doit contenir que des lettres" name="LastName" placeholder="Last Name" required minlength="4" >
+						<li ><input size=45% required pattern="[A-Za-zÀ-ÖØ-öø-ÿ-]+{4,255}" title="votre prenom ne doit contenir que des lettres" name="FirstName"  placeholder="First Name" required minlength="4" >
+							 <input  size=45% required pattern="[A-Za-zÀ-ÖØ-öø-ÿ-]+{4,255}" title="votre nom ne doit contenir que des lettres" name="LastName" placeholder="Last Name" required minlength="4" >
 				   		</li>
 						<li ><input  size=45% name="Email"    type="email"    placeholder="Email Address " ></li>
 						<li ><input  size=45% name="Password" placeholder="Password"   type="password"    required minlength="8" ></li>
@@ -66,6 +66,8 @@ session_start(); // On démarre la session AVANT toute chose
 				<div>
 					<img class="responsive" src="images/sign_up_image.png">
 				</div>
+
+
 
 			</div>
 

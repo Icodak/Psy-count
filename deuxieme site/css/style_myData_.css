@@ -3,17 +3,18 @@
 html, body {
  margin:0;
  padding:0;
+ height: 100%; 
  }
 
 
 #doctorPage{
 	background-color: rgba(177, 88, 158,0.45);
 	width: 100%;
-	margin-right: 5%;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	max-width: 600px;
+	margin-right: 3%;
 
 }
 
@@ -35,21 +36,31 @@ header{
 }
 
 .graph{
-	margin-left: 10%;
 	text-align: center;
-
+	border-radius: 15px;
+	padding-right: 1%;
+	padding-left: 1%;
+	margin-right: 5%;
 }
+
+
+
+
 #myDataPage{
 	display: flex;
 	margin-left: 5%;
 	margin-right: 5%;
+	flex-direction: row;
+	justify-content: center;
+	margin-bottom: 110px;
+
 }
 li{
 	list-style: none;
 }
 
 #graphPage{
-
+	margin-left: 3%;
 	display: flex;
 	flex-direction: column;
 }
@@ -82,7 +93,9 @@ a{
 
 
 .subgraphPage img{
-	max-width: 70%;
+	width: 280px;
+	height:280px;
+
 
 }
 
@@ -108,7 +121,7 @@ a{
 }
 
 #graphPage h1{
-	padding-top 15%;
+	padding-top: 15%;
 }
 
 
@@ -118,18 +131,26 @@ a{
 
 #myDataPage{
 	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	margin: 0%;
+
+}
+
+.subgraphPage{
+	margin-top: 10%;
+	display: flex;
+	justify-content: space-around;
+}
+
+.graph{
+	margin-left: 2%;
+	margin-right: 2%;
 
 }
 
 #graphPage{
-	display: flex;
-	justify-content: center;
-}
-
-.graph{
-	margin-left: 0%;
+	margin-left:0%;
 }
 
 
@@ -138,6 +159,49 @@ a{
 
 }
 
-#graphPage{
-	margin-top: 10%;
+#UserImage{
+	margin-left: 2%;
 }
+#doctorLabel{
+	margin-right: 2%;
+}
+
+
+
+
+@media only screen  and (max-width: 550px) {
+	
+	.subgraphPage{
+	flex-direction: column;
+}
+
+.subgraphPage img{
+	width: 250px;
+	height:250px;
+
+}
+
+.subgraphPage{
+	margin-top: 0%;
+}
+
+#graphPage{
+	margin-top: 2%;
+	margin-left:0%;
+}
+
+
+
+#graphPage h1{
+	font-size: 20px;
+	padding-left: 2%;
+	padding-right: 2%;
+}
+
+#myDataPage{
+	margin-bottom: 0%;
+
+}
+
+}
+

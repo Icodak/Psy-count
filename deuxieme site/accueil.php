@@ -4,7 +4,7 @@
   <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home</title>
   <link rel="icon" type="image/png" href="images/psy-fi.png" />
-  <link rel="stylesheet" href="css/styleAccueil.css">
+  <link rel="stylesheet" href="css//styleAccueil.css">
 </head>
 
   <header>
@@ -125,7 +125,7 @@
 
 		<div id="presentation1">
 
-		<h1>Qui sommes nous ?</h1>
+		<h1 id="menuBarAnchor">Qui sommes nous ?</h1>
 				<div id="discordImages">
 					<div id="discordGroup1">
 						<div><img src="images/nicolas.png"></div>
@@ -187,25 +187,14 @@
 </div>
 
 
+	<?php include("footer.php") ?>
+
 </body>
 
-<footer>
-	
-	<div id="footerText1">
-		© 2021 PSY-fi 
-	</div>
-	<div id="footerText2">
 
-		<div id="confidentialite">
-		 Politique de confidentialité
-		</div>
 
-		<div>
-		 <a href="TermsOfUse.php">Conditions d'utilisation	</a>
-		</div>
 
-	</div>
 
-	  
-</footer>
+
+
 </html>

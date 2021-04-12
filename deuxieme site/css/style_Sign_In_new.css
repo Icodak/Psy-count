@@ -1,18 +1,17 @@
+
 html, body {
  margin:0;
  padding:0;
+
  }
 
 
 body{
-	background-image: url("images_css/new_background.png");
-	background-size: cover;
-	background-position: center;
-	width:100%;
-	display:flex;
+	background-color: black;
+	display: flex;
 	justify-content: center;
-}
 
+}
 
 .latoType{
 	font-family: Lato; 
@@ -29,12 +28,9 @@ body{
 	justify-content: space-around;
 }
 
-button:focus {
-	outline:none;
-}
 
 
-#closeButton2{
+#closeButton{
 	background-color: #FFF0F0;
 	border-radius: 70%;
 	border: none;
@@ -62,8 +58,7 @@ button:focus {
 
 
 .button4 {
-  border-radius: 25px;
-  background-color: grey;
+  background-color: #B1589E;
   border: none;
   color: white;
   text-align: center;
@@ -84,33 +79,23 @@ li{
 }
 a{
 	text-decoration-line: none;
+	cursor:pointer;
 }
 input{
 	 border: none;
 	 background-color: #FFF0F0;
 	 padding-bottom: 15px;
 }
-select{
-	 border: none;
-	 background-color: #FFF0F0;
-	 padding-bottom: 15px;
-	 width: 51%;
-	 text-align: center;
 
-}
-
-select:invalid {
- color: gray; 
-}
-
-#placeholderType{
-	text-align: center;
-	color: grey;
-}
 
 .alignCenter{
 	text-align : center;
 }
+
+button:focus {
+	outline:none;
+}
+
 
 #informationblock{
 	margin-top: 8%;
@@ -119,7 +104,6 @@ select:invalid {
 .responsive {
   width: 100%;
   height: auto;
-  margin-top:15%;
 }
 
 
@@ -127,6 +111,7 @@ select:invalid {
 	margin-top: 5%;
 	padding-bottom: 3%;
 	padding-top: 3%;
+	justify-content: center;
 }
 
 #signUpinformation{
@@ -141,13 +126,15 @@ select:invalid {
 	vertical-align:middle;
 	padding-left: 2%;
 	background-color: white;
+	max-width: 700px;
 }
 #accountText{
 	margin-left: 5%;
 }
-#latoText{
-	margin-left: 10%;
+
+
+@media only screen and (max-width: 200px) {
+  img{
+  	display: none;
+  }  
 }
-
-
-

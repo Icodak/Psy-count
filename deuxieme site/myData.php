@@ -20,7 +20,7 @@
   	<div id="doctorPage">
 
   				<div id="doctorData">
-  					<div>	
+  					<div id="UserImage" >	
   						<img src="images/backgroundImages vertical.png">
 
 	  				</div>
@@ -56,7 +56,7 @@
 
   				<div id="consultButton">
   						<h4 id="consultbuttonText">Medecin traitant</h4>
-  						<a href=""> <button class="button4">  consulter  </button> </a>
+  						<a href="" > <button class="button4">  consulter  </button> </a>
   				</div>
   		
 
@@ -68,9 +68,9 @@
   		<div class="subgraphPage">
 
 				<div class="graph">
-					<h1>Fréquence Cardiaque</h1>
-					<a href="">
-					<img  class="responsive" src="images/backgroundImages.png">
+					<h1>Cardiaque</h1>
+					<a href="" type="hidden">
+					<img  class="responsive" src="images/frequence.jpg">
 					</a>
   		
 
@@ -78,8 +78,8 @@
 
   				<div class="graph" >
 					<h1>Tonalité</h1>
-					<a href="">
-					<img class="responsive" src="images/backgroundImages.png">
+					<a href="" type="hidden">
+					<img class="responsive" src="images/voice.jpg">
 					</a>
   			    </div>
 
@@ -88,15 +88,15 @@
 
   				<div class="graph">
   					<h1>Température</h1>
-  					<a href="">
-  					<img class="responsive" src="images/backgroundImages.png">
+  					<a href="" type="hidden">
+  					<img class="responsive" src="images/temperature2.jpg">
   					</a>
   				</div>
 
   				<div class="graph">
-  					<h1>Confort</h1>
-  					<a href="">
-  					<img class="responsive" src="images/backgroundImages.png">
+  					<h1>Reaction</h1>
+  					<a href="" type="hidden">
+  					<img class="responsive" src="images//reaction2.jpg">
   					</a>
   				</div>
   		</div>
@@ -112,4 +112,6 @@
 
 
 </body>
+
+  <?php include("footer.php") ?>
 </html>
