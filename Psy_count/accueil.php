@@ -16,7 +16,7 @@
 		<li class="headerDdescription">  <h5 id="headerPresentation">  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed<br>
 		 do eiusmod tempor incididunt ut labore et dolore magna<br>
 			 aliqua.
-			 TEEEEEEEEEEEEEEEEST
+
 		</h4>
 		</li>
 
