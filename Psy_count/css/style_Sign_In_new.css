@@ -1,0 +1,140 @@
+
+html, body {
+ margin:0;
+ padding:0;
+
+ }
+
+
+body{
+	background-color: black;
+	display: flex;
+	justify-content: center;
+
+}
+
+.latoType{
+	font-family: Lato; 
+	font-weight: 10;
+}
+
+.title{
+	font-size: 200%;
+}
+#titleText{
+	margin-bottom: 5%;
+	padding-top: 5%;
+	display: flex;
+	justify-content: space-around;
+}
+
+
+
+#closeButton{
+	background-color: #FFF0F0;
+	border-radius: 70%;
+	border: none;
+	height: 40px;
+	width: 40px;
+	cursor:pointer;
+}
+
+::-webkit-input-placeholder {
+   text-align: center;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   text-align: center;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   text-align: center;  
+}
+
+
+:-ms-input-placeholder {  
+   text-align: center; 
+}
+
+
+.button4 {
+  background-color: #B1589E;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 150%;
+  margin: 3% 8%;
+  padding-right: 30%;
+  padding-left: 30%;
+  padding-bottom: 2%;
+  padding-top: 2%;
+  cursor:pointer;
+
+}
+li{
+	list-style: none;
+	margin-bottom: 10px;
+}
+a{
+	text-decoration-line: none;
+	cursor:pointer;
+}
+input{
+	 border: none;
+	 background-color: #FFF0F0;
+	 padding-bottom: 15px;
+}
+
+
+.alignCenter{
+	text-align : center;
+}
+
+button:focus {
+	outline:none;
+}
+
+
+#informationblock{
+	margin-top: 8%;
+}
+
+.responsive {
+  width: 100%;
+  height: auto;
+}
+
+
+#imageBackground{
+	margin-top: 5%;
+	padding-bottom: 3%;
+	padding-top: 3%;
+	justify-content: center;
+}
+
+#signUpinformation{
+	display: flex;
+	justify-content: space-around;
+}
+
+#signUp{
+	flex-wrap: wrap;
+	overflow: auto;
+	margin-top: 5%;
+	vertical-align:middle;
+	padding-left: 2%;
+	background-color: white;
+	max-width: 700px;
+}
+#accountText{
+	margin-left: 5%;
+}
+
+
+@media only screen and (max-width: 200px) {
+  img{
+  	display: none;
+  }  
+}
