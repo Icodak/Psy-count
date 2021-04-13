@@ -37,6 +37,7 @@ html, body {
   cursor:pointer;
 }
 table{
+  overflow: auto;
   margin-top: 50px;
   width: 100%;
   border-spacing: 0px 30px;

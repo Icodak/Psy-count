@@ -1,5 +1,4 @@
- 
- 
+
 
  function checkboxcheck(){
  
@@ -37,7 +36,6 @@
 }}}
 
 function allSelect(source){
-    alert('ok');
     checkboxes = document.getElementsByName('checkBoxGestion');
   for(var i=0, n=checkboxes.length;i<n;i++) {
     checkboxes[i].checked = source.checked;
@@ -45,17 +43,58 @@ function allSelect(source){
 }
 
 
-function deleteUsers(){
-    alert('ok');
+
+
+$(document).ready(function(){
+ 
+    $("#SuppButton").click(function(){
+
+
     checkboxes = document.getElementsByName('checkBoxGestion');
+    var tableau = new Array(checkboxcheck.length);
+    if (confirm("voulez vous vraiment supprimer ses utilisateurs ?"))
+{
     for(var i=0, n=checkboxes.length;i<n;i++) {
         if(checkboxes[i].checked ==true){
-            alert(checkboxes[i].id);
-
+            tableau[i]=checkboxes[i].id;
+            $.ajax({
+                url : 'gestionFonction.php',
+                type : 'POST',
+                data : "idTable=" + tableau[i],
+                success : function(code_html, statut){
+                    document.location.reload();
+                },
+         
+                error : function(resultat, statut, erreur){
+                  
+                },
+         
+                complete : function(resultat, statut){
+         
+                }
+         
+             });
         }
-      }
 
-}
+      }
+    }
+
+
+        
+    
+    });
+    
+    });
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -63,25 +102,6 @@ function deleteUsers(){
 
 
     
-}
-
-
-
-   
-
-
-
-
-
-             
-
-
-
-
-
-
-
-
 
 
 
