@@ -42,7 +42,7 @@ html, body {
 }
 
 #globalPage{
-  display: none;
+  display: block;
 }
 
 table{

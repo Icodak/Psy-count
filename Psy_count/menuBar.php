@@ -36,17 +36,6 @@ session_start();
 
 
 
-
-
-
-
-
-
-
-
-
-
-
     <?php
       if(isset($_SESSION['type'])){
         if($_SESSION['type']=='Admin'){

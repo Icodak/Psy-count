@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Titre de la page</title>
-    <link rel="stylesheet" href="css/style_des_utilisateurs.css">
+    <link rel="stylesheet" href="css//style_des_utilisateurs.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script type="text/javascript" src="javaScript//javaScriptCode_.js"></script>
 
@@ -76,17 +76,13 @@ if( !isset( $_SESSION['type']) || $_SESSION['type']!='Admin'){
 
         <h1>Gestion des Utilisateurs</h1>
 
-        <?php
-        if(isset($_SESSION["gestionModification"])&&$_SESSION["gestionModification"]=='false'){
-        ?>
+       
 
         <form method="post" action="gestionFonction.php">
         <input type="submit" class="button5" value="Ajouter un profil" name="Ajouter">
         </form>
 
-            <?php
-        }
-        ?>
+       
 
         <?php include("popUpGestion.php") ?>
 

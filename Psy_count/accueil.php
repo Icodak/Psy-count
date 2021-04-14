@@ -1,3 +1,5 @@
+
+
 <!doctype html>
 <html lang="fr">
 <head>
@@ -7,10 +9,30 @@
   <link rel="stylesheet" href="css//styleAccueil.css">
 </head>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
   <header>
 	<div id="menuBar1">
 
+	
+
 		<?php include("menuBar.php") ?>
+
+
+
+
+
 		<li><h2 id="headerText"> PSY-Count</h2></li>
 
 		<li class="headerDdescription">  <h5 id="headerPresentation">  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed<br>
@@ -23,6 +45,13 @@
 		<li><button class="button button4">Découvrir</button></li>
 	</div>
 </header>
+
+
+
+
+
+
+
 
 
 
