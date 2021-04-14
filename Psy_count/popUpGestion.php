@@ -1,6 +1,13 @@
 
 
 
+
+
+ <?php
+        if(isset($_SESSION["hidde"])&&$_SESSION["hidde"]=='true'){
+?>
+
+
    <?php
         if(isset($_SESSION["gestionModification"])&&$_SESSION["gestionModification"]=='true'){
         ?>
@@ -224,4 +231,8 @@
 <?php  
 }
 }
+?>
+
+<?php
+        }
 ?>
