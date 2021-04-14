@@ -14,15 +14,39 @@ session_start();
 		<a href="accueil.php" class="menuText" > Accueil </a>  
 		<a href="" class="menuText" > Forum </a> 
 
+
+
+
+
+
+
+
+
     <?php
       if(isset($_SESSION['type'])){
         if($_SESSION['type']=='patient'){
     ?>
     <a href="myData.php" class="menuText" > Mes données </a>  
+    
     <?php
      }
      }
     ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <?php
       if(isset($_SESSION['type'])){
         if($_SESSION['type']=='Admin'){

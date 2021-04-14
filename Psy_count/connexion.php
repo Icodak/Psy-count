@@ -18,7 +18,15 @@ try{
 
       $resultat = $req->fetch();
 
+
+      
+
       $isPasswordCorrect = password_verify($Password, $resultat['motDePasse']);
+
+
+
+
+
 
       $req2 =  $dbco->prepare(
       'SELECT permission_lvl FROM utilisateur where Email=:Email');
@@ -26,6 +34,9 @@ try{
       $req2->execute(array('Email' => $Email));
 
       $resultat3 = $req2->fetch();
+
+
+
 
       $req3 =  $dbco->prepare(
       'SELECT ID_Utilisateur FROM utilisateur where Email=:Email ');
