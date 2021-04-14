@@ -1,6 +1,19 @@
 <?php  
 session_start();
 
+?>
+
+<?php
+if(isset($_POST['Ajouter']))
+{
+    $_SESSION["hidde"]='true' ;
+}
+
+?>
+
+
+<?php
+
 if(isset($_POST['idTable'])){
 
     $ID = json_decode($_POST['idTable']);
@@ -35,6 +48,7 @@ if(isset($_POST['typeId4'])){
 if(isset($_POST['typeId6'])){
 
     $_SESSION["gestionModification"]='false';
+    $_SESSION["hidde"]='false';
 
     header('Location: gestionDesUtilisateurs.php');
 

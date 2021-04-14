@@ -20,9 +20,6 @@
 
 
 
-
-
-
  function faq(texte,element){
     var d1 = document.getElementsByClassName("reponse");
     var d2 = document.getElementsByClassName("question");
