@@ -1,14 +1,9 @@
 
 
 
-<?php 
-session_start();
-?>
-
-
-
-
-
+   <?php
+        if(isset($_SESSION["gestionModification"])&&$_SESSION["gestionModification"]=='true'){
+        ?>
 
     <form method="post" action="gestionFonction.php">
     <select name="permission" id="pet-select" placeholder="spécialité">
@@ -22,6 +17,10 @@ session_start();
     
     <input name="typeId4" type="submit" class="button4" value="choisir" name="Ajouter">
     </form>
+<?php
+
+        }
+        ?>
 
 
 
@@ -78,6 +77,7 @@ session_start();
             <div>
 
     <input type="submit" class='button4' name="typeId5" value="valider">
+    <input type="submit" class='button4' name="typeId6" value="annuler">
 </div>
 </div>
 
@@ -147,6 +147,7 @@ session_start();
             <div>
 
     <input type="submit" class='button4' name="typeId5" value="valider">
+    <input type="submit" class='button4' name="typeId6" value="annuler">
 </div>
 </div>
 

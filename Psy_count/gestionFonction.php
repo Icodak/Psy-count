@@ -24,6 +24,30 @@ if(isset($_POST['idTable'])){
 
 }
 
+if(isset($_POST['typeId4'])){
+
+    $_SESSION["gestionModification"]='true';
+    $_SESSION["permission"]=$_POST['permission'];
+    header('Location: gestionDesUtilisateurs.php');
+
+}
+
+if(isset($_POST['typeId6'])){
+
+    $_SESSION["gestionModification"]='false';
+
+    header('Location: gestionDesUtilisateurs.php');
+
+}
+
+if(isset($_POST['Ajouter'])){
+
+    $_SESSION["gestionModification"]='true';
+    header('Location: gestionDesUtilisateurs.php');
+    
+
+}
+
 
 
 ?>

@@ -4,11 +4,10 @@
 <head>
     <meta charset="utf-8">
     <title>Titre de la page</title>
-    <link rel="stylesheet" href="css//style_des_utilisateurs.css">
+    <link rel="stylesheet" href="css/style_des_utilisateurs.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script type="text/javascript" src="javaScript/javaScriptCode_.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script type="text/javascript" src="javaScript//javaScriptCode_.js"></script>
+
 
 </head>
 
@@ -77,43 +76,53 @@ if( !isset( $_SESSION['type']) || $_SESSION['type']!='Admin'){
 
         <h1>Gestion des Utilisateurs</h1>
 
+        <?php
+        if(isset($_SESSION["gestionModification"])&&$_SESSION["gestionModification"]=='false'){
+        ?>
+
+        <form method="post" action="gestionFonction.php">
+        <input type="submit" class="button5" value="Ajouter un profil" name="Ajouter">
+        </form>
+
+            <?php
+        }
+        ?>
+
+        <?php include("popUpGestion.php") ?>
+
+
+        <div id="globalPage">
+            <div id="actionButton">
+                <input class="button4" value="Modifier" name="Modifier">
+                <input class="button4" id="SuppButton" value="Supprimer" name="supprimer">
+                <input class="button4" value="Bannir" name="Bannir">
+
+            </div>
 
 
 
-        <input onclick="window.open('popUpGestion.php')" class="button4" value="Ajouter un profil" name="Ajouter">
-
-
-
-        <div id="actionButton">
-            <input class="button4" value="Modifier" name="Modifier">
-            <input class="button4" id="SuppButton" value="Supprimer" name="supprimer">
-            <input class="button4" value="Bannir" name="Bannir">
-
-        </div>
 
 
 
 
+            <div id="tableau">
+                <div id="subTable">
+                    <table>
 
+                        <thead>
+                            <tr>
+                                <th class="text2" align="left" colspan="1">id</th>
+                                <th class="text2" align="left" colspan="1">nom</th>
+                                <th class="text2" align="left" colspan="1">prenom</th>
+                                <th class="text2" align="left" colspan="1">Email</th>
+                                <th class="text2" align="left" colspan="1">permission</th>
+                                <th>
+                                    <input type="checkbox" onclick="allSelect(this)">
+                                </th>
+                            </tr>
+                        </thead>
 
-
-        <div id="tableau">
-            <table>
-
-                <thead>
-                    <tr>
-                        <th class="text2" align="left" colspan="1">id</th>
-                        <th class="text2" align="left" colspan="1">nom</th>
-                        <th class="text2" align="left" colspan="1">prenom</th>
-                        <th class="text2" align="left" colspan="1">Email</th>
-                        <th class="text2" align="left" colspan="1">permission</th>
-                        <th>
-                            <input type="checkbox" onclick="allSelect(this)">
-                        </th>
-                    </tr>
-                </thead>
-
-                <?php
+                        <?php
 
 
         
@@ -124,52 +133,56 @@ if( !isset( $_SESSION['type']) || $_SESSION['type']!='Admin'){
 
 
 
-                <tbody>
-                    <tr>
-                        <td class="text2" align="left"><?php echo  $resultat3[$i][0]?></td>
-                        <td class="text2" align="left"><?php echo  $resultat3[$i][1]?></td>
-                        <td class="text2" align="left"><?php echo  $resultat3[$i][2]?></td>
-                        <td class="text2" align="left"><?php echo  $resultat3[$i][3]?></td>
-                        <td class="text2" align="left"><?php echo  $resultat3[$i][4]?></td>
-                        <td>
-                            <input type="checkbox" name="checkBoxGestion" id=<?php echo  $resultat3[$i][0]?>>
-                        </td>
+                        <tbody>
+                            <tr>
+                                <td class="text2" align="left"><?php echo  $resultat3[$i][0]?></td>
+                                <td class="text2" align="left"><?php echo  $resultat3[$i][1]?></td>
+                                <td class="text2" align="left"><?php echo  $resultat3[$i][2]?></td>
+                                <td class="text2" align="left"><?php echo  $resultat3[$i][3]?></td>
+                                <td class="text2" align="left"><?php echo  $resultat3[$i][4]?></td>
+                                <td>
+                                    <input type="checkbox" name="checkBoxGestion" id=<?php echo  $resultat3[$i][0]?>>
+                                </td>
 
-                    </tr>
-                </tbody>
+                            </tr>
+                        </tbody>
 
 
-                <?php
+                        <?php
          }
          ?>
 
-            </table>
+                    </table>
+
+
+
+
+                    <div class="pagination">
+                        <!-- Lien vers la page précédente (désactivé si on se trouve sur la 1ère page) -->
+                        <div class="page-items <?= ($currentPage == 1) ? "disabled" : "" ?>">
+                            <a href="gestionDesUtilisateurs.php?page=<?= $currentPage - 1 ?>" class="page-link">«</a>
+                        </div>
+                        <?php for($page = 1; $page <= $pages; $page++): ?>
+                        <!-- Lien vers chacune des pages (activé si on se trouve sur la page correspondante) -->
+                        <div class="page-item <?= ($currentPage == $page) ? "active" : "" ?> ">
+                            <a href="gestionDesUtilisateurs.php?page=<?= $page ?>" class="page-link"><?= $page ?></a>
+                        </div>
+                        <?php endfor ?>
+                        <!-- Lien vers la page suivante (désactivé si on se trouve sur la dernière page) -->
+                        <div class="page-items <?= ($currentPage == $pages) ? "disabled" : "" ?>">
+                            <a href="gestionDesUtilisateurs.php?page=<?= $currentPage + 1 ?>" class="page-link">»</a>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
         </div>
 
-        <nav>
-            <ul class="pagination">
-                <!-- Lien vers la page précédente (désactivé si on se trouve sur la 1ère page) -->
-                <li class="page-item <?= ($currentPage == 1) ? "disabled" : "" ?>">
-                    <a href="gestionDesUtilisateurs.php?page=<?= $currentPage - 1 ?>" class="page-link">Précédente</a>
-                </li>
-                <?php for($page = 1; $page <= $pages; $page++): ?>
-                <!-- Lien vers chacune des pages (activé si on se trouve sur la page correspondante) -->
-                <li class="page-item <?= ($currentPage == $page) ? "active" : "" ?>">
-                    <a href="gestionDesUtilisateurs.php?page=<?= $page ?>" class="page-link"><?= $page ?></a>
-                </li>
-                <?php endfor ?>
-                <!-- Lien vers la page suivante (désactivé si on se trouve sur la dernière page) -->
-                <li class="page-item <?= ($currentPage == $pages) ? "disabled" : "" ?>">
-                    <a href="gestionDesUtilisateurs.php?page=<?= $currentPage + 1 ?>" class="page-link">Suivante</a>
-                </li>
-            </ul>
-        </nav>
-
-    </div>
 
 
-
-    <?php include("footer.php") ?>
+        <?php include("footer.php") ?>
 
 
 </body>

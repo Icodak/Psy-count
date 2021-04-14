@@ -16,6 +16,13 @@
     }
 
 
+
+
+
+
+
+
+
  function faq(texte,element){
     var d1 = document.getElementsByClassName("reponse");
     var d2 = document.getElementsByClassName("question");
@@ -52,7 +59,7 @@ $(document).ready(function(){
 
     checkboxes = document.getElementsByName('checkBoxGestion');
     var tableau = new Array(checkboxcheck.length);
-    if (confirm("voulez vous vraiment supprimer ses utilisateurs ?"))
+    if (confirm("Voulez vous vraiment supprimer ces utilisateurs ?"))
 {
     for(var i=0, n=checkboxes.length;i<n;i++) {
         if(checkboxes[i].checked ==true){

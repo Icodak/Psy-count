@@ -10,7 +10,9 @@ html, body {
 #actionButton{
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
+
 
 .button4 {
   background-color: #BB66BF;
@@ -23,9 +25,10 @@ html, body {
   font-size: 20px;
   margin: 4px 2px;
   cursor:pointer;
+  max-width: 150px;
 }
 .button5 {
-  background-color: black;
+  background-color: #BB66BF;
   border: none;
   color: white;
   padding: 10px;
@@ -35,10 +38,16 @@ html, body {
   font-size: 20px;
   margin: 4px 2px;
   cursor:pointer;
+  margin-bottom: 20px;
 }
+
+#globalPage{
+  display: none;
+}
+
 table{
   overflow: auto;
-  margin-top: 50px;
+  margin-top: 5px;
   width: 100%;
   border-spacing: 0px 30px;
   border: 2px solid black;
@@ -56,16 +65,59 @@ table{
 .text2{
   border-bottom: solid purple;
 }
+
+#subTable{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
 header{
   text-align: center;
   padding-top: 2%;
 }
+
+.pagination{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.page-item{
+  border: 1px solid black;
+  padding: 8px;
+  margin: 0 4px;
+  font-size: 22px;
+  text-align: center;
+  border-radius: 5px;
+
+}
+.page-items{
+  border: 1px solid black;
+  padding: 8px;
+  margin: 0 4px;
+  font-size: 22px;
+  text-align: center;
+  border-radius: 5px;
+
+}
+
+
+
+.page-item:hover {background-color: green;}
+
+
 
 
 td,th{
   padding-left: 20px;
   padding-right: 20px;
 }
+
+
 
 
 
