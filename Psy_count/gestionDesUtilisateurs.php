@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Titre de la page</title>
-    <link rel="stylesheet" href="css//style_des_utilisateurs.css">
+    <link rel="stylesheet" href="css/style_des_utilisateurs.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script type="text/javascript" src="javaScript//javaScriptCode.js"></script>
 
@@ -30,13 +30,13 @@ $dbco = new PDO("mysql:host=localhost;dbname=serveur_psy_fi",'root','');
 $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 // On détermine le nombre total d'articles
-$sql = "SELECT COUNT(*) AS nb_users FROM utilisateur";
+$sql = "SELECT COUNT(*) AS nb_users FROM utilisateur WHERE permission_lvl!='Admin'";
 $res = $dbco->prepare($sql);
 $exec = $res->execute();
 $resultat = $res->fetch();
 $nbUsers = (int) $resultat['nb_users'];
 // On détermine le nombre d'articles par page
-$parPage = 7;
+$parPage = 3;
 // On calcule le nombre de pages total
 $pages = ceil($nbUsers / $parPage);
 // Calcul du 1er article de la page

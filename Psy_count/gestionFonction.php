@@ -7,6 +7,8 @@ session_start();
 if(isset($_POST['Ajouter']))
 {
     $_SESSION["hidde"]='true' ;
+    header('Location: gestionDesUtilisateurs.php');
+
 }
 
 ?>
