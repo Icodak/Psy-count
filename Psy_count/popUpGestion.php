@@ -22,7 +22,7 @@
 
 
     
-    <input name="typeId4" type="submit" class="button4" value="choisir" name="Ajouter">
+    <input name="typeId4" type="submit" class="button3" value="choisir" name="Ajouter">
     </form>
 <?php
 
@@ -83,8 +83,8 @@
          </div>
             <div>
 
-    <input type="submit" class='button4' name="typeId5" value="valider">
-    <input type="submit" class='button4' name="typeId6" value="annuler">
+    <input type="submit" class='button3' name="typeId5" value="valider">
+    <input type="submit" class='button3' name="typeId6" value="annuler">
 </div>
 </div>
 
@@ -153,8 +153,8 @@
          </div>
             <div>
 
-    <input type="submit" class='button4' name="typeId5" value="valider">
-    <input type="submit" class='button4' name="typeId6" value="annuler">
+    <input type="submit" class='button3' name="typeId5" value="valider">
+    <input type="submit" class='button3' name="typeId6" value="annuler">
 </div>
 </div>
 
@@ -219,10 +219,10 @@
          </div>
             <div>
 
-    <input type="submit" class='button4' name="typeId5" value="valider">
+    <input type="submit" class='button3' name="typeId5" value="valider">
 
 
-    <input type="submit" class='button4' name="typeId6" value="annuler">
+    <input type="submit" class='button3' name="typeId6" value="annuler">
 </div>
 </div>
 

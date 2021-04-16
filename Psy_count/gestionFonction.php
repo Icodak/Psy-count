@@ -88,8 +88,8 @@ if(isset($_POST['typeId6'])){
 
         try{
 
-            $sql = "INSERT INTO patient(dateDeNaissance,ID_Utilisateur)
-            VALUES('$dateOfBirth',(SELECT ID_Utilisateur from utilisateur where Email='$Email'))"; 
+            $sql = "INSERT INTO administrateur(ID_Utilisateur)
+            VALUES((SELECT ID_Utilisateur from utilisateur where Email='$Email'))"; 
             $dbco->exec($sql);
 
         }catch(PDOException $e){
@@ -97,7 +97,34 @@ if(isset($_POST['typeId6'])){
         }
 
 
+    }
 
+    if(isset($_SESSION["permission"])&&$_SESSION["permission"]=='patient'){
+
+
+        try{
+
+            $sql = "INSERT INTO administrateur(ID_Utilisateur)
+            VALUES((SELECT ID_Utilisateur from utilisateur where Email='$Email'))"; 
+            $dbco->exec($sql);
+
+        }catch(PDOException $e){
+            echo "Erreur : " . $e->getMessage();
+        }
+
+
+    }
+    if(isset($_SESSION["permission"])&&$_SESSION["permission"]=='Medecin'){
+
+        try{
+
+            $sql = "INSERT INTO administrateur(ID_Utilisateur)
+            VALUES((SELECT ID_Utilisateur from utilisateur where Email='$Email'))"; 
+            $dbco->exec($sql);
+
+        }catch(PDOException $e){
+            echo "Erreur : " . $e->getMessage();
+        }
 
 
     }

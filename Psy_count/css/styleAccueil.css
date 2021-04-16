@@ -18,6 +18,9 @@ html, body {
   cursor:pointer;
 }
 
+body{
+  position: relative;
+}
 
 li{
 	list-style: none;

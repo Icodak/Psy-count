@@ -15,11 +15,6 @@
         }
     }
 
-
-
-
-
-
  function faq(texte,element){
     var d1 = document.getElementsByClassName("reponse");
     var d2 = document.getElementsByClassName("question");
@@ -39,11 +34,39 @@
              }
 }}}
 
+
 function allSelect(source){
     checkboxes = document.getElementsByName('checkBoxGestion');
   for(var i=0, n=checkboxes.length;i<n;i++) {
     checkboxes[i].checked = source.checked;
   }
+  checkboxcheckGestionsUtilisateurs();
+}
+
+
+
+function checkboxcheckGestionsUtilisateurs(){
+
+    var element = document.getElementsByClassName("checkBoxUtilisateurs");
+    var button  = document.getElementsByClassName("button4");
+
+    for(var i=0, n=element.length;i<n;i++) {
+
+        if(element[i].checked==true){
+            for(var i=0, n=button.length;i<n;i++) {
+            button[i].disabled=false;
+            button[i].style.backgroundColor ="#B1589E";
+            }
+        } else{
+            for(var i=0, n=button.length;i<n;i++) {
+            button[i].disabled=true;
+            button[i].style.backgroundColor ="grey";
+            }
+        }
+    }
+   
+
+    
 }
 
 

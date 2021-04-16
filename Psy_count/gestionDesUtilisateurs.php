@@ -6,7 +6,7 @@
     <title>Titre de la page</title>
     <link rel="stylesheet" href="css//style_des_utilisateurs.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script type="text/javascript" src="javaScript//javaScriptCode.js"></script>
+    <script type="text/javascript" src="javaScript/javaScriptCode.js"></script>
 
 
 </head>
@@ -97,9 +97,9 @@ if( !isset( $_SESSION['type']) || $_SESSION['type']!='Admin'){
 ?>
         <div id="globalPage">
             <div id="actionButton">
-                <input class="button4" value="Modifier" name="Modifier">
-                <input class="button4" id="SuppButton" value="Supprimer" name="supprimer">
-                <input class="button4" value="Bannir" name="Bannir">
+                <input class="button4" disabled  value="Modifier" name="Modifier">
+                <input class="button4" disabled  id="SuppButton" value="Supprimer" name="supprimer">
+                <input class="button4" disabled  value="Bannir" name="Bannir">
 
             </div>
 
@@ -141,7 +141,7 @@ if( !isset( $_SESSION['type']) || $_SESSION['type']!='Admin'){
                         <tbody>
                             <tr>
                                  <td>
-                                    <input type="checkbox" name="checkBoxGestion" id=<?php echo  $resultat3[$i][0]?>>
+                                    <input type="checkbox" name="checkBoxGestion" class="checkBoxUtilisateurs" onclick="checkboxcheckGestionsUtilisateurs()" id=<?php echo  $resultat3[$i][0]?>>
                                 </td>
                                 <td class="text2" align="left"><?php echo  $resultat3[$i][0]?></td>
                                 <td class="text2" align="left"><?php echo  $resultat3[$i][1]?></td>
