@@ -51,18 +51,23 @@ function checkboxcheckGestionsUtilisateurs(){
     var button  = document.getElementsByClassName("button4");
 
     for(var i=0, n=element.length;i<n;i++) {
-        if(element[i].checked==true){
-            for(var i=0, n=button.length;i<n;i++) {
-                button[i].disabled=false;
-                button[i].style.backgroundColor ="#BB66BF";
+        if(element[i].checked!=true){
+            for(var p=0, f=button.length;p<f;p++) {
+                button[p].disabled=true;
+                button[p].style.backgroundColor ="grey";
             }
-        } else{
-            button[i].disabled=true;
-            button[i].style.backgroundColor ="grey";
+           
+        }else{
+            for(var b=0, d=button.length;b<d;b++) {
+                button[b].disabled=false;
+                button[b].style.backgroundColor ="#BB66BF";
+                
+            } 
+            break;
         }
        
+    
     }
-   
 
     
 }
