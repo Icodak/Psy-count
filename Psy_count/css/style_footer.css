@@ -5,7 +5,7 @@ footer{
   background-color: #FFDEDE;
   display: flex;
   justify-content: space-between;
-  position:relative;
+  position:absolute;
 	bottom:0px;
 	width:100%;
 

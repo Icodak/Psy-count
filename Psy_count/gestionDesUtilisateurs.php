@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Titre de la page</title>
-    <link rel="stylesheet" href="css/style_des_utilisateurs.css">
+    <link rel="stylesheet" href="css//style_des_utilisateurs.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script type="text/javascript" src="javaScript//javaScriptCode.js"></script>
 
@@ -36,7 +36,7 @@ $exec = $res->execute();
 $resultat = $res->fetch();
 $nbUsers = (int) $resultat['nb_users'];
 // On détermine le nombre d'articles par page
-$parPage = 3;
+$parPage = 5;
 // On calcule le nombre de pages total
 $pages = ceil($nbUsers / $parPage);
 // Calcul du 1er article de la page
@@ -115,14 +115,15 @@ if( !isset( $_SESSION['type']) || $_SESSION['type']!='Admin'){
 
                         <thead>
                             <tr>
+                            <th>
+                                    <input type="checkbox" onclick="allSelect(this)">
+                                </th>
                                 <th class="text2" align="left" colspan="1">id</th>
                                 <th class="text2" align="left" colspan="1">nom</th>
                                 <th class="text2" align="left" colspan="1">prenom</th>
                                 <th class="text2" align="left" colspan="1">Email</th>
                                 <th class="text2" align="left" colspan="1">permission</th>
-                                <th>
-                                    <input type="checkbox" onclick="allSelect(this)">
-                                </th>
+                           
                             </tr>
                         </thead>
 
@@ -139,14 +140,15 @@ if( !isset( $_SESSION['type']) || $_SESSION['type']!='Admin'){
 
                         <tbody>
                             <tr>
+                                 <td>
+                                    <input type="checkbox" name="checkBoxGestion" id=<?php echo  $resultat3[$i][0]?>>
+                                </td>
                                 <td class="text2" align="left"><?php echo  $resultat3[$i][0]?></td>
                                 <td class="text2" align="left"><?php echo  $resultat3[$i][1]?></td>
                                 <td class="text2" align="left"><?php echo  $resultat3[$i][2]?></td>
                                 <td class="text2" align="left"><?php echo  $resultat3[$i][3]?></td>
                                 <td class="text2" align="left"><?php echo  $resultat3[$i][4]?></td>
-                                <td>
-                                    <input type="checkbox" name="checkBoxGestion" id=<?php echo  $resultat3[$i][0]?>>
-                                </td>
+                               
 
                             </tr>
                         </tbody>
@@ -188,11 +190,11 @@ if( !isset( $_SESSION['type']) || $_SESSION['type']!='Admin'){
 ?>
 
 
-
-        <?php include("footer.php") ?>
-
-
+        
+<?php include("footer.php") ?>
 </body>
+
+
 
 
 

@@ -56,6 +56,7 @@ table{
 
 }
 #gestionUtilisateur{
+  height: 800px;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -106,7 +107,9 @@ header{
 }
 
 
-
+div{
+  border: 2px border black;
+}
 
 
 

@@ -65,5 +65,45 @@ if(isset($_POST['Ajouter'])){
 }
 
 
+if(isset($_POST['typeId6'])){
+
+    $permission=$_SESSION["permission"];
+
+    try{
+    $dbco = new PDO("mysql:host=localhost;dbname=serveur_psy_fi",'root','');
+    $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    $sql = "INSERT INTO utilisateur(motDePasse,nom,prenom,Email,permission_lvl)
+    VALUES('$Password','$LastName','$FirstName','$Email','$permission')"; 
+    $dbco->exec($sql);
+
+
+
+    }catch(PDOException $e){
+        echo "Erreur : " . $e->getMessage();
+    }
+
+    if(isset($_SESSION["permission"])&&$_SESSION["permission"]=='Admin'){
+
+
+        try{
+
+            $sql = "INSERT INTO patient(dateDeNaissance,ID_Utilisateur)
+            VALUES('$dateOfBirth',(SELECT ID_Utilisateur from utilisateur where Email='$Email'))"; 
+            $dbco->exec($sql);
+
+        }catch(PDOException $e){
+            echo "Erreur : " . $e->getMessage();
+        }
+
+
+
+
+
+    }
+    
+}
+
+
 
 ?>
