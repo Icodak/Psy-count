@@ -60,16 +60,26 @@ function checkboxcheckGestionsUtilisateurs(){
         }else{
             for(var b=0, d=button.length;b<d;b++) {
                 button[b].disabled=false;
-                button[b].style.backgroundColor ="#BB66BF";
-                
+                button[b].style.backgroundColor ="#BB66BF";       
             } 
             break;
         }
-       
-    
     }
+}
 
-    
+function verifyOneCheckBox(){
+    var count =0;
+    var element = document.getElementsByClassName("checkBoxUtilisateurs");
+    for(var i=0, n=element.length;i<n;i++) {
+        if(element[i].checked==true){
+            count+=1;
+        }
+    }
+    if(count>1){
+        return true;
+    }else{
+        return false;
+    }
 }
 
 
@@ -119,6 +129,70 @@ $(document).ready(function(){
 
 
 
+    $(document).ready(function(){
+ 
+        $("#banButton").click(function(){
+    
+    
+        checkboxes = document.getElementsByName('checkBoxGestion');
+        var tableau = new Array(checkboxcheck.length);
+        if (confirm("Voulez vous vraiment bannir ces utilisateurs ?"))
+    {
+        for(var i=0, n=checkboxes.length;i<n;i++) {
+            if(checkboxes[i].checked ==true){
+                tableau[i]=checkboxes[i].id;
+                $.ajax({
+                    url : 'gestionFonction.php',
+                    type : 'POST',
+                    data : "idTable=" + tableau[i],
+                    success : function(code_html, statut){
+                        document.location.reload();
+                    },
+             
+                    error : function(resultat, statut, erreur){
+                      
+                    },
+             
+                    complete : function(resultat, statut){
+             
+                    }
+             
+                 });
+            }
+    
+          }
+        }
+    
+    
+            
+        
+        });
+        
+        });
+    
+
+
+
+
+$(document).ready(function(){
+ 
+        $("#ModifierButton").click(function(){
+    
+         if(verifyOneCheckBox()) 
+         {
+            
+
+
+         }else{
+
+         }
+    
+
+            
+        
+        });
+        
+        });
 
 
 

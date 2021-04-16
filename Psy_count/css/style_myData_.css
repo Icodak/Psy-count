@@ -3,9 +3,12 @@
 html, body {
  margin:0;
  padding:0;
- height: 100%; 
  }
 
+
+body{
+	position: relative;
+}
 
 #doctorPage{
 	background-color: rgba(177, 88, 158,0.45);

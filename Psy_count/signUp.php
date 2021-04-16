@@ -9,7 +9,7 @@ session_start(); // On démarre la session AVANT toute chose
   <link rel="icon" type="image/png" href="images/psy-fi.png" />
   <link rel="stylesheet" href="css/style_Sign_Up_.css">
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
-  <script type="text/javascript" src="javaScript//javaScriptCode_.js"></script>
+  <script type="text/javascript" src="javaScript//javaScriptCode.js"></script>
 </head>
 
 

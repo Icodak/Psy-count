@@ -65,7 +65,7 @@ if(isset($_POST['Ajouter'])){
 }
 
 
-if(isset($_POST['typeId6'])){
+if(isset($_POST['typeId5'])){
 
     $permission=$_SESSION["permission"];
 
