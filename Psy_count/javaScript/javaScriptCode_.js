@@ -51,18 +51,16 @@ function checkboxcheckGestionsUtilisateurs(){
     var button  = document.getElementsByClassName("button4");
 
     for(var i=0, n=element.length;i<n;i++) {
-
         if(element[i].checked==true){
             for(var i=0, n=button.length;i<n;i++) {
-            button[i].disabled=false;
-            button[i].style.backgroundColor ="#B1589E";
+                button[i].disabled=false;
+                button[i].style.backgroundColor ="#BB66BF";
             }
         } else{
-            for(var i=0, n=button.length;i<n;i++) {
             button[i].disabled=true;
             button[i].style.backgroundColor ="grey";
-            }
         }
+       
     }
    
 
