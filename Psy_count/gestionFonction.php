@@ -39,6 +39,28 @@ if(isset($_POST['idTable'])){
 
 }
 
+
+if(isset($_POST['idTable2'])){
+
+    $ID = json_decode($_POST['idTable2']);
+    
+        try{
+
+            $dbco = new PDO("mysql:host=localhost;dbname=serveur_psy_fi",'root','');
+            $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            $sql = "INSERT INTO blacklist(ID_utilisateur)
+            VALUES('$ID')"; 
+            $dbco->exec($sql);
+
+        }catch(PDOException $e){
+            echo "Erreur : " . $e->getMessage();
+        }
+
+}
+
+
+
 if(isset($_POST['typeId4'])){
 
     $_SESSION["gestionModification"]='true';

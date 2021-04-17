@@ -132,6 +132,7 @@ $(document).ready(function(){
     $(document).ready(function(){
  
         $("#banButton").click(function(){
+          
     
     
         checkboxes = document.getElementsByName('checkBoxGestion');
@@ -144,7 +145,7 @@ $(document).ready(function(){
                 $.ajax({
                     url : 'gestionFonction.php',
                     type : 'POST',
-                    data : "idTable=" + tableau[i],
+                    data : "idTable2=" + tableau[i],
                     success : function(code_html, statut){
                         document.location.reload();
                     },
