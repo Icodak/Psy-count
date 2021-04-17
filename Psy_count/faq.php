@@ -6,9 +6,9 @@
   <meta charset="utf-8">
   <title>mes données</title>
   <link rel="icon" type="image/png" href="images/psy-fi.png" />
-  <link rel="stylesheet" href="css//style_faq.css">
+  <link rel="stylesheet" href="css/style_faq.css">
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
-    <script type="text/javascript" src="javaScript//javaScriptCode.js"></script>
+    <script type="text/javascript" src="javaScript//javaScriptCode_.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 </head>
 <body>
@@ -106,17 +106,18 @@
     if($_SESSION['type']=='Admin'){
 ?>
                   
+                <div class="faqButton">
                 <form method="post" action="faqFonctionDeux.php">
 
                 <input  name="typeId" type="hidden" value=<?php echo $i ?>  >   
-                <input  name="idval" type="submit" class="button6" value= "supprimer"  id=<?php echo $i ?>>
+                <input  name="idval" type="submit" class="button7" value= "supprimer"  id=<?php echo $i ?>>
                 </form>
 
                 <form method="post" action="faqFonctionTrois.php">
                 <input  name="typeId2" type="hidden" value=<?php echo $i ?>  >   
-                <input  name="idval2" type="submit" class="button6" value= "modifier"  id=<?php echo $i ?>>
+                <input  name="idval2" type="submit" class="button7" value= "modifier"  id=<?php echo $i ?>>
                 </form>
-
+                </div>
 
   <?php
 }
@@ -130,7 +131,7 @@
 
 
 
-                <div class="reponse">
+                <div class="reponse" style="display: none;">
                   <h1 > <?php echo $resultat3[$i][1]  ?></h1>
 
                
@@ -191,7 +192,8 @@
 
 
 
-
+        
+<?php include("footer.php") ?>
 
 </body>
 </html>

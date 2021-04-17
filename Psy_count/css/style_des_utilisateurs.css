@@ -17,6 +17,10 @@ body{
   position: relative;
 }
 
+li{
+  list-style: none;
+}
+
 
 .button4 {
   background-color:grey;

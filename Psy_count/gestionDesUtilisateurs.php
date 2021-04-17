@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Titre de la page</title>
-    <link rel="stylesheet" href="css/style_des_utilisateurs.css">
+    <link rel="stylesheet" href="css//style_des_utilisateurs.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script type="text/javascript" src="javaScript//javaScriptCode_.js"></script>
 
@@ -166,7 +166,9 @@ if( !isset( $_SESSION['type']) || $_SESSION['type']!='Admin'){
                     <div class="pagination">
                         <!-- Lien vers la page précédente (désactivé si on se trouve sur la 1ère page) -->
                         <div class="page-items <?= ($currentPage == 1) ? "disabled" : "" ?>">
+                            <li class="<?= ($currentPage == 1) ? "disabled" : "" ?>">
                             <a href="gestionDesUtilisateurs.php?page=<?= $currentPage - 1 ?>" class="page-link">«</a>
+                            </li>
                         </div>
                         <?php for($page = 1; $page <= $pages; $page++): ?>
                         <!-- Lien vers chacune des pages (activé si on se trouve sur la page correspondante) -->
