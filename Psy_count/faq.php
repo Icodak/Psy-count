@@ -8,7 +8,7 @@
   <link rel="icon" type="image/png" href="images/psy-fi.png" />
   <link rel="stylesheet" href="css/style_faq.css">
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
-    <script type="text/javascript" src="javaScript//javaScriptCode_.js"></script>
+    <script type="text/javascript" src="javaScript/javaScriptCode_.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 </head>
 <body>

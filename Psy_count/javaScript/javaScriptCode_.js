@@ -27,12 +27,12 @@
 
             if(d1[pas].style.display=="none"){
                 d1[pas].style.display="block";
-                alert('block');
+            
 
 
             }else{
                 d1[pas].style.display="none";
-                alert(d1[pas].style.display);
+              
              }
 }}}
 
