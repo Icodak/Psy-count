@@ -1,6 +1,6 @@
 <?php
 session_start(); // On démarre la session AVANT toute chose
-
+//Pour l'INSCRIPTION
 
    // Vérifier si le formulaire est soumis 
    if ( isset( $_POST['submit'] ) ) {
