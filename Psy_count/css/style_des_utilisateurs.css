@@ -78,6 +78,15 @@ table{
   font-size: 20px;
 
 }
+
+input[type='text']{
+background-color: white;
+border: none;
+font-size: 20px;
+}
+
+
+
 #gestionUtilisateur{
   height: 800px;
   text-align: center;

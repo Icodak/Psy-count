@@ -4,9 +4,9 @@
 <head>
     <meta charset="utf-8">
     <title>Titre de la page</title>
-    <link rel="stylesheet" href="css//style_des_utilisateurs.css">
+    <link rel="stylesheet" href="css/style_des_utilisateurs.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script type="text/javascript" src="javaScript//javaScriptCode_.js"></script>
+    <script type="text/javascript" src="javaScript/javaScriptCode.js"></script>
 
 
 </head>
@@ -143,13 +143,12 @@ if( !isset( $_SESSION['type']) || $_SESSION['type']!='Admin'){
                                  <td>
                                     <input type="checkbox" name="checkBoxGestion" class="checkBoxUtilisateurs" onclick="checkboxcheckGestionsUtilisateurs()" id=<?php echo  $resultat3[$i][0]?>>
                                 </td>
-                                <td class="text2" align="left"><?php echo  $resultat3[$i][0]?></td>
-                                <td class="text2" align="left"><?php echo  $resultat3[$i][1]?></td>
-                                <td class="text2" align="left"><?php echo  $resultat3[$i][2]?></td>
-                                <td class="text2" align="left"><?php echo  $resultat3[$i][3]?></td>
-                                <td class="text2" align="left"><?php echo  $resultat3[$i][4]?></td>
+                                <td class="text2" align="left"   > <?php echo  $resultat3[$i][0]?></td>
+                                <td class="text2" align="left"    > <?php echo  $resultat3[$i][1]?> </td>
+                                <td class="text2" align="left"  > <?php echo  $resultat3[$i][2]?> </td>
+                                <td class="text2" align="left"   > <?php echo  $resultat3[$i][3]?> </td>
+                                <td class="text2 " align="left"    > <?php echo  $resultat3[$i][4]?> </td>
                                
-
                             </tr>
                         </tbody>
 

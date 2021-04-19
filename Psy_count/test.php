@@ -21,7 +21,7 @@ echo "Erreur : " . $e->getMessage();
 
 
 
-$Mavaraible=$Mavaraible['nom'];
+$Mavaraible='lien.php';
 
 echo ("<a href='$Mavaraible' class='sommaire_niveau2'>". 'bonjour'. "</a><br/>");
 ?>

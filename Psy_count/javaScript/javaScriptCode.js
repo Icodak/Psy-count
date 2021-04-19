@@ -192,10 +192,34 @@ $(document).ready(function(){
     
          if(verifyOneCheckBox()) 
          {
-            
+            alert('vous ne pouvez modifier qu\'un seul utilisateurs à la fois'); 
 
 
          }else{
+            checkboxes = document.getElementsByName('checkBoxGestion');
+            for(var i=0, n=checkboxes.length;i<n;i++) {
+                if(checkboxes[i].checked ==true){
+                    $.ajax({
+                        url : 'gestionFonction.php',
+                        type : 'POST',
+                        data : "ModificationButton=" + i,
+                        success : function(code_html, statut){
+                            document.location.reload();
+                        },
+                 
+                        error : function(resultat, statut, erreur){
+                          
+                        },
+                 
+                        complete : function(resultat, statut){
+                 
+                        }
+                 
+                     });
+                    
+                }
+
+            }
 
          }
     

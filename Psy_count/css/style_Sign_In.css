@@ -8,7 +8,7 @@ html, body {
 
 body{
 
-	background-image:url(images/purple.png);
+	background-image:url(images_css/purple.png);
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
