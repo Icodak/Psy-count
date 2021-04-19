@@ -1,7 +1,7 @@
 
 <?php  
 session_start();
-
+//permet de supprimer
 if(isset($_POST['idval']))
 {
 

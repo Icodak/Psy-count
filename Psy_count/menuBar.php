@@ -1,6 +1,7 @@
 <?php
 session_start();
 ?>
+<!--En include(menubar.php) dans les autres pages, pas besoin de reécrire session start!-->
 
 <link rel="stylesheet" href="css/styleMenu.css">
 <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -14,6 +15,7 @@ session_start();
 		<a href="accueil.php" class="menuText" > Accueil </a>  
 		<a href="" class="menuText" > Forum </a> 
 
+<!--'type' hek connexion-->
     <?php
       if(isset($_SESSION['type'])){
         if($_SESSION['type']=='patient'){
@@ -45,9 +47,11 @@ session_start();
 		<a href="faq.php" class="menuText"> FAQ </a> 
 		<a href="accueil.php#menuBarAnchor" class="menuText"> A propos </a>  
 		<a href="" class="menuText"> Support </a> 
+    <a href="contact.php" class="menuText"> Contact </a>
 
        	<?php
           if(!isset($_SESSION['connexion']) || $_SESSION['connexion']!=1){
+            //si connexion = 1, une connexion a été établie
        	?>
         <a href="signIn.php"> <button class="button6" > Login </button> </a>
         <?php

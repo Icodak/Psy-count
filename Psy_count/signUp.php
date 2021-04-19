@@ -60,6 +60,7 @@ session_start(); // On démarre la session AVANT toute chose
 
 						<li> 
 							<?php if(!empty($_SESSION['message'])){echo $_SESSION['message'];}?>
+							<!--value vient de getInformation.php-->
 						</li>
 					</form>
 				</div>

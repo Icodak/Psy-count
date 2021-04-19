@@ -15,6 +15,8 @@
 	 <div id="inputText"> 
     <h1>QUESTION</h1>
    <textarea rows="15" cols="5" name="question" ></textarea>
+   <!--pas besoin de value car value = ce qu'il y a d'écrit dans le textarea-->
+   
    <h1>R&EacutePONSE</h1>
    <textarea rows="15" cols="5" name="reponse"> </textarea>
 

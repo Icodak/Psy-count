@@ -34,12 +34,14 @@
     try{
 
                 $dbco = new PDO("mysql:host=localhost;dbname=serveur_psy_fi",'root','');
+                //connexion au serveur/la bdd
                 $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
                 $req2 =  $dbco->prepare(
                   'SELECT question,reponse from faq');
                 $req2->execute();
                 $resultat3 = $req2->fetchAll();
+                //requête SQL pour récupérer toutes les questions et les mettre dans la var
 
         ?>
                 <div id="questionReponse"> 
@@ -52,6 +54,7 @@
 
           if(isset($_SESSION["faqModification"])){
           if( $_SESSION["faqModification"]=='true'){
+            //check Form bouton Modifier plus bas -> fonction3
       ?>
              <form method="post" action="faqFonctionTrois.php">
               <h2>QESTION</h2>
@@ -89,10 +92,11 @@
 
         
                 for ($i = 0; $i <= count( $resultat3)-1 ; $i++) {
+                  //Affiche toutes les div à créer selon le nombre de questions
 
       ?>
 
-  <script type="text/javascript">         
+  <script type="text/javascript">  //Début d'une "boucle"       
                 var variableRecuperee = <?php echo json_encode($resultat3)  ?>;
   </script>
                 <div class="question">
@@ -100,6 +104,7 @@
                   <div class="questionText">
 
                   <h1  onclick="faq(variableRecuperee,this)"> <?php echo $resultat3[$i][0]  ?></h1>
+                  <!--1ère Q d'id $i-->
 
       <?php
   if(isset($_SESSION['type'])){
@@ -115,6 +120,8 @@
                 <form method="post" action="faqFonctionTrois.php">
                 <input  name="typeId2" type="hidden" value=<?php echo $i ?>  >   
                 <input  name="idval2" type="submit" class="button6" value= "modifier"  id=<?php echo $i ?>>
+                <!--type submit renvoie les infoes dans l'action faqFonctionDeux.php-->
+                <!--le name est l'identifiant, à utiliser avec $Post qui récupère la value-->
                 </form>
 
 
@@ -154,7 +161,7 @@
        echo "Erreur : " . $e->getMessage();
 
 
-    }
+    } //catch permet de récupérer les erreurs qui sont contenues dans $e, à chaque requête SQL mettre try et catch pour savoir d'où vient le pb avec les $db
 
 ?>
 

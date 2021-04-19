@@ -12,7 +12,7 @@ session_start();
 <a href=""> <button> modifier le compte d'un utilisateur </button> </a>
 
 <?php
-}else{
+}else{//Permet d'ajouter un administrateur
 	$Password=password_hash('motdepasse', PASSWORD_DEFAULT);
 
 
