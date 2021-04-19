@@ -7,13 +7,16 @@ html, body {
 
 
 body{
-	background-color: white;
+
+	background-image:url(images/purple.png);
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	font-size: 25px;
 
 }
+
 
 .latoType{
 	font-family: Lato; 
@@ -66,12 +69,12 @@ body{
   text-decoration: none;
   display: inline-block;
   font-size: 150%;
-  margin: 3% 8%;
   padding-right: 30%;
   padding-left: 30%;
   padding-bottom: 2%;
   padding-top: 2%;
   cursor:pointer;
+  font-size: 30px;
 
 }
 
@@ -93,11 +96,14 @@ input{
 	 color: white;
 	 border-bottom: 2px solid white ;
 }
+
+
+
 input:focus{
 	outline: none;
 }
 #informationInput{
-	margin-bottom: 5%;
+	margin-bottom: 8%;
 }
 
 .alignCenter{
@@ -109,8 +115,14 @@ button:focus {
 }
 
 
+#quitter{
+	min-width: 93px;
+
+}
+
 #informationblock{
 	margin-top: 8%;
+	margin-bottom: 8%;
 }
 
 .responsive {
@@ -137,7 +149,7 @@ button:focus {
 
 .connexionText{
 	color: white;
-	font-size: 15px;
+	font-size: 20px;
 	display: flex;
 	justify-content: left;
 }

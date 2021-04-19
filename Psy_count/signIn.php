@@ -8,7 +8,7 @@ session_start(); // On démarre la session AVANT toute chose
     <meta charset="utf-8">
     <title>signIn</title>
     <link rel="icon" type="image/png" href="images/psy-fi.png" />
-    <link rel="stylesheet" href="css//style_Sign_In.css">
+    <link rel="stylesheet" href="css/style_Sign_In.css">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
 </head>
 
@@ -34,7 +34,7 @@ session_start(); // On démarre la session AVANT toute chose
 
                     </div>
                     <li><input class="button4" type="submit" name="submit" value="Sign In"></li>
-					<li><a class="button4" href="accueil.php">  Quitter  </a></li>
+					<li><a class="button4" id="quitter" href="accueil.php"> Quitter </a></li>
                     <li>
                         <span style="color:white">
                             <?php if(!empty($_SESSION['message2'])){echo $_SESSION['message2'];}?></span>
