@@ -36,7 +36,7 @@ $exec = $res->execute();
 $resultat = $res->fetch();
 $nbUsers = (int) $resultat['nb_users'];
 // On détermine le nombre d'articles par page
-$parPage = 5;
+$parPage = 3;
 // On calcule le nombre de pages total
 $pages = ceil($nbUsers / $parPage);
 // Calcul du 1er article de la page
@@ -163,21 +163,24 @@ if( !isset( $_SESSION['type']) || $_SESSION['type']!='Admin'){
 
 
                     <div class="pagination">
-                        <!-- Lien vers la page précédente (désactivé si on se trouve sur la 1ère page) -->
+      
+
                         <div class="page-items <?= ($currentPage == 1) ? "disabled" : "" ?>">
-                            <li class="<?= ($currentPage == 1) ? "disabled" : "" ?>">
-                            <a href="gestionDesUtilisateurs.php?page=<?= $currentPage - 1 ?>" class="page-link">«</a>
-                            </li>
+                            <a href="gestionDesUtilisateurs.php?page=<?php if($currentPage==1){echo $currentPage;}else{echo $currentPage - 1;}?>" class="page-link">«</a>                    
                         </div>
                         <?php for($page = 1; $page <= $pages; $page++): ?>
-                        <!-- Lien vers chacune des pages (activé si on se trouve sur la page correspondante) -->
+ 
+
                         <div class="page-item <?= ($currentPage == $page) ? "active" : "" ?> ">
                             <a href="gestionDesUtilisateurs.php?page=<?= $page ?>" class="page-link"><?= $page ?></a>
                         </div>
                         <?php endfor ?>
-                        <!-- Lien vers la page suivante (désactivé si on se trouve sur la dernière page) -->
+
+
+
+     
                         <div class="page-items <?= ($currentPage == $pages) ? "disabled" : "" ?>">
-                            <a href="gestionDesUtilisateurs.php?page=<?= $currentPage + 1 ?>" class="page-link">»</a>
+                            <a href="gestionDesUtilisateurs.php?page=<?php if($currentPage==$pages){echo $currentPage;}else{echo $currentPage + 1;}?>" class="page-link ">»</a>
                         </div>
                     </div>
 

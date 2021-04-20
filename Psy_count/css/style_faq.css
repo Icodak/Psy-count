@@ -37,7 +37,10 @@ header{
 }
 
 
-
+#faq{
+	height: 8000px;
+	display: flex;
+}
 
 
 input{
