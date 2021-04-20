@@ -4,6 +4,10 @@ session_start();
 ?>
 
 <?php
+
+$dbco = new PDO("mysql:host=localhost;dbname=serveur_psy_fi",'root','');
+$dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
 if(isset($_POST['Ajouter']))
 {
     $_SESSION["hidde"]='true' ;
@@ -22,8 +26,6 @@ if(isset($_POST['idTable'])){
     
         try{
 
-            $dbco = new PDO("mysql:host=localhost;dbname=serveur_psy_fi",'root','');
-            $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             $sql = "DELETE FROM utilisateur WHERE ID_Utilisateur=:ID_Utilisateur"; 
             $res = $dbco->prepare($sql);
@@ -46,8 +48,6 @@ if(isset($_POST['idTable2'])){
     
         try{
 
-            $dbco = new PDO("mysql:host=localhost;dbname=serveur_psy_fi",'root','');
-            $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             $sql = "INSERT INTO blacklist(ID_utilisateur)
             VALUES('$ID')"; 
@@ -78,6 +78,18 @@ if(isset($_POST['typeId6'])){
 
 }
 
+if(isset($_POST['typeId7'])){
+    $id= $_SESSION["idModification"];
+    $req =  $dbco->prepare(
+    "UPDATE utilisateur SET nom=?, prenom=?, Email=?, permission_lvl=? WHERE ID_Utilisateur=?");
+    $req->execute([$_POST['nom'],$_POST['prenom'],$_POST['Email'],$_POST['permission'],$id]);
+    $_SESSION["faqModification2"]='false';
+    header('Location: gestionDesUtilisateurs.php');
+
+}
+
+
+
 if(isset($_POST['Ajouter'])){
 
     $_SESSION["gestionModification"]='true';
@@ -89,7 +101,9 @@ if(isset($_POST['Ajouter'])){
 
 if(isset($_POST['ModificationButton'])){
 
-   
+    $_SESSION["hidde"]='true';
+    $_SESSION["gestionModification2"]='true';
+    $_SESSION["idModification"]=$_POST['ModificationButton'];
 
 }
 
@@ -102,8 +116,6 @@ if(isset($_POST['typeId5'])){
     $permission=$_SESSION["permission"];
 
     try{
-    $dbco = new PDO("mysql:host=localhost;dbname=serveur_psy_fi",'root','');
-    $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     $sql = "INSERT INTO utilisateur(motDePasse,nom,prenom,Email,permission_lvl)
     VALUES('$Password','$LastName','$FirstName','$Email','$permission')"; 

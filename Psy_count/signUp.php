@@ -7,7 +7,7 @@ session_start(); // On démarre la session AVANT toute chose
   <meta charset="utf-8">
   <title>signUp</title>
   <link rel="icon" type="image/png" href="images/psy-fi.png" />
-  <link rel="stylesheet" href="css/style_Sign_Up_.css">
+  <link rel="stylesheet" href="css//style_Sign_Up.css">
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
   <script type="text/javascript" src="javaScript//javaScriptCode.js"></script>
 </head>
@@ -20,58 +20,57 @@ session_start(); // On démarre la session AVANT toute chose
 
 
 <body>
-	<div id="imageBackground">
 		<div id="signUp">
 			<div id="accountText" >
 				<div id="titleText">
-				<span class="latoType title">Create A account</span><br>
-				<a href="accueil.php"> <button id="closeButton2">  X  </button> </a>
-				</div>
-				<div>
-				<span class="latoType">Already a user ? </span> <a href="signIn.php"><span style="color:#1968FF" class="latoType">Sign In </span></a>
+				<a href="signIn.php"> <span class="latoType title" id="signInText"> Sign In </span><br></a>
+                <a href="signUp.php"> <span class="latoType title" id="signUpText"> Sign Up </span></a>
 				</div>
 			</div>
 
 
 			<div id="signUpinformation" class="alignCenter" >
-				<div id="informationblock">
+				
+			
 					<form action="getInformation.php" method="post">
 
+						<div id="informationInput">
+						<h2 class="connexionText"> date de naissance </h2>
+						<input  size=45% name="dateDeNaissance" type="date" >
+						<h2 class="connexionText"> Prenom</h2>
+						<input size=45% required pattern="[A-Za-zÀ-ÖØ-öø-ÿ-]+{4,255}" title="votre prenom ne doit contenir que des lettres" name="FirstName"   required minlength="4" >
+						<h2 class="connexionText"> Nom</h2>
+						<input  size=45% required pattern="[A-Za-zÀ-ÖØ-öø-ÿ-]+{4,255}" title="votre nom ne doit contenir que des lettres" name="LastName" required minlength="4" >
+						<h2 class="connexionText"> Email</h2>
+						<input  size=45% name="Email"    type="email"   >
+						<h2 class="connexionText"> mot de passe</h2>
+						<input  size=45% name="Password"   type="password"    required minlength="8" >
+						<h2 class="connexionText"> vérification du mot de passe</h2>
+						<input  size=45% name="password_verify" type="password"  >
 
-						<li ><input  size=45% name="dateDeNaissance" type="date" ></li>
-						<li ><input size=45% required pattern="[A-Za-zÀ-ÖØ-öø-ÿ-]+{4,255}" title="votre prenom ne doit contenir que des lettres" name="FirstName"  placeholder="First Name" required minlength="4" >
-							 <input  size=45% required pattern="[A-Za-zÀ-ÖØ-öø-ÿ-]+{4,255}" title="votre nom ne doit contenir que des lettres" name="LastName" placeholder="Last Name" required minlength="4" >
-				   		</li>
-						<li ><input  size=45% name="Email"    type="email"    placeholder="Email Address " ></li>
-						<li ><input  size=45% name="Password" placeholder="Password"   type="password"    required minlength="8" ></li>
-						<li ><input  size=45% name="password_verify" type="password" placeholder="Password verification" ></li>
-
+						<div id="checkboxText">
 						<input type="checkbox" id="checkbox" name="horns" OnClick="checkboxcheck()">
 
-						<label for="horns"><span style="color:black">j'accepte les</span> 	<a href="TermsOfUse.php"><span style="color:#1968FF"> conditions generales d'utilisations</span></label></a>
-  						
+						<label for="horns"><span style="color:white">j'accepte les</span> 	<a href="TermsOfUse.php"><span style="color:#1968FF"> conditions generales d'utilisations</span></label></a>
+						</div>
 
-						<li ><input  name="type" type="hidden" value="patient" ></li>
+						<input  name="type" type="hidden" value="patient" >
 
-						<li ><input  class="button4" type="submit" name="submit" value="Sign Up" disabled  id="submit"></li>
-
-
-
+						<input  class="button4" type="submit" name="submit" value="Sign Up" disabled  id="submit">
+						<a class="button5" id="quitter" href="accueil.php"> Quitter </a>
 
 						<li> 
 							<?php if(!empty($_SESSION['message'])){echo $_SESSION['message'];}?>
 						</li>
+
 					</form>
-				</div>
-				<div>
-					<img class="responsive" src="images/sign_up_image.png">
-				</div>
+				
+					
+			
 
 
 
 			</div>
-
-		</div>
 	</div>
   
 </body>

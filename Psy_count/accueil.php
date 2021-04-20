@@ -6,7 +6,7 @@
   <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home</title>
   <link rel="icon" type="image/png" href="images/psy-fi.png" />
-  <link rel="stylesheet" href="css/styleAccueil.css">
+  <link rel="stylesheet" href="css//styleAccueil.css">
 </head>
 
 

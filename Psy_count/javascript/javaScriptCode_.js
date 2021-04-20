@@ -202,7 +202,7 @@ $(document).ready(function(){
                     $.ajax({
                         url : 'gestionFonction.php',
                         type : 'POST',
-                        data : "ModificationButton=" + i,
+                        data : "ModificationButton=" + checkboxes[i].id,
                         success : function(code_html, statut){
                             document.location.reload();
                         },

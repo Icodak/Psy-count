@@ -8,7 +8,7 @@ session_start(); // On démarre la session AVANT toute chose
     <meta charset="utf-8">
     <title>signIn</title>
     <link rel="icon" type="image/png" href="images/psy-fi.png" />
-    <link rel="stylesheet" href="css//style_Sign_In.css">
+    <link rel="stylesheet" href="css/style_Sign_In.css">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
 </head>
 
@@ -18,7 +18,7 @@ session_start(); // On démarre la session AVANT toute chose
         <div id="accountText">
             <div id="titleText">
 				<a href="signIn.php"> <span class="latoType title" id="signInText"> Sign In </span><br></a>
-                <a href="signUp.php"> <span class="latoType title" id="signInText"> Sign Up </span></a>
+                <a href="signUp.php"> <span class="latoType title" id="signUpText"> Sign Up </span></a>
             </div>
         </div>
 

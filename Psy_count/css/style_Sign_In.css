@@ -97,7 +97,9 @@ input{
 	 border-bottom: 2px solid white ;
 }
 
-
+#signInText{
+	border-bottom: 4px solid purple;
+}
 
 input:focus{
 	outline: none;

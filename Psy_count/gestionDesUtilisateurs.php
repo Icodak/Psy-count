@@ -4,9 +4,9 @@
 <head>
     <meta charset="utf-8">
     <title>Titre de la page</title>
-    <link rel="stylesheet" href="css/style_des_utilisateurs.css">
+    <link rel="stylesheet" href="css//style_des_utilisateurs.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script type="text/javascript" src="javaScript/javaScriptCode.js"></script>
+    <script type="text/javascript" src="javascript/javaScriptCode_.js"></script>
 
 
 </head>
@@ -89,7 +89,7 @@ if( !isset( $_SESSION['type']) || $_SESSION['type']!='Admin'){
        
 
         <?php include("popUpGestion.php") ?>
-
+        <?php include("popUpGestion2.php") ?>
 
 
         <?php

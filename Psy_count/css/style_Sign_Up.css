@@ -6,9 +6,7 @@ html, body {
 
 
 body{
-	background-image: url("images_css/new_background.png");
-	background-size: cover;
-	background-position: center;
+	background-image:url(images_css/purple.png);
 	width:100%;
 	display: flex;
 	justify-content: center;
@@ -17,16 +15,19 @@ body{
 .latoType{
 	font-family: Lato; 
 	font-weight: 10;
+	color: white;
 }
 
 .title{
 	font-size: 200%;
 }
 #titleText{
-	margin-bottom: 5%;
+	margin-bottom: 2%;
 	padding-top: 5%;
 	display: flex;
 	justify-content: space-around;
+	margin-right: 10%;
+	margin-left: 10%;
 }
 
 button:focus {
@@ -55,29 +56,78 @@ button:focus {
    text-align: center;  
 }
 
+#informationInput{
+	display: flex;
+	flex-direction: column;
+}
+
 
 :-ms-input-placeholder {  
    text-align: center; 
 }
 
 
+input{
+	background-color: #460F45;
+	border: none;
+	color: white;
+	border-bottom: 2px solid white ;
+}
+
+#signUpText{
+	border-bottom: 4px solid purple;
+}
+
+.latoType:hover{
+	border-bottom: 4px solid purple;
+}
+
+#checkboxText{
+	margin-top: 5%;
+	margin-bottom: 5%;
+}
+.connexionText{
+	color: white;
+    font-size: 20px;
+    display: flex;
+    justify-content: left;
+}
+
 .button4 {
-  border-radius: 25px;
   background-color: grey;
   border: none;
   color: white;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 150%;
   margin: 3% 8%;
   padding-right: 30%;
   padding-left: 30%;
   padding-bottom: 2%;
   padding-top: 2%;
   cursor:pointer;
+  font-size: 30px;
 
 }
+
+.button5 {
+	background-color: rgb(177, 88, 158);
+	border: none;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	margin: 3% 8%;
+	padding-right: 30%;
+	padding-left: 30%;
+	padding-bottom: 2%;
+	padding-top: 2%;
+	cursor:pointer;
+	font-size: 30px;
+  
+  }
+
+
 li{
 	list-style: none;
 	margin-bottom: 10px;
@@ -85,10 +135,8 @@ li{
 a{
 	text-decoration-line: none;
 }
-input{
-	 border: none;
-	 background-color: #FFF0F0;
-	 padding-bottom: 15px;
+input:focus{
+	outline: none;
 }
 
 
@@ -122,8 +170,9 @@ input{
 	overflow: auto;
 	margin-top: 5%;
 	vertical-align:middle;
-	padding-left: 2%;
-	background-color: white;
+	background-color: #460F45 ;
+	min-width: 450px;
+	min-height: 400px;
 
 }
 
