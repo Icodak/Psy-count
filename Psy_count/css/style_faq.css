@@ -38,8 +38,9 @@ header{
 
 
 #faq{
-	height: 8000px;
+	min-height: 1200px;
 	display: flex;
+	flex-direction: column;
 }
 
 

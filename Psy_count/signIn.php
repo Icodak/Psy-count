@@ -8,7 +8,7 @@ session_start(); // On démarre la session AVANT toute chose
     <meta charset="utf-8">
     <title>signIn</title>
     <link rel="icon" type="image/png" href="images/psy-fi.png" />
-    <link rel="stylesheet" href="css/style_Sign_In.css">
+    <link rel="stylesheet" href="css//style_Sign_In.css">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
 </head>
 
@@ -17,8 +17,8 @@ session_start(); // On démarre la session AVANT toute chose
     <div id="signIn">
         <div id="accountText">
             <div id="titleText">
-				<a href="signIn.php"> <span class="latoType title" id="signInText"> Sign In </span><br></a>
-                <a href="signUp.php"> <span class="latoType title" id="signUpText"> Sign Up </span></a>
+				<a href="signIn.php"> <span class="latoType title" id="signInText"> s'identifier </span><br></a>
+                <a href="signUp.php"> <span class="latoType title" id="signUpText"> S'inscrire </span></a>
             </div>
         </div>
 
@@ -27,13 +27,13 @@ session_start(); // On démarre la session AVANT toute chose
             <div id="informationblock">
                 <form action="connexion.php" method="post">
                     <div id="informationInput">
-                        <h2 class="connexionText">Nom d'utilisateur ou Email </h2>
+                        <h2 class="connexionText">Email </h2>
                         <input size=45% name="Email" type="email" >
                         <h2 class="connexionText">Mot de passe </h2>
                         <input size=45% name="Password"  type="password">
 
                     </div>
-                    <li><input class="button4" type="submit" name="submit" value="Sign In"></li>
+                    <li><input class="button4" type="submit" name="submit"  id="signInbutton" value="S'identifier"></li>
 					<li><a class="button4" id="quitter" href="accueil.php"> Quitter </a></li>
                     <li>
                         <span style="color:white">

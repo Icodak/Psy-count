@@ -7,9 +7,9 @@ session_start(); // On démarre la session AVANT toute chose
   <meta charset="utf-8">
   <title>signUp</title>
   <link rel="icon" type="image/png" href="images/psy-fi.png" />
-  <link rel="stylesheet" href="css//style_Sign_Up.css">
+  <link rel="stylesheet" href="css/style_Sign_Up.css">
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
-  <script type="text/javascript" src="javaScript//javaScriptCode.js"></script>
+  <script type="text/javascript" src="javaScript//javaScriptCode_.js"></script>
 </head>
 
 
@@ -23,8 +23,8 @@ session_start(); // On démarre la session AVANT toute chose
 		<div id="signUp">
 			<div id="accountText" >
 				<div id="titleText">
-				<a href="signIn.php"> <span class="latoType title" id="signInText"> Sign In </span><br></a>
-                <a href="signUp.php"> <span class="latoType title" id="signUpText"> Sign Up </span></a>
+				<a href="signIn.php"> <span class="latoType title" id="signInText">s'identifier </span><br></a>
+                <a href="signUp.php"> <span class="latoType title" id="signUpText"> S'inscrire</span></a>
 				</div>
 			</div>
 
@@ -35,12 +35,12 @@ session_start(); // On démarre la session AVANT toute chose
 					<form action="getInformation.php" method="post">
 
 						<div id="informationInput">
-						<h2 class="connexionText"> date de naissance </h2>
-						<input  size=45% name="dateDeNaissance" type="date" >
 						<h2 class="connexionText"> Prenom</h2>
 						<input size=45% required pattern="[A-Za-zÀ-ÖØ-öø-ÿ-]+{4,255}" title="votre prenom ne doit contenir que des lettres" name="FirstName"   required minlength="4" >
 						<h2 class="connexionText"> Nom</h2>
 						<input  size=45% required pattern="[A-Za-zÀ-ÖØ-öø-ÿ-]+{4,255}" title="votre nom ne doit contenir que des lettres" name="LastName" required minlength="4" >
+						<h2 class="connexionText"> date de naissance </h2>
+						<input  size=45% name="dateDeNaissance" type="date" >
 						<h2 class="connexionText"> Email</h2>
 						<input  size=45% name="Email"    type="email"   >
 						<h2 class="connexionText"> mot de passe</h2>
@@ -56,8 +56,8 @@ session_start(); // On démarre la session AVANT toute chose
 
 						<input  name="type" type="hidden" value="patient" >
 
-						<input  class="button4" type="submit" name="submit" value="Sign Up" disabled  id="submit">
-						<a class="button5" id="quitter" href="accueil.php"> Quitter </a>
+						<input  class="button4" type="submit" name="submit" value="S'inscrire" disabled  id="submit">
+						<a class="button5" id="quitter2" href="accueil.php"> Quitter </a>
 
 						<li> 
 							<?php if(!empty($_SESSION['message'])){echo $_SESSION['message'];}?>

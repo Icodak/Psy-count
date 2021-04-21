@@ -7,13 +7,18 @@
   <link rel="icon" type="image/png" href="images/psy-fi.png" />
   <link rel="stylesheet" href="css/style_myData_.css">
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
+  <script type="text/javascript" src="javascript/javaScriptCode_.js"></script>
 </head>
 <body>
 
 	<header>
 		<?php include("menuBar.php") ?>
+		<?php include("myDataFonction.php") ?>
 	</header>
 
+	<?php
+	initialisation();
+	?>
 
   <div id="myDataPage">
   	
@@ -28,19 +33,26 @@
 	  				<div id="doctorLabel">  	
 	  					<ul>
 	  						<li>
-	  							Label
+							  <?php
+							 
+							  echo $_SESSION['DataEmail'];
+							  ?>
 	  							<hr size=3 id="sepator1">
 	  							
 	  						</li>
 
 	  						<li>
-	  							Label
+							  <?php
+							  echo $_SESSION['DataNom'];
+							  ?>
 	  							<hr size=3 id="sepator1">
 	  							
 	  						</li>
 								
 							<li>
-								Label
+							<?php
+							  echo $_SESSION['DataPrenom'];
+							  ?>
 								<hr size=3 id="sepator1">
 	  							
 	  						</li>
@@ -55,8 +67,9 @@
   				</div>
 
   				<div id="consultButton">
-  						<h4 id="consultbuttonText">Medecin traitant</h4>
-  						<a href="" > <button class="button4">  consulter  </button> </a>
+  						<h4 id="consultbuttonText">Medecin traitant: </h4>
+						 <button class="button4" onclick="dataModification()">  Modifier mes données  </button> 
+  						 <button class="button4" onclick="">  consulter  </button> 
   				</div>
   		
 

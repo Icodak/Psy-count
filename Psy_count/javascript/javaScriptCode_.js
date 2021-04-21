@@ -38,7 +38,25 @@
 
 
 
-
+function dataModification(){
+    $.ajax({
+        url : 'gestionFonction.php',
+        type : 'POST',
+        data : "idTable=" + tableau[i],
+        success : function(code_html, statut){
+            document.location.reload();
+        },
+ 
+        error : function(resultat, statut, erreur){
+          
+        },
+ 
+        complete : function(resultat, statut){
+ 
+        }
+ 
+     });
+}
 
 
 
