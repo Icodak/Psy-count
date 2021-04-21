@@ -8,6 +8,18 @@ html{
   background-color:white;
 }
 
+.test{
+  background-color: teal;
+}
+
+#alertContact{
+  display: block; 
+  margin: 5%; 
+  border: 0.1em solid #BB66BF;
+  background-color: lightcoral;
+  color: white;
+}
+
 @media screen and (min-width:800px) {
   #form{
     display: block; 
