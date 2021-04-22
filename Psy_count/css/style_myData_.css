@@ -127,6 +127,85 @@ a{
 	padding-top: 15%;
 }
 
+/* PAGE DEUX MODIFICATIONS DES DONNEES*/
+
+
+
+#userAccount{
+	margin-top: 20px;
+	min-height: 800px;
+	text-align: center;
+	margin-right: 25%;
+	margin-left: 25%;
+	display: flex;
+	flex-direction: column;
+}
+
+#modificationPage{
+	display: none;
+}
+
+#inputAccount{
+	display: flex;
+	flex-direction: row;
+}
+
+#dataPage2{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+#personalInformations img{
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+}
+
+#inputAccount input{
+	padding-bottom: 15px;
+	padding-top: 15px;
+	width: 300px;
+	border: none;
+	font-size: 25px;
+	
+}
+
+
+
+
+.inputImage{
+	margin-top:20px;
+	margin-bottom: 20px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+button{
+	border: none;
+}
+
+#dataPage2 h1{
+	margin-bottom: 20px;
+}
+
+#dataPage2 h3{
+	text-align: left;
+}
+
+#imageAccount{
+	margin-right: 15%;
+	display: flex;
+	flex-direction: column;
+}
+
+#imageAccount img{
+	margin-bottom: 20px;
+	width: 250px;
+	height: 250px;
+}
+
+
 
 
 

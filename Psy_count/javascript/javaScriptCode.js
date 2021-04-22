@@ -39,26 +39,19 @@
 
 
 function dataModification(){
-    $.ajax({
-        url : 'gestionFonction.php',
-        type : 'POST',
-        data : "idTable=" + tableau[i],
-        success : function(code_html, statut){
-            document.location.reload();
-        },
- 
-        error : function(resultat, statut, erreur){
-          
-        },
- 
-        complete : function(resultat, statut){
- 
-        }
- 
-     });
+    var element = document.getElementById("myDataPage");
+    var element2 = document.getElementById("modificationPage");
+    element.style.display='none';
+    element2.style.display='block';
 }
 
 
+
+function modificationInformations(element){
+    var type = element.className;
+    var champ = document.getElementsByClassName(type);
+    champ.disabled=false;
+}
 
 
 
