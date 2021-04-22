@@ -50,9 +50,8 @@ function dataModification(){
 function modificationInformations(element){
     var type = element.className;
     var champ = document.getElementsByClassName(type);
-    champ.disabled=false;
+    champ[0].disabled=false;
 }
-
 
 
 

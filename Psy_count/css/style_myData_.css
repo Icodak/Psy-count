@@ -181,8 +181,9 @@ a{
 	flex-direction: row;
 	justify-content: center;
 }
-button{
+.inputImage button{
 	border: none;
+	background-color: white;
 }
 
 #dataPage2 h1{
