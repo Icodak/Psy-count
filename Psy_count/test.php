@@ -4,27 +4,20 @@ session_start();
 
 <?php
 
-try{
 
-$dbco = new PDO("mysql:host=localhost;dbname=serveur_psy_fi",'root','');
-$dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $pwdHashed = "112";
+    $pwdHashed2= "122";
+    $Password = password_hash($pwdHashed, PASSWORD_DEFAULT);
+    $checkPwd = password_verify( $pwdHashed2, $Password);
 
-$req2 =  $dbco->prepare(
-  "SELECT nom from utilisateur WHERE ID_Utilisateurs=4");
-$req2->execute();
-$resultat3 = $req2->fetch();
-
-
-} catch(PDOException $e){
-echo "Erreur : " . $e->getMessage();
-}
+    if ($checkPwd==true ) {
+       echo 'reussi';
+    }else{
+      echo 'non';
+    }
 
 
 
-$Mavaraible='lien.php';
-
-echo ("<a href='$Mavaraible' class='sommaire_niveau2'>". 'bonjour'. "</a><br/>");
-?>
 
 
 
