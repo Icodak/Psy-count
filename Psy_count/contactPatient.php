@@ -11,91 +11,105 @@
 <header>
     <div>
         <?php include("menuBar.php") ?>
-        <h2 id="headerText"> Une question ? Contactez-nous !</h2>
-        <?php echo $_SESSION['ID'];?>
+        <h2 id="headerText"> Consultation et Aide</h2>
     </div>
 </header>
 
-<?php
-$msg_envoi = false;
-
+<?php //Fonction Récup Mail du Médecin traitant 
 try {
     $dbMsg = new PDO("mysql:host=localhost;dbname=serveur_psy_fi", 'root', '');
     $dbMsg->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    
-    if($_SESSION['type']='patient'){
-        echo $_SESSION['ID'];
-        echo 'test messagerie patient';
-        
 
-        $testSQL = $dbMsg->query(
-            'SELECT ID_Patient
-            FROM patient
-             WHERE ID_Utilisateur = "' .$_SESSION['ID']. '"'
-        );
-        print_r($testSQL->fetch()); //ID_Patient
-    
+    if ($_SESSION['type'] = 'patient') {
+        echo 'Test messagerie patient : ';
+
+        //TODO : J'assigne d'office un Doc à un patient prcq on n'a pas encore la fonction 
+        //pour que le médecin choisisse ses patient !
         $testSQL2 = $dbMsg->query(
             'UPDATE patient
-             SET ID_Medecin = 5
-             WHERE ID_Utilisateur = "' .$_SESSION['ID']. '"'
+             SET ID_Medecin = 6
+             WHERE ID_Utilisateur = "' . $_SESSION['ID'] . '"'
         );
+
+        //Trouver ID_Medecin à partir de ID_Utilisateur du patient
         $testSQL3 = $dbMsg->query(
             'SELECT ID_Medecin 
             FROM patient
-             WHERE ID_Utilisateur = "' .$_SESSION['ID']. '"'
+             WHERE ID_Utilisateur = "' . $_SESSION['ID'] . '"'
         );
-        print_r($testSQL3->fetch()); //ID_Medecin = 5
-        //$testSQL2->execute(array(':current_user_ID' => $_SESSION["ID"]));
-    
-        //$testSQL3->execute(array('ID_Utilisateur'));
-        //echo $testSQL3;
-    
+
+        $ID_doc = $testSQL3->fetch();
+        $_SESSION["ID_DocOfPatient"] = $ID_doc["ID_Medecin"];
+
+        //Trouver ID_Utilisateur du médecin traitant à partir de son ID_Medecin
         $testSQL4 = $dbMsg->query(
             'SELECT ID_Utilisateur 
             FROM medecin
-             WHERE ID_Medecin = 5'//Change
+             WHERE ID_Medecin = "' . $_SESSION["ID_DocOfPatient"] . '"'
         );
-        print_r($testSQL4->fetch()); //ID_Utilisateur
-    
+
+        $ID_docUser = $testSQL4->fetch();
+        $_SESSION["ID_DocAsUser"] = $ID_docUser["ID_Utilisateur"];
+
+        //Enfin : récupérer l'email du médecin traitant
         $testSQL5 = $dbMsg->query(
             'SELECT Email
             FROM utilisateur
-             WHERE ID_Utilisateur = 14'//Change
+             WHERE ID_Utilisateur = "' . $_SESSION["ID_DocAsUser"] . '"'
         );
-        print_r($testSQL5->fetch()); //Email de contact
-    
+
+        $ID_docMail = $testSQL5->fetch();
+        $_SESSION["ID_DocMail"] = $ID_docMail["Email"];
+
+        echo "\nLe mail du patient d'ID_Utilisateur = " . $_SESSION['ID'] . " est " . $_SESSION["ID_DocMail"];
+
+        //Get nom, prenom, Email, from ID_Utilisateur pour auto remplir le formulaire
+
+        $testSQL6 = $dbMsg->query(
+            'SELECT prenom, nom, Email
+            FROM utilisateur
+             WHERE ID_Utilisateur = "' . $_SESSION["ID"] . '"'
+        );
+
+        $user_data = $testSQL6->fetch();
+        //TODO : J'utilise des SuperGlobales prcq on peut les utiliser dans le profil
+        //par ex si l'user change son prénom, le formulaire s'en souvient :D
+        $_SESSION["user_prenom"] = $user_data["prenom"];
+        $_SESSION["user_nom"] = $user_data["nom"];
+        $_SESSION["user_mail"] = $user_data["Email"];
+
+        echo $_SESSION["user_prenom"] . $_SESSION["user_nom"] . $_SESSION["user_mail"];
     }
+} catch (Exception $e) {
+    echo "Erreur :", $e->getMessage(), "\n";
+}
+?>
 
-    $reqMsg =  $dbMsg->prepare(
-        'SELECT ID_Medecin from patient WHERE ID_Utilisateur =:current_user_ID'
-    );
-    $reqMsg->execute(array(':current_user_ID' => $_SESSION["ID"]));
-    $resultMsg = $reqMsg->fetchAll();
-    //print_r($resultMsg);
+<?php //Fonction Envoi de Mail/Contact
+$msg_envoi = false;
 
+try {
     if (isset($_POST['submit'])) { //A voir si c'est obligatoire ou pas, i don't think so
-
-
-
-        $visitorFirstName = $_SESSION["patient"];
-        $visitorLastName = $_POST["nom_Cct"];
-        $visitorEmail = $_POST["mail_Cct"];
         $visitorMsgSubject = $_POST["msgSubject_Cct"];
         $visitorMsg = $_POST["msg_Cct"];
 
-        $to = "amanda.dieuaide@gmail.com"; //Get mail from Admin
+        if ($_POST['msg_destinataire'] == "medTraitant") {
+            $to = $_SESSION["ID_DocMail"];
+            //$to = "amanda.dieuaide@isep.fr";
+        } else {
+            $to = "amanda.dieuaide@gmail.com";
+        } //Get mail from Admin, Doc, Patient
         $body = "";
 
-        $body .= "De : " . $visitorFirstName . "\r\n";
-        $body .= "Email : " . $visitorEmail . "\r\n";
+        $body .= "De : " . $_SESSION["user_prenom"] . " " . $_SESSION["user_nom"] . "\r\n";
+        $body .= "Email : " . $_SESSION["user_mail"] . "\r\n";
         $body .= "Message : " . $visitorMsg . "\r\n";
 
-        ini_set('sendmail_from', $visitorEmail);
+        ini_set('sendmail_from', $_SESSION["user_mail"]);
         ini_set('display_errors', 1);
         error_reporting(E_ALL);
-        //mail($to, $visitorMsgSubject, $body);
+        mail($to, $visitorMsgSubject, $body);
         $msg_envoi = true;
     }
 } catch (Exception $e) {
@@ -131,17 +145,17 @@ try {
 
 
         <div id="form" class="form_content">
-            <form action="contact.php" method="POST" autocomplete="off">
-                <div><label id="form" class="form_label" for="text"> Prénom </label>
+            <form action="contactPatient.php" method="POST" autocomplete="off">
+                <!--<div><label id="form" class="form_label" for="text"> Prénom </label>
                     <input id="form" class="form_content" type="text" name="prenom_Cct" placeholder="ex : John"> </label>
                 </div>
 
                 <div><label id="form" class="form_label" for="text"> Nom </label>
                     <input id="form" class="form_content" type="text" name="nom_Cct" placeholder="ex : Doe"> </label>
-                </div>
+                </div>-->
 
                 <div> <label id="form" class="form_label" for="text"> E-mail </label>
-                    <select id="form" class="form_content">
+                    <select id="form" class="form_content" name="msg_destinataire">
                         <option value="">--Je souhaite contacter--</option>
                         <option value="medTraitant">Mon médecin traitant</option>
                         <option value="adminContact">L'administrateur PSY-fi</option>

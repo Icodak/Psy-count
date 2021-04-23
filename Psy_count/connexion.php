@@ -7,7 +7,6 @@ if ( isset( $_POST['submit'] ) ) {
   $Password = $_POST['Password'];
 try{
       $dbco = new PDO("mysql:host=localhost;dbname=serveur_psy_fi",'root','');
-      //PDO = requête préparé
 
       $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -25,14 +24,11 @@ try{
       'SELECT permission_lvl FROM utilisateur where Email=:Email');
 
       $req2->execute(array('Email' => $Email));
-//récupérer valeur dans variable, autre méthode avec des ? possible
 
       $resultat3 = $req2->fetch();
-//requête sql, resultat est un tableau associatif
-     //pour plusieurs sorties/résultats, faire un fetch all
+
       $req3 =  $dbco->prepare(
       'SELECT ID_Utilisateur FROM utilisateur where Email=:Email ');
-//Je veux Selectionner l'ID_USer de l'User où la valeur est l'Email
 
       $req3->execute(array('Email' => $Email));
 
@@ -47,11 +43,10 @@ try{
       else
       {
       if ($isPasswordCorrect) {
-        $_SESSION['type']=$resultat3['permission_lvl']; //indique si c'est Admin/User/Médecin
+        $_SESSION['type']=$resultat3['permission_lvl'];
         $_SESSION['connexion']='1';
-        $_SESSION['ID']=$resultat2['ID']; //récupère l'id utilisateur, la clé primaire différente pour tout le monde
-        //permet de récupérer les infos d'un user selon son id (nom, prénom...)
-        header('Location: accueil.php'); //redirection/permet de relier les pages
+        $_SESSION['ID']=$resultat2['ID_Utilisateur'];
+        header('Location: accueil.php');
       }
       else {
         $_SESSION['message2']= 'mot de passe ou Email incorrect';
