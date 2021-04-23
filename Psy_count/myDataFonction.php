@@ -29,6 +29,11 @@ function changeDataUsers($prenom,$nom,$Email,$motDePasse){
   $req =  $dbco->prepare(
   "UPDATE utilisateur SET nom=?, prenom=? Email=? motDePasse=?  WHERE ID_Utilisateur=?");
   $req->execute([$prenom, $nom,$Email,$Password,$_SESSION['ID']]);
+  $req =  $dbco->prepare(
+    "UPDATE patient SET dateDeNaissance=? WHERE ID_Utilisateur=?");
+  $req->execute([$prenom, $nom,$Email,$Password,$_SESSION['ID']]);
+
+
   header('Location: myData.php');
 
   
