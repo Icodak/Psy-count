@@ -58,11 +58,13 @@ session_start();
     ?>
 
 <?php
+ if (isset($_SESSION['type'])) {
     if ($_SESSION['type'] == 'patient') {
     ?>
       <a href="contactPatient.php" class="menuText"> Consulter </a>
     <?php
     }
+  }
     ?>
 
     <?php
