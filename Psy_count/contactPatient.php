@@ -25,7 +25,9 @@ try {
 
     
     if($_SESSION['type']='patient'){
+        echo $_SESSION['ID'];
         echo 'test messagerie patient';
+        
 
         $testSQL = $dbMsg->query(
             'SELECT ID_Patient
