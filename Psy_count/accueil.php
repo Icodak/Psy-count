@@ -17,11 +17,6 @@
 
 
 
-
-
-
-
-
   <header>
 	<div id="menuBar1">
 
@@ -221,12 +216,6 @@
 <?php include("footer.php") ?>
 
 </body>
-
-
-
-
-
-
 
 
 

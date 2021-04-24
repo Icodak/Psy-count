@@ -6,7 +6,7 @@
     <title>Titre de la page</title>
     <link rel="stylesheet" href="css//style_des_utilisateurs.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script type="text/javascript" src="javascript/javaScriptCode_.js"></script>
+    <script type="text/javascript" src="javascript/javaScriptCode.js"></script>
 
 
 </head>
@@ -68,9 +68,6 @@ if( !isset( $_SESSION['type']) || $_SESSION['type']!='Admin'){
 ?>
 
 
-
-
-
     <div id="gestionUtilisateur">
 
 
@@ -103,12 +100,6 @@ if( !isset( $_SESSION['type']) || $_SESSION['type']!='Admin'){
 
             </div>
 
-
-
-
-
-
-
             <div id="tableau">
                 <div id="subTable">
                     <table>
@@ -135,9 +126,6 @@ if( !isset( $_SESSION['type']) || $_SESSION['type']!='Admin'){
 
          ?>
 
-
-
-
                         <tbody>
                             <tr>
                                  <td>
@@ -158,9 +146,6 @@ if( !isset( $_SESSION['type']) || $_SESSION['type']!='Admin'){
          ?>
 
                     </table>
-
-
-
 
                     <div class="pagination">
       
@@ -193,8 +178,7 @@ if( !isset( $_SESSION['type']) || $_SESSION['type']!='Admin'){
         }
 ?>
 
-
-        
+       
 <?php include("footer.php") ?>
 </body>
 

@@ -31,6 +31,7 @@ body{
 	font-size: 200%;
 }
 
+
 #titleText{
 	margin-bottom: 2%;
 	padding-top: 5%;
@@ -158,8 +159,10 @@ button:focus {
 	justify-content: left;
 }
 
-
-
+#divMedecin{
+	display: flex;
+	justify-content: center;
+}
 
 
 

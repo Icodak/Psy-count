@@ -9,7 +9,7 @@ session_start(); // On démarre la session AVANT toute chose
   <link rel="icon" type="image/png" href="images/psy-fi.png" />
   <link rel="stylesheet" href="css/style_Sign_Up.css">
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
-  <script type="text/javascript" src="javaScript//javaScriptCode_.js"></script>
+  <script type="text/javascript" src="javaScript//javaScriptCode.js"></script>
 </head>
 
 
@@ -22,6 +22,10 @@ session_start(); // On démarre la session AVANT toute chose
 <body>
 		<div id="signUp">
 			<div id="accountText" >
+			<div id="divMedecin">
+                <a href="signUpMedecin.php"> <span class="latoType title" id="signUpMedecin">S'inscrire comme Medecin
+                    </span><br></a>
+            </div>
 				<div id="titleText">
 				<a href="signIn.php"> <span class="latoType title" id="signInText">s'identifier </span><br></a>
                 <a href="signUp.php"> <span class="latoType title" id="signUpText"> S'inscrire</span></a>

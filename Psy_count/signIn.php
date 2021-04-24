@@ -16,8 +16,15 @@ session_start(); // On démarre la session AVANT toute chose
 
     <div id="signIn">
         <div id="accountText">
+            
+            <div id="divMedecin">
+                <a href="signUpMedecin.php"> <span class="latoType title" id="signUpMedecin">S'inscrire comme Medecin
+                    </span><br></a>
+            </div>
+
+
             <div id="titleText">
-				<a href="signIn.php"> <span class="latoType title" id="signInText"> s'identifier </span><br></a>
+                <a href="signIn.php"> <span class="latoType title" id="signInText"> s'identifier </span><br></a>
                 <a href="signUp.php"> <span class="latoType title" id="signUpText"> S'inscrire </span></a>
             </div>
         </div>
@@ -28,13 +35,13 @@ session_start(); // On démarre la session AVANT toute chose
                 <form action="connexion.php" method="post">
                     <div id="informationInput">
                         <h2 class="connexionText">Email </h2>
-                        <input size=45% name="Email" type="email" >
+                        <input size=45% name="Email" type="email">
                         <h2 class="connexionText">Mot de passe </h2>
-                        <input size=45% name="Password"  type="password">
+                        <input size=45% name="Password" type="password">
 
                     </div>
-                    <li><input class="button4" type="submit" name="submit"  id="signInbutton" value="S'identifier"></li>
-					<li><a class="button4" id="quitter" href="accueil.php"> Quitter </a></li>
+                    <li><input class="button4" type="submit" name="submit" id="signInbutton" value="S'identifier"></li>
+                    <li><a class="button4" id="quitter" href="accueil.php"> Quitter </a></li>
                     <li>
                         <span style="color:white">
                             <?php if(!empty($_SESSION['message2'])){echo $_SESSION['message2'];}?></span>

@@ -17,8 +17,7 @@ if(isset($_POST['idval3']))
       $id=$_POST['typeId3'];
 
       try{
-
-                $dbco = new PDO("mysql:host=localhost;dbname=serveur_psy_fi",'root','');
+               $dbco = new PDO("mysql:host=localhost;dbname=serveur_psy_fi",'root','');
                 $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
                 $req =  $dbco->prepare(
@@ -31,14 +30,11 @@ if(isset($_POST['idval3']))
                 $req->execute(array($resultat2[ $id][0],$resultat2[ $id][1]));
                 $resultat3 = $req->fetchAll();
 
-
                 $req =  $dbco->prepare(
                   "UPDATE faq SET question=?, reponse=? WHERE ID_faq=?");
                 $req->execute([$question, $reponse, $resultat3[0][0]]);
                 $_SESSION["faqModification"]='false';
                 header('Location: faq.php');
-
-
 
         }catch(PDOException $e){
           echo "Erreur : " . $e->getMessage();

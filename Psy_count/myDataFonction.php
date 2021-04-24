@@ -24,7 +24,9 @@ function initialisation(){
 
 
 function changeDataUsers($prenom,$nom,$Email,$motDePasse){
-   
+
+  $dbco = new PDO("mysql:host=localhost;dbname=serveur_psy_fi",'root','');
+  $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
   $Password = password_hash($motDePasse, PASSWORD_DEFAULT);
   $req =  $dbco->prepare(
   "UPDATE utilisateur SET nom=?, prenom=? Email=? motDePasse=?  WHERE ID_Utilisateur=?");

@@ -30,6 +30,8 @@ body{
 	margin-left: 10%;
 }
 
+
+
 #signInbutton{
 	max-width: 100px;
 }
@@ -188,9 +190,13 @@ input:focus{
 }
 #accountText{
 	margin-left: 5%;
+	text-align: center;
 }
 
-
+#divMedecin{
+	display: flex;
+	justify-content: center;
+}
 
 @media only screen and (max-width: 200px) {
    
