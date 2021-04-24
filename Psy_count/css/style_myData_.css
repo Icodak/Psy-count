@@ -129,7 +129,10 @@ a{
 
 /* PAGE DEUX MODIFICATIONS DES DONNEES*/
 
-
+.inputChamp{
+	border: 1px solid black;
+	padding-left: 5%;
+}
 
 #userAccount{
 	margin-top: 20px;
@@ -141,6 +144,11 @@ a{
 	flex-direction: column;
 }
 
+#saveInforamtions{
+	margin-top: 20px;
+}
+
+
 #modificationPage{
 	display: none;
 }
@@ -148,12 +156,14 @@ a{
 #inputAccount{
 	display: flex;
 	flex-direction: row;
+	min-height: 1000px;
 }
 
 #dataPage2{
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	position: relative;
 }
 
 #personalInformations img{
@@ -179,7 +189,8 @@ a{
 	margin-bottom: 20px;
 	display: flex;
 	flex-direction: row;
-	justify-content: center;
+	justify-content: left;
+
 }
 .inputImage button{
 	border: none;
@@ -220,6 +231,9 @@ a{
 	margin: 0%;
 
 
+}
+#inputAccount{
+	min-height: 1300px;
 }
 
 .subgraphPage{
@@ -291,3 +305,24 @@ a{
 
 }
 
+#inputAccount{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#imageAccount{
+	margin-right: 0%;
+}
+
+.inputChamp{
+	min-width: 250px;
+}
+
+
+
+#inputAccount input{
+	width: 200px;
+	font-size: 15px;
+	word-break: break-all;
+}

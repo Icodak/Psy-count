@@ -100,7 +100,7 @@
 
                   <div class="questionText">
 
-                  <h1  onclick="faq(variableRecuperee,this)"> <?php echo $resultat3[$i][0]  ?></h1>
+                  <h1> <?php echo $resultat3[$i][0]  ?> <img class="flecheBottom" onclick="faq(variableRecuperee,this)" src="images/flecheBottom.png"  id="<?php echo $resultat3[$i][0]?>" >   </h1>
 
 
 

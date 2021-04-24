@@ -64,7 +64,6 @@ iframe{
 }
 
 .question h1{
-	cursor:pointer;
 	word-wrap: break-word;
 }
 
@@ -128,4 +127,12 @@ textarea
 }
 h2{
 	text-align: center;
+}
+
+.flecheBottom{
+	width: 30px;
+	height: 30px;
+	float: right;
+	margin-right: 3%;
+	cursor:pointer;
 }

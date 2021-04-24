@@ -56,33 +56,48 @@ try{
             
             <div id="personalInformations">
                 <h1>Mes informations personnel </h1>
+
+                <div class="inputChamp">
                 <h3>Nom</h3>
                 <div class="inputImage">
                     <input type="text" class="crayon1"  name='nom' disabled value=<?php echo $resultat[0][0]?>><button type="button" class="crayon1" onclick="modificationInformations(this)"> <img src="images/crayon2.png">
                     </button>
                 </div>
+                </div>
+
+                <div class="inputChamp">
                 <h3>Prenom</h3>
                 <div class="inputImage">
                     <input type="text" class="crayon2" name='prenom' disabled  value=<?php echo $resultat[0][1]?>><button type="button" class="crayon2" onclick="modificationInformations(this)"> <img src="images/crayon2.png">
                     </button>
                 </div>
+                </div>
+
+                <div class="inputChamp">
                 <h3>Email</h3>
                 <div class="inputImage">
                     <input type="text"  class="crayon3" name='Email' disabled  value=<?php echo $resultat[0][2]?>><button  type="button" class="crayon3" onclick="modificationInformations(this)"> <img src="images/crayon2.png">
                     </button>
                 </div>
+                </div>
+
+
+                <div class="inputChamp">
                 <h3>Date de naissance</h3>
                 <div class="inputImage">
                     <input type="text"  class="crayon4" name='DateDeNaissance' disabled value=<?php echo $resultat2[0][0]?>><button  type="button" class="crayon4" onclick="modificationInformations(this)"> <img src="images/crayon2.png">
                     </button>
                 </div>
+                </div>
+
+                <div class="inputChamp">
                 <h3>mot de passe</h3>
                 <div class="inputImage">
                     <input type="text" class="crayon5"  name='motDePasse' disabled value="*********"><button type="button" class="crayon5" onclick="modificationInformations(this)"> <img src="images/crayon2.png">
                     </button>
                 </div>
-               
-                <button type="submit"  name="idtype8" class="button4">Enregistrer les modifications</button>
+                </div>
+                <button type="submit"  id="saveInforamtions" name="idtype8" class="button4">Enregistrer les modifications</button>
             </div>
          
             </form>

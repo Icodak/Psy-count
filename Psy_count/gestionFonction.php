@@ -72,6 +72,7 @@ if(isset($_POST['typeId4'])){
 if(isset($_POST['typeId6'])){
 
     $_SESSION["gestionModification"]='false';
+    $_SESSION["gestionModification2"]='false';
     $_SESSION["hidde"]='false';
 
     header('Location: gestionDesUtilisateurs.php');
@@ -105,10 +106,8 @@ if(isset($_POST['ModificationButton'])){
     $_SESSION["gestionModification2"]='true';
     $_SESSION["idModification"]=$_POST['ModificationButton'];
 
+
 }
-
-
-
 
 
 if(isset($_POST['typeId5'])){

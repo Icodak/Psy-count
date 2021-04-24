@@ -18,7 +18,7 @@
  function faq(texte,element){
     var d1 = document.getElementsByClassName("reponse");
     var d2 = document.getElementsByClassName("question");
-    var d3 = element.innerText;
+    var d3 = element.id;
     
     for (let pas = 0; pas < d1.length; pas++) {
 

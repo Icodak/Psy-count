@@ -18,59 +18,26 @@
     </header>
 
 
+    <?php include_once("gestionDesUtilisateursFonctionSql.php") ?>   
+    <?php include_once("popUpGestion.php") ?>
+    <?php include_once("popUpGestion2.php") ?>
+
 
     <?php
+
 // On détermine sur quelle page on se trouve
 if(isset($_GET['page']) && !empty($_GET['page'])){
     $currentPage = (int) strip_tags($_GET['page']);
 }else{
     $currentPage = 1;
 }
-$dbco = new PDO("mysql:host=localhost;dbname=serveur_psy_fi",'root','');
-$dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-// On détermine le nombre total d'articles
-$sql = "SELECT COUNT(*) AS nb_users FROM utilisateur WHERE permission_lvl!='Admin'";
-$res = $dbco->prepare($sql);
-$exec = $res->execute();
-$resultat = $res->fetch();
-$nbUsers = (int) $resultat['nb_users'];
-// On détermine le nombre d'articles par page
-$parPage = 3;
-// On calcule le nombre de pages total
-$pages = ceil($nbUsers / $parPage);
-// Calcul du 1er article de la page
-$premier = ($currentPage * $parPage) - $parPage;
-
-if( !isset( $_SESSION['type']) || $_SESSION['type']!='Admin'){
-  header('Location: accueil.php');
-}
-
-
-  try{
-
-              $dbco = new PDO("mysql:host=localhost;dbname=serveur_psy_fi",'root','');
-              $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-              $req2 =  $dbco->prepare(
-                "SELECT ID_Utilisateur,nom,prenom,Email,permission_lvl from utilisateur WHERE permission_lvl!=:permission_lvl LIMIT $premier, $parPage ");
-              $req2->execute(array(':permission_lvl' => 'Admin'));
-              $resultat3 = $req2->fetchAll();
-
-
-      } catch(PDOException $e){
-     echo "Erreur : " . $e->getMessage();
-      }
-
-
- 
-
+$resultat=tableCreation($currentPage);
+$resultat3=$resultat[0];
+$pages=$resultat[1];
 ?>
 
 
     <div id="gestionUtilisateur">
-
-
         <h1>Gestion des Utilisateurs</h1>
 
         <?php
@@ -78,25 +45,19 @@ if( !isset( $_SESSION['type']) || $_SESSION['type']!='Admin'){
 ?>
 
         <form method="post" action="gestionFonction.php">
-        <input type="submit"  class="button5" value="Ajouter un profil" name="Ajouter">
+            <input type="submit" class="button5" value="Ajouter un profil" name="Ajouter">
         </form>
-<?php
+        <?php
         }
 ?>
-       
-
-        <?php include("popUpGestion.php") ?>
-        <?php include("popUpGestion2.php") ?>
-
-
         <?php
         if(!isset($_SESSION["hidde"])||$_SESSION["hidde"]=='false'){
 ?>
         <div id="globalPage">
             <div id="actionButton">
-                <input class="button4" disabled  id="ModifierButton" value="Modifier" name="Modifier">
-                <input class="button4" disabled  id="SuppButton" value="Supprimer" name="supprimer">
-                <input class="button4" disabled  id="banButton"value="Bannir" name="Bannir">
+                <input class="button4" disabled id="ModifierButton" value="Modifier" name="Modifier">
+                <input class="button4" disabled id="SuppButton" value="Supprimer" name="supprimer">
+                <input class="button4" disabled id="banButton" value="Bannir" name="Bannir">
 
             </div>
 
@@ -106,7 +67,7 @@ if( !isset( $_SESSION['type']) || $_SESSION['type']!='Admin'){
 
                         <thead>
                             <tr>
-                            <th>
+                                <th>
                                     <input type="checkbox" onclick="allSelect(this)">
                                 </th>
                                 <th class="text2" align="left" colspan="1">id</th>
@@ -114,7 +75,7 @@ if( !isset( $_SESSION['type']) || $_SESSION['type']!='Admin'){
                                 <th class="text2" align="left" colspan="1">prenom</th>
                                 <th class="text2" align="left" colspan="1">Email</th>
                                 <th class="text2" align="left" colspan="1">permission</th>
-                           
+
                             </tr>
                         </thead>
 
@@ -128,15 +89,17 @@ if( !isset( $_SESSION['type']) || $_SESSION['type']!='Admin'){
 
                         <tbody>
                             <tr>
-                                 <td>
-                                    <input type="checkbox" name="checkBoxGestion" class="checkBoxUtilisateurs" onclick="checkboxcheckGestionsUtilisateurs()" id=<?php echo  $resultat3[$i][0]?>>
+                                <td>
+                                    <input type="checkbox" name="checkBoxGestion" class="checkBoxUtilisateurs"
+                                        onclick="checkboxcheckGestionsUtilisateurs()"
+                                        id=<?php echo  $resultat3[$i][0]?>>
                                 </td>
-                                <td class="text2" align="left"   > <?php echo  $resultat3[$i][0]?></td>
-                                <td class="text2" align="left"    > <?php echo  $resultat3[$i][1]?> </td>
-                                <td class="text2" align="left"  > <?php echo  $resultat3[$i][2]?> </td>
-                                <td class="text2" align="left"   > <?php echo  $resultat3[$i][3]?> </td>
-                                <td class="text2 " align="left"    > <?php echo  $resultat3[$i][4]?> </td>
-                               
+                                <td class="text2" align="left"> <?php echo  $resultat3[$i][0]?></td>
+                                <td class="text2" align="left"> <?php echo  $resultat3[$i][1]?> </td>
+                                <td class="text2" align="left"> <?php echo  $resultat3[$i][2]?> </td>
+                                <td class="text2" align="left"> <?php echo  $resultat3[$i][3]?> </td>
+                                <td class="text2 " align="left"> <?php echo  $resultat3[$i][4]?> </td>
+
                             </tr>
                         </tbody>
 
@@ -148,13 +111,14 @@ if( !isset( $_SESSION['type']) || $_SESSION['type']!='Admin'){
                     </table>
 
                     <div class="pagination">
-      
+
 
                         <div class="page-items <?= ($currentPage == 1) ? "disabled" : "" ?>">
-                            <a href="gestionDesUtilisateurs.php?page=<?php if($currentPage==1){echo $currentPage;}else{echo $currentPage - 1;}?>" class="page-link">«</a>                    
+                            <a href="gestionDesUtilisateurs.php?page=<?php if($currentPage==1){echo $currentPage;}else{echo $currentPage - 1;}?>"
+                                class="page-link">«</a>
                         </div>
                         <?php for($page = 1; $page <= $pages; $page++): ?>
- 
+
 
                         <div class="page-item <?= ($currentPage == $page) ? "active" : "" ?> ">
                             <a href="gestionDesUtilisateurs.php?page=<?= $page ?>" class="page-link"><?= $page ?></a>
@@ -163,9 +127,10 @@ if( !isset( $_SESSION['type']) || $_SESSION['type']!='Admin'){
 
 
 
-     
+
                         <div class="page-items <?= ($currentPage == $pages) ? "disabled" : "" ?>">
-                            <a href="gestionDesUtilisateurs.php?page=<?php if($currentPage==$pages){echo $currentPage;}else{echo $currentPage + 1;}?>" class="page-link ">»</a>
+                            <a href="gestionDesUtilisateurs.php?page=<?php if($currentPage==$pages){echo $currentPage;}else{echo $currentPage + 1;}?>"
+                                class="page-link ">»</a>
                         </div>
                     </div>
 
@@ -178,8 +143,8 @@ if( !isset( $_SESSION['type']) || $_SESSION['type']!='Admin'){
         }
 ?>
 
-       
-<?php include("footer.php") ?>
+
+        <?php include("footer.php") ?>
 </body>
 
 
