@@ -43,7 +43,7 @@ try{
          header('Location: signIn.php');
 
       }
-      //  si le mot de passe est correct récupérer les inforamtions de l'utilisateur
+      //  si le mot de passe est correct récupérer les informations de l'utilisateur
       else
       {
       if ($isPasswordCorrect) {

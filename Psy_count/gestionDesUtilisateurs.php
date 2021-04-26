@@ -19,8 +19,7 @@
 
 
     <?php include_once("gestionDesUtilisateursFonctionSql.php") ?>   
-    <?php include_once("popUpGestion.php") ?>
-    <?php include_once("popUpGestion2.php") ?>
+ 
 
 
     <?php
@@ -38,7 +37,10 @@ $pages=$resultat[1];
 
 
     <div id="gestionUtilisateur">
+ 
         <h1>Gestion des Utilisateurs</h1>
+        <?php include_once("popUpGestion.php") ?>
+    <?php include_once("popUpGestion2.php") ?>
 
         <?php
         if(!isset($_SESSION["hidde"])||$_SESSION["hidde"]=='false'){
@@ -71,10 +73,10 @@ $pages=$resultat[1];
                                     <input type="checkbox" onclick="allSelect(this)">
                                 </th>
                                 <th class="text2" align="left" colspan="1">id</th>
-                                <th class="text2" align="left" colspan="1">nom</th>
-                                <th class="text2" align="left" colspan="1">prenom</th>
+                                <th class="text2" align="left" colspan="1">Nom</th>
+                                <th class="text2" align="left" colspan="1">Prénom</th>
                                 <th class="text2" align="left" colspan="1">Email</th>
-                                <th class="text2" align="left" colspan="1">permission</th>
+                                <th class="text2" align="left" colspan="1">Permission</th>
 
                             </tr>
                         </thead>
