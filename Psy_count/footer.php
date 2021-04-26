@@ -15,7 +15,7 @@
 	<div id="footerText2">
 
 		<div id="confidentialite">
-		 Politique de confidentialité
+		 <a href="policy.php">Politique de confidentialité</a>
 		</div>
 
 		<div>

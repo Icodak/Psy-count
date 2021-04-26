@@ -5,7 +5,7 @@
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="icon" type="image/png" href="images/psy-fi.png" />
-    <link rel="stylesheet" href="css//style_Contact.css">
+    <link rel="stylesheet" href="css//style_Policy.css">
 </head>
 
 <header>
@@ -22,25 +22,26 @@ try {
 
 
     if ($_SESSION['type'] = 'patient') {
-        echo 'Test messagerie patient : ';
+        echo 'Test messagerie patient : '.$_SESSION['ID']."\n\r";
 
         //TODO : J'assigne d'office un Doc à un patient prcq on n'a pas encore la fonction 
         //pour que le médecin choisisse ses patient !
         $testSQL2 = $dbMsg->query(
             'UPDATE patient
              SET ID_Medecin = 6
-             WHERE ID_Utilisateur = "' . $_SESSION['ID'] . '"'
+             WHERE ID_Utilisateur = "'.$_SESSION['ID'].'"'
         );
 
         //Trouver ID_Medecin à partir de ID_Utilisateur du patient
         $testSQL3 = $dbMsg->query(
             'SELECT ID_Medecin 
             FROM patient
-             WHERE ID_Utilisateur = "' . $_SESSION['ID'] . '"'
+             WHERE ID_Utilisateur = "'.$_SESSION['ID'].'"'
         );
 
         $ID_doc = $testSQL3->fetch();
         $_SESSION["ID_DocOfPatient"] = $ID_doc["ID_Medecin"];
+        echo "TEST".$_SESSION["ID_DocOfPatient"]."TEST";
 
         //Trouver ID_Utilisateur du médecin traitant à partir de son ID_Medecin
         $testSQL4 = $dbMsg->query(
@@ -80,6 +81,8 @@ try {
         $_SESSION["user_mail"] = $user_data["Email"];
 
         echo $_SESSION["user_prenom"] . $_SESSION["user_nom"] . $_SESSION["user_mail"];
+    } else {
+        echo "Test messagerie médecin :";
     }
 } catch (Exception $e) {
     echo "Erreur :", $e->getMessage(), "\n";
@@ -119,6 +122,7 @@ try {
 
 <body>
 
+    <div class="background"></div>
     <!--Faire un truc plus clean avec du JS
     <//?php
         if (isset($_POST['submit']) && $msg_filled != true) { 
@@ -136,8 +140,8 @@ try {
     <?php
     if ($msg_envoi) :
     ?>
-        <div id="form">
-            <h3 id="headerText"> Message bien reçu ! Nous vous recontacterons prochainement.</h2>
+        <div style="height: 100vh;" id="form">
+            <h3 id="headerText"> Message bien reçu. Nous vous recontacterons prochainement.</h2>
         </div>
     <?php
     else :
@@ -154,27 +158,27 @@ try {
                     <input id="form" class="form_content" type="text" name="nom_Cct" placeholder="ex : Doe"> </label>
                 </div>-->
 
-                <div> <label id="form" class="form_label" for="text"> E-mail </label>
+                <div> <label class="form_label" for="text"> Je souhaite contacter : </label>
                     <select id="form" class="form_content" name="msg_destinataire">
-                        <option value="">--Je souhaite contacter--</option>
                         <option value="medTraitant">Mon médecin traitant</option>
                         <option value="adminContact">L'administrateur PSY-fi</option>
                     </select>
                     <!--<input id="form" class="form_content" type="text" name="mail_Cct" placeholder="ex : john.doe@gmail.com"> </label>-->
                 </div>
 
-                <div> <label id="form" class="form_label" for="text"> Sujet du message </label>
+                <div> <label class="form_label" for="text"> Sujet du message </label>
                     <!--Faire un menu déroulant ?-->
                     <input id="form" class="form_content" type="text" name="msgSubject_Cct" placeholder="ex : Contact avec l'administrateur PSY-fi..."> </label>
                 </div>
 
                 <div>
-                    <label id="form" class="form_label" for="text"> Message </label>
+                    <label class="form_label" for="text"> Message </label>
                     <textarea id="form" class="form_content" name="msg_Cct" placeholder="Veuillez écrire votre message..."></textarea>
                 </div>
 
                 <div>
-                    <button id="form" type="submit" name="submit"> Envoyer </button>
+                    <button class="submit" type="submit" name="submit"> Envoyer </button>
+                    <button class="submit" type="reset"> Annuler </button>
                 </div>
             </form>
         </div>
@@ -184,53 +188,8 @@ try {
     ?>
 
     <!-- v Should be in a footer :/ mais la mise en page marche pas?-->
-    <div id="container4">
-
-        <div id="groupInformation">
-            <span style="color:white">
-                <li>
-                    <h2>PSY-FI</h2>
-                </li>
-                <li>28 Rue Notre Dame des Champs, 75006 Paris<br></li>
-                <li>01 23 45 67 89</li>
-
-            </span>
-        </div>
-
-
-        <div id="groupeSettings">
-            <span style="color:white">
-                <li>
-                    <h2> Accessibilité </h2>
-                </li>
-                <li> Thème</li>
-                <li> Langue</li>
-            </span>
-
-        </div>
-
-        <div id="groupeRessources">
-            <span style="color:white">
-                <li>
-                    <h2> Ressources </h2>
-                </li>
-                <li> Actualités </li>
-                <li> FAQ </li>
-                <li> Videos </li>
-            </span>
-
-        </div>
-
-        </span>
-
-    </div>
-
-
-    <?php include("footer.php") ?>
 </body>
 
-<footer>
-
-</footer>
+<?php include("footer.php") ?>
 
 </html>
