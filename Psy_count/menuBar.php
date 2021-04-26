@@ -80,7 +80,7 @@ session_start();
           if(isset($_SESSION['connexion'])){
        		if($_SESSION['connexion']==1){
        	?>
-        <a href="deconnexion.php"> <button class="button6" > deconnexion </button> </a>
+        <a href="deconnexion.php"> <button class="button6"> deconnexion </button> </a>
         <?php
     		}
       }
