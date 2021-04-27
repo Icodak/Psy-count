@@ -1,0 +1,49 @@
+/*REFONTE CONTACT FORM*/
+@font-face {
+    font-family: "poppins";
+    src: url("../fonts/POPPINS-REGULAR.TTF") format("truetype");
+}
+
+html{
+    font-family: poppins;
+}
+
+.form{
+    display: flex;
+    flex-flow: column wrap;
+    background-color: black;
+    box-shadow: 2px;
+    margin: 5% 20%; /*vertical horizontal*/
+    padding: 2%;
+    text-align: center;
+}
+
+.form_content{
+
+}
+
+.form_label{
+
+}
+
+.form_button{
+
+}
+
+.form_button {
+    background-color: white;
+    color: #B25DBB;
+    border: 2px solid #B25DBB;
+    text-align: center;
+    text-decoration: none;
+    font-size: inherit;
+    margin: 1% 2%;
+    cursor: pointer;
+    border-radius: 1px;
+  }
+  
+.form_button:hover {
+    background-color: #B25DBB;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    color: white;
+  }

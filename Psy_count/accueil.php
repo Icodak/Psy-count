@@ -24,8 +24,6 @@
 	</div>
 </header>
 
-Branch-Amanda
-
 <body>
 
 <div id="container1">

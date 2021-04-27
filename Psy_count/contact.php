@@ -38,19 +38,19 @@ try {
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="icon" type="image/png" href="images/psy-fi.png" />
-    <link rel="stylesheet" href="css//style_Policy.css">
+    <link rel="stylesheet" href="css//style_Refonte.css">
 </head>
 
 <header>
     <div>
         <?php include("menuBar.php") ?>
-        <h2 id="headerText"> Une question ? Contactez-nous !</h2>
+        <h2> Une question ? Contactez-nous !</h2>
     </div>
 </header>
 
 <body>
     <div class="background"></div>
-<!--Faire un truc plus clean avec du JS
+    <!--Faire un truc plus clean avec du JS
     <//?php
         if (isset($_POST['submit']) && $msg_filled != true) { 
         if (empty($visitorEmail) || empty($visitorFirstName) || empty($visitorLastName) || empty($visitorMsgSubject) || empty($visitorMsg)) {
@@ -67,48 +67,44 @@ try {
     <?php
     if ($msg_envoi) :
     ?>
-        <div id="form">
-            <h3 id="headerText"> Message bien reçu. Nous vous recontacterons prochainement.</h2>
+        <div>
+            <h3> Message bien reçu. Nous vous recontacterons prochainement.</h2>
         </div>
     <?php
     else :
     ?>
 
 
-        <div id="form" class="form_content">
+        <div class="form">
             <form action="contact.php" method="POST" autocomplete="off">
-                <div><label for="text"> Prénom </label>
-                    <input id="form" class="form_content" type="text" name="prenom_Cct" placeholder="ex : John"> </label>
+                <div><label class="form_label" for="text"> Prénom </label>
+                    <input class="form_content" type="text" name="prenom_Cct" placeholder="ex : John"> </label>
                 </div>
 
-                <div><label for="text"> Nom </label>
-                    <input id="form" class="form_content" type="text" name="nom_Cct" placeholder="ex : Doe"> </label>
+                <div> <label class="form_label" for="text"> Nom </label>
+                    <input class="form_content" type="text" name="nom_Cct" placeholder="ex : Doe"> </label>
                 </div>
 
-                <div> <label for="text"> E-mail </label>
-                    <input id="form" class="form_content" type="text" name="mail_Cct" placeholder="ex : john.doe@gmail.com"> </label>
+                <div><label class="form_label" for="text"> E-mail </label>
+                    <input class="form_content" type="text" name="mail_Cct" placeholder="ex : john.doe@gmail.com"> </label>
                 </div>
-
-                <div> <label for="text"> Sujet du message </label>
+                <div>
+                    <label class="form_label" for="text"> Sujet du message </label>
                     <!--Faire un menu déroulant ?-->
-                    <input id="form" class="form_content" type="text" name="msgSubject_Cct" placeholder="ex : Contact avec l'administrateur PSY-fi..."> </label>
+                    <input class="form_content" type="text" name="msgSubject_Cct" placeholder="ex : Contact avec l'administrateur PSY-fi..."> </label>
                 </div>
-
                 <div>
-                    <label for="text"> Message </label>
-                    <textarea id="form" class="form_content" name="msg_Cct" placeholder="Veuillez écrire votre message..."></textarea>
+                    <label class="form_label" for="text"> Message </label>
+                    <textarea class="form_content" name="msg_Cct" placeholder="Veuillez écrire votre message..."></textarea>
                 </div>
-
-                <div>
-                    <button class="submit" type="submit" name="submit"> Envoyer </button>
-                    <button class="submit" type="reset"> Annuler </button>
-                </div>
+                <button class="form_button" type="submit" name="submit"> Envoyer </button>
+                <button class="form_button" type="reset"> Annuler </button>
             </form>
         </div>
 
     <?php
     endif;
-    ?>  
+    ?>
 </body>
 
 <?php include("footer.php") ?>
