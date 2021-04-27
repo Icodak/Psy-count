@@ -2,31 +2,53 @@
 <html lang="fr">
 
 <head>
-    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
     <title>footer</title>
-    <link rel="icon" type="image/png" href="images/psy-fi.png" />
-    <link rel="stylesheet" href="css//style_footer.css">
+    <link rel="stylesheet" href="css/style_footer.css">
+    <link rel="stylesheet" href="css/styles_fonts.css">
 </head>
 
 <footer>
+    <section class="footer-general">
+        <div class="footer-column">
 
-	
+            <h2>PSY-FI</h2>
 
-    <div id="footerText1">
-        © 2021 PSY-fi
-    </div>
-    <div id="footerText2">
+            <p>28 Rue Notre Dame des Champs, 75006 Paris <br>
+                01 23 45 67 89</p>
 
-        <div id="confidentialite">
-            Politique de confidentialité
+
         </div>
 
+
+        <div class="footer-column">
+
+
+            <h2> Accessibilité </h2>
+
+            <a href="#">Thème</a>
+            <a href="#">Langue</a>
+
+
+        </div>
+
+        <div class="footer-column">
+
+            <h2> Ressources </h2>
+
+            <a href="#">FAQ </a>
+
+
+        </div>
+
+    </section>
+
+    <section class="last-footer">
+        <p>© 2021 PSY-fi</p>
         <div>
+            <a href="#">Politique de confidentialité </a>
+
+
             <a href="TermsOfUse.php">Conditions d'utilisation </a>
         </div>
-
-    </div>
-
-
-
+    </section>
 </footer>

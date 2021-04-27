@@ -1,66 +1,84 @@
-#Menu{
-margin-bottom: 4%;
-display: flex;
-justify-content: center;
-font-family: 'Roboto', sans-serif;
+#Menu {
+  margin-bottom: 4%;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  
+  padding: 10px 0px;
+  background-color: #ffffff56;
 }
-a
-{ 
- text-decoration:none; 
- color: black;
-} 
 
-#psyfimenutext{
-	margin-right: 10%;
-	font-weight: bold;
+a {
+  text-decoration: none;
+  color: black;
+}
+
+#psyfimenutext {
+  margin-right: 10%;
+  font-weight: bold;
   font-size: 150%;
 }
 
-
-
-.menuText{
-	text-decoration-color: black;
-	margin-left: 1%;
-	margin-right: 1%;
+.menuText {
+  text-decoration-color: black;
+  margin-left: 10px;
+  margin-right: 10px;
   font-size: 110%;
 }
-.menuText:hover{
+
+.menuText:hover {
+  text-underline-offset: 10px;
   text-decoration: underline #BB66BF 2px;
 }
-#psyfimenutext:hover{
+
+#psyfimenutext:hover {
   text-decoration: none;
 }
 
 
-
-#navbar{
-	width: 100%;
+#navbar {
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
 }
 
-.button6 {
-  border-radius: 12px;
-  background-color: #BB66BF;
-  border: none;
-  color: white;
-  padding: 10px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
-  margin: 4px 2px;
-  margin-left: 1%;
-  cursor:pointer;
-}
-nav{
+nav {
   border: none;
 }
 
+@media only screen and (max-width: 1000px) {
+
+}
 
 
-@media only screen  and (max-width: 1000px) {
-  
-  #psyfimenutext{
+@media (min-width: 500px) {
+  p,a, .button {
+    font-size: 8px;
+  }
+
+
+}
+
+
+@media (min-width: 900px) {
+  #psyfimenutext {
     display: none;
+  }
+
+
+  p, a,.button {
+    font-size: 10px;
+  }
+
+
+}
+
+
+@media (min-width: 1200px) {
+
+  p, a,.button {
+    font-size: 20px;
   }
 
 
