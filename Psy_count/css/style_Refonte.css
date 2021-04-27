@@ -5,53 +5,69 @@
 }
 
 html{
-    font-family: "poppins";
+    font-family: "poppins", Oxygen;
     box-sizing: border-box;
 }
 
 .form{
-    background-color: rgba(129,54,217, 0.85);
+    background-color: white;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
     width: 100%;
-    height: 100%;
+    height: 502px;
     padding: 2%;
-
-}
-
-.form_interior{
-    background-color: rgba(0,0,0,0.19);;
-    color: white;
-
+    min-width: 50%;
 }
 
 .flex_column{
     display: flex;
     flex-wrap: column wrap;
     margin: 5% 10% 5% 10%;
+    padding: 2%;
+}
+
+.form_field{
+    display: flex;
+}
+
+.form_group{
+    width: 100%;
 }
 
 .flex_row{
     display: flex;
     flex-wrap: row wrap;
-
 }
 
 .form_content{
+    border-bottom: 2px solid gray;
     display: fixed;   
-    width: 98%;
+    width: 95%;
+    outline: none;
+    padding: inherit;
+    resize: none;
+}
+
+.form_content:hover{
+    resize: none;
+    border-bottom: 2px solid #B25DBB;
     background: none;
-    border-bottom: solid #B25DBB;
+    transition-duration: 0.2s;
 }
 
 .form_label{
-    border-bottom: white;
     display: block;
+    padding: 2%;
+    margin-top: 2%;
 }
 
-textarea{
-    display: fixed;
-    resize: inherit;
-    width: 98%;
+input[type=text], select, textarea{
+    resize: none;
+    border-bottom: 2px solid grey;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background: none;
+    padding: 2%;
 }
 
 /*Boutons*/
@@ -62,13 +78,16 @@ textarea{
     text-align: center;
     text-decoration: none;
     font-size: inherit;
-    margin: 1% 2%;
+    margin: 5% 0% 1% 0%;
     cursor: pointer;
     border-radius: 1px;
+    width: 100%;
+    font-size: 20px;
   }
   
 .form_button:hover {
     background-color: #B25DBB;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
     color: white;
+    transition-duration: 0.5s;
   }
