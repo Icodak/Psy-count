@@ -1,31 +1,36 @@
-
-footer{
-  padding-top: 12.5px;
-  padding-bottom: 12.5px;
-  background-color: #FFDEDE;
+footer {
   display: flex;
-  justify-content: space-between;
-  position:absolute;
-	bottom:0;
-	width:100%;
-
-
-}
-
-
-#footerText1{
-  margin-left: 10%;
-  vertical-align:middle;
-}
-
-#footerText2{
-display: flex; 
-margin-right: 5%;
-vertical-align:middle;
+  flex-direction: column;
+  width: 100%;
+  padding: 0px;
+  background-color: rgb(71, 0, 34);
 
 }
-#confidentialite{
-  margin-right: 20px;
+
+footer a {
+  color: inherit;
 }
 
+section {
+  width: 100%;
+  display: flex;
+  padding: 0px;
+}
+
+.footer-general{
+  justify-content: space-around;
+  padding: 50px 0px;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.last-footer {
+  background-color: rgb(54, 0, 26);
+  justify-content: space-around;
+  align-items: center;
+  padding: 2px 0px;
+}
 

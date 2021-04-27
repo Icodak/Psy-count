@@ -1,594 +1,277 @@
-
-
 html, body {
- margin:0;
- padding:0;
- }
-.button4 {
-  border-radius: 12px;
-  background-color: #BB66BF;
-  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.banner {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url("images_css/Placement_Area_ASSETheroSIZEDe.png");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 10%;
+}
+
+.button {
+  border-radius: 30px;
+  background-color: #aa3558;
   color: white;
-  padding: 10px;
+  font-size: 3.5vw;
+  border:none;
+  letter-spacing: 0.2px;
+  padding: 10px 20px;
+  margin: 0px 10px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 20px;
-  margin: 4px 2px;
-  cursor:pointer;
+  cursor: pointer;
+  transition: all 0.2s ease 0s;
 }
 
-body{
-  position: relative;
-}
-
-li{
-	list-style: none;
-}
-
-#headerText{
-  color:#7B28A2;
-}
-
-#menuBar1{
-  background-image: url("images_css/Placement_Area_ASSETheroSIZEDe.png");
-  background-position: top;
-  background-repeat:no-repeat;
-  background-size: 100%;
-  padding-bottom: 10%;
-  padding-top: 2%;
-}
-
-header{
+.discord-description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+}
 
+.button:hover{
+  transition: all 0.2s ease 0s;
+  background-color: #6d2339;
+  letter-spacing: 1px;
+}
+
+.button:active{
+  transition: all 0.1s ease 0s;
+  background-color: rgb(184, 38, 99);
+  letter-spacing: 0px;
+}
+
+.headerText {
+  margin-top: 150px;
+  color: #972467;
+  font-size: 40px;
+}
+
+.who{
+  margin-bottom: 5px;
+}
+
+.menuBar1 {
+  position: sticky;
+  top: 0px;
+  z-index: 1000;
+  display: flex;
+  height: 0px;
+  padding: 0px;
+  width: 100%;
+  justify-content: center;
+}
+
+.menuBar1 div {
+  width: 100%;
 
 }
 
+header {
+  text-align: center;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+section {
+  padding-top: 20px;
+}
+
+h2 {
+  margin: 0;
+}
 
 img {
   max-width: 100%;
   height: auto;
+  border-radius: 5px;
 }
 
-
-#block1{
+.block1 {
   display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-between;
+  justify-content: space-around;
   text-align: center;
-
-}
-#container1{
-  text-align: center;
-  margin-bottom: 50px;
+  flex-direction: column;
 }
 
-#container2{
+.container1 {
+  text-align: center;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  margin: 50px 0px;
+}
+
+.container2 {
   max-height: 750px;
 }
 
-#column1{
-  margin-left: 3%;
+.column1 {
+  display: flex;
+  flex-direction: column;
 }
-#column3{
+
+.column1 > div {
+  margin: 10px;
+}
+
+.column3 {
   margin-right: 3%;
 }
 
-#sepator1{
-  color: #B25DBB;
-  background-color:#B25DBB;
-  width: 100px; 
+.separator {
+  background-color: #972467;
+  width: 100px;
+  height: 1px;
   margin-bottom: 40px;
 }
-#sepator2{
-  color: #B25DBB;
-  background-color:#B25DBB;
-  width: 100px; 
-}
-#video1{
-  width: 100%;
+
+
+.video1 {
   max-height: 750px;
-  outline: none;
+  width: auto;
 }
 
+.container3 {
+  display: flex;
+  padding: 0px;
+  flex-direction: column-reverse;
 }
 
-#presentation1{
-    display: flex;
-    flex-direction: column;
-    margin-left: 5%;
-   margin-right: 5%;
-   margin-top: 50px;
+.descriptifText{
+  display: flex;
+  flex-direction: column;
+  flex:1;
+}
+
+.presentation1{
+  display: flex;
+  flex:2;
+  padding: 20px 0px;
 
 }
 
-#descriptifText{
-  padding-left: 2%;
-  background-color: #C488B6;
-  padding-top: 65px;
-  padding-bottom: 50px;
+.psy-icon{
+  display: none;
+  flex:0;
 }
 
-#discordGroup1{
-    display: flex;
-    margin-bottom: 5%;
-    justify-content: space-around;
+
+.presentation1 {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
 }
 
-#discordGroup2{
-    display: flex;
-    justify-content: space-around;
+.descriptifText {
+  padding: 50px 30px 30px 30px;
+  background-color: #972467;
 }
 
-#groupInformation{
+.discordGroup {
+  display: flex;
+  margin-bottom: 5%;
+  justify-content: space-around;
+}
+
+.discordGroup>div {
+  margin: 10px;
+}
+
+.groupInformation {
   margin-left: 10%;
 }
 
-#groupeRessources{
+.groupeRessources {
   margin-right: 5%;
   margin-left: 5%;
 }
 
-
-#container3{
-  display: flex;
-  justify-content: space-between;
-
-}
-
-
-#container4{
-
-background-color: #BB66BF;
-display: flex;
-justify-content: space-between;
-padding-top: 75px;
-padding-bottom: 75px;
-width: 100%
-}
-
-#imagePsyFi{
-  margin-bottom: 5%; 
-  display: block;
-}
-
-#footerText1{
+.footerText1 {
   margin-left: 10%;
-  vertical-align:middle;
+  vertical-align: middle;
 }
 
-#footerText2{
-display: flex; 
-margin-right: 5%;
-vertical-align:middle;
-
+.footerText2 {
+  display: flex;
+  margin-right: 5%;
+  vertical-align: middle;
 }
 
-#confidentialite{
+.confidentialite {
   margin-right: 20px;
 }
 
-#menuBlock{
+.menuBlock {
   display: flex;
 }
 
-
-
-footer{
-  padding-top: 12.5px;
-  padding-bottom: 12.5px;
-  background-color: #FFDEDE;
-  display: flex;
-  justify-content: space-between;
-
+p,a {
+  font-size: 3.5vw;
 }
-
-.abstractText2{
-  display: none;
-}
-
-.abstractText3{
-  display: none;
-}
-
-.abstractText4{
-  display:none;
-}
-
-.abstractText5{
-  display:none;
-}
-
-#presentation1{
-  margin-top:  7%;
-}
-
-
-
 
 
 /*||||||||||||||||||||||||||||||||||||||||||||||||*/
 
-
-
-
-
-
 /*TAILLE D'ECRAN comprise entre  */
 
 
-
-
-
-@media only screen and (min-width: 820px)  and (max-width: 1080px) {
-  #presentation1{
-  margin-left: 5%;
-  margin-top:  5%;
-}
-
-}
-
-@media only screen and (min-width: 720px)  and (max-width: 819px) {
-
-.abstractText2{
-  display: block;
-}
-.abstractText{
-  display: none;
-}
-
-#presentation1{
-  margin-left: 5%;
-  margin-top:  5%;
-}
-
-}
-
-
-@media only screen and (min-width: 669px)  and (max-width: 719px) {
-
-.abstractText2{
-  display: block;
-}
-.abstractText{
-  display: none;
-}
-
-#container3{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-#descriptifText{
-   text-align: center;
- width: 100%
-}
-
-#imagePsyFi{
-  display: none;
-}
-
-#presentation1{
-  margin-bottom: 5%;
-}
-
-#container3{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-}
-
-
-
-@media only screen and (min-width: 639px)  and (max-width: 668px) {
-
-.abstractText2{
-  display: none;
-}
-.abstractText{
-  display: none;
-}
-
-
-.abstractText3{
-  display: block;
-}
-
-#imagePsyFi{
-  display: none;
-}
-
-#container3{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-#descriptifText{
-   text-align: center;
- width: 100%
-}
-#presentation1{
-  margin-bottom: 5%;
-}
-
-}
-
-
-@media only screen and (min-width: 520px)  and (max-width: 638px) {
-
-.abstractText2{
-  display: none;
-}
-.abstractText{
-  display: none;
-}
-#imagePsyFi{
-  display: none;
-}
-
-.abstractText3{
-  display: none;
-}
-
-.abstractText4{
-  display: block;
-}
-
-
-
-#container3{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-#descriptifText{
-   text-align: center;
- width: 100%
-}
-#presentation1{
-  margin-bottom: 5%;
-}
-
-}
-
-
-
-@media only screen and (min-width: 432px)  and (max-width: 519px) {
-
-.abstractText2{
-  display: none;
-}
-.abstractText{
-  display: none;
-}
-#imagePsyFi{
-  display: none;
-}
-
-.abstractText3{
-  display: none;
-}
-
-.abstractText4{
-  display: block;
-}
-
-#container3{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-#descriptifText{
-   text-align: center;
- width: 100%
-}
-#presentation1{
-  margin-bottom: 5%;
-}
-
-.button4{
-  margin-top: 10%;
-}
-
-}
-
-
-
-@media only screen and (min-width: 391px)  and (max-width: 431px) {
-
-.abstractText2{
-  display: none;
-}
-.abstractText{
-  display: none;
-}
-#imagePsyFi{
-  display: none;
-}
-
-.abstractText3{
-  display: none;
-}
-
-.abstractText4{
-  display: none;
-}
-
-.abstractText5{
-  display: block;
-}
-
-#container3{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-#descriptifText{
-   text-align: center;
- width: 100%
-}
-#presentation1{
-  margin-bottom: 5%;
-}
-
-.button4{
-  margin-top: 10%;
-}
-
-
-}
-
-
-
-
-@media only screen and (min-width: 330px)  and (max-width: 390px) {
-
-.abstractText2{
-  display: none;
-}
-.abstractText{
-  display: none;
-}
-#imagePsyFi{
-  display: none;
-}
-
-.abstractText3{
-  display: none;
-}
-
-.abstractText4{
-  display: none;
-}
-
-.abstractText5{
-  display: block;
-}
-
-
-
-#container3{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-#descriptifText{
-   text-align: center;
- width: 100%
-}
-#presentation1{
-  margin-bottom: 5%;
-}
-
-.button4{
-  margin-top: 10%;
-}
-#headerPresentation{
-  display: none;
+@media (min-width: 500px) {
+  p,a, .button {
+    font-size: 3vw;
+  }
+
+  nav * {
+    font-size: 10px;
   }
 
 }
 
-@media only screen and (max-width: 321px) {
-  #psyfimenutext{
-    display: none;
-  }
-}
 
-@media only screen and (max-width: 329px) {
+@media (min-width: 900px) {
 
-.abstractText2{
-  display: none;
-}
-.abstractText{
-  display: none;
-}
-#imagePsyFi{
-  display: none;
-}
-
-.abstractText3{
-  display: none;
-}
-
-.abstractText4{
-  display: none;
-}
-
-.abstractText5{
-  display: block;
-}
-
-
-#container3{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-#descriptifText{
-   text-align: center;
- width: 100%
-}
-#presentation1{
-  margin-bottom: 5%;
-}
-
-.button4{
-  margin-top: 15%;
-}
-#headerPresentation{
-  display: none;
+  .block1{
+    flex-direction: row;
   }
 
-#container4 h2{
-  font-size:  100%;
-}
+  p, a,.button {
+    font-size: 2vw;
+  }
 
-#groupInformation{
-  margin-left: 3%;
-}
+  .container3 {
+    flex-direction: row;
+  }
 
-#groupeSettings{
-  margin-right: 3%;
-}
-
-
-#groupeRessources{
-  margin-right: 3%;
-}
-
-#column2{
-  margin-left: 1%;
-  margin-right: 1%;
 }
 
 
-#column1{
-  margin-left: 0%;
-  margin-right: 0%;
-}
+@media (min-width: 1200px) {
+  .psy-icon{
+    display: flex;
+    flex:1;
 
-#column3{
-  margin-left: 0%;
-  margin-right: 0%;
-}
+  }
 
-#block1{
-  display: flex;
-  flex-wrap: wrap;
-}
+  .imagePsyFi {
+    object-fit: scale-down;
+  }
 
-#headerText{
-  display: none;
-}
+  p, a,.button {
+    font-size: 20px;
+  }
+
+
 }
