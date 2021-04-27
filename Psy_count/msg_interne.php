@@ -5,13 +5,13 @@
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="icon" type="image/png" href="images/psy-fi.png" />
-    <link rel="stylesheet" href="css//style_Policy.css">
+    <link rel="stylesheet" href="css//style_Refonte.css">
 </head>
 
 <header>
     <div>
         <?php include("menuBar.php") ?>
-        <h2 id="headerText"> Consultation et Aide</h2>
+        <h2 class="headerText"> Consultation et Aide</h2>
     </div>
 </header>
 
@@ -51,35 +51,40 @@ $recipient_from_users = $dbMsgInt->query('SELECT ID_Utilisateur, nom, prenom FRO
     <div class="background"></div>
     <?php
     if (isset($warning)) {
-        echo "<span style='color:lightcoral;'>" .$warning. "</span>";
+        echo "<span style='color:lightcoral;'>" . $warning . "</span>";
     }
     ?>
 
-    <div id="form" class="form_content">
-        <form action="msg_interne.php" method="POST" autocomplete="off">
+    <div class="flex_column">
+        <div class="form">
+            <form action="msg_interne.php" method="POST" autocomplete="off">
 
-            <div> <label class="form_label" for="text"> Je souhaite contacter : </label>
-                <select id="form" class="form_content" name="msg_destinataire">
-                    <?php while ($d = $recipient_from_users->fetch()) { ?>
-                        <option><?= $d['nom'] . " " . $d['prenom'] //?= == php echo?></option>
-                    <?php } ?>
-                </select>
-            </div>
+                <div class="form_group"> <label class="form_label" for="text"> Je souhaite contacter : </label>
+                    <select class="form_content" name="msg_destinataire">
+                        <?php while ($d = $recipient_from_users->fetch()) { ?>
+                            <option><?= $d['nom'] . " " . $d['prenom'] //?= == php echo
+                                    ?></option>
+                        <?php } ?>
+                    </select>
+                </div>
 
-            <div> <label class="form_label" for="text"> Sujet du message </label>
-                <input id="form" class="form_content" type="text" name="msgSubject_Cct" placeholder="ex : Contact avec l'administrateur PSY-fi..."> </label>
-            </div>
+                <div class="form_group"> <label class="form_label" for="text"> Sujet du message </label>
+                    <input class="form_content" type="text" name="msgSubject_Cct" placeholder="ex : Contact avec l'administrateur PSY-fi..."> </label>
+                </div>
 
-            <div>
-                <label class="form_label" for="text"> Message </label>
-                <textarea id="form" class="form_content" name="msg_Cct" placeholder="Veuillez écrire votre message..."></textarea>
-            </div>
+                <div class="form_group">
+                    <label class="form_label" for="text"> Message </label>
+                    <textarea class="form_content" name="msg_Cct" placeholder="Veuillez écrire votre message..."></textarea>
+                </div>
 
-            <div>
-                <button class="submit" type="submit" name="submit"> Envoyer </button>
-                <button class="submit" type="reset"> Annuler </button>
-            </div>
-        </form>
+                <div class="form_group">
+                    <button class="form_button" type="submit" name="submit"> Envoyer </button>
+                    <button class="form_button" type="reset"> Annuler </button>
+                </div>
+            </form>
+            
+        </div>
+        <img src="css//images_css/psy-fi.png">
     </div>
 
 </body>

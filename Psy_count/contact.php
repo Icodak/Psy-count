@@ -44,7 +44,7 @@ try {
 <header>
     <div>
         <?php include("menuBar.php") ?>
-        <h2> Une question ? Contactez-nous !</h2>
+        <h2 class="headerText"> Une question ? Contactez-nous !</h2>
     </div>
 </header>
 
@@ -68,7 +68,7 @@ try {
     if ($msg_envoi) :
     ?>
         <div>
-            <h3> Message bien reçu. Nous vous recontacterons prochainement.</h2>
+            <h3 class="headerText"> Message bien reçu. Nous vous recontacterons prochainement.</h2>
         </div>
     <?php
     else :
@@ -91,23 +91,31 @@ try {
                         </div>
                     </div>
 
-
-                    <div class="form_group">
-                        <label class="form_label" for="text"> E-mail </label>
-                        <input class="form_content" type="text" name="mail_Cct" placeholder="ex : john.doe@gmail.com"> </label>
+                    <div class="form_field">
+                        <div class="form_group">
+                            <label class="form_label" for="text"> E-mail </label>
+                            <input class="form_content" type="text" name="mail_Cct" placeholder="ex : john.doe@gmail.com"> </label>
+                        </div>
                     </div>
-                    <div class="form_group">
-                        <label class="form_label" for="text"> Sujet du message </label>
-                        <!--Faire un menu déroulant ?-->
-                        <input class="form_content" type="text" name="msgSubject_Cct" placeholder="ex : Contact avec l'administrateur PSY-fi..."> </label>
+                    <div class="form_field">
+                        <div class="form_group">
+                            <label class="form_label" for="text"> Sujet du message </label>
+                            <!--Faire un menu déroulant ?-->
+                            <input class="form_content" type="text" name="msgSubject_Cct" placeholder="ex : Contact avec l'administrateur PSY-fi..."> </label>
+                        </div>
                     </div>
-                    <div class="form_group">
-                        <label class="form_label" for="text"> Message </label>
-                        <textarea class="form_content" name="msg_Cct" placeholder="Veuillez écrire votre message..."></textarea>
+                    <div class="form_field">
+                        <div class="form_group">
+                            <label class="form_label" for="text"> Message </label>
+                            <textarea class="form_content" name="msg_Cct" placeholder="Veuillez écrire votre message..."></textarea>
+                        </div>
                     </div>
-                    <button class="form_button" type="submit" name="submit"> Envoyer </button>
-                    <button class="form_button" type="reset"> Annuler </button>
-
+                    <div class="form_field">
+                        <div class="form_group">
+                            <button class="form_button" type="submit" name="submit"> Envoyer </button>
+                            <button class="form_button" type="reset"> Annuler </button>
+                        </div>
+                    </div>
                 </form>
 
             </div>
