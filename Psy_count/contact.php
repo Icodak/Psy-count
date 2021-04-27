@@ -75,31 +75,39 @@ try {
     ?>
 
 
-        <div class="form">
-            <form action="contact.php" method="POST" autocomplete="off">
-                <div><label class="form_label" for="text"> Prénom </label>
-                    <input class="form_content" type="text" name="prenom_Cct" placeholder="ex : John"> </label>
-                </div>
+        <div class="flex_column">
+            <div class="form">
+                <div class="form_interior">
+                    <form action="contact.php" method="POST" autocomplete="off">
+                        <div><label class="form_label" for="text"> Prénom </label>
+                            <input class="form_content" type="text" name="prenom_Cct" placeholder="ex : John"> </label>
+                        </div>
 
-                <div> <label class="form_label" for="text"> Nom </label>
-                    <input class="form_content" type="text" name="nom_Cct" placeholder="ex : Doe"> </label>
-                </div>
+                        <div> <label class="form_label" for="text"> Nom </label>
+                            <input class="form_content" type="text" name="nom_Cct" placeholder="ex : Doe"> </label>
+                        </div>
 
-                <div><label class="form_label" for="text"> E-mail </label>
-                    <input class="form_content" type="text" name="mail_Cct" placeholder="ex : john.doe@gmail.com"> </label>
+                        <div><label class="form_label" for="text"> E-mail </label>
+                            <input class="form_content" type="text" name="mail_Cct" placeholder="ex : john.doe@gmail.com"> </label>
+                        </div>
+                        <div>
+                            <label class="form_label" for="text"> Sujet du message </label>
+                            <!--Faire un menu déroulant ?-->
+                            <input class="form_content" type="text" name="msgSubject_Cct" placeholder="ex : Contact avec l'administrateur PSY-fi..."> </label>
+                        </div>
+                        <div>
+                            <label class="form_label" for="text"> Message </label>
+                            <textarea class="form_content" name="msg_Cct" placeholder="Veuillez écrire votre message..."></textarea>
+                        </div>
+
+                        <div>
+                        <button class="form_button" type="submit" name="submit"> Envoyer </button>
+                        <button class="form_button" type="reset"> Annuler </button>
+                        </div>
+                    </form>
                 </div>
-                <div>
-                    <label class="form_label" for="text"> Sujet du message </label>
-                    <!--Faire un menu déroulant ?-->
-                    <input class="form_content" type="text" name="msgSubject_Cct" placeholder="ex : Contact avec l'administrateur PSY-fi..."> </label>
-                </div>
-                <div>
-                    <label class="form_label" for="text"> Message </label>
-                    <textarea class="form_content" name="msg_Cct" placeholder="Veuillez écrire votre message..."></textarea>
-                </div>
-                <button class="form_button" type="submit" name="submit"> Envoyer </button>
-                <button class="form_button" type="reset"> Annuler </button>
-            </form>
+            </div>
+            <img src="css//images_css/psy-fi.png">
         </div>
 
     <?php
