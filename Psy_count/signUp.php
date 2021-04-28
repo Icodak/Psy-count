@@ -22,12 +22,9 @@ session_start(); // On démarre la session AVANT toute chose
 <body>
 		<div id="signUp">
 			<div id="accountText" >
-			<div id="divMedecin">
-                <a href="signUpMedecin.php"> <span class="latoType title" id="signUpMedecin">S'inscrire comme Medecin
-                    </span><br></a>
-            </div>
 				<div id="titleText">
 				<a href="signIn.php"> <span class="latoType title" id="signInText">s'identifier </span><br></a>
+				<a href="signUpMedecin.php"> <span class="latoType title" id="signUpMedecin">S'inscrire comme Medecin</span><br></a>
                 <a href="signUp.php"> <span class="latoType title" id="signUpText"> S'inscrire</span></a>
 				</div>
 			</div>
@@ -59,9 +56,10 @@ session_start(); // On démarre la session AVANT toute chose
 						</div>
 
 						<input  name="type" type="hidden" value="patient" >
-
-						<input  class="button4" type="submit" name="submit" value="S'inscrire" disabled  id="submit">
-						<a class="button5" id="quitter2" href="accueil.php"> Quitter </a>
+						<div id="signUpBlock">
+						<input  class="button4" type="submit" style="background-color: grey;" name="submit" value="S'inscrire" id="submit">
+						<input  class="button4" type="button" onclick="locationAccueil()" value="Quitter" >
+						</div>
 
 						<li> 
 							<?php if(!empty($_SESSION['message'])){echo $_SESSION['message'];}?>

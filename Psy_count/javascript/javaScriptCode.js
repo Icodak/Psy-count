@@ -1,4 +1,7 @@
 
+var click = "true";
+
+
 
  function checkboxcheck(){
  
@@ -19,6 +22,13 @@
     var d1 = document.getElementsByClassName("reponse");
     var d2 = document.getElementsByClassName("question");
     var d3 = element.id;
+    if(click=="true"){
+    element.style.transform="rotate(0.5turn)";
+    click="false";
+    }else{
+        element.style.transform="rotate(0turn)";
+        click="true";
+    }
     
     for (let pas = 0; pas < d1.length; pas++) {
 
@@ -43,6 +53,11 @@ function dataModification(){
     var element2 = document.getElementById("modificationPage");
     element.style.display='none';
     element2.style.display='block';
+}
+
+
+function locationAccueil(){
+    document.location.href="accueil.php";
 }
 
 
@@ -150,7 +165,7 @@ $(document).ready(function(){
 
 
 
-    $(document).ready(function(){
+$(document).ready(function(){
  
         $("#banButton").click(function(){
           

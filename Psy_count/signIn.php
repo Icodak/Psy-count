@@ -10,21 +10,18 @@ session_start(); // On démarre la session AVANT toute chose
     <link rel="icon" type="image/png" href="images/psy-fi.png" />
     <link rel="stylesheet" href="css//style_Sign_In.css">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
+    <script type="text/javascript" src="javaScript/javaScriptCode.js"></script>
 </head>
 
 <body>
 
     <div id="signIn">
         <div id="accountText">
-            
-            <div id="divMedecin">
-                <a href="signUpMedecin.php"> <span class="latoType title" id="signUpMedecin">S'inscrire comme Medecin
-                    </span><br></a>
-            </div>
-
 
             <div id="titleText">
-                <a href="signIn.php"> <span class="latoType title" id="signInText"> s'identifier </span><br></a>
+                <a href="signIn.php"> <span class="latoType title" id="signInText"> S'identifier </span><br></a>
+                <a href="signUpMedecin.php"> <span class="latoType title" id="signUpMedecin">S'inscrire comme
+                        Medecin</span><br></a>
                 <a href="signUp.php"> <span class="latoType title" id="signUpText"> S'inscrire </span></a>
             </div>
         </div>
@@ -40,8 +37,18 @@ session_start(); // On démarre la session AVANT toute chose
                         <input size=45% name="Password" type="password">
 
                     </div>
-                    <li><input class="button4" type="submit" name="submit" id="signInbutton" value="S'identifier"></li>
-                    <li><a class="button4" id="quitter" href="accueil.php"> Quitter </a></li>
+                    <li>
+                        <div id="buttonSignIn">
+                            <div>
+                                <input class="button4" type="submit" name="submit" id="signInbutton"
+                                    value="Connexion">
+                            </div>
+                            <div>
+                                <input class="button4" type="button" onclick="locationAccueil()" name="submit" id="quitterbutton"
+                                    value="Quitter">
+                            </div>
+                        </div>
+                    </li>
                     <li>
                         <span style="color:white">
                             <?php if(!empty($_SESSION['message2'])){echo $_SESSION['message2'];}?></span>

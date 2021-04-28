@@ -3,9 +3,11 @@
   display: flex;
   justify-content: center;
   width: 100%;
+
   padding: 10px 0px;
   background-color: #ffffff56;
 }
+
 
 a {
   text-decoration: none;
@@ -22,6 +24,7 @@ a {
 .menuText {
   margin-left: 10px;
   margin-right: 10px;
+
 }
 
 .menuText:hover {
@@ -44,6 +47,7 @@ nav {
   border: none;
 }
 
+
 nav p, nav a, nav .button {
   font-size: 2vw;
 }
@@ -51,6 +55,7 @@ nav p, nav a, nav .button {
 @media (min-width: 550px) {
   nav p, nav a, nav .button {
     font-size: 15px;
+
   }
 }
 
@@ -63,8 +68,10 @@ nav p, nav a, nav .button {
   }
 }
 
+
 @media (min-width: 1200px) {
   nav p, nav a, nav .button {
     font-size: 20px;
   }
+
 }

@@ -28,20 +28,21 @@ try{
 
 <link rel="stylesheet" href="css//style_myData_.css">
 
-<div id="dataPage2">
-    <div id="userAccount">
-        <form  method="post" action="myDataFonction.php">
-        <div id="inputAccount">
-        <div id="imageAccount">
-            <h1>Mon image </h1>
 
-                <?php
+<div class="wrapper">
+
+    <div class="main">
+        <form>
+            <div class="frame-header">
+                <div>
+                    <?php
                   if($resultat[0][3]==NULL){
                    
                     ?>
-         
-                    <img src="images/backgroundImages vertical.png">
-                    
+                    <div class="User-image">
+                        <img src="images/backgroundImages vertical.png">
+                        <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
+                    </div>
 
                     <?php
                   }else{
@@ -50,64 +51,152 @@ try{
                   
 
                 ?>
-          
+                </div>
+                <div>
+                    <h1>
+                        Mon profil
+                    </h1>
+                </div>
             </div>
 
-            
-            <div id="personalInformations">
-                <h1>Mes informations personnel </h1>
-
-                <div class="inputChamp">
-                <h3>Nom</h3>
-                <div class="inputImage">
-                    <input type="text" class="crayon1"  name='nom' disabled value=<?php echo $resultat[0][0]?>><button type="button" class="crayon1" onclick="modificationInformations(this)"> <img src="images/crayon2.png">
-                    </button>
-                </div>
-                </div>
-
-                <div class="inputChamp">
-                <h3>Prenom</h3>
-                <div class="inputImage">
-                    <input type="text" class="crayon2" name='prenom' disabled  value=<?php echo $resultat[0][1]?>><button type="button" class="crayon2" onclick="modificationInformations(this)"> <img src="images/crayon2.png">
-                    </button>
-                </div>
-                </div>
-
-                <div class="inputChamp">
-                <h3>Email</h3>
-                <div class="inputImage">
-                    <input type="text"  class="crayon3" name='Email' disabled  value=<?php echo $resultat[0][2]?>><button  type="button" class="crayon3" onclick="modificationInformations(this)"> <img src="images/crayon2.png">
-                    </button>
-                </div>
-                </div>
 
 
-                <div class="inputChamp">
-                <h3>Date de naissance</h3>
-                <div class="inputImage">
-                    <input type="text"  class="crayon4" name='DateDeNaissance' disabled value=<?php echo $resultat2[0][0]?>><button  type="button" class="crayon4" onclick="modificationInformations(this)"> <img src="images/crayon2.png">
-                    </button>
-                </div>
+            <div class="topic-main">
+                <div class="topic-list">
+
+                    <div class="topic-items">
+                        <div class="topic-right">
+
+                            <h3>Nom : </h3>
+                        </div>
+
+
+
+                        <div class="topic-meta">
+
+                            <input type="text" class="crayon1" name='nom' disabled value=<?php echo $resultat[0][0]?>>
+                        </div>
+                        <div class="inputImage">
+                            <button type="button" class="crayon1" onclick="modificationInformations(this)"> <img
+                                    src="images/crayon2.png">
+                            </button>
+
+                        </div>
+                    </div>
+
+
+
+
+
+                    <div class="topic-items">
+
+                        <div class="topic-right">
+
+                            <h3>Prenom : </h3>
+                        </div>
+
+                        <div class="topic-meta">
+
+                            <input type="text" class="crayon2" name='prenom' disabled
+                                value=<?php echo $resultat[0][1]?>>
+                        </div>
+                        <div class="inputImage">
+                            <button type="button" class="crayon2" onclick="modificationInformations(this)"> <img
+                                    src="images/crayon2.png">
+                            </button>
+                        </div>
+
+                    </div>
+
+
+                    <div class="topic-items">
+                        <div class="topic-right">
+
+                            <h3>Email : </h3>
+                        </div>
+
+
+                        <div class="topic-meta">
+                            <input type="text" class="crayon3" name='prenom' disabled
+                                value=<?php echo $resultat[0][2]?>>
+                        </div>
+                        <div class="inputImage">
+                            <button type="button" class="crayon3" onclick="modificationInformations(this)"> <img
+                                    src="images/crayon2.png">
+                            </button>
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="topic-items">
+                        <div class="topic-right">
+
+                            <h3>Date de naissance : </h3>
+                        </div>
+
+                        <div class="topic-meta">
+
+                            <input type="text" class="crayon4" name='prenom' disabled
+                                value=<?php echo $resultat2[0][0]?>>
+                        </div>
+                        <div class="inputImage">
+                            <button type="button" class="crayon4" onclick="modificationInformations(this)"> <img
+                                    src="images/crayon2.png">
+                            </button>
+                        </div>
+
+                    </div>
+
+
+                    <div class="topic-items">
+                        <div class="topic-right">
+
+                            <h3>Mot de passe: </h3>
+                        </div>
+
+                        <div class="topic-meta">
+                            <input type="text" class="crayon5" name='prenom' disabled value="*********">
+                        </div>
+                        <div class="inputImage">
+                            <button type="button" class="crayon5" onclick="modificationInformations(this)">
+                                <img src="images/crayon2.png">
+                            </button>
+                        </div>
+
+                    </div>
                 </div>
 
-                <div class="inputChamp">
-                <h3>mot de passe</h3>
-                <div class="inputImage">
-                    <input type="text" class="crayon5"  name='motDePasse' disabled value="*********"><button type="button" class="crayon5" onclick="modificationInformations(this)"> <img src="images/crayon2.png">
-                    </button>
+
+                <div class="data-button">
+                    <div>
+                    <a class="new-subject">
+                        <p>Enregistrer</p>
+                    </a>
+                    </div>
+                    <div>
+                    <a class="new-subject">
+                        <p>Annuler</p>
+                    </a>
+                    </div>
+
                 </div>
-                </div>
-                <button type="submit"  id="saveInforamtions" name="idtype8" class="button4">Enregistrer les modifications</button>
             </div>
-         
-            </form>
-
-           
 
 
 
-        </div>
+
+
     </div>
+
+
+
+
+    </form>
+</div>
+</div>
+</div>
 
 
 </div>

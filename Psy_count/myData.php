@@ -22,7 +22,7 @@
 
 
 <div id="modificationPage">
-<?php include("DataPage2.php") ?>
+<?php include("DataPage2.php") ?> 
 </div>
 
 
