@@ -4,7 +4,6 @@ footer {
   width: 100%;
   padding: 0px;
   background-color: rgb(71, 0, 34);
-
 }
 
 footer a {
@@ -17,19 +16,35 @@ section {
   padding: 0px;
 }
 
-.footer-general{
-  justify-content: space-around;
+.footer-general {
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
   padding: 50px 0px;
 }
 
 .footer-column {
   display: flex;
   flex-direction: column;
+  margin: 10px 0px;
+  padding: 0px 20px;
 }
 
 .last-footer {
   background-color: rgb(54, 0, 26);
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
   padding: 2px 0px;
+}
+
+@media (min-width: 900px) {
+  .last-footer {
+    flex-direction: row;
+  }
+  .footer-general {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
 }
