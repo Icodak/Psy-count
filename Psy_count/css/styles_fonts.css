@@ -7,8 +7,7 @@
     font-weight: lighter, normal, bold, bolder;
 }
 
-
-html {
+html, label, select, textarea {
     font-family: poppins;
     font-weight: normal;
 }
