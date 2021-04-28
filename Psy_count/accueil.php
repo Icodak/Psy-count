@@ -10,6 +10,7 @@
   <header>
 	<div id="menuBar1">
 
+<!--Include page php-->
 		<?php include("menuBar.php") ?>
 		<li><h2 id="headerText"> PSY-Count</h2></li>
 
@@ -23,11 +24,6 @@
 		<li><button class="button button4">Découvrir</button></li>
 	</div>
 </header>
-
-
-
-Test branch Nicolas
-
 
 
 <body>
@@ -163,6 +159,16 @@ Test branch Nicolas
 			<li>01 23 45 67 89</li>
 
 			</span>
+		
+
+
+
+
+
+
+
+
+
 		
 		</div>
 

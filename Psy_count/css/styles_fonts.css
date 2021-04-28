@@ -1,0 +1,24 @@
+@font-face {
+    font-family: "poppins";
+    src: url("../fonts/POPPINS-LIGHT.TTF") format("truetype"),
+    url("../fonts/POPPINS-REGULAR.TTF") format("truetype"),
+    url("../fonts/POPPINS-BOLD.TTF") format("truetype"),
+    url("../fonts/POPPINS-EXTRABOLD.TTF") format("truetype");
+    font-weight: lighter, normal, bold, bolder;
+}
+
+html, label, select, textarea {
+    font-family: poppins;
+    font-weight: normal;
+}
+
+h1 {
+    font-weight: lighter;
+}
+
+button {
+    font-weight: lighter;
+}
+.white-text {
+    color: white;
+}

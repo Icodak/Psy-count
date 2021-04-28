@@ -45,7 +45,7 @@ try{
       if ($isPasswordCorrect) {
         $_SESSION['type']=$resultat3['permission_lvl'];
         $_SESSION['connexion']='1';
-        $_SESSION['ID']=$resultat2['ID'];
+        $_SESSION['ID']=$resultat2['ID_Utilisateur'];
         header('Location: accueil.php');
       }
       else {

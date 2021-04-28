@@ -1,14 +1,72 @@
-html, body {
- margin:0;
- padding:0;
- background: linear-gradient(white, #BB66BF);
- }
+html{
+  font-family: Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
 
 #form{
   display: block; 
   margin: 5%; 
   background-color:white;
 }
+
+.test{
+  background-color: teal;
+}
+
+#alertContact{
+  display: block; 
+  margin: 5%; 
+  border: 0.1em solid #BB66BF;
+  background-color: lightcoral;
+  color: white;
+}
+
+@media screen and (min-width:800px) {
+  #form{
+    display: block; 
+    margin-left: 20%;
+    margin-right: 20%;
+    background-color:white;
+  }
+
+  textarea{
+    resize: inherit;
+    max-width: 60%;
+  }
+
+  input{
+    max-width: 60%;
+  }
+}
+
+.form_label{
+  border-bottom: 0.1em solid #7B28A2; 
+  color:black
+}
+
+.form_content{
+  margin:inherit;
+  border: 0.1em solid #B25DBB;
+  color: darkgray;
+}
+
+textarea{
+  font-family: inherit;
+  resize: inherit;
+  width: 90%;
+}
+
+input{
+  width: 90%;
+}
+
+/**/
+
+html, body {
+ margin:0;
+ padding:0;
+ background: linear-gradient(white, #BB66BF);
+ }
+
 
 .button4 {
   border-radius: 12px;
@@ -31,9 +89,15 @@ li{
 
 #headerText{
   color:#7B28A2;
-  margin:5px;
 }
 
+#menuBar1{
+  background-position: top;
+  background-repeat:no-repeat;
+  background-size: 100%;
+  padding-bottom: 10%;
+  padding-top: 2%;
+}
 
 header{
   text-align: center;
@@ -87,7 +151,6 @@ img {
   max-height: 750px;
   outline: none;
 }
-
 
 #presentation1{
     display: flex;
