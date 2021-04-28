@@ -3,26 +3,11 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  
+
   padding: 10px 0px;
   background-color: #ffffff56;
 }
 
-.button {
-  border-radius: 30px;
-  background-color: #aa3558;
-  color: white;
-  font-size: 3.5vw;
-  border: none;
-  letter-spacing: 0.2px;
-  padding: 10px 20px;
-  margin: 0px 10px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  cursor: pointer;
-  transition: all 0.2s ease 0s;
-}
 
 a {
   text-decoration: none;
@@ -30,16 +15,16 @@ a {
 }
 
 #psyfimenutext {
+  display: none;
   margin-right: 10%;
   font-weight: bold;
   font-size: 150%;
 }
 
 .menuText {
-  text-decoration-color: black;
   margin-left: 10px;
   margin-right: 10px;
-  font-size: 110%;
+
 }
 
 .menuText:hover {
@@ -50,7 +35,6 @@ a {
 #psyfimenutext:hover {
   text-decoration: none;
 }
-
 
 #navbar {
   width: 100%;
@@ -63,39 +47,31 @@ nav {
   border: none;
 }
 
-@media only screen and (max-width: 1000px) {
 
+nav p, nav a, nav .button {
+  font-size: 2vw;
 }
 
+@media (min-width: 550px) {
+  nav p, nav a, nav .button {
+    font-size: 15px;
 
-@media (min-width: 500px) {
-  p,a, .button {
-    font-size: 8px;
   }
-
-
 }
-
 
 @media (min-width: 900px) {
   #psyfimenutext {
-    display: none;
+    display: flex;
   }
-
-
-  p, a,.button {
-    font-size: 10px;
+  nav p, nav a, nav .button {
+    font-size: 15px;
   }
-
-
 }
 
 
 @media (min-width: 1200px) {
-
-  p, a,.button {
+  nav p, nav a, nav .button {
     font-size: 20px;
   }
-
 
 }
