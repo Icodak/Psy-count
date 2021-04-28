@@ -167,7 +167,7 @@
 
 <div id="values">
 
-  <input  type="" name="" placeholder="value">
+  <input  type="text" name="" placeholder="value">
 
   <input type="button" class="button" value="Besoin d'aide ?">
 

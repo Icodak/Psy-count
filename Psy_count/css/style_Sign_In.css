@@ -41,13 +41,10 @@ body{
 	margin-right: 10%;
 	margin-left: 10%;
 	font-size: 20px;
+	flex-wrap: wrap;
 }
 
-#buttonSignIn{
-	display: flex;
-	flex: row;
-	justify-content: space-around;
-}
+
 
 
 ::-webkit-input-placeholder {
@@ -81,7 +78,9 @@ body{
 
 }
 
-
+.White-color{
+	color: white;
+}
 
 li{
 	list-style: none;
@@ -96,7 +95,9 @@ input{
 	 border: none;
 	 color: white;
 	 border-bottom: 2px solid white ;
-	 padding: 15px;
+	 padding-bottom: 15px;
+	 padding-top: 15px;
+	 padding-right: 0px;
 	 width: 100%;
 	 font-size: 35px;
 }
@@ -169,6 +170,35 @@ button:focus {
 }
 
 
+#buttonSignIn{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
 
 
 
+
+@media screen and (max-width: 992px) {
+	#buttonSignIn{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+	.button4{
+		margin-bottom: 2%;
+	}
+	#signInText{
+		order: 1;
+	}
+	#signUpMedecin{
+		order: 3;
+	}
+	#signUpText{
+		order: 2;
+	}
+	#titleText {
+		justify-content: space-around;
+	}
+  }
+  

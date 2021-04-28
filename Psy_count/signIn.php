@@ -19,10 +19,16 @@ session_start(); // On démarre la session AVANT toute chose
         <div id="accountText">
 
             <div id="titleText">
-                <a href="signIn.php"> <span class="latoType title" id="signInText"> S'identifier </span><br></a>
-                <a href="signUpMedecin.php"> <span class="latoType title" id="signUpMedecin">S'inscrire comme
-                        Medecin</span><br></a>
-                <a href="signUp.php"> <span class="latoType title" id="signUpText"> S'inscrire </span></a>
+                <div id="signInText"> 
+                <a href="signIn.php" class="latoType title" > S'identifier </a>
+                </div>
+                <div id="signUpMedecin">
+                <a href="signUpMedecin.php" class="latoType title" >S'inscrire comme
+                        Medecin</a>
+                </div>
+                <div id="signUpText">
+                <a href="signUp.php" class="latoType title" > S'inscrire </a>
+                </div>
             </div>
         </div>
 
@@ -32,26 +38,25 @@ session_start(); // On démarre la session AVANT toute chose
                 <form action="connexion.php" method="post">
                     <div id="informationInput">
                         <h2 class="connexionText">Email </h2>
-                        <input size=45% name="Email" type="email">
+                        <input  name="Email" type="email">
                         <h2 class="connexionText">Mot de passe </h2>
-                        <input size=45% name="Password" type="password">
-
+                        <input name="Password" type="password">
                     </div>
-                    <li>
+                  
                         <div id="buttonSignIn">
                             <div>
-                                <input class="button4" type="submit" name="submit" id="signInbutton"
-                                    value="Connexion">
+                                <input class="button4" type="submit" name="submit" id="signInbutton" value="Connexion">
                             </div>
                             <div>
-                                <input class="button4" type="button" onclick="locationAccueil()" name="submit" id="quitterbutton"
-                                    value="Quitter">
+                                <input class="button4" type="button" onclick="locationAccueil()" name="submit"
+                                    id="quitterbutton" value="Quitter">
                             </div>
                         </div>
-                    </li>
+                   
                     <li>
-                        <span style="color:white">
-                            <?php if(!empty($_SESSION['message2'])){echo $_SESSION['message2'];}?></span>
+                        <span class="White-color">
+                            <?php if(!empty($_SESSION['message2'])){echo $_SESSION['message2'];}?>
+                        </span>
                     </li>
 
                 </form>
