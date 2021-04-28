@@ -13,7 +13,7 @@ session_start();
   <nav id="navbar">
     <span class="menuText" id="psyfimenutext"> Psy-fi</span>
     <a href="accueil.php" class="menuText"> Accueil </a>
-    <a href="" class="menuText"> Forum </a>
+    <a href="forum.php" class="menuText"> Forum </a>
 
     <!--'type' hek connexion-->
     <?php
