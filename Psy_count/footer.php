@@ -26,7 +26,7 @@
     <section class="last-footer">
         <p>© 2021 PSY-fi</p>
         <div>
-            <a href="#">Politique de confidentialité </a>
+            <a href="policy.php">Politique de confidentialité </a>
             <a href="TermsOfUse.php">Conditions d'utilisation </a>
         </div>
     </section>
