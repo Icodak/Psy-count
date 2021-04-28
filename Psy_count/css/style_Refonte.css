@@ -1,0 +1,111 @@
+/*REFONTE CSS*/
+html{
+    box-sizing: border-box;
+}
+
+.headerText{
+    text-align: center;
+    color: #B25DBB;
+}
+
+/*POLICY*/
+
+.policy_box{
+    background-color: white;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    width: 80%;
+    /*height: 502px;*/
+    padding: 2%;
+    margin: 20%;
+}
+
+
+/*CONTACT/MESSAGERIE*/
+.form{
+    background-color: white;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    width: 100%;
+    /*height: 502px;*/
+    height: fit-content;
+    padding: 2%;
+    min-width: 50%;
+}
+
+.flex_column{
+    display: flex;
+    flex-wrap: column wrap;
+    margin: 5% 10% 5% 10%;
+    padding: 2%;
+}
+
+.form_field{
+    display: flex;
+}
+
+.form_group{
+    width: 100%;
+}
+
+.flex_row{
+    display: flex;
+    flex-wrap: row wrap;
+}
+
+.form_content{
+    border-bottom: 2px solid gray;
+    display: fixed;   
+    width: 95%;
+    outline: none;
+    padding: 2%;
+    resize: none;
+}
+
+.form_content:hover{
+    resize: none;
+    border-bottom: 2px solid #B25DBB;
+    background: none;
+    transition-duration: 0.2s;
+}
+
+.form_label{
+    display: block;
+    padding: 2%;
+    margin-top: 2%;
+}
+
+input[type=text], select, textarea{
+    resize: none;
+    border-bottom: 2px solid grey;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background: none;
+    padding: 2%;
+}
+
+.form_content::placeholder { 
+    font-family : "poppins";
+    font-size: 15px;
+}
+
+/*Boutons*/
+.form_button {
+    background-color: white;
+    color: #B25DBB;
+    border: 2px solid #B25DBB;
+    text-align: center;
+    text-decoration: none;
+    font-size: inherit;
+    margin: 5% 0% 0% 0%;
+    cursor: pointer;
+    border-radius: 1px;
+    width: 100%;
+    font-size: 20px;
+  }
+  
+.form_button:hover {
+    background-color: #B25DBB;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    color: white;
+    transition-duration: 0.5s;
+  }
