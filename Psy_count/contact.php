@@ -39,6 +39,7 @@ try {
     <title>Home</title>
     <link rel="icon" type="image/png" href="images/psy-fi.png" />
     <link rel="stylesheet" href="css//style_Refonte.css">
+    <link rel="stylesheet" href="css//styles_fonts.css">
 </head>
 
 <header>

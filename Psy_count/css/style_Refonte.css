@@ -1,11 +1,5 @@
 /*REFONTE CSS*/
-@font-face {
-    font-family: "poppins";
-    src: url("../fonts/POPPINS-REGULAR.TTF") format("truetype");
-}
-
 html{
-    font-family: "poppins", Oxygen;
     box-sizing: border-box;
 }
 
