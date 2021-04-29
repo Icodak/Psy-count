@@ -1,11 +1,13 @@
 /*REFONTE CSS*/
-html{
+html, body{
     box-sizing: border-box;
+    margin: 0px;
+    border: 0px;
 }
 
 .headerText{
     text-align: center;
-    color: #B25DBB;
+    color: #aa3558;
 }
 
 /*POLICY*/
@@ -62,7 +64,7 @@ html{
 
 .form_content:hover{
     resize: none;
-    border-bottom: 2px solid #B25DBB;
+    border-bottom: 2px solid #aa3558;
     background: none;
     transition-duration: 0.2s;
 }
@@ -96,8 +98,8 @@ optgroup {
 /*Boutons*/
 .form_button {
     background-color: white;
-    color: #B25DBB;
-    border: 2px solid #B25DBB;
+    color: #aa3558;
+    border: 2px solid #aa3558;
     text-align: center;
     text-decoration: none;
     font-size: inherit;
@@ -109,8 +111,18 @@ optgroup {
   }
   
 .form_button:hover {
-    background-color: #B25DBB;
+    background-color: #aa3558;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
     color: white;
     transition-duration: 0.5s;
+  }
+
+  .image-scale {
+      width: 100%;
+  }
+
+  img {
+      width: 100%;
+      height: auto;
+      object-fit: scale-down;
   }

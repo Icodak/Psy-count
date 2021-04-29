@@ -10,14 +10,10 @@ body{
 	position: relative;
 }
 
-header{
-	text-align: center;
-	padding-top: 3%;
-}
 #faqText{
 	user-select: none;
 	text-align: center;
-	background-color: #BB66BF;
+	background-color: #aa3558;
 	margin-left: 6%;
 	margin-right: 6%;
 	padding-top: 1%;

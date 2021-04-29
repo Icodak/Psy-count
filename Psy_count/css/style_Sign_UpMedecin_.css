@@ -1,227 +1,211 @@
-
 html, body {
-	margin:0;
-	padding:0;
-	}
-   
-   
-   body{
-	   background: linear-gradient(white, #BB66BF);
-	   width:100%;
-	   display: flex;
-	   justify-content: center;
-   }
-   
-   .latoType{
-	   font-family: Lato; 
-	   font-weight: 10;
-	   color: white;
-   }
-   
-   .title{
-	   font-size: 200%;
-   }
-   #titleText{
-	   margin-bottom: 2%;
-	   padding-top: 5%;
-	   display: flex;
-	   justify-content: space-around;
-	   margin-right: 10%;
-	   margin-left: 10%;
-   }
-   
-   #signInbutton{
-	   max-width: 100px;
-   }
-   
-   
-   button:focus {
-	   outline:none;
-   }
-   
-   
-   #closeButton2{
-	   background-color: #FFF0F0;
-	   border-radius: 70%;
-	   border: none;
-	   height: 40px;
-	   width: 40px;
-	   cursor:pointer;
-   }
-   
-   ::-webkit-input-placeholder {
-	  text-align: center;
-   }
-   
-   :-moz-placeholder { /* Firefox 18- */
-	  text-align: center;  
-   }
-   
-   ::-moz-placeholder {  /* Firefox 19+ */
-	  text-align: center;  
-   }
-   
-   #informationInput{
-	   display: flex;
-	   flex-direction: column;
-	   width: 100%;
-   }
-   
-   
-   :-ms-input-placeholder {  
-	  text-align: center; 
-   }
-   
-   #checkBoxContainer{
-	   display: flex;
-	   flex-direction: row;
-	   align-items: center;
-	   font-size: 35px;
-	   text-align: center;
-	   justify-content: center;
-   }
+	margin: 0;
+	padding: 0;
+}
 
-   #signMedecinButton{
-	   display: flex;
-	   flex-direction: row;
-	   justify-content: space-around;
-   }
+body {
+	background-color: white;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	font-family: poppins;
+}
 
-   input{
-	   background-color: #460F45;
-	   border: none;
-	   color: white;
-	   border-bottom: 2px solid white ;
-	   font-size: 35px;
-   }
-   
-   #signUpMedecinText{
-	   border-bottom: 4px solid purple;
-   }
-   
-   .latoType:hover{
-	   border-bottom: 4px solid purple;
-   }
-   
-   #checkboxText{
-	   margin-top: 5%;
-	   margin-bottom: 5%;
-	   font-size: 25px;
-   }
-   .connexionText{
-	   color: white;
-	   font-size: 40px;
-	   display: flex;
-	   justify-content: left;
-   }
-   
-   .button4 {
-	background-color: #B1589E;
+.latoType {
+	font-weight: 10;
+	color: white;
+}
+
+.title {
+	font-size: 200%;
+}
+
+#titleText {
+	margin-bottom: 2%;
+	padding-top: 5%;
+	display: flex;
+	justify-content: space-around;
+	margin-right: 10%;
+	margin-left: 10%;
+}
+
+#signInbutton {
+	max-width: 100px;
+}
+
+button:focus {
+	outline: none;
+}
+
+::-webkit-input-placeholder {
+	text-align: center;
+}
+
+:-moz-placeholder {
+	/* Firefox 18- */
+	text-align: center;
+}
+
+::-moz-placeholder {
+	/* Firefox 19+ */
+	text-align: center;
+}
+
+#informationInput {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+:-ms-input-placeholder {
+	text-align: center;
+}
+
+#checkBoxContainer {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	font-size: 35px;
+	text-align: center;
+	justify-content: center;
+}
+
+#signMedecinButton {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-around;
+}
+
+input {
+	background-color: #460F45;
 	border: none;
 	color: white;
+	border-bottom: 2px solid white;
+	font-size: 35px;
+}
+
+#signUpMedecinText {
+	border-bottom: 4px solid purple;
+}
+
+.latoType:hover {
+	border-bottom: 4px solid purple;
+}
+
+#checkboxText {
+	margin-top: 5%;
+	margin-bottom: 5%;
+	font-size: 25px;
+}
+
+.connexionText {
+	color: white;
+	font-size: 40px;
+	display: flex;
+	justify-content: left;
+}
+
+.button {
+	border-radius: 30px;
+	background-color: #aa3558;
+	color: white;
+	font-size: 3.5vw;
+	border: none;
+	letter-spacing: 0.2px;
+	padding: 10px 20px;
+	margin: 0px 10px;
 	text-align: center;
 	text-decoration: none;
-	display: inline-block;
-	cursor:pointer;
-	font-size: 45px;
-	width: 250px;
-	padding: 15px;
-   
-   }
-   .button4:hover{
-	background-color: #944A84;
-}
-   
-   .button5 {
-	   background-color: rgb(177, 88, 158);
-	   border: none;
-	   color: white;
-	   text-align: center;
-	   text-decoration: none;
-	   display: inline-block;
-	   padding-right: 10%;
-	   padding-left: 10%;
-	   padding-bottom: 2%;
-	   padding-top: 2%;
-	   cursor:pointer;
-	   font-size: 30px;
-	 
-	 }
-   
-   #quitter2{
-	   min-width: 130px;
-   }
-   
+	display: flex;
+	cursor: pointer;
+	transition: all 0.2s ease 0s;
+  }
+
+  .button#submit{
+	background-color: grey;
+  }
   
-   
-   li{
-	   list-style: none;
-	   margin-bottom: 10px;
-   }
-   a{
-	   text-decoration-line: none;
-   }
-   input:focus{
-	   outline: none;
-   }
-   
-   
-   .alignCenter{
-	   text-align : center;
-   }
-   
-   #informationblock{
-	   margin-top: 8%;
-   }
-   
-   input[id="checkbox"]{
-	   width: 40px;
-	   height: 40px;
-	   margin-right: 20px;
-   }
+  .button:hover{
+	transition: all 0.2s ease 0s;
+	background-color: #6d2339;
+	letter-spacing: 1px;
+  }
+  
+  .button:active {
+	transition: all 0.1s ease 0s;
+	background-color: rgb(184, 38, 99);
+	letter-spacing: 0px;
+  }
 
+#quitter2 {
+	min-width: 130px;
+}
 
-   .responsive{
-	   margin-top: 9%;
-   }
-   
-   #imageBackground{
-	   margin-top: 5%;
-	   padding-bottom: 3%;
-	   padding-top: 3%;
-	   max-width: 700px;
-   }
-   
-   #signUpinformation{
-	   width: 100%;
-	   display: flex;
-	   justify-content: center;
-   }
-   
-   #signUp{
-	   flex-wrap: wrap;
-	   overflow: auto;
-	   margin-top: 1%;
-	   vertical-align:middle;
-	   background-color: #460F45 ;
-	   width: 75%;
-	   min-height: 400px;
-   
-   }
-   
-   }
-   #accountText{
-	   margin-left: 5%;
-	   text-align: center;
-   }
-   
-   #divMedecin{
-	   display: flex;
-	   justify-content: center;
-   }
-   
-   @media only screen and (max-width: 200px) {
-	  
-   }
+li {
+	list-style: none;
+	margin-bottom: 10px;
+}
 
+a {
+	text-decoration-line: none;
+}
 
+input:focus {
+	outline: none;
+}
+
+.alignCenter {
+	text-align: center;
+}
+
+#informationblock {
+	margin-top: 8%;
+}
+
+[type="checkbox"] {
+	width: 40px;
+	height: 40px;
+	font-size: 20px;
+	margin-right: 20px;
+}
+
+.responsive {
+	margin-top: 9%;
+}
+
+#imageBackground {
+	margin-top: 5%;
+	padding-bottom: 3%;
+	padding-top: 3%;
+	max-width: 700px;
+}
+
+#signUpinformation {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+#signUp {
+	flex-wrap: wrap;
+	overflow: auto;
+	margin-top: 1%;
+	vertical-align: middle;
+	background-color: #460F45;
+	width: 75%;
+	min-height: 400px;
+	box-shadow: 0px 0px 10px rgb(73, 73, 73);
+}
+
+#accountText {
+	margin-left: 5%;
+	text-align: center;
+}
+
+#divMedecin {
+	display: flex;
+	justify-content: center;
+}
+
+@media only screen and (max-width: 200px) {}

@@ -8,7 +8,8 @@ session_start(); // On démarre la session AVANT toute chose
     <meta charset="utf-8">
     <title>S'identifier</title>
     <link rel="icon" type="image/png" href="images/psy-fi.png" />
-    <link rel="stylesheet" href="css//style_Sign_In.css">
+    <link rel="stylesheet" href="css/style_fonts.css">
+    <link rel="stylesheet" href="css/style_Sign_In.css">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
     <script type="text/javascript" src="javaScript/javaScriptCode.js"></script>
 </head>
@@ -24,7 +25,7 @@ session_start(); // On démarre la session AVANT toute chose
                 </div>
                 <div id="signUpMedecin">
                 <a href="signUpMedecin.php" class="latoType title" >S'inscrire comme
-                        Medecin</a>
+                        Médecin</a>
                 </div>
                 <div id="signUpText">
                 <a href="signUp.php" class="latoType title" > S'inscrire </a>
@@ -44,13 +45,12 @@ session_start(); // On démarre la session AVANT toute chose
                     </div>
                   
                         <div id="buttonSignIn">
-                            <div>
-                                <input class="button4" type="submit" name="submit" id="signInbutton" value="Connexion">
-                            </div>
-                            <div>
-                                <input class="button4" type="button" onclick="locationAccueil()" name="submit"
+                            
+                                <input class="button" type="submit" name="submit" id="signInbutton" value="Connexion">
+                            
+                                <input class="button" type="button" onclick="locationAccueil()" name="submit"
                                     id="quitterbutton" value="Quitter">
-                            </div>
+                            
                         </div>
                    
                     <li>

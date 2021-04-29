@@ -105,14 +105,14 @@
 			<hr size=3 class="separator">
 			<div class="discordImages">
 				<div class="discordGroup">
-					<div class="discord-description"><img src="images/nicolas.png"><p>Nicolas</p></div>
-					<div class="discord-description"><img src="images/victoria.png"><p>Victoria</p></div>
-					<div class="discord-description"><img src="images/justin.png"><p>Justin</p></div>
+					<div class="discord-description"><img src="images/nicolas.jpg"><p>Nicolas</p></div>
+					<div class="discord-description"><img src="images/victoria.jpg"><p>Victoria</p></div>
+					<div class="discord-description"><img src="images/justin.jpg"><p>Justin</p></div>
 				</div>
 				<div class="discordGroup">
-					<div class="discord-description"><img src="images/amanda.png"><p>Amanda</p></div>
-					<div class="discord-description"><img src="images/arsene.png"><p>Arsène</p></div>
-					<div class="discord-description"><img src="images/thibault.png"><p>Thibault</p></div>
+					<div class="discord-description"><img src="images/amanda.jpg"><p>Amanda</p></div>
+					<div class="discord-description"><img src="images/arsene.jpg"><p>Arsène</p></div>
+					<div class="discord-description"><img src="images/thibault.jpg"><p>Thibault</p></div>
 				</div>
 			</div>
 		</div>

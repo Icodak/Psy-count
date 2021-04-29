@@ -193,7 +193,7 @@ justify-content: center;
 .discordGroup {
   display: flex;
   margin-bottom: 5%;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .discordGroup>div {

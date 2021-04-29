@@ -66,8 +66,8 @@
 
             <div class="consultButton">
                 <h4 class="consultbuttonText">Médecin traitant: </h4>
-                <button class="button4" onclick="dataModification()"> Modifier mes données </button>
-                <button class="button4" onclick=""> Consulter </button>
+                <button class="button" onclick="dataModification()"> Modifier mes données </button>
+                <button class="button" onclick=""> Consulter </button>
             </div>
         </div>
 

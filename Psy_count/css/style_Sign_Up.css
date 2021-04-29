@@ -6,16 +6,16 @@ html, body {
 
 
 body{
-	background: linear-gradient(white, #BB66BF);
+	background-color: white;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	min-height: 1080px;
+	font-family: poppins;
 }
 
 .latoType{
-	font-family: Lato; 
 	font-weight: 10;
 	color: white;
 }
@@ -122,42 +122,36 @@ input[id="checkbox"]{
 	margin-right: 20px;
 }
 
-.button4 {
-  background-color: #B1589E;
-  border: none;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  padding-right: 10%;
-  padding-left: 10%;
-  padding-bottom: 2%;
-  padding-top: 2%;
-  cursor:pointer;
-  font-size: 30px;
-  margin-bottom: 5%;
-
-}
-
-.button4:hover{
-	background-color: #944A84;
-}
-
-
-.button5 {
-	background-color: rgb(177, 88, 158);
-	border: none;
+.button {
+	border-radius: 30px;
+	background-color: #aa3558;
 	color: white;
+	font-size: 3.5vw;
+	border: none;
+	letter-spacing: 0.2px;
+	padding: 10px 20px;
+	margin: 0px 10px;
 	text-align: center;
 	text-decoration: none;
-	display: inline-block;
-	padding-right: 10%;
-	padding-left: 10%;
-	padding-bottom: 2%;
-	padding-top: 2%;
-	cursor:pointer;
-	font-size: 30px;
+	display: flex;
+	cursor: pointer;
+	transition: all 0.2s ease 0s;
+  }
+
+  .button#submit{
+	background-color: grey;
+  }
   
+  .button:hover{
+	transition: all 0.2s ease 0s;
+	background-color: #6d2339;
+	letter-spacing: 1px;
+  }
+  
+  .button:active {
+	transition: all 0.1s ease 0s;
+	background-color: rgb(184, 38, 99);
+	letter-spacing: 0px;
   }
 
 #quitter2{
@@ -210,9 +204,9 @@ input:focus{
 	vertical-align:middle;
 	background-color: #460F45 ;
 	width: 75%;
+	box-shadow: 0px 0px 10px rgb(73, 73, 73);
 }
 
-}
 #accountText{
 	margin-left: 5%;
 	text-align: center;
