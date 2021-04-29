@@ -134,6 +134,11 @@ img {
   margin: 10px;
 }
 
+.En-savoir-plus{
+display: flex;
+justify-content: center;
+}
+
 .column3 {
   margin-right: 3%;
 }

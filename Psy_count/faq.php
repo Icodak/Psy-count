@@ -55,7 +55,7 @@
           if( $_SESSION["faqModification"]=='true'){
       ?>
              <form method="post" action="faqFonctionTrois.php">
-              <h2>QESTION</h2>
+              <h2>QUESTION</h2>
             <div class="question">
               <div class="questionText">
                 <textarea name="question"><?php echo $resultat3[$_SESSION["faqID"]][0]?></textarea>
@@ -63,7 +63,7 @@
             </div>
           </div>
             </div>
-                <h2>REPONSE</h2>
+                <h2>R&EacutePONSE</h2>
                 <div class="question">
                       <textarea name="reponse"><?php echo $resultat3[$_SESSION["faqID"]][1]?></textarea>
                  </div>

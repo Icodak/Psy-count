@@ -46,8 +46,8 @@
 					adipiscing elit, sed do eiusmod tempor incididunt <br>
 					ut labore et dolore magna aliqua.
 					</p>
-				</div>
-				<div><button class="button">En savoir plus</button></div>
+				</div >
+				<div  class="En-savoir-plus"><button class="button">En savoir plus</button></div>
 			</div>
 			<div class="column1">
 				<div><img src="images/Placement_Area_ASSETsmallSIZED_di.png" alt="" /></div>
@@ -59,8 +59,8 @@
 					adipiscing elit, sed do eiusmod tempor incididunt <br>
 					ut labore et dolore magna aliqua.
 					</p>
-				</div>
-				<div><button class="button">En savoir plus</button></div>
+				</div >
+				<div class="En-savoir-plus"><button class="button">En savoir plus</button></div>
 			</div>
 			<div class="column1">
 				<div><img src="images/Placement_Area_ASSETsmallSIZED_dy.png" alt="" /></div>
@@ -73,7 +73,7 @@
 					ut labore et dolore magna aliqua.
 					</p>
 				</div>
-				<div><button class="button">En savoir plus</button></div>
+				<div  class="En-savoir-plus"><button class="button">En savoir plus</button></div>
 			</div>
 		</div>
 	</section>
