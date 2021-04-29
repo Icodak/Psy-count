@@ -8,12 +8,7 @@
     <link rel="stylesheet" href="css//style_Refonte.css">
 </head>
 
-<header>
-    <div>
-        <?php include("menuBar.php") ?>
-        <h2 class="headerText"> Consultation et Aide</h2>
-    </div>
-</header>
+
 
 <?php //Fonction Récup Mail du Médecin traitant 
 try {
@@ -44,6 +39,12 @@ $recipient_from_users = $dbMsgInt->query('SELECT ID_Utilisateur, nom, prenom FRO
 ?>
 
 <body>
+<header>
+    <div>
+        <?php include("menuBar.php") ?>
+        <h2 class="headerText"> Consultation et Aide</h2>
+    </div>
+</header>
 
     <div class="background"></div>
     <?php
@@ -81,7 +82,7 @@ $recipient_from_users = $dbMsgInt->query('SELECT ID_Utilisateur, nom, prenom FRO
             </form>
             
         </div>
-        <img src="css//images_css/psy-fi.png">
+    
     </div>
 
 </body>

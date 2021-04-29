@@ -119,7 +119,6 @@ try {
                 </form>
 
             </div>
-            <img src="css//images_css/psy-fi.png">
         </div>
 
     <?php
