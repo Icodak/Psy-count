@@ -111,7 +111,7 @@ try{
 
                         <div class="topic-right">
 
-                            <h3>Prenom : </h3>
+                            <h3>Pr&eacutenom : </h3>
                         </div>
 
                         <div class="topic-meta">
@@ -195,7 +195,7 @@ try{
                     </a>
                     </div>
                     <div>
-                    <a onclick="ReversedataModification()" class="new-subject">
+                    <a href="myData.php" class="new-subject">
                         <p>Annuler</p>
                     </a>
                     </div>

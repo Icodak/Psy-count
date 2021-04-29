@@ -296,7 +296,13 @@ form{
 }
 
 .topic-right{
-	min-width: 300px;
+	min-width: 400px;
+}
+
+
+.frame-header h1{
+	font-size: 50px;
+	font-weight: bold;
 }
 
 .end-main{
@@ -506,4 +512,5 @@ form{
 	width: 200px;
 	font-size: 15px;
 	word-break: break-all;
+}
 }
