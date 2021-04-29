@@ -47,7 +47,7 @@ session_start();
 
     <a href="faq.php" class="menuText"> FAQ </a>
     <a href="accueil.php#menuBarAnchor" class="menuText"> A propos </a>
-   
+
 
     <?php
     if (isset($_SESSION['connexion']) && $_SESSION['connexion'] == 1) {
@@ -68,8 +68,16 @@ session_start();
     <?php
     }
     ?>
-  
 
+    <?php
+    if (isset($_SESSION['type']) && (isset($_SESSION['connexion']) || $_SESSION['connexion'] = 1)) {
+      if ($_SESSION['type'] == 'patient') {
+    ?>
+        <a href="contactPatient.php" class="menuText"> Consulter </a>
+    <?php
+      }
+    }
+    ?>
 
     <?php
     if (!isset($_SESSION['connexion']) || $_SESSION['connexion'] != 1) {
@@ -93,11 +101,10 @@ session_start();
     if (isset($_SESSION['connexion'])) {
       if ($_SESSION['connexion'] == 1) {
     ?>
-        <a href="deconnexion.php"> <button class="button"> deconnexion </button> </a>
+        <a href="deconnexion.php"> <button class="button"> Déconnexion </button> </a>
     <?php
       }
     }
     ?>
   </nav>
 </div>
-

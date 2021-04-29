@@ -5,7 +5,7 @@
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="icon" type="image/png" href="images/psy-fi.png" />
-    <link rel="stylesheet" href="css//style_Refonte.css">
+    <link rel="stylesheet" href="css//style_TermsOfUses.css">
 </head>
 
 <header>
@@ -45,10 +45,10 @@
                     professionnels de santé.</p>
 
 
-                <h3>FINALITÉS ET TRAITEMENTS DES DONNEES A CARACTERE
-                    PERSONNEL COLLECTEES</h3>
+                <h1>FINALITÉS ET TRAITEMENTS DES DONNEES A CARACTERE
+                    PERSONNEL COLLECTEES</h1>
 
-                <h4>1. Nécessité de la collecte</h4>
+                <h1>1. Nécessité de la collecte</h1>
 
                 <p>Lors de son utilisation de la Plateforme, l’Utilisateur communique à PSY-FI certaines Données à
                     caractère personnel nécessaires à la fourniture du Service demandé. Si l’Utilisateur ne souhaite
@@ -56,7 +56,7 @@
                     PSY-FI, il se peut que l’Utilisateur ne puisse pas accéder à certaines parties du Site ou des
                     Services et que PSY-FI soit dans l’impossibilité de répondre à sa demande.</p>
 
-                <h4>2. Durées de conservation</h4>
+                <h1>2. Durées de conservation</h1>
 
                 <p>Toutes les Données à caractère personnel collectées sont traitées et conservées pour une durée
                     limitée en fonction de la finalité du traitement et de la législation applicable aux Services.
@@ -74,8 +74,8 @@
                     Utilisateurs pour des durées plus longues que celles indiquées ci-dessous afin d’assurer aux
                     Patients un suivi médical et une prise en charge optimale.</p>
 
-                <h3>SOUS TRAITANTS ET DESTINATAIRES DES DONNEES A
-                    CARACTERE PERSONNEL</h3>
+                <h1>SOUS TRAITANTS ET DESTINATAIRES DES DONNEES A
+                    CARACTERE PERSONNEL</h1>
 
                 <p>LES DONNÉES À CARACTÈRE PERSONNEL DE L’UTILISATEUR NE SONT PAS TRANSMISES À
                     DES ACTEURS COMMERCIAUX OU PUBLICITAIRES SANS CONSENTEMENT</p>
@@ -99,7 +99,7 @@
                     Données à caractère personnel, PSY-FI veille à ce que les mesures nécessaires soient mises en
                     place conformément à la Loi Informatique et Libertés et au RGPD.</p>
 
-                <h3>LES DROITS DES UTILISATEURS</h3>
+                <h1>LES DROITS DES UTILISATEURS</h1>
 
 
                 <p>Conformément à la réglementation européenne en vigueur, les Utilisateurs de PSY-FI disposent
@@ -139,7 +139,7 @@
                         </p>
 
                 </ul>
-                <h3>RÉSEAUX SOCIAUX</h3>
+                <h1>RÉSEAUX SOCIAUX</h1>
 
                 <p>Chaque Utilisateur a la possibilité de cliquer sur les icônes dédiées aux réseaux sociaux Twitter,
                     Facebook, Linkedin et Instagram figurant sur le Site ou dans la Plateforme PSY-FI.
@@ -158,12 +158,12 @@
                     à ses Données à caractère personnel.</p>
 
 
-                <h3>INFORMATIONS PERSONNELLES ET MINEURS</h3>
+                <h1>INFORMATIONS PERSONNELLES ET MINEURS</h1>
 
                 <p>L’Utilisation des Services est réservée aux Utilisateurs personnes physiques de plus de quinze
                     (15) ans capables de souscrire des obligations conformément à la loi applicable.</p>
 
-                <h3>CONDITIONS D’APPLICATION DE LA POLITIQUE</h3>
+                <h1>CONDITIONS D’APPLICATION DE LA POLITIQUE</h1>
 
                 <p>PSY-FI est susceptible de modifier, compléter ou mettre à jour la présente Politique afin de
                     prendre en compte toute évolution légale, réglementaire, jurisprudentielle et/ou technique.

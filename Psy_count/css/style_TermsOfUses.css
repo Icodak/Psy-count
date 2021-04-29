@@ -35,7 +35,7 @@ header {
   	left: 0;
 
 }
-p{
+p, ul, li{
 	text-align: justify;
   	padding-left: 5%;
   	padding-right: 5%;

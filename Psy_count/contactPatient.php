@@ -22,7 +22,7 @@ try {
 
 
     if ($_SESSION['type'] = 'patient') {
-        echo 'Test messagerie patient : '.$_SESSION['ID']."\n\r";
+        //echo 'Test messagerie patient : '.$_SESSION['ID']."\n\r";
 
         //TODO : J'assigne d'office un Doc à un patient prcq on n'a pas encore la fonction 
         //pour que le médecin choisisse ses patient !
@@ -41,7 +41,7 @@ try {
 
         $ID_doc = $testSQL3->fetch();
         $_SESSION["ID_DocOfPatient"] = $ID_doc["ID_Medecin"];
-        echo "TEST".$_SESSION["ID_DocOfPatient"]."TEST";
+        //echo "TEST".$_SESSION["ID_DocOfPatient"]."TEST";
 
         //Trouver ID_Utilisateur du médecin traitant à partir de son ID_Medecin
         $testSQL4 = $dbMsg->query(
@@ -63,7 +63,7 @@ try {
         $ID_docMail = $testSQL5->fetch();
         $_SESSION["ID_DocMail"] = $ID_docMail["Email"];
 
-        echo "\nLe mail du patient d'ID_Utilisateur = " . $_SESSION['ID'] . " est " . $_SESSION["ID_DocMail"];
+        //echo "\nLe mail du patient d'ID_Utilisateur = " . $_SESSION['ID'] . " est " . $_SESSION["ID_DocMail"];
 
         //Get nom, prenom, Email, from ID_Utilisateur pour auto remplir le formulaire
 
@@ -80,9 +80,9 @@ try {
         $_SESSION["user_nom"] = $user_data["nom"];
         $_SESSION["user_mail"] = $user_data["Email"];
 
-        echo $_SESSION["user_prenom"] . $_SESSION["user_nom"] . $_SESSION["user_mail"];
+        //echo $_SESSION["user_prenom"] . $_SESSION["user_nom"] . $_SESSION["user_mail"];
     } else {
-        echo "Test messagerie médecin :";
+        //echo "Test messagerie médecin :";
     }
 } catch (Exception $e) {
     echo "Erreur :", $e->getMessage(), "\n";
@@ -174,7 +174,7 @@ try {
             </form>
             
         </div>
-        <img src="css//images_css/psy-fi.png">
+        <img src="images/psy-fi.png">
     </div>
 
     <?php

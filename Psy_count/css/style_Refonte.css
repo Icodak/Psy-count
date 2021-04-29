@@ -73,7 +73,7 @@ html{
     margin-top: 2%;
 }
 
-input[type=text], select, textarea{
+input[type=text], select, textarea, option{
     resize: none;
     border-bottom: 2px solid grey;
     border-top: none;
@@ -81,6 +81,11 @@ input[type=text], select, textarea{
     border-right: none;
     background: none;
     padding: 2%;
+    font-family: "poppins";
+}
+
+optgroup { 
+    font-family: "poppins";
 }
 
 .form_content::placeholder { 

@@ -59,10 +59,12 @@ $recipient_from_users = $dbMsgInt->query('SELECT ID_Utilisateur, nom, prenom FRO
 
                 <div class="form_group"> <label class="form_label" for="text"> Je souhaite contacter : </label>
                     <select class="form_content" name="msg_destinataire">
+                        <optgroup>
                         <?php while ($d = $recipient_from_users->fetch()) { ?>
                             <option><?= $d['nom'] . " " . $d['prenom'] //?= == php echo
                                     ?></option>
                         <?php } ?>
+                        </optgroup>
                     </select>
                 </div>
 
@@ -82,7 +84,7 @@ $recipient_from_users = $dbMsgInt->query('SELECT ID_Utilisateur, nom, prenom FRO
             </form>
             
         </div>
-    
+        <img src="images/psy-fi.png">
     </div>
 
 </body>

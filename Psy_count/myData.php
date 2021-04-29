@@ -65,9 +65,9 @@
             </div>
 
             <div class="consultButton">
-                <h4 class="consultbuttonText">Medecin traitant: </h4>
+                <h4 class="consultbuttonText">Médecin traitant: </h4>
                 <button class="button4" onclick="dataModification()"> Modifier mes données </button>
-                <button class="button4" onclick=""> consulter </button>
+                <button class="button4" onclick=""> Consulter </button>
             </div>
         </div>
 
@@ -103,7 +103,7 @@
                 </div>
 
                 <div class="graph">
-                    <h1>Reaction</h1>
+                    <h1>Réaction</h1>
 
                     <img class="responsive" src="images//reaction2.jpg">
 
