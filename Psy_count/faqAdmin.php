@@ -33,7 +33,7 @@
     </form>
     <div>
 
-        <a href="faq.php"> <button class="button5" type="button"> Quitter</button> </a>
+        <a href="faq.php"> <button class="button5" type="button">Quitter</button> </a>
 
 
 

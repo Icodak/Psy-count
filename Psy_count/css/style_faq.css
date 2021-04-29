@@ -64,6 +64,22 @@ header{
     transition: all 0.2s ease 0s;
 	max-width: 250px;
 }
+input[type="submit"]{
+	border-radius: 30px;
+    background-color: #aa3558;
+    color: white;
+    font-size: 1.5vw;
+    border: none;
+    letter-spacing: 0.2px;
+    padding: 10px 20px;
+    margin: 0px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    cursor: pointer;
+    transition: all 0.2s ease 0s;
+	max-width: 250px;
+}
 
 .question h1{
 	margin-left: 48px;
@@ -85,7 +101,7 @@ header{
 }
 
 
-input{
+input[type="text"]{
 	border: none;
 	 background-color: #FFF0F0;
 	 padding-bottom: 1%;
@@ -156,15 +172,21 @@ iframe{
 }
 
 
-textarea
-{
+textarea{
+	text-align: center;
+  font-size: 35px;
  resize : none;
  background-color: rgba(0,0,0,0);
  border:none;
+ min-width: 100%;
+ min-height: 200px;
+
 }
 
 #registerButton{
-	text-align: center;
+	display: flex;
+	justify-content: center;
+	margin-top: 1%;
 }
 h2{
 	text-align: center;

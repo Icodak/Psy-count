@@ -58,20 +58,20 @@
               <h2>QESTION</h2>
             <div class="question">
               <div class="questionText">
-                <textarea name="question"><?php echo  $resultat3[$_SESSION["faqID"]][0] ?></textarea>
+                <textarea name="question"><?php echo $resultat3[$_SESSION["faqID"]][0]?></textarea>
 
             </div>
           </div>
             </div>
                 <h2>REPONSE</h2>
                 <div class="question">
-                      <textarea name="reponse"><?php echo $resultat3[$_SESSION["faqID"]][1]   ?> </textarea>
+                      <textarea name="reponse"><?php echo $resultat3[$_SESSION["faqID"]][1]?></textarea>
                  </div>
 
-                   <input  name="typeId3" type="hidden" value= <?php echo $_SESSION["faqID"] ?> >  
+                   <input  name="typeId3" type="hidden" value= <?php echo $_SESSION["faqID"]?>>  
 
                    <div id="registerButton">
-                   <input  name="idval3" type="submit" class="button6" value= "Enregistrer" >
+                   <input  name="idval3" type="submit" class="button" value= "Enregistrer" >
                    </div>
                 </form>
 
@@ -100,7 +100,7 @@
 
                   <div class="questionText">
 
-                  <h1> <?php echo $resultat3[$i][0]  ?> <img class="flecheBottom" onclick="faq(variableRecuperee,this)" src="images/flecheBottom.png"  id="<?php echo $resultat3[$i][0]?>" >   </h1>
+                  <h1> <?php echo $resultat3[$i][0]?> <img class="flecheBottom" onclick="faq(variableRecuperee,this)" src="images/flecheBottom.png"  id="<?php echo $resultat3[$i][0]?>" >   </h1>
 
 
 
