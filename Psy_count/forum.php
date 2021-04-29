@@ -97,7 +97,7 @@
                         </div>
                         <div class="topic-right">
 
-                            <div class="topic-icon"><img src="images/Dieu lapin.png"/></div>
+                            <div class="topic-icon"><img src="images/nicolas@2x.png"/></div>
                             <div class="topic-response">
                                 <h3>Nicolas</h3>
                                 <p>29 mars</p>
