@@ -18,22 +18,9 @@
     <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-    <header>
-        <ul>
-            <li><a>
-                    <p>COUCOU |</p>
-                </a></li>
-            <li><a>
-                    <p>| HELLO |</p>
-                </a></li>
-            <li><a>
-                    <p>| MIAOU |</p>
-                </a></li>
-            <li><a>
-                    <p>| FLAP</p>
-                </a></li>
-        </ul>
-    </header>
+
+    <?php include("menuBar.php") ?>
+
     <div class="wrapper">
         <div class="main">
 
@@ -128,9 +115,9 @@
         </div>
     </div>
     </div>
-    <footer>
-        <p>Je suis un footer de remplacement © 2021</p>
-    </footer>
+
+    <?php include("footer.php") ?>
+
 </body>
 
 </html>
