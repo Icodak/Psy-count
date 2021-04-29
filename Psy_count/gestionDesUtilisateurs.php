@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Titre de la page</title>
+    <title>Gestion des utilisateurs</title>
+	<link rel="icon" type="image/png" href="images/psy-fi.png" />
     <link rel="stylesheet" href="css//style_des_utilisateurs.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script type="text/javascript" src="javascript/javaScriptCode.js"></script>

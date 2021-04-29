@@ -36,7 +36,7 @@ try {
 
 <head>
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Contact</title>
     <link rel="icon" type="image/png" href="images/psy-fi.png" />
     <link rel="stylesheet" href="css//style_Refonte.css">
     <link rel="stylesheet" href="css//styles_fonts.css">

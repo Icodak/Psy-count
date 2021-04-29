@@ -5,7 +5,7 @@ session_start(); // On démarre la session AVANT toute chose
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <title>signUp</title>
+  <title>S'inscire</title>
   <link rel="icon" type="image/png" href="images/psy-fi.png" />
   <link rel="stylesheet" href="css/style_Sign_Up.css">
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />

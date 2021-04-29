@@ -10,6 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Forum</title>
     <meta name="description" content="Forum de Psy-Count L'endroit d'échange entre utilisateurs">
+    <link rel="icon" type="image/png" href="images/psy-fi.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/style_forum.css">
 </head>
