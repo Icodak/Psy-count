@@ -47,6 +47,7 @@ session_start();
 
     <a href="faq.php" class="menuText"> FAQ </a>
     <a href="accueil.php#menuBarAnchor" class="menuText"> A propos </a>
+    <a href="msg_interne.php" class="menuText"> Messagerie (en test) </a>
     <?php
     if (!isset($_SESSION['connexion']) || $_SESSION['connexion'] != 1) {
       //Le formulaire de Contact normal est utilisable par les visiteurs
