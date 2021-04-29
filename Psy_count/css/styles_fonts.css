@@ -11,11 +11,7 @@ html {
     font-weight: normal;
 }
 
-h1 {
-    font-weight: lighter;
-}
-
-button {
+button, .button, h1 {
     font-weight: lighter;
 }
 .white-text {

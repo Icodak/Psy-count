@@ -121,7 +121,7 @@
 		</div>
 	</section>
 
-	<section class="container4 white-text">
+	<section class="container4 white-text" id="menuBarAnchor">
 		<?php include("footer.php") ?>
 	</section>
 </body>

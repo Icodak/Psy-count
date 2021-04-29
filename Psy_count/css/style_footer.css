@@ -1,4 +1,5 @@
 footer {
+
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -25,6 +26,7 @@ section {
 }
 
 .footer-column {
+  color:white;
   display: flex;
   flex-direction: column;
   margin: 10px 0px;
@@ -32,6 +34,7 @@ section {
 }
 
 .last-footer {
+  color:white;
   background-color: rgb(54, 0, 26);
   flex-direction: column;
   justify-content: space-around;
