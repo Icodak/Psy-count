@@ -31,6 +31,13 @@ header{
 	margin-top: 3%;
 }
 
+.button {
+    background-color: #aa3558;
+    color: white;
+    border: none;
+	cursor: pointer;
+}
+
 #values{
 	text-align: center;
 	margin-top: 3%;

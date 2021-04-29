@@ -56,6 +56,15 @@ function dataModification(){
 }
 
 
+function ReversedataModification(){
+    var element = document.getElementById("myDataPage");
+    var element2 = document.getElementById("modificationPage");
+    element.style.display='block';
+    element2.style.display='none';
+}
+
+
+
 function locationAccueil(){
     document.location.href="accueil.php";
 }

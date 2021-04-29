@@ -176,7 +176,7 @@ try{
                     </a>
                     </div>
                     <div>
-                    <a class="new-subject">
+                    <a onclick="ReversedataModification()" class="new-subject">
                         <p>Annuler</p>
                     </a>
                     </div>
