@@ -1,3 +1,22 @@
+
+
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Mon profil</title>
+    <link rel="icon" type="image/png" href="images/psy-fi.png" />
+    <link rel="stylesheet" href="css//style_myData_.css">
+    <script type="text/javascript" src="javascript//javaScriptCode.js"></script>
+</head>
+
+<body>
+    <header>
+<?php include("menuBar.php") ?>
+</header>
+
+
 <?php
 
 
@@ -26,7 +45,7 @@ try{
 ?>
 
 
-<link rel="stylesheet" href="css//style_myData_.css">
+
 
 
 <div class="wrapper">
@@ -200,3 +219,5 @@ try{
 
 
 </div>
+<?php include("footer.php") ?>
+</body>

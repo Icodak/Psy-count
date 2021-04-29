@@ -22,11 +22,6 @@
 	?>
 
 
-    <div id="modificationPage">
-        <?php include("DataPage2.php") ?>
-    </div>
-
-
     <div id="myDataPage">
 
         <div id="doctorPage">

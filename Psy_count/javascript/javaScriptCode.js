@@ -49,18 +49,12 @@ var click = "true";
 
 
 function dataModification(){
-    var element = document.getElementById("myDataPage");
-    var element2 = document.getElementById("modificationPage");
-    element.style.display='none';
-    element2.style.display='block';
+    document.location.href="DataPage2.php";
 }
 
 
 function ReversedataModification(){
-    var element = document.getElementById("myDataPage");
-    var element2 = document.getElementById("modificationPage");
-    element.style.display='block';
-    element2.style.display='none';
+    document.location.href="myData.php";
 }
 
 
