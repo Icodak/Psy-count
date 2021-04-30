@@ -5,7 +5,7 @@
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="icon" type="image/png" href="images/psy-fi.png" />
-    <link rel="stylesheet" href="css//style_Refonte.css">
+    <link rel="stylesheet" href="css/style_Refonte.css">
 </head>
 
 <header>
@@ -144,7 +144,7 @@ try {
     <?php
     if ($msg_envoi) :
     ?>
-        <div style="height: 100vh;" id="form">
+        <div id="form">
             <h3 class="headerText"> Message bien reçu. Nous vous recontacterons prochainement.</h2>
         </div>
     <?php
@@ -188,7 +188,7 @@ try {
 
     <!-- v Should be in a footer :/ mais la mise en page marche pas?-->
 </body>
-
+<div class="enbas">
 <?php include("footer.php") ?>
-
+</div>
 </html>

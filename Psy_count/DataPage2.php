@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <title>Mon profil</title>
     <link rel="icon" type="image/png" href="images/psy-fi.png" />
-    <link rel="stylesheet" href="css//style_myData_.css">
+    <link rel="stylesheet" href="css/style_myData_.css">
     <script type="text/javascript" src="javascript//javaScriptCode.js"></script>
 </head>
 
@@ -188,11 +188,11 @@ try{
 
                 <div class="data-button">
                     <div>
-                    <input type="submit" onclick="ActiveInputDataPage()" name="dataPageChange" value="Enregistrer" class="new-subject">
+                    <input type="submit" onclick="ActiveInputDataPage()" name="dataPageChange" value="Enregistrer" class="button">
                     </div>
                     <div>
-                    <a href="myData.php" class="new-subject">
-                        <p>Annuler</p>
+                    <a href="myData.php" class="button">
+                        Annuler
                     </a>
                     </div>
 

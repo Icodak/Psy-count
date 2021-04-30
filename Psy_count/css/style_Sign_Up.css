@@ -152,6 +152,7 @@ input[id="checkbox"]{
 	letter-spacing: 0.2px;
 	padding: 10px 20px;
 	margin: 0px 10px;
+	justify-content: center;
 	text-align: center;
 	text-decoration: none;
 	display: flex;
