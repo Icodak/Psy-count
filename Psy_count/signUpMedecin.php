@@ -44,9 +44,9 @@ session_start(); // On démarre la session AVANT toute chose
                     <h2 class="connexionText">Spécialité</h2>
                     <div class="drop-down">
                     <select name="specialite" id="pet-select" placeholder="spécialité">
-                        <option value="maitre medecin">anesthésiologie</option>
-                        <option value="jeune medecin">cardiologie</option>
-                        <option value="seigneur medecin">andrologie</option>
+                        <option value="Anesthésiologie">Anesthésiologie</option>
+                        <option value="Cardiologie">Cardiologie</option>
+                        <option value="Andrologie">Andrologie</option>
                     </select></div>
                     <h2 class="connexionText"> Mot de passe</h2>
                     <input size=45% name="Password" type="password" required minlength="8">

@@ -115,12 +115,12 @@
                 <form method="post" action="faqFonctionDeux.php">
 
                 <input  name="typeId" type="hidden" value=<?php echo $i ?>  >   
-                <input  name="idval" type="submit" class="button" value= "supprimer"  id=<?php echo $i ?>>
+                <input  name="idval" type="submit" class="button" value= "Supprimer"  id=<?php echo $i ?>>
                 </form>
 
                 <form method="post" action="faqFonctionTrois.php">
                 <input  name="typeId2" type="hidden" value=<?php echo $i ?>  >   
-                <input  name="idval2" type="submit" class="button" value= "modifier"  id=<?php echo $i ?>>
+                <input  name="idval2" type="submit" class="button" value= "Modifier"  id=<?php echo $i ?>>
                 </form>
                 </div>
 
@@ -176,7 +176,7 @@
     if($_SESSION['type']=='Admin'){
 ?>
 
-  <a href="faqAdmin.php" class="button" > ajouter </a> 
+  <a href="faqAdmin.php" class="button" > Ajouter </a> 
 <?php
 
 }

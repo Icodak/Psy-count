@@ -59,6 +59,7 @@ body{
     cursor: pointer;
     transition: all 0.2s ease 0s;
 	max-width: 250px;
+	align-items: center;
 }
 input[type="submit"]{
 	border-radius: 30px;

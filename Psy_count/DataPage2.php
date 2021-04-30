@@ -170,7 +170,7 @@ try{
                     <div class="topic-items">
                         <div class="topic-right">
 
-                            <h3>Mot de passe: </h3>
+                            <h3>Mot de passe : </h3>
                         </div>
 
                         <div class="topic-meta">
