@@ -84,7 +84,7 @@
 
                     <div class="data-button">
                         <div>
-                            <input type="submit"  value="Enregistrer" class="new-subject">
+                            <input type="submit" name="dataPageChange2" value="Enregistrer" class="new-subject">
                         </div>
                         <div>
                             <a href="DataPage2.php" class="new-subject">

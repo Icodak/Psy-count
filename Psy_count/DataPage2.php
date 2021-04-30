@@ -174,7 +174,7 @@ try{
                         </div>
 
                         <div class="topic-meta">
-                            <input type="password" class="crayon5 datainput" name='motDePasse' disabled value="***************">>
+                            <input type="password" class="crayon5 datainput" name='motDePasse' disabled value="***************">
                         </div>
                         <div class="inputImage">
                             <button type="button" class="crayon5" onclick="redirectionDataPage3()">

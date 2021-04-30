@@ -241,6 +241,10 @@ body {
 
 }
 
+.error-message{
+	text-align: center;
+}
+
 .new-subject {
     position: inherit;
     display: flex;
