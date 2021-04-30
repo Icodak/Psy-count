@@ -164,12 +164,12 @@ try {
                 </div>
 
                 <div class="form_group"> <label class="form_label" for="text"> Sujet du message </label>
-                    <input class="form_content" type="text" name="msgSubject_Cct" placeholder="ex : Contact avec l'administrateur PSY-fi..."> </label>
+                    <input class="form_content" required  minlength="1" type="text" name="msgSubject_Cct" placeholder="ex : Contact avec l'administrateur PSY-fi..."> </label>
                 </div>
 
                 <div class="form_group">
                     <label class="form_label" for="text"> Message </label>
-                    <textarea class="form_content" name="msg_Cct" placeholder="Veuillez écrire votre message..."></textarea>
+                    <textarea class="form_content" required  minlength="1" name="msg_Cct" placeholder="Veuillez écrire votre message..."></textarea>
                 </div>
 
                 <div class="form_group">
