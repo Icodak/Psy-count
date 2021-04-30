@@ -194,6 +194,18 @@ body {
     justify-content: center;
 }
 
+.wrapper2{
+    display: flex;
+    background: no-repeat url("images_css/new_background.png");
+    background-position: center;
+    position: relative;
+    background-size: cover;
+    vertical-align: baseline;
+    min-height: 75vh;
+    overflow: hidden;
+    justify-content: center;
+}
+
 .main{
 	width: 100%;
 	display: flex;

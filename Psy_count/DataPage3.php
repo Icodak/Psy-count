@@ -37,7 +37,7 @@
 
     ?>
 
-    <div class="wrapper">
+    <div class="wrapper2">
         <div class="main">
             <form>
                 <div class="frame-header">
