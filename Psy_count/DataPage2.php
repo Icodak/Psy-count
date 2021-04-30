@@ -116,7 +116,7 @@ try{
 
                         <div class="topic-meta">
 
-                            <input type="text" class="crayon2" name='prenom' disabled
+                            <input type="text" class="crayon2" name='Prenom' disabled
                                 value=<?php echo $resultat[0][1]?>>
                         </div>
                         <div class="inputImage">
@@ -136,7 +136,7 @@ try{
 
 
                         <div class="topic-meta">
-                            <input type="text" class="crayon3" name='prenom' disabled
+                            <input type="text" class="crayon3" name='Email' disabled
                                 value=<?php echo $resultat[0][2]?>>
                         </div>
                         <div class="inputImage">
@@ -157,7 +157,7 @@ try{
 
                         <div class="topic-meta">
 
-                            <input type="text" class="crayon4" name='prenom' disabled
+                            <input type="text" class="crayon4" name=dateDeNaissance' disabled
                                 value=<?php echo $resultat2[0][0]?>>
                         </div>
                         <div class="inputImage">
@@ -176,10 +176,10 @@ try{
                         </div>
 
                         <div class="topic-meta">
-                            <input type="text" class="crayon5" name='prenom' disabled value="*********">
+                            <input type="text" class="crayon5" name='motDePasse' disabled value="*********">
                         </div>
                         <div class="inputImage">
-                            <button type="button" class="crayon5" onclick="modificationInformations(this)">
+                            <button type="button" class="crayon5" onclick="redirectionDataPage3()">
                                 <img src="images/crayon2.png">
                             </button>
                         </div>

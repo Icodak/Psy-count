@@ -69,7 +69,7 @@ session_start(); // On démarre la session AVANT toute chose
                 $dbco->exec($sql);
 
               }
-                echo "Transfert vers la base de données";
+              header('Location: signIn.php');
                 }
               }
 

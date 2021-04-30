@@ -273,6 +273,10 @@ body {
 }
 
 
+.change-password{
+	min-width: 700px;
+}
+
 
 .frame-header img{
 	max-width: 250px;
@@ -445,6 +449,8 @@ form{
 	margin-left:0%;
 	margin-bottom: 10%;
 }
+
+
 
 
 .UserImage{

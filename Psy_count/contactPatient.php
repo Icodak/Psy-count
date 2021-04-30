@@ -40,9 +40,11 @@ try {
         );
 
         $ID_doc = $testSQL3->fetch();
+
+      
         $_SESSION["ID_DocOfPatient"] = $ID_doc["ID_Medecin"];
         //echo "TEST".$_SESSION["ID_DocOfPatient"]."TEST";
-
+      
         //Trouver ID_Utilisateur du médecin traitant à partir de son ID_Medecin
         $testSQL4 = $dbMsg->query(
             'SELECT ID_Utilisateur 
@@ -52,6 +54,8 @@ try {
 
         $ID_docUser = $testSQL4->fetch();
         $_SESSION["ID_DocAsUser"] = $ID_docUser["ID_Utilisateur"];
+        
+      
 
         //Enfin : récupérer l'email du médecin traitant
         $testSQL5 = $dbMsg->query(
@@ -59,9 +63,10 @@ try {
             FROM utilisateur
              WHERE ID_Utilisateur = "' . $_SESSION["ID_DocAsUser"] . '"'
         );
-
+       
         $ID_docMail = $testSQL5->fetch();
         $_SESSION["ID_DocMail"] = $ID_docMail["Email"];
+       
 
         //echo "\nLe mail du patient d'ID_Utilisateur = " . $_SESSION['ID'] . " est " . $_SESSION["ID_DocMail"];
 

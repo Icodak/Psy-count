@@ -46,7 +46,9 @@ var click = "true";
              }
 }}}
 
-
+function redirectionDataPage3(){
+    document.location.href="DataPage3.php";
+}
 
 function dataModification(){
     document.location.href="DataPage2.php";

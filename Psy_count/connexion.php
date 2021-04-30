@@ -46,6 +46,16 @@ try{
       //  si le mot de passe est correct récupérer les informations de l'utilisateur
       else
       {
+
+        $req3 =  $dbco->prepare(
+          'SELECT ID_Utilisateur FROM blacklist where ID_Utilisateur=:ID_Utilisateur ');
+          $req3->execute(array('ID_Utilisateur' =>$resultat2['ID_Utilisateur'] ));
+          $resultat4 = $req3->fetchAll();
+
+          if(count($resultat4)!=0){
+            $_SESSION['message2']= 'votre compte est banni contactez un administrateur';
+            header('Location: signIn.php');
+          }else{
       if ($isPasswordCorrect) {
         $_SESSION['type']=$resultat3['permission_lvl'];
         $_SESSION['connexion']='1';
@@ -57,6 +67,7 @@ try{
         header('Location: signIn.php');
       }
       }
+    }
       }
         catch(PDOException $e){
         echo "Erreur : " . $e->getMessage();

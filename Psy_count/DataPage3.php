@@ -51,7 +51,7 @@
                     <div class="topic-list">
 
                         <div class="topic-items">
-                            <div class="topic-right">
+                            <div class=" change-password">
 
                                 <h3>Votre mot de passe : </h3>
                             </div>
@@ -61,7 +61,7 @@
                             </div>
                         </div>
                         <div class="topic-items">
-                            <div class="topic-right">
+                            <div class=" change-password">
                                 <h3> Nouveau mot de passe : </h3>
                             </div>
                             <div class="topic-meta">
@@ -69,7 +69,7 @@
                             </div>
                         </div>
                         <div class="topic-items">
-                            <div class="topic-right">
+                            <div class=" change-password">
                                 <h3>Vérification du nouveau mot de passse : </h3>
                             </div>
                             <div class="topic-meta">
