@@ -53,7 +53,7 @@
                         </div>
                         <div class="topic-right">
 
-                            <div class="topic-icon"><img src="images/Nightmare.jpg"/></div>
+                            <div class="topic-icon"><img src="images/amanda.jpg"/></div>
                             <div class="topic-response">
                                 <h3>Amanda</h3>
                                 <p>26 avril</p>
@@ -75,7 +75,7 @@
                         </div>
                         <div class="topic-right">
 
-                            <div class="topic-icon"><img src="images/icone icodakv2.5.blanc.png"/></div>
+                            <div class="topic-icon"><img src="images/arsene.jpg"/></div>
                             <div class="topic-response">
                                 <h3>Arsène</h3>
                                 <p>15 avril</p>
@@ -98,7 +98,7 @@
                         </div>
                         <div class="topic-right">
 
-                            <div class="topic-icon"><img src="images/nicolas@2x.png"/></div>
+                            <div class="topic-icon"><img src="images/nicolas.jpg"/></div>
                             <div class="topic-response">
                                 <h3>Nicolas</h3>
                                 <p>29 mars</p>

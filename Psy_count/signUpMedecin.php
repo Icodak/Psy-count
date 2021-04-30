@@ -42,11 +42,12 @@ session_start(); // On démarre la session AVANT toute chose
                     <h2 class="connexionText">Numéro de téléphone</h2>
                     <input size=45% name="telephone">
                     <h2 class="connexionText">Spécialité</h2>
+                    <div class="drop-down">
                     <select name="specialite" id="pet-select" placeholder="spécialité">
                         <option value="maitre medecin">anesthésiologie</option>
                         <option value="jeune medecin">cardiologie</option>
                         <option value="seigneur medecin">andrologie</option>
-                    </select>
+                    </select></div>
                     <h2 class="connexionText"> Mot de passe</h2>
                     <input size=45% name="Password" type="password" required minlength="8">
                     <h2 class="connexionText"> Vérification du mot de passe</h2>
@@ -55,9 +56,9 @@ session_start(); // On démarre la session AVANT toute chose
                     <div id="checkBoxContainer">
                         <div id="checkboxText">
                             <input type="checkbox" id="checkbox" name="horns" OnClick="checkboxcheck()">
-                        </div>
-                        <label for="horns"><span style="color:white">J'accepte les</span> <a href="TermsOfUse.php"><span style="color:#1968FF"> conditions générales d'utilisations</span></label></a>
-                    </div>
+                        
+                        <label for="horns"><span>J'accepte les</span> <a href="TermsOfUse.php"><span style="color:#aa3558"> conditions générales d'utilisations</span></label></a>
+                    </div></div>
 
                     <input name="type" type="hidden" value="Medecin">
                     <div id="signMedecinButton">

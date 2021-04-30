@@ -40,7 +40,7 @@ session_start(); // On démarre la session AVANT toute chose
 					<input size=45% name="password_verify" type="password">
 					<div id="checkboxText">
 						<input type="checkbox" id="checkbox" name="horns" OnClick="checkboxcheck()">
-						<label for="horns"><span style="color:white">J'accepte les</span> <a href="TermsOfUse.php"><span style="color:#1968FF"> conditions générales d'utilisations</span></label></a>
+						<label for="horns"><span>J'accepte les</span> <a href="TermsOfUse.php"><span style="color:#aa3558"> conditions générales d'utilisations</span></label></a>
 					</div>
 					<input name="type" type="hidden" value="patient">
 					<div id="signUpBlock">
