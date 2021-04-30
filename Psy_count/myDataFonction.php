@@ -22,7 +22,6 @@ function initialisation(){
     } 
 }
 
-
 function changeDataUsers($prenom,$nom,$Email,$dateDeNaissance){
 
   $dbco = new PDO("mysql:host=localhost;dbname=serveur_psy_fi",'root','');

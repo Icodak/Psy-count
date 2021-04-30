@@ -250,6 +250,10 @@ body {
 	text-align: center;
 }
 
+input[type="file"]{
+	margin-top: 15px;
+}
+
 .new-subject p {
 	font-size: 25px;
 }

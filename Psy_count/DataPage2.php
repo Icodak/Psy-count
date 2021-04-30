@@ -187,9 +187,7 @@ try{
                         </div>
                     </div>
 
-                    <span class="Black-color">
-                        <?php if(!empty( $_SESSION['errorImage'])){echo  $_SESSION['errorImage'];}?>
-                    </span>
+                   
                     <div class="data-button">
                         <div>
                             <input type="submit" onclick="ActiveInputDataPage()" name="dataPageChange"
