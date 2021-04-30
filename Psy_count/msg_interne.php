@@ -49,7 +49,7 @@ $recipient_from_users = $dbMsgInt->query('SELECT ID_Utilisateur, nom, prenom FRO
     <div class="background"></div>
     <?php
     if (isset($warning)) {
-        echo "<span style='color:lightcoral;'>" . $warning . "</span>";
+        echo "<div class='warning'>" . $warning . "</div>";
     }
     ?>
 

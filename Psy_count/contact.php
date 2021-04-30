@@ -129,7 +129,5 @@ try {
     endif;
     ?>
 </body>
-<div class="enbas">
 <?php include("footer.php") ?>
-</div>
 </html>

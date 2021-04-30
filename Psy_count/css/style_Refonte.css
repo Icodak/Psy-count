@@ -9,6 +9,12 @@ html, body{
 .headerText{
     text-align: center;
     color: #aa3558;
+    height: 20vh;
+}
+
+.warning{
+    color:lightcoral;
+    margin-left: 23%; /*A CHANGER*/
 }
 
 /*POLICY*/

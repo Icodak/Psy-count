@@ -144,7 +144,7 @@ try {
     <?php
     if ($msg_envoi) :
     ?>
-        <div id="form">
+        <div>
             <h3 class="headerText"> Message bien reçu. Nous vous recontacterons prochainement.</h2>
         </div>
     <?php
@@ -188,7 +188,5 @@ try {
 
     <!-- v Should be in a footer :/ mais la mise en page marche pas?-->
 </body>
-<div class="enbas">
 <?php include("footer.php") ?>
-</div>
 </html>
