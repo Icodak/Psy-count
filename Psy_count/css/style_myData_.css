@@ -181,6 +181,12 @@ body {
 	cursor: pointer;
 }
 
+.newmdpverif{
+	text-align: center;
+	color: red;
+}
+
+
 
 .wrapper {
     display: flex;

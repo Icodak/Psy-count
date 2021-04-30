@@ -39,7 +39,7 @@
 
     <div class="wrapper2">
         <div class="main">
-            <form>
+           <form method="post" action="myDataFonction.php">
                 <div class="frame-header">
                     <div>
                         <h1>
@@ -57,7 +57,7 @@
                             </div>
                             <div class="topic-meta">
 
-                                <input type="text" class="crayon1" name='nom'>
+                                <input type="text" class="crayon1" name='mdp'>
                             </div>
                         </div>
                         <div class="topic-items">
@@ -65,7 +65,7 @@
                                 <h3> Nouveau mot de passe : </h3>
                             </div>
                             <div class="topic-meta">
-                                <input type="text" class="crayon2" name='prenom'>
+                                <input type="text" class="crayon2" name='newmdp'>
                             </div>
                         </div>
                         <div class="topic-items">
@@ -73,15 +73,18 @@
                                 <h3>Vérification du nouveau mot de passse : </h3>
                             </div>
                             <div class="topic-meta">
-                                <input type="text" class="crayon3" name='prenom'>
+                                <input type="text" class="crayon3" name='newmdpverif'>
                             </div>
                         </div>
                     </div>
+
+                    <div class="error-message">
+                    <?php if(!empty($_SESSION['messageData'])){echo $_SESSION['messageData'];}?>
+                    </div>
+
                     <div class="data-button">
                         <div>
-                            <a class="new-subject">
-                                <p>Modifier</p>
-                            </a>
+                            <input type="submit"  value="Enregistrer" class="new-subject">
                         </div>
                         <div>
                             <a href="DataPage2.php" class="new-subject">
