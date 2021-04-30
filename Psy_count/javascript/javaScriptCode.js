@@ -59,6 +59,10 @@ function ReversedataModification(){
     document.location.href="myData.php";
 }
 
+function requestContact(){
+    document.location.href="contactPatient.php";
+}
+
 function locationAccueil(){
     document.location.href="accueil.php";
 }
