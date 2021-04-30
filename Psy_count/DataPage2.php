@@ -25,7 +25,7 @@ try{
     $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $id=$_SESSION['ID'];
 
-    $req =  $dbco->prepare('SELECT nom,prenom,Email,images FROM utilisateur WHERE ID_Utilisateur=:ID_Utilisateur');
+    $req =  $dbco->prepare('SELECT nom,prenom,Email,images,motDePasse FROM utilisateur WHERE ID_Utilisateur=:ID_Utilisateur');
     $req->execute(['ID_Utilisateur' => $id]);
     $resultat = $req->fetchAll();
 
@@ -46,12 +46,10 @@ try{
 
 
 
-
-
 <div class="wrapper">
 
     <div class="main">
-        <form>
+        <form method="post" action="myDataFonction.php">
             <div class="frame-header">
                 <div>
                     <?php
@@ -93,7 +91,7 @@ try{
 
                         <div class="topic-meta">
 
-                            <input type="text" class="crayon1" name='nom' disabled value=<?php echo $resultat[0][0]?>>
+                            <input type="text" class="crayon1 datainput" name='nom' disabled value=<?php echo $resultat[0][0]?>>
                         </div>
                         <div class="inputImage">
                             <button type="button" class="crayon1" onclick="modificationInformations(this)"> <img
@@ -116,7 +114,7 @@ try{
 
                         <div class="topic-meta">
 
-                            <input type="text" class="crayon2" name='Prenom' disabled
+                            <input type="text" class="crayon2 datainput" name='Prenom' disabled
                                 value=<?php echo $resultat[0][1]?>>
                         </div>
                         <div class="inputImage">
@@ -136,7 +134,7 @@ try{
 
 
                         <div class="topic-meta">
-                            <input type="text" class="crayon3" name='Email' disabled
+                            <input type="text" class="crayon3 datainput" name='Email' disabled
                                 value=<?php echo $resultat[0][2]?>>
                         </div>
                         <div class="inputImage">
@@ -157,7 +155,7 @@ try{
 
                         <div class="topic-meta">
 
-                            <input type="text" class="crayon4" name=dateDeNaissance' disabled
+                            <input type="text" class="crayon4 datainput" name='dateDeNaissance' disabled
                                 value=<?php echo $resultat2[0][0]?>>
                         </div>
                         <div class="inputImage">
@@ -176,7 +174,7 @@ try{
                         </div>
 
                         <div class="topic-meta">
-                            <input type="text" class="crayon5" name='motDePasse' disabled value="*********">
+                            <input type="password" class="crayon5 datainput" name='motDePasse' disabled value="***************">
                         </div>
                         <div class="inputImage">
                             <button type="button" class="crayon5" onclick="redirectionDataPage3()">
@@ -190,9 +188,7 @@ try{
 
                 <div class="data-button">
                     <div>
-                    <a class="new-subject">
-                        <p>Enregistrer</p>
-                    </a>
+                    <input type="submit" onclick="ActiveInputDataPage()" name="dataPageChange" value="Enregistrer" class="new-subject">
                     </div>
                     <div>
                     <a href="myData.php" class="new-subject">

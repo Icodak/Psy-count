@@ -59,12 +59,17 @@ function ReversedataModification(){
     document.location.href="myData.php";
 }
 
-
-
 function locationAccueil(){
     document.location.href="accueil.php";
 }
 
+
+function ActiveInputDataPage(){
+    var champ = document.getElementsByClassName("datainput");
+    for(var i=0, n=champ.length;i<n;i++) {
+        champ[i].disabled=false;
+      }
+}
 
 
 function modificationInformations(element){

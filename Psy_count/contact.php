@@ -83,31 +83,31 @@ try {
                     <div class="form_field">
                         <div class="form_group">
                             <label class="form_label" for="text"> Prénom </label>
-                            <input class="form_content" type="text" name="prenom_Cct" placeholder="ex : John"> </label>
+                            <input class="form_content"  required  minlength="1" type="text" name="prenom_Cct" placeholder="ex : John"> </label>
                         </div>
                         <div class="form_group">
                             <label class="form_label" for="text"> Nom </label>
-                            <input class="form_content" type="text" name="nom_Cct" placeholder="ex : Doe"> </label>
+                            <input class="form_content" required  minlength="1" type="text" name="nom_Cct" placeholder="ex : Doe"> </label>
                         </div>
                     </div>
 
                     <div class="form_field">
                         <div class="form_group">
                             <label class="form_label" for="text"> E-mail </label>
-                            <input class="form_content" type="text" name="mail_Cct" placeholder="ex : john.doe@gmail.com"> </label>
+                            <input class="form_content" required  minlength="1" type="text" name="mail_Cct" placeholder="ex : john.doe@gmail.com"> </label>
                         </div>
                     </div>
                     <div class="form_field">
                         <div class="form_group">
                             <label class="form_label" for="text"> Sujet du message </label>
                             <!--Faire un menu déroulant ?-->
-                            <input class="form_content" type="text" name="msgSubject_Cct" placeholder="ex : Contact avec l'administrateur PSY-fi..."> </label>
+                            <input class="form_content" required  minlength="1" type="text" name="msgSubject_Cct" placeholder="ex : Contact avec l'administrateur PSY-fi..."> </label>
                         </div>
                     </div>
                     <div class="form_field">
                         <div class="form_group">
                             <label class="form_label" for="text"> Message </label>
-                            <textarea class="form_content" name="msg_Cct" placeholder="Veuillez écrire votre message..."></textarea>
+                            <textarea class="form_content" required  minlength="1" name="msg_Cct" placeholder="Veuillez écrire votre message..."></textarea>
                         </div>
                     </div>
                     <div class="form_field">
