@@ -189,7 +189,7 @@ body {
     position: relative;
     background-size: cover;
     vertical-align: baseline;
-    min-height: 140vh;
+    min-height: 150vh;
     overflow: hidden;
     justify-content: center;
 }
