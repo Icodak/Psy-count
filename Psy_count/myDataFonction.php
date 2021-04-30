@@ -24,7 +24,6 @@ function initialisation(){
 
 
 function changeDataUsers($prenom,$nom,$Email,$dateDeNaissance){
-  session_start();
 
   $dbco = new PDO("mysql:host=localhost;dbname=serveur_psy_fi",'root','');
   $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
@@ -34,8 +33,35 @@ function changeDataUsers($prenom,$nom,$Email,$dateDeNaissance){
   $req =  $dbco->prepare(
     "UPDATE patient SET dateDeNaissance=? WHERE ID_Utilisateur=?");
   $req->execute([$dateDeNaissance,$_SESSION['ID']]);
-  header('Location: DataPage2.php');  
 }
+
+function changeImageUsers($image){
+  $maxSize=4500000;
+  $typeOfFiles=array('jpg','png','jpge');
+    if($image['size']<$maxSize){
+      $extensionFile=strtolower(substr(strrchr($image['name'],'.'),1));
+      if(in_array($extensionFile,$typeOfFiles)){
+        $chemin="images_utilisateurs/".$_SESSION['ID'].".".$extensionFile;
+        $test = move_uploaded_file($image['tmp_name'],$chemin);
+        if($test){
+          $avatar=$_SESSION['ID'].".".$extensionFile;
+          $dbco = new PDO("mysql:host=localhost;dbname=serveur_psy_fi",'root','');
+          $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
+          $req =  $dbco->prepare(
+          "UPDATE utilisateur SET images=? WHERE ID_Utilisateur=?");
+          $req->execute([$avatar,$_SESSION['ID']]);
+        }else{
+          $_SESSION['errorImage']="transfert impossible, retentez ultérieument"; 
+      }
+    }else{
+      $_SESSION['errorImage']="votre images ne doit pas avoir une taille de plus de 5Mo";   
+    }
+}else{
+  $_SESSION['errorImage']="votre images ne doit pas avoir une taille de plus de 5Mo";
+}
+}
+
+
 
 
 function updatePassword($motDePasse){
@@ -45,7 +71,6 @@ function updatePassword($motDePasse){
   $req =  $dbco->prepare(
   "UPDATE utilisateur SET motDePasse=?  WHERE ID_Utilisateur=?");
   $req->execute([$Password,$_SESSION['ID']]);
-  header('Location: myDataPage2.php');  
 }
 
 function SelectPassword($id){
@@ -65,7 +90,12 @@ if(isset($_POST['dataPageChange']))
   $Email=$_POST['Email'];
   $Prenom=$_POST['Prenom'];
   $nom=$_POST['nom'];
+  $image=$_FILES['avatar'];
+  session_start();
+  changeImageUsers($image);
   changeDataUsers($Prenom,$nom,$Email,$dateDeNaissance);
+  header('Location: DataPage2.php'); 
+
 
 }
 

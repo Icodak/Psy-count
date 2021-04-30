@@ -245,7 +245,10 @@ body {
 	text-align: center;
 }
 
-
+.Black-color{
+	color: black;
+	text-align: center;
+}
 
 .new-subject p {
 	font-size: 25px;
