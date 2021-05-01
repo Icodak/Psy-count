@@ -67,6 +67,43 @@ function locationAccueil(){
     document.location.href="accueil.php";
 }
 
+function hidePassword(){
+    elements = document.getElementsByClassName("showHide");
+    elements2 = document.getElementsByClassName("passwordImage2"); 
+    elements3 = document.getElementsByClassName("passwordImage"); 
+
+    for(var i=0, n=elements.length;i<n;i++) {
+        if(elements[i].type=="password"){
+        elements[i].type="text";
+        elements2[0].style.display="block";
+        elements3[0].style.display="none";
+        }else{
+        elements[i].type="password"; 
+        elements2[0].style.display="none";
+        elements3[0].style.display="block";  
+        }
+      }
+}
+
+function hidePassword2(){
+    elements = document.getElementsByClassName("showHide2");
+    elements2 = document.getElementsByClassName("passwordImage2"); 
+    elements3 = document.getElementsByClassName("passwordImage"); 
+   
+    for(var i=0, n=elements.length;i<n;i++) {
+        if(elements[i].type=="password"){
+        elements[i].type="text";
+        elements2[1].style.display="block";
+        elements3[1].style.display="none";
+        }else{
+        elements[i].type="password"; 
+        elements2[1].style.display="none";
+        elements3[1].style.display="block";   
+        }
+      }
+}
+
+
 
 function ActiveInputDataPage(){
     var champ = document.getElementsByClassName("datainput");

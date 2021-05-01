@@ -10,7 +10,7 @@ session_start(); // On démarre la session AVANT toute chose
 	<link rel="icon" type="image/png" href="images/psy-fi.png" />
 	<link rel="stylesheet" href="css/style_fonts.css">
 	<link rel="stylesheet" href="css/style_Sign_Up.css">
-	<script type="text/javascript" src="javaScript//javaScriptCode.js"></script>
+	<script type="text/javascript" src="javaScript/javaScriptCode.js"></script>
 </head>
 
 <body>
@@ -25,6 +25,7 @@ session_start(); // On démarre la session AVANT toute chose
 		<div id="signUpinformation" class="alignCenter">
 			<form action="getInformation.php" method="post">
 				<div id="informationInput">
+				<div class="inputText">
 					<h2 class="connexionText"> Prénom</h2>
 					<input size=45% required pattern="[A-Za-zÀ-ÖØ-öø-ÿ-]+{4,255}" title="votre prenom ne doit contenir que des lettres" name="FirstName" required minlength="4">
 					<h2 class="connexionText"> Nom</h2>
@@ -33,15 +34,27 @@ session_start(); // On démarre la session AVANT toute chose
 					<input size=45% name="dateDeNaissance" type="date">
 					<h2 class="connexionText"> Email</h2>
 					<input size=45% name="Email" type="email">
+
 					<h2 class="connexionText"> Mot de passe</h2>
-					<input size=45% name="Password" type="password" required minlength="8">
+					<div class="mot-de-passe">
+					<input size=45% name="Password" class="showHide" type="password" required minlength="8">
+					<img src="images/eye.png" class="passwordImage" onclick="hidePassword()">
+					<img src="images/eyeHide.png" class="passwordImage2" onclick="hidePassword()">
+					</div>
 					<h2 class="connexionText"> Vérification du mot de passe</h2>
-					<input size=45% name="password_verify" type="password">
+					<div class="mot-de-passe">
+					<input size=45% name="password_verify" class="showHide2" type="password">
+					<img src="images/eye.png" class="passwordImage" onclick="hidePassword2()">
+					<img src="images/eyeHide.png" class="passwordImage2" onclick="hidePassword2()">
+					</div>
+
+
 					<div id="checkboxText">
 						<input type="checkbox" id="checkbox" name="horns" OnClick="checkboxcheck()">
 						<label for="horns"><span>J'accepte les</span> <a href="TermsOfUse.php"><span style="color:#aa3558"> conditions générales d'utilisations</span></label></a>
 					</div>
 					<input name="type" type="hidden" value="patient">
+					</div>
 					<div id="signUpBlock">
 						<input class="button" type="submit" style="background-color: grey;" name="submit" value="S'inscrire" id="submit">
 						<input class="button" type="button" onclick="locationAccueil()" value="Quitter">
