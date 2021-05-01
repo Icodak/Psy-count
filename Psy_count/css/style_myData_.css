@@ -168,7 +168,9 @@ body {
 }
 
 .topic-right h3{
-	font-size: 35px;
+	font-size: 25px;
+	margin-top: 2%;
+	margin-bottom: 2%;
 }
 
 
@@ -195,7 +197,7 @@ body {
     position: relative;
     background-size: cover;
     vertical-align: baseline;
-    min-height: 150vh;
+    min-height: 90vh;
     overflow: hidden;
     justify-content: center;
 }
@@ -306,7 +308,7 @@ form{
     align-items: center;
 }
 .topic-items input{
-	font-size: 35px;
+	font-size: 25px;
 }
 
 .topic-right{

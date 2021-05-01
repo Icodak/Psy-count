@@ -48,10 +48,20 @@ session_start(); // On démarre la session AVANT toute chose
                         <option value="Cardiologie">Cardiologie</option>
                         <option value="Andrologie">Andrologie</option>
                     </select></div>
+
+
                     <h2 class="connexionText"> Mot de passe</h2>
-                    <input size=45% name="Password" type="password" required minlength="8">
+                    <div class="mot-de-passe">
+					<input size=45% name="Password" class="showHide" type="password" required minlength="8">
+					<img src="images/eye.png" class="passwordImage" onclick="hidePassword()">
+					<img src="images/eyeHide.png" class="passwordImage2" onclick="hidePassword()">
+					</div>
                     <h2 class="connexionText"> Vérification du mot de passe</h2>
-                    <input size=45% name="password_verify" type="password">
+                    <div class="mot-de-passe">
+					<input size=45% name="password_verify" class="showHide2" type="password">
+					<img src="images/eye.png" class="passwordImage" onclick="hidePassword2()">
+					<img src="images/eyeHide.png" class="passwordImage2" onclick="hidePassword2()">
+					</div>
 
                     <div id="checkBoxContainer">
                         <div id="checkboxText">

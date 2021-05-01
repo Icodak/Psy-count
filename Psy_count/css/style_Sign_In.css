@@ -93,6 +93,44 @@ body {
 	color: black;
 }
 
+
+.mot-de-passe{
+	display: flex;
+	flex-direction: row;
+	background-color: #f9f0f0;
+	border: none;
+	color: #6d2339;
+	border-bottom: 2px solid #6d2339;
+	padding-right: 0px;
+	width: 100%;
+	font-size: inherit;
+	align-items: center;
+}
+
+.mot-de-passe img{
+	width: 60px;
+	height: 40px;
+	cursor: pointer;
+}
+
+.mot-de-passe input{
+	background-color:none;
+	border: none;
+	padding: none;
+	width: 100%;
+}
+
+
+
+.passwordImage{
+	display: block;
+}
+.passwordImage2{
+	display: none;
+}
+
+
+
 li {
 	list-style: none;
 	margin-bottom: 10px;

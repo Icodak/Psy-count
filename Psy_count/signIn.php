@@ -40,7 +40,11 @@ session_start(); // On démarre la session AVANT toute chose
                         <h2 class="connexionText">Email </h2>
                         <input  name="Email" type="email">
                         <h2 class="connexionText">Mot de passe </h2>
-                        <input name="Password" type="password">
+                        <div class="mot-de-passe">
+					<input size=45% name="Password" class="showHide" type="password" required minlength="8">
+					<img src="images/eye.png" class="passwordImage" onclick="hidePassword()">
+					<img src="images/eyeHide.png" class="passwordImage2" onclick="hidePassword()">
+					</div>
                     </div>
                   
                         <div id="buttonSignIn">
