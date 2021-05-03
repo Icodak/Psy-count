@@ -4,7 +4,7 @@
 
 function modificationUtilisateur($ID)
 {
-    $dbco = new PDO("mysql:host=localhost;dbname=serveur_psy_fi",'root','');
+    $dbco = new PDO("mysql:host=localhost;dbname=serveur_psy_fi",'root','root');
     $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   try{
 $req2 =  $dbco->prepare(

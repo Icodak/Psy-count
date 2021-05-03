@@ -5,7 +5,7 @@ session_start();
 
 <?php
 
-$dbco = new PDO("mysql:host=localhost;dbname=serveur_psy_fi",'root','');
+$dbco = new PDO("mysql:host=localhost;dbname=serveur_psy_fi",'root','root');
 $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 if(isset($_POST['Ajouter']))

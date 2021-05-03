@@ -9,7 +9,7 @@ if(isset($_POST['idval']))
 
 
       try{
-                $dbco = new PDO("mysql:host=localhost;dbname=serveur_psy_fi",'root','');
+                $dbco = new PDO("mysql:host=localhost;dbname=serveur_psy_fi",'root','root');
                 $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
                 $req2 =  $dbco->prepare(

@@ -1,11 +1,11 @@
 <?php 
 
-$dbco = new PDO("mysql:host=localhost;dbname=serveur_psy_fi",'root','');
+$dbco = new PDO("mysql:host=localhost;dbname=serveur_psy_fi",'root','root');
 $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 function initialisation(){
     try{
-      $dbco = new PDO("mysql:host=localhost;dbname=serveur_psy_fi",'root','');
+      $dbco = new PDO("mysql:host=localhost;dbname=serveur_psy_fi",'root','root');
       $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $id=$_SESSION['ID'];
         $req =  $dbco->prepare('SELECT Email,nom,prenom FROM utilisateur WHERE ID_Utilisateur=:ID_Utilisateur');

@@ -11,7 +11,7 @@ if ( isset( $_POST['submit'] ) ) {
 
 try{
       //  connexion à la base de donnée
-      $dbco = new PDO("mysql:host=localhost;dbname=serveur_psy_fi",'root','');
+      $dbco = new PDO("mysql:host=localhost;dbname=serveur_psy_fi",'root','root');
       $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
       //  récuperer le mot de passe de l'utilisateur
