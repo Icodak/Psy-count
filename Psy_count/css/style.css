@@ -7,7 +7,7 @@
 html, body {
     font-family: 'poppins', sans-serif, monospace;
     font-weight: normal;
-    border: none;
+    border: 0px;
     margin: 0px;
     padding: 0px;
 }
@@ -30,7 +30,7 @@ a {
 }
 
 h1, .important-text {
-    color:#aa3558;
+    color: #aa3558;
 }
 
 .white-background {
@@ -67,6 +67,7 @@ hr {
     background-color: #aa3558;
     width: 100px;
     height: 1px;
+    margin: 20px 0px;
 }
 
 input {
