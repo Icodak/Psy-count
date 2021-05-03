@@ -26,7 +26,7 @@
 
   </div>
   <div id="faqText2">
-  <h3 class="static" >Questions fréquentes :</h3>
+  <h1 class="static" >Questions fréquentes :</h1>
   </div>
   </div>
 

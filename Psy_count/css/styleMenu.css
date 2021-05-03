@@ -43,6 +43,12 @@ nav {
   border: none;
 }
 
+nav img{
+  width: 100px;
+  height: 100px;
+}
+
+
 nav .button {
   border-radius: 30px;
   background-color: #aa3558;

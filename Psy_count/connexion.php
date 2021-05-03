@@ -35,7 +35,11 @@ try{
       'SELECT ID_Utilisateur FROM utilisateur where Email=:Email ');
       $req3->execute(array('Email' => $Email));
       $resultat2 = $req3->fetch();
-
+  
+      $req =  $dbco->prepare('SELECT images FROM utilisateur WHERE Email=:Email');
+      $req->execute(['Email' => $Email]);
+      $resultat4 = $req->fetch();
+   
       //  vérifier s'il existe un mot de passe pour l'adresse mail donné
       if (!$resultat)
       {
@@ -60,6 +64,7 @@ try{
         $_SESSION['type']=$resultat3['permission_lvl'];
         $_SESSION['connexion']='1';
         $_SESSION['ID']=$resultat2['ID_Utilisateur'];
+        $_SESSION['image']=$resultat4['images'];
         header('Location: accueil.php');
       }
       else {

@@ -33,6 +33,10 @@ li {
 
 }
 
+input[type="checkbox"]{
+  transform: scale(2);
+}
+
 .button5 {
   background-color: #aa3558;
   border: none;

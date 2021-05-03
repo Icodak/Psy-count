@@ -120,6 +120,10 @@ body {
 	width: 100%;
 }
 
+input:-webkit-autofill{
+    -webkit-box-shadow: 0 0 0 1000px #f9f0f0 inset;
+}
+
 
 
 .passwordImage{

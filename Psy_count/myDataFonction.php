@@ -53,7 +53,7 @@ function changeImageUsers($image){
           $_SESSION['errorImage']="transfert impossible, retentez ultérieument"; 
       }
     }else{
-      $_SESSION['errorImage']="votre images ne doit pas avoir une taille de plus de 5Mo";   
+      $_SESSION['errorImage']="votre images doit étre au format jpg/png/jpge";   
     }
 }else{
   $_SESSION['errorImage']="votre images ne doit pas avoir une taille de plus de 5Mo";

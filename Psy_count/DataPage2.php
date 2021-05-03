@@ -30,9 +30,6 @@ try{
     $req =  $dbco->prepare('SELECT dateDeNaissance FROM patient WHERE ID_Utilisateur=:ID_Utilisateur');
     $req->execute(['ID_Utilisateur' => $id]);
     $resultat2 = $req->fetchAll();
-
-
-
 }
 
     catch(PDOException $e){
@@ -63,8 +60,9 @@ try{
                             <?php                           
                         echo "<img src='images_utilisateurs/" . $resultat[0][3] . "'>";     
                   }              
-                ?>
+                ?>        
                             <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
+                          
                         </div>
 
 
@@ -89,6 +87,7 @@ try{
 
 
 
+                            <div class="topic-right2">
                             <div class="topic-meta">
 
                                 <input type="text" class="crayon1 datainput" name='nom' disabled
@@ -99,6 +98,7 @@ try{
                                         src="images/crayon2.png">
                                 </button>
 
+                            </div>
                             </div>
                         </div>
 
@@ -111,8 +111,8 @@ try{
                             <div class="topic-right">
 
                                 <h3>Pr&eacutenom : </h3>
-                            </div>
-
+                            </div >
+                            <div class="topic-right2">
                             <div class="topic-meta">
 
                                 <input type="text" class="crayon2 datainput" name='Prenom' disabled
@@ -122,6 +122,7 @@ try{
                                 <button type="button" class="crayon2" onclick="modificationInformations(this)"> <img
                                         src="images/crayon2.png">
                                 </button>
+                            </div>
                             </div>
 
                         </div>
@@ -133,7 +134,7 @@ try{
                                 <h3>Email : </h3>
                             </div>
 
-
+                            <div class="topic-right2">
                             <div class="topic-meta">
                                 <input type="text" class="crayon3 datainput" name='Email' disabled
                                     value=<?php echo $resultat[0][2]?>>
@@ -142,6 +143,7 @@ try{
                                 <button type="button" class="crayon3" onclick="modificationInformations(this)"> <img
                                         src="images/crayon2.png">
                                 </button>
+                            </div>
                             </div>
 
 
@@ -153,7 +155,7 @@ try{
 
                                 <h3>Date de naissance : </h3>
                             </div>
-
+                            <div class="topic-right2">
                             <div class="topic-meta">
 
                                 <input type="text" class="crayon4 datainput" name='dateDeNaissance' disabled
@@ -164,6 +166,7 @@ try{
                                         src="images/crayon2.png">
                                 </button>
                             </div>
+                            </div>
 
                         </div>
 
@@ -173,7 +176,7 @@ try{
 
                                 <h3>Mot de passe : </h3>
                             </div>
-
+                            <div class="topic-right2">
                             <div class="topic-meta">
                                 <input type="password" class="crayon5 datainput" name='motDePasse' disabled
                                     value="***************">
@@ -182,6 +185,7 @@ try{
                                 <button type="button" class="crayon5" onclick="redirectionDataPage3()">
                                     <img src="images/crayon2.png">
                                 </button>
+                            </div>
                             </div>
 
                         </div>

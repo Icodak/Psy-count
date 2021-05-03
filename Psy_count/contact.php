@@ -114,7 +114,7 @@ try {
                     <div class="form_field">
                         <div class="form_group">
                             <button class="form_button" type="submit" name="submit"> Envoyer </button>
-                            <button class="form_button" onClick="javascript:window.location.href='/Psy-count/Psy_count/accueil.php'" type="reset"> Annuler </button>
+                            <button class="form_button" onClick="javascript:window.location.href='accueil.php'" type="reset"> Annuler </button>
                         </div>
                     </div>
                 </form>
