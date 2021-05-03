@@ -1,9 +1,7 @@
 footer {
-
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 0px;
   background-color: rgb(71, 0, 34);
 }
 
@@ -14,9 +12,7 @@ footer a {
 section {
   width: 100%;
   display: flex;
-  padding: 0px;
 }
-
 
 .footer-general {
   display: flex;
@@ -26,7 +22,7 @@ section {
 }
 
 .footer-column {
-  color:white;
+  color: white;
   display: flex;
   flex-direction: column;
   margin: 10px 0px;
@@ -34,7 +30,7 @@ section {
 }
 
 .last-footer {
-  color:white;
+  color: white;
   background-color: rgb(54, 0, 26);
   flex-direction: column;
   justify-content: space-around;

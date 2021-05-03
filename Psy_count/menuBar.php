@@ -1,9 +1,6 @@
 <?php
 session_start();
 ?>
-
-<link rel="stylesheet" href="css/styles_fonts.css">
-
 <link rel="stylesheet" href="css/styleMenu.css">
 
 
