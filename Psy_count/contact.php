@@ -36,10 +36,11 @@ try {
 
 <head>
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Contact</title>
     <link rel="icon" type="image/png" href="images/psy-fi.png" />
-    <link rel="stylesheet" href="css//style_Refonte.css">
-    <link rel="stylesheet" href="css//styles_fonts.css">
+    <link rel="stylesheet" href="css/styles_fonts.css">
+    <link rel="stylesheet" href="css/style_Refonte.css">
+
 </head>
 
 <header>
@@ -83,50 +84,50 @@ try {
                     <div class="form_field">
                         <div class="form_group">
                             <label class="form_label" for="text"> Prénom </label>
-                            <input class="form_content" type="text" name="prenom_Cct" placeholder="ex : John"> </label>
+                            <input class="form_content"  required  minlength="1" type="text" name="prenom_Cct" placeholder="ex : John"> </label>
                         </div>
                         <div class="form_group">
                             <label class="form_label" for="text"> Nom </label>
-                            <input class="form_content" type="text" name="nom_Cct" placeholder="ex : Doe"> </label>
+                            <input class="form_content" required  minlength="1" type="text" name="nom_Cct" placeholder="ex : Doe"> </label>
                         </div>
                     </div>
 
                     <div class="form_field">
                         <div class="form_group">
                             <label class="form_label" for="text"> E-mail </label>
-                            <input class="form_content" type="text" name="mail_Cct" placeholder="ex : john.doe@gmail.com"> </label>
+                            <input class="form_content" required  minlength="1" type="text" name="mail_Cct" placeholder="ex : john.doe@gmail.com"> </label>
                         </div>
                     </div>
                     <div class="form_field">
                         <div class="form_group">
                             <label class="form_label" for="text"> Sujet du message </label>
                             <!--Faire un menu déroulant ?-->
-                            <input class="form_content" type="text" name="msgSubject_Cct" placeholder="ex : Contact avec l'administrateur PSY-fi..."> </label>
+                            <input class="form_content" required  minlength="1" type="text" name="msgSubject_Cct" placeholder="ex : Contact avec l'administrateur PSY-fi..."> </label>
                         </div>
                     </div>
                     <div class="form_field">
                         <div class="form_group">
                             <label class="form_label" for="text"> Message </label>
-                            <textarea class="form_content" name="msg_Cct" placeholder="Veuillez écrire votre message..."></textarea>
+                            <textarea class="form_content" required  minlength="1" name="msg_Cct" placeholder="Veuillez écrire votre message..."></textarea>
                         </div>
                     </div>
                     <div class="form_field">
                         <div class="form_group">
                             <button class="form_button" type="submit" name="submit"> Envoyer </button>
-                            <button class="form_button" type="reset"> Annuler </button>
+                            <button class="form_button" onClick="javascript:window.location.href='accueil.php'" type="reset"> Annuler </button>
                         </div>
                     </div>
                 </form>
 
             </div>
-            <img src="css//images_css/psy-fi.png">
+            <div class="image-scale">
+            <img src="images/psy-fi.png">
+            </div>
         </div>
 
     <?php
     endif;
     ?>
 </body>
-
 <?php include("footer.php") ?>
-
 </html>

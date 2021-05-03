@@ -9,6 +9,7 @@
 <footer>
     <section class="footer-general">
         <div class="footer-column">
+
             <h2>PSY-FI</h2>
             <p>28 Rue Notre Dame des Champs, 75006 Paris <br>
                 01 23 45 67 89</p>
@@ -20,7 +21,7 @@
         </div>
         <div class="footer-column">
             <h2> Ressources </h2>
-            <a href="#">FAQ </a>
+            <a href="faq.php">FAQ </a>
         </div>
     </section>
     <section class="last-footer">

@@ -1,8 +1,6 @@
 
 var click = "true";
 
-
-
  function checkboxcheck(){
  
    		var element = document.getElementById("checkbox");
@@ -10,7 +8,7 @@ var click = "true";
 
         if(element.checked==true){
         		button.disabled=false;
-        		button.style.backgroundColor ="#B1589E";
+        		button.style.backgroundColor ="#aa3558";
         }
         else{
             button.disabled=true;
@@ -46,20 +44,71 @@ var click = "true";
              }
 }}}
 
-
-
-function dataModification(){
-    var element = document.getElementById("myDataPage");
-    var element2 = document.getElementById("modificationPage");
-    element.style.display='none';
-    element2.style.display='block';
+function redirectionDataPage3(){
+    document.location.href="DataPage3.php";
 }
 
+function dataModification(){
+    document.location.href="DataPage2.php";
+}
+
+
+function ReversedataModification(){
+    document.location.href="myData.php";
+}
+
+function requestContact(){
+    document.location.href="contactPatient.php";
+}
 
 function locationAccueil(){
     document.location.href="accueil.php";
 }
 
+function hidePassword(){
+    elements = document.getElementsByClassName("showHide");
+    elements2 = document.getElementsByClassName("passwordImage2"); 
+    elements3 = document.getElementsByClassName("passwordImage"); 
+
+    for(var i=0, n=elements.length;i<n;i++) {
+        if(elements[i].type=="password"){
+        elements[i].type="text";
+        elements2[0].style.display="block";
+        elements3[0].style.display="none";
+        }else{
+        elements[i].type="password"; 
+        elements2[0].style.display="none";
+        elements3[0].style.display="block";  
+        }
+      }
+}
+
+function hidePassword2(){
+    elements = document.getElementsByClassName("showHide2");
+    elements2 = document.getElementsByClassName("passwordImage2"); 
+    elements3 = document.getElementsByClassName("passwordImage"); 
+   
+    for(var i=0, n=elements.length;i<n;i++) {
+        if(elements[i].type=="password"){
+        elements[i].type="text";
+        elements2[1].style.display="block";
+        elements3[1].style.display="none";
+        }else{
+        elements[i].type="password"; 
+        elements2[1].style.display="none";
+        elements3[1].style.display="block";   
+        }
+      }
+}
+
+
+
+function ActiveInputDataPage(){
+    var champ = document.getElementsByClassName("datainput");
+    for(var i=0, n=champ.length;i<n;i++) {
+        champ[i].disabled=false;
+      }
+}
 
 
 function modificationInformations(element){
@@ -96,7 +145,7 @@ function checkboxcheckGestionsUtilisateurs(){
         }else{
             for(var b=0, d=button.length;b<d;b++) {
                 button[b].disabled=false;
-                button[b].style.backgroundColor ="#BB66BF";       
+                button[b].style.backgroundColor ="#aa3558";       
             } 
             break;
         }

@@ -4,7 +4,7 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <title>mes données</title>
+  <title>FAQ</title>
   <link rel="icon" type="image/png" href="images/psy-fi.png" />
   <link rel="stylesheet" href="css//style_faq.css">
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
@@ -26,7 +26,7 @@
 
   </div>
   <div id="faqText2">
-  <h3 class="static" >questions fréquentes :</h3>
+  <h1 class="static" >Questions fréquentes :</h1>
   </div>
   </div>
 
@@ -55,23 +55,23 @@
           if( $_SESSION["faqModification"]=='true'){
       ?>
              <form method="post" action="faqFonctionTrois.php">
-              <h2>QESTION</h2>
+              <h2>QUESTION</h2>
             <div class="question">
               <div class="questionText">
-                <textarea name="question"><?php echo  $resultat3[$_SESSION["faqID"]][0] ?></textarea>
+                <textarea name="question"><?php echo $resultat3[$_SESSION["faqID"]][0]?></textarea>
 
             </div>
           </div>
             </div>
-                <h2>REPONSE</h2>
+                <h2>R&EacutePONSE</h2>
                 <div class="question">
-                      <textarea name="reponse"><?php echo $resultat3[$_SESSION["faqID"]][1]   ?> </textarea>
+                      <textarea name="reponse"><?php echo $resultat3[$_SESSION["faqID"]][1]?></textarea>
                  </div>
 
-                   <input  name="typeId3" type="hidden" value= <?php echo $_SESSION["faqID"] ?> >  
+                   <input  name="typeId3" type="hidden" value= <?php echo $_SESSION["faqID"]?>>  
 
                    <div id="registerButton">
-                   <input  name="idval3" type="submit" class="button6" value= "Enregistrer" >
+                   <input  name="idval3" type="submit" class="button" value= "Enregistrer" >
                    </div>
                 </form>
 
@@ -100,7 +100,7 @@
 
                   <div class="questionText">
 
-                  <h1> <?php echo $resultat3[$i][0]  ?> <img class="flecheBottom" onclick="faq(variableRecuperee,this)" src="images/flecheBottom.png"  id="<?php echo $resultat3[$i][0]?>" >   </h1>
+                  <h1> <?php echo $resultat3[$i][0]?> <img class="flecheBottom" onclick="faq(variableRecuperee,this)" src="images/flecheBottom.png"  id="<?php echo $resultat3[$i][0]?>" >   </h1>
 
 
 
@@ -115,12 +115,12 @@
                 <form method="post" action="faqFonctionDeux.php">
 
                 <input  name="typeId" type="hidden" value=<?php echo $i ?>  >   
-                <input  name="idval" type="submit" class="button" value= "supprimer"  id=<?php echo $i ?>>
+                <input  name="idval" type="submit" class="button" value= "Supprimer"  id=<?php echo $i ?>>
                 </form>
 
                 <form method="post" action="faqFonctionTrois.php">
                 <input  name="typeId2" type="hidden" value=<?php echo $i ?>  >   
-                <input  name="idval2" type="submit" class="button" value= "modifier"  id=<?php echo $i ?>>
+                <input  name="idval2" type="submit" class="button" value= "Modifier"  id=<?php echo $i ?>>
                 </form>
                 </div>
 
@@ -167,7 +167,7 @@
 
 <div id="values">
 
-  <input  type="" name="" placeholder="value">
+  <input  type="text" name="" placeholder="value">
 
   <input type="button" class="button" value="Besoin d'aide ?">
 
@@ -176,7 +176,7 @@
     if($_SESSION['type']=='Admin'){
 ?>
 
-  <a href="faqAdmin.php" class="button" > ajouter </a> 
+  <a href="faqAdmin.php" class="button" > Ajouter </a> 
 <?php
 
 }

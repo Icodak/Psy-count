@@ -1,29 +1,24 @@
-
-
-
 html, body {
- margin:0;
- padding:0;
- }
+  margin: 0;
+  padding: 0;
+}
 
-
-#actionButton{
+#actionButton {
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
 
-body{
+body {
   position: relative;
 }
 
-li{
+li {
   list-style: none;
 }
 
-
 .button4 {
-  background-color:grey;
+  background-color: grey;
   border: none;
   color: white;
   padding: 10px;
@@ -32,11 +27,19 @@ li{
   display: inline-block;
   font-size: 20px;
   margin: 4px 2px;
-  cursor:pointer;
-  max-width: 150px;
+  cursor: pointer;
+  min-width: 150px;
+  border-radius: 30px;
+
 }
+
+input[type="checkbox"]{
+  transform: scale(2);
+  /*zoom: 1.5;*/
+}
+
 .button5 {
-  background-color: #BB66BF;
+  background-color: #aa3558;
   border: none;
   color: white;
   padding: 10px;
@@ -45,12 +48,13 @@ li{
   display: inline-block;
   font-size: 20px;
   margin: 4px 2px;
-  cursor:pointer;
+  cursor: pointer;
   margin-bottom: 20px;
+  border-radius: 30px;
 }
 
 .button3 {
-  background-color:#BB66BF;
+  background-color: #aa3558;
   border: none;
   color: white;
   padding: 10px;
@@ -59,139 +63,121 @@ li{
   display: inline-block;
   font-size: 20px;
   margin: 4px 2px;
-  cursor:pointer;
+  cursor: pointer;
   max-width: 150px;
+  border-radius: 30px;
 }
 
-#globalPage{
+#globalPage {
   display: block;
 }
 
-table{
+table {
   overflow: auto;
   margin-top: 5px;
   width: 100%;
   border-spacing: 0px 30px;
   border: 2px solid black;
   background-color: white;
-  margin-bottom: 20px;;
+  margin-bottom: 20px;
   font-size: 40px;
-
 }
 
-input[type='text']{
-background-color: white;
-border: none;
-font-size: 20px;
+input[type='text'] {
+  background-color: white;
+  border: none;
+  font-size: 20px;
 }
 
-
-
-#gestionUtilisateur{
-  height: 800px;
+#gestionUtilisateur {
+  height: max(calc(100vh - 340px),100%);
   text-align: center;
   display: flex;
   flex-direction: column;
-  align-items:center;
- background-color:white ;
+  align-items: center;
+  background-color: white;
 }
-.text2{
+
+.text2 {
   border-bottom: solid purple;
 }
 
-#subTable{
+#subTable {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 
-
-header{
-  text-align: center;
-  padding-top: 2%;
-}
-
-.pagination{
+.pagination {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: 20px;
 }
 
-.page-item{
+.page-item {
   border: 1px solid black;
   padding: 8px;
   margin: 0 4px;
   font-size: 35px;
   text-align: center;
   border-radius: 5px;
-
+  min-width: 25px;
 }
-.page-items{
+
+.page-items {
   border: 1px solid black;
   padding: 8px;
   margin: 0 4px;
   font-size: 35px;
   text-align: center;
   border-radius: 5px;
-
 }
 
-
-div{
+div {
   border: 2px border black;
 }
 
-
-
-
-td,th{
+td, th {
   padding-left: 20px;
   padding-right: 20px;
 }
 
-
-
-
-
-form{
+form {
   text-align: center;
   display: flex;
   flex-direction: row;
 }
-body{
-    background-color: #C488B6 ;
+
+
+textarea {
+  resize: none;
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid black;
 }
-textarea{
- resize : none;
- background-color: rgba(0,0,0,0);
- border: 1px solid black;
-}
 
-
-
-
-select{
+select {
   padding-top: 1%;
   padding-bottom: 1%;
 }
 
-
-
-@media only screen   and (max-width: 800px) {
-
-
-table{
-  border-spacing: 0px 10px;
-  font-size: 10px;
-
+.main {
+  display: flex;
+  justify-content: center;
+  height: auto;
 }
 
-td,th{
-  padding-left: 2px;
-  padding-right: 2px;
-}
 
-}
 
+
+@media only screen and (max-width: 800px) {
+  table {
+    border-spacing: 0px 10px;
+    font-size: 10px;
+  }
+  td, th {
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+}

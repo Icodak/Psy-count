@@ -15,8 +15,7 @@ html{
 #alertContact{
   display: block; 
   margin: 5%; 
-  border: 0.1em solid #BB66BF;
-  background-color: lightcoral;
+  border: 0.1em solid #aa3558;
   color: white;
 }
 
@@ -39,13 +38,13 @@ html{
 }
 
 .form_label{
-  border-bottom: 0.1em solid #7B28A2; 
+  border-bottom: 0.1em solid #aa3558; 
   color:black
 }
 
 .form_content{
   margin:inherit;
-  border: 0.1em solid #B25DBB;
+  border: 0.1em solid #aa3558;
   color: darkgray;
 }
 
@@ -64,13 +63,12 @@ input{
 html, body {
  margin:0;
  padding:0;
- background: linear-gradient(white, #BB66BF);
  }
 
 
 .button4 {
   border-radius: 12px;
-  background-color: #BB66BF;
+  background-color: #aa3558;
   border: none;
   color: white;
   padding: 10px;
@@ -88,7 +86,7 @@ li{
 }
 
 #headerText{
-  color:#7B28A2;
+  color:#aa3558;
 }
 
 #menuBar1{
@@ -136,14 +134,14 @@ img {
 }
 
 #sepator1{
-  color: #B25DBB;
-  background-color:#B25DBB;
+  color: #aa3558;
+  background-color:#aa3558;
   width: 100px; 
   margin-bottom: 40px;
 }
 #sepator2{
-  color: #B25DBB;
-  background-color:#B25DBB;
+  color: #aa3558;
+  background-color:#aa3558;
   width: 100px; 
 }
 #video1{
@@ -161,23 +159,6 @@ img {
 
 }
 
-#descriptifText{
-  padding-left: 2%;
-  background-color: #C488B6;
-  padding-top: 65px;
-  padding-bottom: 50px;
-}
-
-#discordGroup1{
-    display: flex;
-    margin-bottom: 5%;
-    justify-content: space-around;
-}
-
-#discordGroup2{
-    display: flex;
-    justify-content: space-around;
-}
 
 #groupInformation{
   margin-left: 10%;

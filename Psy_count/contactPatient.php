@@ -5,7 +5,7 @@
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="icon" type="image/png" href="images/psy-fi.png" />
-    <link rel="stylesheet" href="css//style_Refonte.css">
+    <link rel="stylesheet" href="css/style_Refonte.css">
 </head>
 
 <header>
@@ -22,7 +22,7 @@ try {
 
 
     if ($_SESSION['type'] = 'patient') {
-        echo 'Test messagerie patient : '.$_SESSION['ID']."\n\r";
+        //echo 'Test messagerie patient : '.$_SESSION['ID']."\n\r";
 
         //TODO : J'assigne d'office un Doc à un patient prcq on n'a pas encore la fonction 
         //pour que le médecin choisisse ses patient !
@@ -40,9 +40,11 @@ try {
         );
 
         $ID_doc = $testSQL3->fetch();
-        $_SESSION["ID_DocOfPatient"] = $ID_doc["ID_Medecin"];
-        echo "TEST".$_SESSION["ID_DocOfPatient"]."TEST";
 
+      
+        $_SESSION["ID_DocOfPatient"] = $ID_doc["ID_Medecin"];
+        //echo "TEST".$_SESSION["ID_DocOfPatient"]."TEST";
+      
         //Trouver ID_Utilisateur du médecin traitant à partir de son ID_Medecin
         $testSQL4 = $dbMsg->query(
             'SELECT ID_Utilisateur 
@@ -52,6 +54,8 @@ try {
 
         $ID_docUser = $testSQL4->fetch();
         $_SESSION["ID_DocAsUser"] = $ID_docUser["ID_Utilisateur"];
+        
+      
 
         //Enfin : récupérer l'email du médecin traitant
         $testSQL5 = $dbMsg->query(
@@ -59,11 +63,12 @@ try {
             FROM utilisateur
              WHERE ID_Utilisateur = "' . $_SESSION["ID_DocAsUser"] . '"'
         );
-
+       
         $ID_docMail = $testSQL5->fetch();
         $_SESSION["ID_DocMail"] = $ID_docMail["Email"];
+       
 
-        echo "\nLe mail du patient d'ID_Utilisateur = " . $_SESSION['ID'] . " est " . $_SESSION["ID_DocMail"];
+        //echo "\nLe mail du patient d'ID_Utilisateur = " . $_SESSION['ID'] . " est " . $_SESSION["ID_DocMail"];
 
         //Get nom, prenom, Email, from ID_Utilisateur pour auto remplir le formulaire
 
@@ -80,9 +85,9 @@ try {
         $_SESSION["user_nom"] = $user_data["nom"];
         $_SESSION["user_mail"] = $user_data["Email"];
 
-        echo $_SESSION["user_prenom"] . $_SESSION["user_nom"] . $_SESSION["user_mail"];
+        //echo $_SESSION["user_prenom"] . $_SESSION["user_nom"] . $_SESSION["user_mail"];
     } else {
-        echo "Test messagerie médecin :";
+        //echo "Test messagerie médecin :";
     }
 } catch (Exception $e) {
     echo "Erreur :", $e->getMessage(), "\n";
@@ -139,7 +144,7 @@ try {
     <?php
     if ($msg_envoi) :
     ?>
-        <div style="height: 100vh;" id="form">
+        <div>
             <h3 class="headerText"> Message bien reçu. Nous vous recontacterons prochainement.</h2>
         </div>
     <?php
@@ -159,12 +164,12 @@ try {
                 </div>
 
                 <div class="form_group"> <label class="form_label" for="text"> Sujet du message </label>
-                    <input class="form_content" type="text" name="msgSubject_Cct" placeholder="ex : Contact avec l'administrateur PSY-fi..."> </label>
+                    <input class="form_content" required  minlength="1" type="text" name="msgSubject_Cct" placeholder="ex : Contact avec l'administrateur PSY-fi..."> </label>
                 </div>
 
                 <div class="form_group">
                     <label class="form_label" for="text"> Message </label>
-                    <textarea class="form_content" name="msg_Cct" placeholder="Veuillez écrire votre message..."></textarea>
+                    <textarea class="form_content" required  minlength="1" name="msg_Cct" placeholder="Veuillez écrire votre message..."></textarea>
                 </div>
 
                 <div class="form_group">
@@ -174,7 +179,7 @@ try {
             </form>
             
         </div>
-        <img src="css//images_css/psy-fi.png">
+        <img src="images/psy-fi.png">
     </div>
 
     <?php
@@ -183,7 +188,5 @@ try {
 
     <!-- v Should be in a footer :/ mais la mise en page marche pas?-->
 </body>
-
 <?php include("footer.php") ?>
-
 </html>

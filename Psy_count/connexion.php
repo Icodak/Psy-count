@@ -35,7 +35,11 @@ try{
       'SELECT ID_Utilisateur FROM utilisateur where Email=:Email ');
       $req3->execute(array('Email' => $Email));
       $resultat2 = $req3->fetch();
-
+  
+      $req =  $dbco->prepare('SELECT images FROM utilisateur WHERE Email=:Email');
+      $req->execute(['Email' => $Email]);
+      $resultat4 = $req->fetch();
+   
       //  vérifier s'il existe un mot de passe pour l'adresse mail donné
       if (!$resultat)
       {
@@ -46,10 +50,21 @@ try{
       //  si le mot de passe est correct récupérer les informations de l'utilisateur
       else
       {
+
+        $req3 =  $dbco->prepare(
+          'SELECT ID_Utilisateur FROM blacklist where ID_Utilisateur=:ID_Utilisateur ');
+          $req3->execute(array('ID_Utilisateur' =>$resultat2['ID_Utilisateur'] ));
+          $resultat4 = $req3->fetchAll();
+
+          if(count($resultat4)!=0){
+            $_SESSION['message2']= 'votre compte est banni contactez un administrateur';
+            header('Location: signIn.php');
+          }else{
       if ($isPasswordCorrect) {
         $_SESSION['type']=$resultat3['permission_lvl'];
         $_SESSION['connexion']='1';
         $_SESSION['ID']=$resultat2['ID_Utilisateur'];
+        $_SESSION['image']=$resultat4['images'];
         header('Location: accueil.php');
       }
       else {
@@ -57,6 +72,7 @@ try{
         header('Location: signIn.php');
       }
       }
+    }
       }
         catch(PDOException $e){
         echo "Erreur : " . $e->getMessage();

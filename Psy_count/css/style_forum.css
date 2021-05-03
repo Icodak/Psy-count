@@ -27,8 +27,6 @@ header>ul a:hover {
 
 .wrapper {
     display: flex;
-    background: no-repeat url("images_css/new_background.png");
-    background-position: center;
     position: relative;
     background-size: cover;
     vertical-align: baseline;
@@ -37,6 +35,7 @@ header>ul a:hover {
     overflow: hidden;
     align-items: center;
     justify-content: center;
+    background-color: #f9f0f0;
 }
 
 .main {
@@ -183,14 +182,7 @@ header {
     opacity: 70%;
 }
 
-footer {
-    position: absolute;
-    bottom: 0px;
-    z-index: 1000;
-    background-color: aliceblue;
-    height: 60px;
-    width: 100vw;
-}
+
 
 .topic-list li p {
     transform: translateY(-10px);
@@ -238,3 +230,4 @@ img {
 .topic-response{
     padding-left: 20px;
 }
+

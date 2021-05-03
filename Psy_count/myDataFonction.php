@@ -22,38 +22,116 @@ function initialisation(){
     } 
 }
 
-
-function changeDataUsers($prenom,$nom,$Email,$motDePasse){
+function changeDataUsers($prenom,$nom,$Email,$dateDeNaissance){
 
   $dbco = new PDO("mysql:host=localhost;dbname=serveur_psy_fi",'root','');
   $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
-  $Password = password_hash($motDePasse, PASSWORD_DEFAULT);
   $req =  $dbco->prepare(
-  "UPDATE utilisateur SET nom=?, prenom=? Email=? motDePasse=?  WHERE ID_Utilisateur=?");
-  $req->execute([$prenom, $nom,$Email,$Password,$_SESSION['ID']]);
+  "UPDATE utilisateur SET nom=?, prenom=?, Email=? WHERE ID_Utilisateur=?");
+  $req->execute([$nom,$prenom,$Email,$_SESSION['ID']]);
   $req =  $dbco->prepare(
     "UPDATE patient SET dateDeNaissance=? WHERE ID_Utilisateur=?");
-  $req->execute([$prenom, $nom,$Email,$Password,$_SESSION['ID']]);
+  $req->execute([$dateDeNaissance,$_SESSION['ID']]);
+}
 
-
-  header('Location: myData.php');
-
-  
+function changeImageUsers($image){
+  $maxSize=4500000;
+  $typeOfFiles=array('jpg','png','jpge');
+    if($image['size']<$maxSize){
+      $extensionFile=strtolower(substr(strrchr($image['name'],'.'),1));
+      if(in_array($extensionFile,$typeOfFiles)){
+        $chemin="images_utilisateurs/".$_SESSION['ID'].".".$extensionFile;
+        $test = move_uploaded_file($image['tmp_name'],$chemin);
+        if($test){
+          $avatar=$_SESSION['ID'].".".$extensionFile;
+          $dbco = new PDO("mysql:host=localhost;dbname=serveur_psy_fi",'root','');
+          $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
+          $req =  $dbco->prepare(
+          "UPDATE utilisateur SET images=? WHERE ID_Utilisateur=?");
+          $req->execute([$avatar,$_SESSION['ID']]);
+        }else{
+          $_SESSION['errorImage']="transfert impossible, retentez ultérieument"; 
+      }
+    }else{
+      $_SESSION['errorImage']="votre images doit étre au format jpg/png/jpge";   
+    }
+}else{
+  $_SESSION['errorImage']="votre images ne doit pas avoir une taille de plus de 5Mo";
+}
 }
 
 
 
 
+function updatePassword($motDePasse){
+  $Password = password_hash($motDePasse, PASSWORD_DEFAULT);
+  $dbco = new PDO("mysql:host=localhost;dbname=serveur_psy_fi",'root','');
+  $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
+  $req =  $dbco->prepare(
+  "UPDATE utilisateur SET motDePasse=?  WHERE ID_Utilisateur=?");
+  $req->execute([$Password,$_SESSION['ID']]);
+}
 
-if(isset($_POST['idtype8']))
+function SelectPassword($id){
+  $dbco = new PDO("mysql:host=localhost;dbname=serveur_psy_fi",'root','');
+  $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
+  $req =  $dbco->prepare('SELECT motDePasse FROM utilisateur WHERE ID_Utilisateur=:ID_Utilisateur');
+  $req->execute(['ID_Utilisateur' => $id]);
+  $resultat = $req->fetch();
+  return $resultat['motDePasse'];
+}
+
+
+if(isset($_POST['dataPageChange']))
 {
 
-  $_POST['prenom'];
-  $_POST['nom'];
-  $_POST['Email'];
-  $_POST['motDePasse'];
+  $dateDeNaissance=$_POST['dateDeNaissance'];
+  $Email=$_POST['Email'];
+  $Prenom=$_POST['Prenom'];
+  $nom=$_POST['nom'];
+  $image=$_FILES['avatar'];
+  session_start();
+  changeImageUsers($image);
+  changeDataUsers($Prenom,$nom,$Email,$dateDeNaissance);
+  header('Location: DataPage2.php'); 
 
 
 }
+
+if(isset($_POST['dataPageChange2']))
+{
+
+  $Password1=$_POST['mdp'];
+  $Password2=$_POST['newmdp'];
+  $Password3=$_POST['newmdpverif'];
+  session_start();
+  $PasswordTest=SelectPassword($_SESSION['ID']);
+  $isPasswordCorrect = password_verify($Password1,$PasswordTest);
+
+
+  if($isPasswordCorrect){
+    if($Password2!=$Password3){
+
+      $_SESSION['messageData']="vos nouveaux mot de passe doivent correspondre";
+      header('Location: DataPage3.php'); 
+    }else{
+  
+      updatePassword($Password2);
+      $_SESSION['messageData']="mot de passe changé";
+      header('Location: DataPage3.php'); 
+    }
+  }else{
+    $_SESSION['messageData']="votre ancien mot de passe est incorrect";
+    header('Location: DataPage3.php'); 
+  }
+
+
+
+  
+
+}
+
+
+
 
 ?>

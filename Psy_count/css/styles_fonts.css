@@ -6,17 +6,12 @@
     url("../fonts/POPPINS-EXTRABOLD.TTF") format("truetype");
     font-weight: lighter, normal, bold, bolder;
 }
-
-html, label, select, textarea {
+html {
     font-family: poppins;
     font-weight: normal;
 }
 
-h1 {
-    font-weight: lighter;
-}
-
-button {
+button, .button, h1 {
     font-weight: lighter;
 }
 .white-text {

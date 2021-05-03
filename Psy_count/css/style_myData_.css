@@ -10,33 +10,41 @@ body{
 	position: relative;
 }
 
+.responsive {
+	object-fit: cover;
+}
+
 #doctorPage{
-	background-color: rgba(177, 88, 158,0.45);
+	padding: 20px;
 	width: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	max-width: 600px;
+	background-color: white;
 	margin-right: 3%;
 	max-height: 725px;
+	box-shadow: 0px 0px 10px rgb(189, 189, 189);
+	border-radius: 3px;
 }
 
 h1{
 	margin: 0px;
+	padding: 0px;
 }
 
 
-#consultButton{
+.consultButton .consultbuttonText {
 	margin-right: 2%;
 	margin-left: 2%;
 	display: flex;
 	justify-content: space-between;
 }
-
-header{
-	text-align: center;
-	padding-top: 3%;
+.consultButton{
+	display: flex;
+	justify-content: space-around;
 }
+
 
 .graph{
 	text-align: center;
@@ -51,21 +59,23 @@ header{
 
 #myDataPage{
 	display: flex;
-	margin-left: 5%;
-	margin-right: 5%;
 	flex-direction: row;
 	justify-content: center;
-	min-height:900px;
+	padding: 30px 0px;
+	background-color: #f9f0f0;
 
 }
 li{
 	list-style: none;
+	justify-content: center;
+	text-align: center;
 }
 
-#graphPage{
+.graphPage{
 	margin-left: 3%;
 	display: flex;
 	flex-direction: column;
+	box-sizing: content-box;
 }
 
 .subgraphPage{
@@ -79,20 +89,41 @@ a{
 }
 
 
-
-.button4 {
-  border-radius: 20px;
-  background-color: #B1589E;
-  border: none;
-  color: white;
-  padding: 10px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
-  margin: 4px 2px;
-  cursor:pointer;
+.button {
+	border-radius: 30px;
+	background-color: #aa3558;
+	color: white;
+	font-size: 3.5vw;
+	border: none;
+	letter-spacing: 0.2px;
+	padding: 10px 20px;
+	margin: 0px 10px;
+	align-items: center;
+	text-align: center;
+	text-decoration: none;
+	display: flex;
+	cursor: pointer;
+	transition: all 0.2s ease 0s;
+  }
+  
+hr {
+	background-color: #972467;
+	width: 100px;
+	height: 1px;
+	margin-bottom: 40px;
 }
+
+  .button:hover{
+	transition: all 0.2s ease 0s;
+	background-color: #6d2339;
+	letter-spacing: 1px;
+  }
+  
+  .button:active {
+	transition: all 0.1s ease 0s;
+	background-color: rgb(184, 38, 99);
+	letter-spacing: 0px;
+  }
 
 
 .subgraphPage img{
@@ -102,30 +133,13 @@ a{
 
 }
 
-#doctorData img {
-	max-height: 60%;
-	max-width: 100%;
-}
-
-
-#doctorData{
+.doctorData{
 	display: flex;
 	flex-direction: row;
-	margin-top: 5%;
 	justify-content: space-around;
 }
 
-#sepator1{
-  color: white;
-  background-color: white;
-  width: 100px; 
-  margin-bottom: 40px;
-  border:none;
-}
 
-#graphPage h1{
-	padding-top: 15%;
-}
 
 
 
@@ -154,21 +168,26 @@ body {
 }
 
 .topic-right h3{
-	font-size: 35px;
+	font-size: 25px;
+	margin-top: 2%;
+	margin-bottom: 2%;
 }
 
 
 
-ul {
-    list-style: none;
-    display: flex;
-}
+
 
 .inputImage  img {
 	width: 40px;
 	height: 40px;
 	cursor: pointer;
 }
+
+.newmdpverif{
+	text-align: center;
+	color: red;
+}
+
 
 
 .wrapper {
@@ -178,7 +197,19 @@ ul {
     position: relative;
     background-size: cover;
     vertical-align: baseline;
-    min-height: 140vh;
+    min-height: 90vh;
+    overflow: hidden;
+    justify-content: center;
+}
+
+.wrapper2{
+    display: flex;
+    background: no-repeat url("images_css/new_background.png");
+    background-position: center;
+    position: relative;
+    background-size: cover;
+    vertical-align: baseline;
+    min-height: 75vh;
     overflow: hidden;
     justify-content: center;
 }
@@ -212,39 +243,21 @@ ul {
 
 }
 
-.new-subject {
-    position: inherit;
-    display: flex;
-    border-radius: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
-    transform: translateX(-10px);
-    color: white;
-    height: auto;
-    background-color: rgb(58, 0, 48);
-    align-items: center;
-    justify-content: center;
-    transition: all 0.2s ease 0s;
-	min-width: 150px;
+.error-message{
+	text-align: center;
+}
+
+.Black-color{
+	color: black;
+	text-align: center;
+}
+
+input[type="file"]{
+	margin-top: 15px;
 }
 
 .new-subject p {
 	font-size: 25px;
-}
-
-
-.new-subject:hover {
-    background-color: rgb(94, 1, 78);
-    letter-spacing: 0.5px;
-    transition: all 0.2s ease 0s;
-    cursor: pointer;
-}
-
-.new-subject:active {
-    background-color: rgb(238, 97, 139);
-    color: rgb(26, 1, 16);
-    letter-spacing: 0px;
-    transition: all 0.1s ease 0s;
 }
 
 .topic-main {
@@ -262,20 +275,34 @@ ul {
 }
 
 
+.change-password{
+	min-width: 700px;
+}
+
 
 .frame-header img{
-	max-width: 250px;
+	max-width: 200px;
 	max-height: 250px;
-	clip-path: circle(40%);
+	clip-path: circle(80%);
 }
 
 .User-image{
 	display: flex;
 	text-align: center;
 	align-items: center;
-	flex-direction: column;
+	flex-direction: row;
 	justify-content: center;
 	margin-bottom: 4%;
+	margin-top: 3%;
+}
+
+.topic-right2{
+	display: flex;
+	flex-direction: row;
+}
+
+label{
+	cursor: pointer;
 }
 
 form{
@@ -291,11 +318,17 @@ form{
     align-items: center;
 }
 .topic-items input{
-	font-size: 35px;
+	font-size: 25px;
 }
 
 .topic-right{
-	min-width: 300px;
+	min-width: 400px;
+}
+
+
+.frame-header h1{
+	font-size: 50px;
+	font-weight: bold;
 }
 
 .end-main{
@@ -372,9 +405,7 @@ form{
 
 
 
-.topic-list li p {
-    transform: translateY(-10px);
-}
+
 
 .topic-left {
     display: flex;
@@ -409,8 +440,6 @@ form{
 	flex-direction: column;
 	align-items: center;
 	margin: 0%;
-
-
 }
 #inputAccount{
 	min-height: 1300px;
@@ -428,21 +457,18 @@ form{
 
 }
 
-#graphPage{
+.graphPage{
 	margin-left:0%;
 	margin-bottom: 10%;
 }
 
 
-#doctorPage{
-	margin-right: 0%;
 
-}
 
-#UserImage{
+.UserImage{
 	margin-left: 2%;
 }
-#doctorLabel{
+.doctorLabel{
 	margin-right: 2%;
 }
 
@@ -465,14 +491,14 @@ form{
 	margin-top: 0%;
 }
 
-#graphPage{
+.graphPage{
 	margin-top: 2%;
 	margin-left:0%;
 }
 
 
 
-#graphPage h1{
+.graphPage h1{
 	font-size: 20px;
 	padding-left: 2%;
 	padding-right: 2%;
@@ -506,3 +532,37 @@ form{
 	font-size: 15px;
 	word-break: break-all;
 }
+}
+@media (min-width: 550px) {
+	p, a, .button {
+	  font-size: 3vw;
+	}
+  }
+  
+  @media (min-width: 900px) {
+	.block1 {
+	  flex-direction: row;
+	}
+	.headerPresentation {
+	  text-align: left;
+	}
+	p, a, .button {
+	  font-size: 2vw;
+	}
+	.container3 {
+	  flex-direction: row;
+	}
+  }
+  
+  @media (min-width: 1200px) {
+	.psy-icon {
+	  display: flex;
+	  flex: 1;
+	}
+	.imagePsyFi {
+	  object-fit: scale-down;
+	}
+	p, a, .button {
+	  font-size: 20px;
+	}
+  }

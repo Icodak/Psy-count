@@ -3,17 +3,12 @@
 
 <head>
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Messagerie interne</title>
     <link rel="icon" type="image/png" href="images/psy-fi.png" />
     <link rel="stylesheet" href="css//style_Refonte.css">
 </head>
 
-<header>
-    <div>
-        <?php include("menuBar.php") ?>
-        <h2 class="headerText"> Consultation et Aide</h2>
-    </div>
-</header>
+
 
 <?php //Fonction Récup Mail du Médecin traitant 
 try {
@@ -44,11 +39,17 @@ $recipient_from_users = $dbMsgInt->query('SELECT ID_Utilisateur, nom, prenom FRO
 ?>
 
 <body>
+<header>
+    <div>
+        <?php include("menuBar.php") ?>
+        <h2 class="headerText"> Consultation et Aide</h2>
+    </div>
+</header>
 
     <div class="background"></div>
     <?php
     if (isset($warning)) {
-        echo "<span style='color:lightcoral;'>" . $warning . "</span>";
+        echo "<div class='warning'>" . $warning . "</div>";
     }
     ?>
 
@@ -58,10 +59,12 @@ $recipient_from_users = $dbMsgInt->query('SELECT ID_Utilisateur, nom, prenom FRO
 
                 <div class="form_group"> <label class="form_label" for="text"> Je souhaite contacter : </label>
                     <select class="form_content" name="msg_destinataire">
+                        <optgroup>
                         <?php while ($d = $recipient_from_users->fetch()) { ?>
                             <option><?= $d['nom'] . " " . $d['prenom'] //?= == php echo
                                     ?></option>
                         <?php } ?>
+                        </optgroup>
                     </select>
                 </div>
 
@@ -81,7 +84,7 @@ $recipient_from_users = $dbMsgInt->query('SELECT ID_Utilisateur, nom, prenom FRO
             </form>
             
         </div>
-        <img src="css//images_css/psy-fi.png">
+        <img src="images/psy-fi.png">
     </div>
 
 </body>

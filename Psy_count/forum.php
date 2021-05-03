@@ -10,6 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Forum</title>
     <meta name="description" content="Forum de Psy-Count L'endroit d'échange entre utilisateurs">
+    <link rel="icon" type="image/png" href="images/psy-fi.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/style_forum.css">
 </head>
@@ -18,22 +19,9 @@
     <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-    <header>
-        <ul>
-            <li><a>
-                    <p>COUCOU |</p>
-                </a></li>
-            <li><a>
-                    <p>| HELLO |</p>
-                </a></li>
-            <li><a>
-                    <p>| MIAOU |</p>
-                </a></li>
-            <li><a>
-                    <p>| FLAP</p>
-                </a></li>
-        </ul>
-    </header>
+
+    <?php include("menuBar.php") ?>
+
     <div class="wrapper">
         <div class="main">
 
@@ -65,7 +53,7 @@
                         </div>
                         <div class="topic-right">
 
-                            <div class="topic-icon"><img src="images/Nightmare.jpg"/></div>
+                            <div class="topic-icon"><img src="images/amanda.jpg"/></div>
                             <div class="topic-response">
                                 <h3>Amanda</h3>
                                 <p>26 avril</p>
@@ -87,7 +75,7 @@
                         </div>
                         <div class="topic-right">
 
-                            <div class="topic-icon"><img src="images/icone icodakv2.5.blanc.png"/></div>
+                            <div class="topic-icon"><img src="images/arsene.jpg"/></div>
                             <div class="topic-response">
                                 <h3>Arsène</h3>
                                 <p>15 avril</p>
@@ -110,7 +98,7 @@
                         </div>
                         <div class="topic-right">
 
-                            <div class="topic-icon"><img src="images/Dieu lapin.png"/></div>
+                            <div class="topic-icon"><img src="images/nicolas.jpg"/></div>
                             <div class="topic-response">
                                 <h3>Nicolas</h3>
                                 <p>29 mars</p>
@@ -128,9 +116,9 @@
         </div>
     </div>
     </div>
-    <footer>
-        <p>Je suis un footer de remplacement © 2021</p>
-    </footer>
+
+    <?php include("footer.php") ?>
+
 </body>
 
 </html>
