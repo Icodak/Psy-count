@@ -1,19 +1,19 @@
-
-
 html, body {
  margin:0;
  padding:0;
  }
-
-
 body{
 	position: relative;
 }
 
-.responsive {
-	object-fit: cover;
-}
+#myDataPage{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	padding: 30px 0px;
+	background-color: #f9f0f0;
 
+}
 #doctorPage{
 	padding: 20px;
 	width: 100%;
@@ -22,17 +22,15 @@ body{
 	justify-content: space-between;
 	max-width: 600px;
 	background-color: white;
-	margin-right: 3%;
 	max-height: 725px;
 	box-shadow: 0px 0px 10px rgb(189, 189, 189);
 	border-radius: 3px;
 }
-
-h1{
-	margin: 0px;
-	padding: 0px;
+li{
+	list-style: none;
+	justify-content: center;
+	text-align: center;
 }
-
 
 .consultButton .consultbuttonText {
 	margin-right: 2%;
@@ -44,7 +42,12 @@ h1{
 	display: flex;
 	justify-content: space-around;
 }
-
+.graphPage{
+	margin-left: 3%;
+	display: flex;
+	flex-direction: column;
+	box-sizing: content-box;
+}
 
 .graph{
 	text-align: center;
@@ -55,382 +58,27 @@ h1{
 }
 
 
-
-
-#myDataPage{
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	padding: 30px 0px;
-	background-color: #f9f0f0;
-
-}
-li{
-	list-style: none;
-	justify-content: center;
-	text-align: center;
-}
-
-.graphPage{
-	margin-left: 3%;
-	display: flex;
-	flex-direction: column;
-	box-sizing: content-box;
-}
-
 .subgraphPage{
 	display: flex;
 	flex-direction: row;
 }
 
-a{
-	text-decoration-line: none;
-	cursor:pointer;
-}
-
 
 .button {
-	border-radius: 30px;
-	background-color: #aa3558;
-	color: white;
-	font-size: 3.5vw;
-	border: none;
-	letter-spacing: 0.2px;
-	padding: 10px 20px;
-	margin: 0px 10px;
 	align-items: center;
-	text-align: center;
-	text-decoration: none;
-	display: flex;
-	cursor: pointer;
-	transition: all 0.2s ease 0s;
   }
   
-hr {
-	background-color: #972467;
-	width: 100px;
-	height: 1px;
-	margin-bottom: 40px;
-}
-
-  .button:hover{
-	transition: all 0.2s ease 0s;
-	background-color: #6d2339;
-	letter-spacing: 1px;
-  }
-  
-  .button:active {
-	transition: all 0.1s ease 0s;
-	background-color: rgb(184, 38, 99);
-	letter-spacing: 0px;
-  }
-
-
 .subgraphPage img{
 	width: 280px;
 	height:280px;
-
-
 }
 
 .doctorData{
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
-}
-
-
-
-
-
-/* PAGE DEUX MODIFICATIONS DES DONNEES*/
-
-
-#modificationPage{
-	display: none;
-}
-
-
-@font-face {
-    font-family: "poppins";
-    src: url("../fonts/POPPINS-REGULAR.TTF") format("truetype");
-}
-
-html, body {
-    margin: 0;
-    border: 0;
-    padding: 0;
-    font-family: poppins;
-}
-
-body {
-    position: relative;
-}
-
-.topic-right h3{
-	font-size: 25px;
-	margin-top: 2%;
 	margin-bottom: 2%;
-}
-
-
-
-
-
-.inputImage  img {
-	width: 40px;
-	height: 40px;
-	cursor: pointer;
-}
-
-.newmdpverif{
-	text-align: center;
-	color: red;
-}
-
-
-
-.wrapper {
-    display: flex;
-    background: no-repeat url("images_css/new_background.png");
-    background-position: center;
-    position: relative;
-    background-size: cover;
-    vertical-align: baseline;
-    min-height: 90vh;
-    overflow: hidden;
-    justify-content: center;
-}
-
-.wrapper2{
-    display: flex;
-    background: no-repeat url("images_css/new_background.png");
-    background-position: center;
-    position: relative;
-    background-size: cover;
-    vertical-align: baseline;
-    min-height: 75vh;
-    overflow: hidden;
-    justify-content: center;
-}
-
-.main{
-	width: 100%;
-	display: flex;
-	justify-content: center;
-}
-
-
-
-.frame-header {
-    position: relative;
-    top: 30px;
-    background-color: white;
-    border-radius: 5px;
-    z-index: 100;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-	width: 100%;
-}
-
-.topic-main .data-button{
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
-	margin-bottom: 3%;
-
 }
-
-.error-message{
-	text-align: center;
-}
-
-.Black-color{
-	color: black;
-	text-align: center;
-}
-
-input[type="file"]{
-	margin-top: 15px;
-}
-
-.new-subject p {
-	font-size: 25px;
-}
-
-.topic-main {
-	padding-top: 3%;
-    position: relative;
-    top: 50px;
-    min-height: 100px;
-    height: auto;
-    background-color: white;
-    border-radius: 5px;
-    z-index: 100;
-    display: flex;
-    flex-direction: column;
-	margin-bottom: 3%;
-}
-
-
-.change-password{
-	min-width: 700px;
-}
-
-
-.frame-header img{
-	max-width: 200px;
-	max-height: 250px;
-	clip-path: circle(80%);
-}
-
-.User-image{
-	display: flex;
-	text-align: center;
-	align-items: center;
-	flex-direction: row;
-	justify-content: center;
-	margin-bottom: 4%;
-	margin-top: 3%;
-}
-
-.topic-right2{
-	display: flex;
-	flex-direction: row;
-}
-
-label{
-	cursor: pointer;
-}
-
-form{
-	width: 80%;
-}
-
-.topic-list {
-    display: flex;
-    width: 100%;
-    padding: 0px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.topic-items input{
-	font-size: 25px;
-}
-
-.topic-right{
-	min-width: 400px;
-}
-
-
-.frame-header h1{
-	font-size: 50px;
-	font-weight: bold;
-}
-
-.end-main{
-	padding-top: 10px;
-    position: relative;
-    top: 50px;
-    min-height: 100px;
-    height: auto;
-    background-color: white;
-    border-radius: 5px;
-    z-index: 100;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-	margin-bottom: 3%;
-}
-
-.inputImage{
-	margin-right: 5%;
-}
-
-.inputImage button{
-	background-color: rgb(228, 226, 226);
-	border: none;
-}
-
-.topic-list li {
-    top: 30px;
-    height: 90px;
-    min-width: 98%;
-    border-radius: 5px;
-    display: flex;
-    margin-top: 20px;
-    box-shadow: 0px 0px 5px rgb(224, 224, 224);
-}
-
-.topic-list .topic-items {
-	padding-left: 2%;
-    display: flex;
-    background-color: rgb(228, 226, 226);
-	align-items: center;
-	width: 90%;
-	margin-bottom: 3%;
-
-}
-
-.topic-list a:hover {
-    background-color: rgb(209, 209, 209);
-}
-
-.topic-list a:active {
-    background-color: rgb(199, 198, 198);
-}
-
-.topic-list{
-	display: flex;
-	flex-direction: column;
-}
-
-
-
-
-
-
-
-
-@media (min-width: 1300px) {
-    
-}
-
-
-
-
-
-
-
-
-
-.topic-left {
-    display: flex;
-    flex:2;
-    justify-content: space-around;
-    align-items: center;
-	width: 100%;
-}
-
-
-
-
-.topic-meta {
-    padding-left: 20px;
-    flex:2;
-	display: flex;
-	flex-direction: row;
-}
-
-
-
-
-
-
-
 
 
 @media only screen and (max-width: 1300px) {
@@ -439,7 +87,6 @@ form{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	margin: 0%;
 }
 #inputAccount{
 	min-height: 1300px;
@@ -462,16 +109,12 @@ form{
 	margin-bottom: 10%;
 }
 
-
-
-
 .UserImage{
 	margin-left: 2%;
 }
 .doctorLabel{
 	margin-right: 2%;
 }
-
 
 
 
@@ -495,8 +138,6 @@ form{
 	margin-top: 2%;
 	margin-left:0%;
 }
-
-
 
 .graphPage h1{
 	font-size: 20px;
@@ -533,36 +174,3 @@ form{
 	word-break: break-all;
 }
 }
-@media (min-width: 550px) {
-	p, a, .button {
-	  font-size: 3vw;
-	}
-  }
-  
-  @media (min-width: 900px) {
-	.block1 {
-	  flex-direction: row;
-	}
-	.headerPresentation {
-	  text-align: left;
-	}
-	p, a, .button {
-	  font-size: 2vw;
-	}
-	.container3 {
-	  flex-direction: row;
-	}
-  }
-  
-  @media (min-width: 1200px) {
-	.psy-icon {
-	  display: flex;
-	  flex: 1;
-	}
-	.imagePsyFi {
-	  object-fit: scale-down;
-	}
-	p, a, .button {
-	  font-size: 20px;
-	}
-  }

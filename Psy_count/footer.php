@@ -2,7 +2,6 @@
 <html lang="fr">
 
 <head>
-    <title>footer</title>
     <link rel="stylesheet" href="css/style_footer.css">
     <link rel="stylesheet" href="css/styles_fonts.css">
 </head>

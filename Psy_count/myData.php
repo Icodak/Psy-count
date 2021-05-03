@@ -6,6 +6,7 @@
     <title>Mes données</title>
     <link rel="icon" type="image/png" href="images/psy-fi.png" />
     <link rel="stylesheet" href="css/style_myData_.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
     <script type="text/javascript" src="javascript//javaScriptCode.js"></script>
 </head>
@@ -27,10 +28,10 @@
         <div id="doctorPage">
 
             <div class="doctorData">
-                <div class="UserImage">
-                    <img src="images/backgroundImages vertical.png">
 
-                </div>
+                <img src="images/backgroundImages vertical.png">
+
+
 
                 <div class="doctorLabel">
                     <ul>
@@ -111,14 +112,7 @@
             </div>
 
         </div>
-
-
-
-
     </div>
-
-
-
     <?php include("footer.php") ?>
 
 </body>
