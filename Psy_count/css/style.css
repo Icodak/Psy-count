@@ -1,0 +1,181 @@
+@font-face {
+    font-family: "poppins";
+    src: url("../fonts/POPPINS-LIGHT.TTF") format("truetype"), url("../fonts/POPPINS-REGULAR.TTF") format("truetype"), url("../fonts/POPPINS-BOLD.TTF") format("truetype"), url("../fonts/POPPINS-EXTRABOLD.TTF") format("truetype");
+    font-weight: lighter, normal, bold, bolder;
+}
+
+html, body {
+    font-family: 'poppins', sans-serif, monospace;
+    font-weight: normal;
+    border: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+p, a {
+    font-size: 3.5vw;
+}
+
+a {
+    color: #6d2339;
+    text-decoration: none;
+}
+
+.white-text {
+    color: white;
+}
+
+.black-text {
+    color: black;
+}
+
+h1, .important-text {
+    color:#aa3558;
+}
+
+.white-background {
+    background-color: white;
+}
+
+.light-background {
+    background-color: #f9f0f0;
+}
+
+.gray-background {
+    background-color: #e9e5e6;
+}
+
+.medium-background {
+    background-color: #aa3558;
+}
+
+.dark-background {
+    background-color: #6d2339;
+}
+
+.darkest-background {
+    background-color: #36001a;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+hr {
+    background-color: #aa3558;
+    width: 100px;
+    height: 1px;
+}
+
+input {
+    font-family: "poppins", sans-serif, monospace;
+    background-color: #f9f0f0;
+    color: #6d2339;
+    border: none;
+    border-bottom: 2px solid rgb(80, 80, 80);
+    padding: 10px;
+    text-align: left;
+    align-items: center;
+    width: 100%;
+    font-size: 3.5vw;
+}
+
+input:hover {
+    border-bottom: 2px solid #6d2339;
+}
+
+input::placeholder {
+    color: rgb(82, 82, 82);
+    background-color: white;
+    border: none;
+}
+
+input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active {
+    background-color: #f9f0f0;
+}
+
+select {
+    font-family: "poppins", sans-serif, monospace;
+    background-color: #f9f0f0;
+    color: #6d2339;
+    padding: 10px 5px;
+    text-align: left;
+    align-items: center;
+    width: 100%;
+    font-size: 3.5vw;
+}
+
+option {
+    background-color: white;
+}
+
+.shadow {
+    box-shadow: 0px 0px 5px rgb(224, 224, 224);
+}
+
+.button {
+    border-radius: 30px;
+    background-color: #aa3558;
+    color: white;
+    font-size: 3.5vw;
+    border: none;
+    font-weight: lighter;
+    letter-spacing: 0.2px;
+    padding: 10px 20px;
+    margin: 0px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    cursor: pointer;
+    transition: all 0.2s ease 0s;
+}
+
+.button:hover {
+    transition: all 0.2s ease 0s;
+    background-color: #6d2339;
+    letter-spacing: 1px;
+}
+
+.button:active {
+    transition: all 0.1s ease 0s;
+    background-color: rgb(184, 38, 99);
+    letter-spacing: 0px;
+}
+
+.underline-link {
+    text-decoration: none;
+    color: black;
+}
+
+.underline-link:hover {
+    text-underline-offset: 10px;
+    text-decoration: underline #aa3558 2px;
+}
+
+/* Media queries*/
+
+@media (min-width: 550px) {
+    input, p, a, .button, select {
+        font-size: 3vw;
+    }
+    nav p, nav a, nav .button {
+        font-size: 15px;
+    }
+}
+
+@media (min-width: 900px) {
+    input, p, a, .button, select {
+        font-size: 2vw;
+    }
+    nav p, nav a, nav .button {
+        font-size: 15px;
+    }
+}
+
+@media (min-width: 1200px) {
+    input, p, a, .button, nav p, nav a, nav .button, select {
+        font-size: 20px;
+    }
+}
