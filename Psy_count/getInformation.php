@@ -45,7 +45,7 @@ session_start(); // On démarre la session AVANT toute chose
                
                 if(in_array("$Email", $allEmail)){
                   $_SESSION['message']='adresse mail deja utilisé pour un autre compte';
-                  header('Location: signUp.php');
+                  header('Location: sign-up.php');
                 }
                 else{
                   if($_POST['type']=='patient'){
@@ -69,7 +69,7 @@ session_start(); // On démarre la session AVANT toute chose
                 $dbco->exec($sql);
 
               }
-              header('Location: signIn.php');
+              header('Location: sign-in.php');
                 }
               }
 
@@ -80,11 +80,11 @@ session_start(); // On démarre la session AVANT toute chose
     }
       else{
         $_SESSION['message']='adresse mail invalide';
-        header('Location: signUp.php');
+        header('Location: sign-up.php');
       }
     }else{
       $_SESSION['message']='vos mot de passe doivent correspondre';
-      header('Location: signUp.php');
+      header('Location: sign-up.php');
     }
 
   }

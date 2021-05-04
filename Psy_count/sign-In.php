@@ -7,27 +7,29 @@
     <title>S'identifier</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/style_Sign_In.css">
+    <link rel="stylesheet" href="css/style_Sign.css">
     <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="javaScript/javaScriptCode.js"></script>
 </head>
 
 <body class="gray-background">
-    <div class="card white-background shadow">
+    <form action="connexion.php" method="post" class="card white-background shadow">
+
         <div class="select-menu">
             <ul>
-                <li><a href="" class="underline-link">S'identifier</a></li>
-                <li><a href="" class="underline-link">S'inscrire comme médecin</a></li>
-                <li><a href="" class="underline-link">S'inscrire</a></li>
+                <li><a href="sign-in.php" class="underline-link underline">S'identifier</a></li>
+                <li><a href="sign-up-medecin.php" class="underline-link ">S'inscrire comme médecin</a></li>
+                <li><a href="sign-up.php" class="underline-link ">S'inscrire</a></li>
             </ul>
         </div>
         <div class="input-field">
-            <div class="input-email">
+            <div>
                 <p>Email</p>
-                <div class="input-bar"><input type="email" /></div>
+                <div class="input-bar"><input name="Email" type="email" /></div>
             </div>
-            <div class="input-email">
+            <div>
                 <p>Mot de passe</p>
-                <div class="input-bar"><input type="password" /></div>
+                <div class="input-bar"><input name="Password" type="password" /></div>
             </div>
         </div>
         <div class="confirm-field">
@@ -39,7 +41,7 @@
                 echo $_SESSION['message2'];
             } ?>
         </div>
-    </div>
+    </form>
 
 </body>
 

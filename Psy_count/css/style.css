@@ -17,7 +17,7 @@ p, a {
 }
 
 a {
-    color: #6d2339;
+    color: #aa3558;
     text-decoration: none;
 }
 
@@ -95,7 +95,8 @@ input::placeholder {
 }
 
 input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active {
-    background-color: #f9f0f0;
+    -webkit-box-shadow: 0 0 0 1000px #f9f0f0 inset;
+    font-family: "poppins", sans-serif, monospace;
 }
 
 select {
@@ -128,6 +129,7 @@ option {
     padding: 10px 20px;
     margin: 0px 10px;
     text-align: center;
+    justify-content: center;
     text-decoration: none;
     display: flex;
     cursor: pointer;
@@ -152,6 +154,11 @@ option {
 }
 
 .underline-link:hover {
+    text-underline-offset: 10px;
+    text-decoration: underline #aa3558 2px;
+}
+
+.underline {
     text-underline-offset: 10px;
     text-decoration: underline #aa3558 2px;
 }

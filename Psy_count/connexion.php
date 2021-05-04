@@ -21,7 +21,7 @@ try{
       $req->execute(array('Email' => $Email));
       $resultat = $req->fetch();
 
-       //  récuperer la permission de l'utilisateur de l'utilisateur
+       //  récuperer la permission de l'utilisateur
       $req2 =  $dbco->prepare(
         'SELECT permission_lvl FROM utilisateur where Email=:Email');
         $req2->execute(array('Email' => $Email));
@@ -44,7 +44,7 @@ try{
       if (!$resultat)
       {
          $_SESSION['message2']='identifiant ou mot de passe incorrect!';
-         header('Location: signIn.php');
+         header('Location: sign-in.php');
 
       }
       //  si le mot de passe est correct récupérer les informations de l'utilisateur
@@ -58,7 +58,7 @@ try{
 
           if(count($resultat4)!=0){
             $_SESSION['message2']= 'votre compte est banni contactez un administrateur';
-            header('Location: signIn.php');
+            header('Location: sign-in.php');
           }else{
       if ($isPasswordCorrect) {
         $_SESSION['type']=$resultat3['permission_lvl'];
@@ -69,7 +69,7 @@ try{
       }
       else {
         $_SESSION['message2']= 'mot de passe ou Email incorrect';
-        header('Location: signIn.php');
+        header('Location: sign-in.php');
       }
       }
     }

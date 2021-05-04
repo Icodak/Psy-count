@@ -43,7 +43,7 @@ session_start();
 
 
     <a href="faq.php" class="menuText"> FAQ </a>
-    <a href="accueil.php#menuBarAnchor" class="menuText"> A propos </a>
+    <a href="accueil.php#about" class="menuText"> A propos </a>
 
 
     <?php
@@ -80,7 +80,7 @@ session_start();
     if (!isset($_SESSION['connexion']) || $_SESSION['connexion'] != 1) {
     ?>
 
-      <a href="signIn.php"> <button class="button"> Login </button> </a>
+      <a href="sign-in.php"> <button class="button"> Login </button> </a>
 
     <?php
     }

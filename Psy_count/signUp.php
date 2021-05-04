@@ -47,7 +47,6 @@ session_start(); // On démarre la session AVANT toute chose
 					<img src="images/eye.png" class="passwordImage" onclick="hidePassword2()">
 					<img src="images/eyeHide.png" class="passwordImage2" onclick="hidePassword2()">
 					</div>
-					
 				
 
 					<div id="checkboxText">
