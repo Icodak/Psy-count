@@ -12,7 +12,7 @@ html, body {
     padding: 0px;
 }
 
-p, a {
+p, a, li {
     font-size: 3.5vw;
 }
 
@@ -166,7 +166,7 @@ option {
 /* Media queries*/
 
 @media (min-width: 550px) {
-    input, p, a, .button, select {
+    input, p, a,li,  .button, select {
         font-size: 3vw;
     }
     nav p, nav a, nav .button {
@@ -175,7 +175,7 @@ option {
 }
 
 @media (min-width: 900px) {
-    input, p, a, .button, select {
+    input, p, a,li, .button, select {
         font-size: 2vw;
     }
     nav p, nav a, nav .button {
@@ -184,7 +184,7 @@ option {
 }
 
 @media (min-width: 1200px) {
-    input, p, a, .button, nav p, nav a, nav .button, select {
+    input, p, a,li, .button, nav p, nav a, nav .button, select {
         font-size: 20px;
     }
 }

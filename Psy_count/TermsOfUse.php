@@ -5,27 +5,20 @@
 	<meta charset="utf-8">
 	<title>Home</title>
 	<link rel="icon" type="image/png" href="images/psy-fi.png" />
-	<link rel="stylesheet" href="css/styles_fonts.css">
+	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/style_TermsOfUses.css">
-
-
 </head>
 
-
-
-<body>
+<body class="gray-background">
 	<header>
 		<div>
 			<?php include("menuBar.php") ?>
-
 		</div>
 	</header>
-	<div class="background"> </div>
 
 	<div>
-		<h1 id="headerText"> Conditions d'Utilisations PSY-COUNT </h1>
-		<div id="form">
-
+		<div class="form white-background shadow">
+		<h1> Conditions d'Utilisations PSY-COUNT </h1>
 			<h2> 1. OBJET </h2>
 
 			<p>Les présentes Conditions d'Utilisation (CU) ont pour but de définir les conditions d'utilisation des Services Psy-fi, les droits et obligations de Psy-fi et de l'Utilisateur. <br>

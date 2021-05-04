@@ -38,6 +38,10 @@ section {
   padding: 2px 0px;
 }
 
+.last-footer a {
+  margin: 0px 10px;
+}
+
 @media (min-width: 900px) {
   .last-footer {
     flex-direction: row;
