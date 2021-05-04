@@ -33,7 +33,7 @@
 		<div>
 			<button class="button">Découvrir</button>
 		</div>
-		
+
 	</section>
 
 
@@ -79,7 +79,7 @@
 	</section>
 
 
-	<section class="section-3">
+	<section class="section-3" id="about">
 
 		<div class="section-3-text white-text">
 			<h2>Notre histoire</h2>
@@ -133,7 +133,7 @@
 		</div>
 
 		<div class="psy-icon">
-			<img class="image-psy-fi" src="images/psy-fi.png" />
+			<img class="image-psy-fi" src="images/psy-fi-flat.png" />
 		</div>
 
 	</section>
