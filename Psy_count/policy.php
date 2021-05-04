@@ -5,11 +5,12 @@
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="icon" type="image/png" href="images/psy-fi.png" />
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style_policy.css">
 </head>
 
 
-<body>
+<body class="gray-background">
     <header>
         <div>
             <?php include("menuBar.php") ?>
@@ -17,9 +18,8 @@
         </div>
     </header>
 
-    <!--<div class="background"> </div>-->
-    <h1 class="headerText"> Politique de confidentialité PSY-COUNT</h1>
-    <div class="form">
+    <div class="form shadow white-background">
+        <h1 class="headerText"> Politique de confidentialité PSY-COUNT</h1>
         <p>Les informations qui touchent à notre santé sont personnelles. À ce titre, elles doivent être
             protégées avec le plus grand soin. </br>
             Le respect de la vie privée est un droit fondamental et l’une des valeurs essentielles de PSY-FI.

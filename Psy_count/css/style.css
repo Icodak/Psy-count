@@ -12,12 +12,12 @@ html, body {
     padding: 0px;
 }
 
-p, a {
+p, a, li {
     font-size: 3.5vw;
 }
 
 a {
-    color: #6d2339;
+    color: #aa3558;
     text-decoration: none;
 }
 
@@ -75,6 +75,7 @@ input {
     background-color: #f9f0f0;
     color: #6d2339;
     border: none;
+    display: flex;
     border-bottom: 2px solid rgb(80, 80, 80);
     padding: 10px;
     text-align: left;
@@ -94,7 +95,8 @@ input::placeholder {
 }
 
 input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active {
-    background-color: #f9f0f0;
+    -webkit-box-shadow: 0 0 0 1000px #f9f0f0 inset;
+    font-family: "poppins", sans-serif, monospace;
 }
 
 select {
@@ -113,7 +115,7 @@ option {
 }
 
 .shadow {
-    box-shadow: 0px 0px 5px rgb(224, 224, 224);
+    box-shadow: 0px 0px 5px rgb(85, 85, 85);
 }
 
 .button {
@@ -127,6 +129,7 @@ option {
     padding: 10px 20px;
     margin: 0px 10px;
     text-align: center;
+    justify-content: center;
     text-decoration: none;
     display: flex;
     cursor: pointer;
@@ -155,10 +158,15 @@ option {
     text-decoration: underline #aa3558 2px;
 }
 
+.underline {
+    text-underline-offset: 10px;
+    text-decoration: underline #aa3558 2px;
+}
+
 /* Media queries*/
 
 @media (min-width: 550px) {
-    input, p, a, .button, select {
+    input, p, a,li,  .button, select {
         font-size: 3vw;
     }
     nav p, nav a, nav .button {
@@ -167,7 +175,7 @@ option {
 }
 
 @media (min-width: 900px) {
-    input, p, a, .button, select {
+    input, p, a,li, .button, select {
         font-size: 2vw;
     }
     nav p, nav a, nav .button {
@@ -176,7 +184,7 @@ option {
 }
 
 @media (min-width: 1200px) {
-    input, p, a, .button, nav p, nav a, nav .button, select {
+    input, p, a,li, .button, nav p, nav a, nav .button, select {
         font-size: 20px;
     }
 }
