@@ -11,6 +11,7 @@ session_start(); // On démarre la session AVANT toute chose
     <link rel="stylesheet" href="css/style_fonts.css">
     <link rel="stylesheet" href="css/style_Sign_In.css">
     <script type="text/javascript" src="javaScript/javaScriptCode.js"></script>
+
 </head>
 
 <body>

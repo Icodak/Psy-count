@@ -98,7 +98,7 @@
                 <div class="graph">
                     <h1>Température</h1>
 
-                    <img class="responsive" src="images/temperature2.jpg">
+                    <a href="myData_Temperature.php"><img class="responsive" src="images/temperature2.jpg"></a>
 
                 </div>
 

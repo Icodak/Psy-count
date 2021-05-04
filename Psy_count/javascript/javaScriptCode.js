@@ -1,8 +1,6 @@
 
 var click = "true";
 
-
-
  function checkboxcheck(){
  
    		var element = document.getElementById("checkbox");
