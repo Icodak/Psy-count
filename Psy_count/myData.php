@@ -79,7 +79,7 @@
                 <div class="graph">
                     <h1>Cardiaque</h1>
 
-                    <img class="responsive" src="images/frequence.jpg">
+                    <a href="myData_Cardiaque.php"><img class="responsive" src="images/frequence.jpg"></a>
 
 
 
