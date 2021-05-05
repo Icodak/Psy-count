@@ -51,28 +51,29 @@
                     <div class="topic-list">
 
                         <div class="topic-items">
-                            <div class=" change-password">
+
+                            <div class=" change-password topic-right">
 
                                 <h3>Votre mot de passe : </h3>
                             </div>
-                            <div class="topic-meta">
+                            <div class="topic-meta topic-right2">
 
                                 <input type="text" class="crayon1" name='mdp'>
                             </div>
                         </div>
                         <div class="topic-items">
-                            <div class=" change-password">
+                            <div class=" change-password topic-right">
                                 <h3> Nouveau mot de passe : </h3>
                             </div>
-                            <div class="topic-meta">
+                            <div class="topic-meta topic-right2">
                                 <input type="text" class="crayon2" name='newmdp'>
                             </div>
                         </div>
                         <div class="topic-items">
-                            <div class=" change-password">
+                            <div class=" change-password topic-right">
                                 <h3>Vérification du nouveau mot de passse : </h3>
                             </div>
-                            <div class="topic-meta">
+                            <div class="topic-meta topic-right2">
                                 <input type="text" class="crayon3" name='newmdpverif'>
                             </div>
                         </div>

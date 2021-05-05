@@ -65,6 +65,19 @@ function locationAccueil(){
     document.location.href="accueil.php";
 }
 
+function locationMyData(){
+    document.location.href="myPatient2.php";
+}
+
+function returnGestionPatient(){
+    document.location.href="myPatient.php";
+}
+
+
+
+
+
+
 function hidePassword(){
     elements = document.getElementsByClassName("showHide");
     elements2 = document.getElementsByClassName("passwordImage2"); 
@@ -256,8 +269,38 @@ $(document).ready(function(){
         
         });
     
+/*
+                 $(document).ready(function(){
+ 
+                        $("#selector").click(function(){
+                    
+                            var element = document.getElementById("select1");
+                            choice = element.selectedIndex;
+                            variable= element[choice].value; 
+                            alert(variable) ;   
+                          
+                    
+                                    $.ajax({
+                                        url : 'myPatientFonction.php',
+                                        type : 'POST',
+                                        data : "tableType=" + variable,
+                                        success : function(code_html, statut){
+                                            document.location.reload();
+                                        }, 
+                                        error : function(resultat, statut, erreur){
+                                             
+                                        },
+                                    
+                                        complete : function(resultat, statut){
+                                        }
+                                    
+                                     });
+                   
+    });
+                        
+   });
 
-
+   */
 
 
 $(document).ready(function(){
@@ -303,12 +346,6 @@ $(document).ready(function(){
         });
         
         });
-
-
-
-
-
-
 
 
 

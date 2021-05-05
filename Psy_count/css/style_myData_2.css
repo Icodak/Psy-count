@@ -19,10 +19,12 @@ body {
     position: relative;
 }
 
+
 .topic-right h3{
 	font-size: 25px;
 	margin-top: 2%;
 	margin-bottom: 2%;
+	padding-left:2%;
 }
 
 .button {
@@ -32,7 +34,7 @@ body {
 	font-size: 3.5vw;
 	border: none;
 	letter-spacing: 0.2px;
-	padding: 10px 20px;
+	padding: 20px 40px;
 	margin: 0px 10px;
 	align-items: center;
 	text-align: center;
@@ -40,6 +42,7 @@ body {
 	display: flex;
 	cursor: pointer;
 	transition: all 0.2s ease 0s;
+
   }
 
 .button:hover{
@@ -75,7 +78,7 @@ body {
     position: relative;
     background-size: cover;
     vertical-align: baseline;
-    min-height: 90vh;
+    min-height: 100vh;
     overflow: hidden;
     justify-content: center;
 }
@@ -177,6 +180,7 @@ input[type="file"]{
 .topic-right2{
 	display: flex;
 	flex-direction: row;
+	width: 50%;
 }
 
 label{
@@ -197,10 +201,12 @@ form{
 }
 .topic-items input{
 	font-size: 25px;
+	width: 85%;
 }
 
 .topic-right{
 	min-width: 400px;
+	width:50%
 }
 
 
@@ -244,11 +250,10 @@ form{
 }
 
 .topic-list .topic-items {
-	padding-left: 2%;
     display: flex;
     background-color: rgb(228, 226, 226);
 	align-items: center;
-	width: 90%;
+	width: 95%;
 	margin-bottom: 3%;
 
 }

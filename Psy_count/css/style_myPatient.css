@@ -1,0 +1,69 @@
+.gestionDesPatients{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 75%;
+}
+    
+
+table {
+    overflow: auto;
+    margin-top: 5px;
+    width: 100%;
+    border-spacing: 0px 30px;
+    background-color: white;
+    margin-bottom: 20px;
+    font-size: 25px;
+  }
+
+  td, th {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .text2 {
+    border-bottom: solid purple;
+  }
+  .page-item {
+    border: 1px solid black;
+    margin: 0 4px;
+    padding-left: 2px;
+    padding-right: 2px;
+    text-align: center;
+    border-radius: 5px;
+    min-width: 30px;
+  }
+.page-item a{
+    font-size: 40px;
+}
+
+.pagination {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+    justify-content: center;
+  }
+  
+input[type="checkbox"]{
+    transform: scale(2);
+    /*zoom: 1.5;*/
+  }
+.selectButton{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+select{
+    width: auto;
+}
+main{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+form{
+  display: flex;
+  flex-direction: row;
+}
