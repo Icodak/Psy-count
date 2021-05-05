@@ -13,6 +13,7 @@
     <link rel="icon" type="image/png" href="images/psy-fi.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/style_forum.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>

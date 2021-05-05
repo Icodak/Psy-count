@@ -1,214 +1,61 @@
-
-
-	html, body {
- margin:0;
- padding:0;
- 
-}
-
-body{
-	position: relative;
-}
-
-#faqText{
-	user-select: none;
-	text-align: center;
-	background-color: #aa3558;
-	margin-left: 6%;
-	margin-right: 6%;
-	padding-top: 1%;
-	padding-bottom: 1%;
-	position: static;
-
-}
-#faqText2{
-	user-select: none;
-	text-align: center;
-	margin-top: 3%;
-}
-
-#questionReponse .button {
-	border-radius: 30px;
-    background-color: #aa3558;
-    color: white;
-    font-size: 1.5vw;
-    border: none;
-    letter-spacing: 0.2px;
-    padding: 10px 20px;
-    margin: 0px 10px;
-    text-align: center;
-    text-decoration: none;
+section.question-container {
     display: flex;
-    cursor: pointer;
-    transition: all 0.2s ease 0s;
-	max-width: 200px;
+    width: auto;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
 }
 
-#values .button{
-	border-radius: 30px;
-    background-color: #aa3558;
-    color: white;
-    font-size: 1.5vw;
-    border: none;
-    letter-spacing: 0.2px;
-    padding: 10px 20px;
-    margin: 0px 10px;
+.banner {
+    width: 100%;
     text-align: center;
-    text-decoration: none;
+    align-items: center;
+    justify-content: center;
     display: flex;
-    cursor: pointer;
-    transition: all 0.2s ease 0s;
-	max-width: 250px;
-	align-items: center;
 }
-input[type="submit"]{
-	border-radius: 30px;
-    background-color: #aa3558;
-    color: white;
-    font-size: 1.5vw;
-    border: none;
-    letter-spacing: 0.2px;
-    padding: 10px 20px;
-    margin: 0px 10px;
-    text-align: center;
-    text-decoration: none;
+
+.container {
     display: flex;
-    cursor: pointer;
-    transition: all 0.2s ease 0s;
-	max-width: 250px;
-}
-
-.question h1{
-	margin-left: 48px;
-}
-
-#values{
-	text-align: center;
-	margin-top: 3%;
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-}
-
-
-#faq{
-	min-height: 1200px;
-	display: flex;
-	flex-direction: column;
-}
-
-
-input[type="text"]{
-	border: none;
-	 background-color: #FFF0F0;
-	 padding-bottom: 1%;
-	 padding-top: 1%;
-	 padding-left: 1%;
-	 font-size: 35px;
-	}
-iframe{
-	height: 100%;
-	width: 100%;
-
-}
-
-#questionReponse{
-	display: flex;
-	flex-direction: column;
-
-}
-
-.question h1{
-	word-wrap: break-word;
-}
-
-
-.faqButton{
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-}
-
-
-.button6 {
-	border-radius: 12px;
-    background-color: #BB66BF;
-    border: none;
-    color: white;
-    padding: 10px;
+    width: 80%;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 20px;
-    margin: 4px 2px;
-    margin-left: 1%;
-    cursor: pointer;
+    border-radius: 5px;
+    margin: 20px 0px;
+    overflow: hidden;
 }
 
-.question{
-	user-select: none;
-	text-align: center;
-	background-color: #CBCBCB;
-	margin-left: 10%;
-	margin-right: 10%;
-	margin-top: 2%;
-
-}
-.reponse{
-	text-align: center;
-	background-color: rgb(203, 203, 203,0.4);
-	margin-left: 10%;
-	margin-right: 10%;
-	display: none;
-	word-wrap: break-word;
+img {
+    width: 30px;
+    height: 30px;
 }
 
-
-#head{
-	position: static;
+input {
+    display: flex;
+    width: auto;
 }
 
-
-textarea{
-	text-align: center;
-  font-size: 35px;
- resize : none;
- background-color: rgba(0,0,0,0);
- border:none;
- min-width: 100%;
- min-height: 200px;
-
+.arrow {
+    position: absolute;
+    right: 20px;
 }
 
-#registerButton{
-	display: flex;
-	justify-content: center;
-	margin-top: 1%;
-}
-h2{
-	text-align: center;
-}
-
-.flecheBottom{
-	width: 30px;
-	height: 30px;
-	float: right;
-	margin-right: 3%;
-	cursor:pointer;
+.question {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    min-height: 70px;
 }
 
+.answer {
+    display: flex;
+    width: 100%;
+    background-color: rgb(206, 197, 200);
+    min-height: 70px;
+    align-items: center;
+    justify-content: center;
 
-@media only screen and (max-width: 800px) {
-	input{
-		width: 50%;
-		margin-bottom: 2%;
-	}
-	#faq{
-		min-height: 900px;
-	}
-	#values {
-		flex-direction: column;
-		align-items: center;
-	}
-  
-  }
+}

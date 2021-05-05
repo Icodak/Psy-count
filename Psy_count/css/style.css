@@ -10,6 +10,13 @@ html, body {
     border: 0px;
     margin: 0px;
     padding: 0px;
+    min-height: 100vh;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 p, a, li {

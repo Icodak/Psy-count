@@ -4,7 +4,7 @@
 <head>
     <title>footer</title>
     <link rel="stylesheet" href="css/style_footer.css">
-    <link rel="stylesheet" href="css/styles_fonts.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <footer>
     <section class="footer-general">
