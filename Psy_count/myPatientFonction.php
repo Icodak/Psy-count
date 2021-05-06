@@ -6,13 +6,14 @@ function initialisationPatient($id){
   try{
     $dbco = new PDO("mysql:host=localhost;dbname=serveur_psy_fi",'root','');
     $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      $req =  $dbco->prepare('SELECT Email,nom,prenom FROM utilisateur WHERE ID_Utilisateur=:ID_Utilisateur');
+      $req =  $dbco->prepare('SELECT Email,nom,prenom,images FROM utilisateur WHERE ID_Utilisateur=:ID_Utilisateur');
       $req->execute(['ID_Utilisateur' => $id]);
       $resultat = $req->fetchAll();
       $information=array();
       $information[0]=$resultat[0][0];
       $information[1]=$resultat[0][1];
       $information[2]=$resultat[0][2];
+      $information[3]=$resultat[0][3];
       return $information;
     }    
     catch(PDOException $e){
@@ -21,14 +22,18 @@ function initialisationPatient($id){
 }
 
 
-function addPatient($idMedecin,$idUtilsiateur)
+function addPatient($idUtilisateur_ofMedecin,$idUtilsiateur)
 {
   try{
     $dbco = new PDO("mysql:host=localhost;dbname=serveur_psy_fi",'root','');
     $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    $req1 = $dbco->prepare("SELECT ID_Medecin FROM medecin WHERE ID_Utilisateur='$idUtilisateur_ofMedecin'");
+    $req1->execute();
+    $resultat = $req1->fetch();
     $req2 =  $dbco->prepare(
       "UPDATE patient SET ID_Medecin=? WHERE ID_Utilisateur=?");
-    $req2->execute(array($idMedecin,$idUtilsiateur));
+    $req2->execute(array($resultat['ID_Medecin'],$idUtilsiateur));
   }
   catch(PDOException $e){
     echo "Erreur : " . $e->getMessage();
@@ -37,16 +42,12 @@ function addPatient($idMedecin,$idUtilsiateur)
 }
 
 
-
-
-
-
 function tableCreationPatient($currentPage){
 $dbco = new PDO("mysql:host=localhost;dbname=serveur_psy_fi",'root','');
 $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 // On détermine le nombre total d'articles
-$sql = "SELECT COUNT(*) AS nb_users FROM utilisateur WHERE permission_lvl='patient'";
+$sql = "SELECT COUNT(*) AS nb_users FROM patient WHERE ID_Medecin='0'";
 $res = $dbco->prepare($sql);
 $res->execute();
 $resultat = $res->fetch();
@@ -73,6 +74,17 @@ $premier = ($currentPage * $parPage) - $parPage;
      echo "Erreur : " . $e->getMessage();
       }
 }
+
+
+function suppPatient($idPatient){
+  $dbco = new PDO("mysql:host=localhost;dbname=serveur_psy_fi",'root','');
+  $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+  $req2 =  $dbco->prepare( "UPDATE patient SET ID_Medecin='NULL' WHERE ID_Utilisateur='$idPatient'");
+  $req2->execute();
+
+}
+
 
 
 function tableCreationMesPatient($currentPage){
@@ -124,6 +136,11 @@ function tableCreationMesPatient($currentPage){
 
 
 
+
+
+
+
+
 if(isset($_POST['tableType'])){
   session_start();
   $_SESSION['showTable']=$_POST['type'];
@@ -131,8 +148,20 @@ if(isset($_POST['tableType'])){
 
 }
 
+if(isset($_POST['ADD'])){
+  session_start();
+  
 
+}
 
+if(isset($_POST['supp'])){
+  session_start();
+  suppPatient($_POST['supp']);
+}
 
+if(isset($_POST['Add1'])){
+  session_start();
+  addPatient($_SESSION['ID'],$_POST['Add1']);
+}
    
 ?>

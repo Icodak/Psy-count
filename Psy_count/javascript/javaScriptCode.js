@@ -183,11 +183,10 @@ function verifyOneCheckBox(){
 
 
 
+
+
 $(document).ready(function(){
- 
     $("#SuppButton").click(function(){
-
-
     checkboxes = document.getElementsByName('checkBoxGestion');
     var tableau = new Array(checkboxcheck.length);
     if (confirm("Voulez vous vraiment supprimer ces utilisateurs ?"))
@@ -216,23 +215,15 @@ $(document).ready(function(){
 
       }
     }
-
-
-        
-    
+  
     });
     
     });
-
-
 
 
 $(document).ready(function(){
  
-        $("#banButton").click(function(){
-          
-    
-    
+        $("#banButton").click(function(){   
         checkboxes = document.getElementsByName('checkBoxGestion');
         var tableau = new Array(checkboxcheck.length);
         if (confirm("Voulez vous vraiment bannir ces utilisateurs ?"))
@@ -268,39 +259,9 @@ $(document).ready(function(){
         });
         
         });
-    
-/*
-                 $(document).ready(function(){
- 
-                        $("#selector").click(function(){
-                    
-                            var element = document.getElementById("select1");
-                            choice = element.selectedIndex;
-                            variable= element[choice].value; 
-                            alert(variable) ;   
-                          
-                    
-                                    $.ajax({
-                                        url : 'myPatientFonction.php',
-                                        type : 'POST',
-                                        data : "tableType=" + variable,
-                                        success : function(code_html, statut){
-                                            document.location.reload();
-                                        }, 
-                                        error : function(resultat, statut, erreur){
-                                             
-                                        },
-                                    
-                                        complete : function(resultat, statut){
-                                        }
-                                    
-                                     });
-                   
-    });
-                        
-   });
 
-   */
+ 
+
 
 
 $(document).ready(function(){
@@ -338,11 +299,7 @@ $(document).ready(function(){
 
             }
 
-         }
-    
-
-            
-        
+         }     
         });
         
         });

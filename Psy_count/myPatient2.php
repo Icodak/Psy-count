@@ -5,9 +5,10 @@
     <meta charset="utf-8">
     <title>Mes données</title>
     <link rel="icon" type="image/png" href="images/psy-fi.png" />
-    <link rel="stylesheet" href="css/style_myData_.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style_myData_.css">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script type="text/javascript" src="javascript//javaScriptCode.js"></script>
 </head>
 
@@ -20,6 +21,8 @@
 
     <?php
 	$information = initialisationPatient($_POST['ID']);
+    $_SESSION['addUser']=$_POST['ID'];
+    
 	?>
 
 
@@ -30,8 +33,15 @@
              
 
             <div class="doctorData">
-
-                <img src="images/backgroundImages vertical.png">
+            <?php
+                if($information[3]!=NULL){
+                    echo "<img src='images_utilisateurs/" . $information[3] . "'>";   
+                }
+                else{
+                    echo'<img src="images/backgroundImages vertical.png">';
+                }
+               
+            ?>
 
 
 
@@ -87,7 +97,7 @@
                <button class="button" onclick="returnGestionPatient()"> revenir à la page de gestion </button>
               
               <?php if($_SESSION['showTable']=='non'){
-                echo '<button class="button" onclick="returnGestionPatient()"> ajouter ce Patient </button>';   
+                echo '<button class="button" id="addPatient"> ajouter ce Patient </button>';   
                 }
                 ?>
 

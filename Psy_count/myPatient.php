@@ -3,26 +3,25 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Mes données</title>
+    <title>Mes Patients</title>
     <link rel="icon" type="image/png" href="images/psy-fi.png" />
-    <link rel="stylesheet" href="css/style_myPatient.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style_myPatient.css">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script type="text/javascript" src="javascript/javaScriptCode.js"></script>
+    <script type="text/javascript" src="javascript/javaScriptCodePatient.js"></script>
 </head>
 
 <body>
     <header>
         <?php include("menuBar.php") ?>
-  
+
     </header>
     <main>
 
         <?php
  include("myPatientFonction.php");
-
-
 
 // On détermine sur quelle page on se trouve
 if (isset($_GET['page']) && !empty($_GET['page'])) {
@@ -48,17 +47,16 @@ $pages = $resultat[1];
             <h1>Gestion des patients</h1>
 
             <div class="selectButton">
-            <form method="post" action="myPatientFonction.php">
-                <div>
-                <input id="selector" name="tableType" class="button" type="submit" value="Choisir">
-                </div>
-                <div>
-                <select id="select1"  name="type" placeholder="classement">
-                     <option value="non">patients sans Medecin</option>
-                    <option value="oui">Mes patients</option>
-                   
-                </select>
-                </div>
+                <form method="post" action="myPatientFonction.php">
+                    <div>
+                        <input id="selector" name="tableType" class="button" type="submit" value="Choisir">
+                    </div>
+                    <div>
+                        <select id="select1" name="type" placeholder="classement">
+                            <option value="non">patients sans Medecin</option>
+                            <option value="oui">Mes patients</option>
+                        </select>
+                    </div>
                 </form>
 
             </div>
@@ -71,13 +69,11 @@ $pages = $resultat[1];
 
                             <thead>
                                 <tr>
-                                    <th>
-                                        <input type="checkbox" onclick="allSelect(this)">
-                                    </th>
+
                                     <th class="text2" align="left" colspan="1">Nom</th>
                                     <th class="text2" align="left" colspan="1">Prénom</th>
                                     <th class="text2" align="left" colspan="1">Email</th>
-                                    <th class="text2" align="left" colspan="1">Action</th>
+                                    <th class="text2" align="left" colspan="1">Actions</th>
 
                                 </tr>
                             </thead>
@@ -92,20 +88,19 @@ $pages = $resultat[1];
 
                             <tbody>
                                 <tr>
-                                    <td>
-                                        <input type="checkbox" name="checkBoxGestion" class="checkBoxUtilisateurs"
-                                            onclick="checkboxcheckGestionsUtilisateurs()"
-                                            id=<?php echo  $resultat3[$i][0] ?>>
-                                    </td>
+
                                     <td class="text2" align="left"> <?php echo  $resultat3[$i][0] ?> </td>
                                     <td class="text2" align="left"> <?php echo  $resultat3[$i][1] ?> </td>
                                     <td class="text2" align="left"> <?php echo  $resultat3[$i][2] ?> </td>
-                                    <td class="text2" align="left"> 
-                                        
-                                    <form method="post" action="myPatient2.php">
-                                    <input class="button" type="submit" value="voir le profil">           
-                                    <input name="ID" type="hidden" value=<?php echo $resultat3[$i][3] ?>>
-                                    </form>
+                                    <td class="text2 flex-column" align="left">
+
+                                        <input type="image"  class="actionButtonVoir" title="voir le profil" src="images/look.png"  value='.$resultat3[$i][3],' >
+
+                                        <?php if(isset($_SESSION['showTable']) && $_SESSION['showTable']=='oui'){
+                                    echo'<input  type="image" class="actionButtonSupprimer" title="Supprimer ce patient" src="images/suppr.png" value='.$resultat3[$i][3],' >';
+                                    }else{
+                                    echo'<input  type="image" class="actionButtonAjouter" title="Ajouter un Utilisateur" src="images/ADD.png" value='.$resultat3[$i][3],'>';   
+                                    }?>
                                     </td>
                                 </tr>
                             </tbody>

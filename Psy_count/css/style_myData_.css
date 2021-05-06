@@ -18,7 +18,10 @@ body{
 	margin-bottom: 2%;
 }
 
-
+hr{
+	margin: none;
+	width: auto;
+}
 #doctorPage{
 	padding: 20px;
 	width: 100%;
