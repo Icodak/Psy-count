@@ -47,9 +47,9 @@ $pages = $resultat[1];
             <h1>Gestion des patients</h1>
 
             <div class="selectButton">
-                <form method="post" action="myPatientFonction.php">
+               
                     <div>
-                        <input id="selector" name="tableType" class="button" type="submit" value="Choisir">
+                        <input id="selector" name="SelectPatient" class="button" type="submit" value="Choisir">
                     </div>
                     <div>
                         <select id="select1" name="type" placeholder="classement">
@@ -57,8 +57,6 @@ $pages = $resultat[1];
                             <option value="oui">Mes patients</option>
                         </select>
                     </div>
-                </form>
-
             </div>
             <div id="globalPage">
 

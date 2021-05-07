@@ -141,11 +141,9 @@ function tableCreationMesPatient($currentPage){
 
 
 
-if(isset($_POST['tableType'])){
+if(isset($_POST['choice'])){
   session_start();
-  $_SESSION['showTable']=$_POST['type'];
-  header('Location: myPatient.php');
-
+  $_SESSION['showTable']=$_POST['choice'];
 }
 
 if(isset($_POST['ADD'])){
