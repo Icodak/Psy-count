@@ -134,22 +134,9 @@ function tableCreationMesPatient($currentPage){
 }
 
 
-
-
-
-
-
-
-
 if(isset($_POST['choice'])){
   session_start();
   $_SESSION['showTable']=$_POST['choice'];
-}
-
-if(isset($_POST['ADD'])){
-  session_start();
-  
-
 }
 
 if(isset($_POST['supp'])){

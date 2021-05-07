@@ -5,7 +5,7 @@
             var el= e.target; 
 
                 if(el.className=="actionButtonSupprimer"){
-                   
+                
                     $.ajax({
                         url : "myPatientFonction.php",
                         type : "POST",
@@ -27,7 +27,7 @@
                      });  
                     } 
                     else if(el.className=="actionButtonAjouter") {
-                       
+                 
                         $.ajax({
                             url : "myPatientFonction.php",
                             type : "POST",
@@ -61,8 +61,30 @@
                                 choice: valeur_cherchee,
                             },
                             success : function(code_html, statut){
+                                     document.location.reload();                        
+                            },
+                     
+                            error : function(resultat, statut, erreur){
+                            },
+                                       
+                            complete : function(resultat, statut){
+                     
+                            }
+                     
+                         }); 
+                    }
+                    else if(el.className=="actionButtonVoir") {
+                  
+                   
+                        $.ajax({
+                            url : "myPatient2.php",
+                            type : "POST",
+                            data :{
+                                choice: el.value,
+                            },
+                            success : function(code_html, statut){
                             
-                                document.location.reload();
+                                document.location.href="myPatient2.php"; 
                                 
                             },
                      
@@ -75,6 +97,7 @@
                      
                          }); 
                     }
+                 
                     
                     
 

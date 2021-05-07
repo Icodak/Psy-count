@@ -42,7 +42,7 @@ $pages = $resultat[1];
 
 ?>
 
-        <div class="gestionDesPatients">
+        <div class="gestionDesPatients shadow">
 
             <h1>Gestion des patients</h1>
 
@@ -62,7 +62,7 @@ $pages = $resultat[1];
 
 
                 <div id="tableau">
-                    <div id="subTable">
+            
                         <table>
 
                             <thead>
@@ -139,7 +139,7 @@ $pages = $resultat[1];
                                                                         } ?>" class="page-link ">»</a>
                             </div>
                         </div>
-                    </div>
+                 
                 </div>
             </div>
             <?php
