@@ -80,7 +80,7 @@ session_start();
     if (!isset($_SESSION['connexion']) || $_SESSION['connexion'] != 1) {
     ?>
 
-      <a href="signIn.php"> <button class="button"> Login </button> </a>
+      <a href="sign-In.php"> <button class="button"> Login </button> </a>
 
     <?php
     }

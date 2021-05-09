@@ -47,36 +47,35 @@ $pages = $resultat[1];
             <h1>Gestion des patients</h1>
 
             <div class="selectButton">
-               
-                    <div>
-                        <input id="selector" name="SelectPatient" class="button" type="submit" value="Choisir">
-                    </div>
-                    <div>
-                        <select id="select1" name="type" placeholder="classement">
-                            <option value="non">patients sans Medecin</option>
-                            <option value="oui">Mes patients</option>
-                        </select>
-                    </div>
+                <div>
+                    <input id="selector" name="SelectPatient" class="button" type="submit" value="Choisir">
+                </div>
+                <div>
+                    <select id="select1" name="type" placeholder="classement">
+                        <option value="non">patients sans Medecin</option>
+                        <option value="oui">Mes patients</option>
+                    </select>
+                </div>
             </div>
             <div id="globalPage">
 
 
                 <div id="tableau">
-            
-                        <table>
 
-                            <thead>
-                                <tr>
+                    <table>
 
-                                    <th class="text2" align="left" colspan="1">Nom</th>
-                                    <th class="text2" align="left" colspan="1">Prénom</th>
-                                    <th class="text2" align="left" colspan="1">Email</th>
-                                    <th class="text2" align="left" colspan="1">Actions</th>
+                        <thead>
+                            <tr>
 
-                                </tr>
-                            </thead>
+                                <th class="text2" align="left" colspan="1">Nom</th>
+                                <th class="text2" align="left" colspan="1">Prénom</th>
+                                <th class="text2" align="left" colspan="1">Email</th>
+                                <th class="text2" align="left" colspan="1">Actions</th>
 
-                            <?php
+                            </tr>
+                        </thead>
+
+                        <?php
 
 
 
@@ -84,62 +83,63 @@ $pages = $resultat[1];
 
                         ?>
 
-                            <tbody>
-                                <tr>
+                        <tbody>
+                            <tr>
 
-                                    <td class="text2" align="left"> <?php echo  $resultat3[$i][0] ?> </td>
-                                    <td class="text2" align="left"> <?php echo  $resultat3[$i][1] ?> </td>
-                                    <td class="text2" align="left"> <?php echo  $resultat3[$i][2] ?> </td>
-                                    <td class="text2 flex-column" align="left">
+                                <td class="text2" align="left"> <?php echo  $resultat3[$i][0] ?> </td>
+                                <td class="text2" align="left"> <?php echo  $resultat3[$i][1] ?> </td>
+                                <td class="text2" align="left"> <?php echo  $resultat3[$i][2] ?> </td>
+                                <td class="text2 flex-column" align="left">
+                                    <form method="post" action="myPatient2.php">
+                                        <button name="patientProfil" class="actionButtonVoir"title="voir le profil"  value=<?php echo $resultat3[$i][3] ?>><img src="images/look.png"> </button>
+                                    </form>
 
-                                        <input type="image"  class="actionButtonVoir" title="voir le profil" src="images/look.png"  value='.$resultat3[$i][3],' >
-
-                                        <?php if(isset($_SESSION['showTable']) && $_SESSION['showTable']=='oui'){
+                                    <?php if(isset($_SESSION['showTable']) && $_SESSION['showTable']=='oui'){
                                     echo'<input  type="image" class="actionButtonSupprimer" title="Supprimer ce patient" src="images/suppr.png" value='.$resultat3[$i][3],' >';
                                     }else{
                                     echo'<input  type="image" class="actionButtonAjouter" title="Ajouter un Utilisateur" src="images/ADD.png" value='.$resultat3[$i][3],'>';   
                                     }?>
-                                    </td>
-                                </tr>
-                            </tbody>
+                                </td>
+                            </tr>
+                        </tbody>
 
 
-                            <?php
+                        <?php
                         }
                         ?>
 
-                        </table>
+                    </table>
 
-                        <div class="pagination">
+                    <div class="pagination">
 
 
-                            <div class="page-item <?= ($currentPage == 1) ? "disabled" : "" ?>">
-                                <a href="myPatient.php?page=<?php if ($currentPage == 1) {
+                        <div class="page-item <?= ($currentPage == 1) ? "disabled" : "" ?>">
+                            <a href="myPatient.php?page=<?php if ($currentPage == 1) {
                                                                             echo $currentPage;
                                                                         } else {
                                                                             echo $currentPage - 1;
                                                                         } ?>" class="page-link">«</a>
-                            </div>
-                            <?php for ($page = 1; $page <= $pages; $page++) : ?>
+                        </div>
+                        <?php for ($page = 1; $page <= $pages; $page++) : ?>
 
 
-                            <div class="page-item <?= ($currentPage == $page) ? "active" : "" ?> ">
-                                <a href="myPatient.php?page=<?= $page ?>" class="page-link"><?= $page ?></a>
-                            </div>
-                            <?php endfor ?>
+                        <div class="page-item <?= ($currentPage == $page) ? "active" : "" ?> ">
+                            <a href="myPatient.php?page=<?= $page ?>" class="page-link"><?= $page ?></a>
+                        </div>
+                        <?php endfor ?>
 
 
 
 
-                            <div class="page-item <?= ($currentPage == $pages) ? "disabled" : "" ?>">
-                                <a href="myPatient.php?page=<?php if ($currentPage == $pages) {
+                        <div class="page-item <?= ($currentPage == $pages) ? "disabled" : "" ?>">
+                            <a href="myPatient.php?page=<?php if ($currentPage == $pages) {
                                                                             echo $currentPage;
                                                                         } else {
                                                                             echo $currentPage + 1;
                                                                         } ?>" class="page-link ">»</a>
-                            </div>
                         </div>
-                 
+                    </div>
+
                 </div>
             </div>
             <?php

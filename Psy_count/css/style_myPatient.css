@@ -19,6 +19,14 @@ input[type="image"]{
   width: 75px;
   height: 50px;
 }
+button[name="patientProfil"]{
+  width: 80px;
+  height: 50px;
+  background: transparent;
+  border: none ;
+  font-size:0;
+  cursor: pointer;
+}
     
 .flex-column{
   display: flex;
@@ -37,6 +45,7 @@ table {
   td, th {
     padding-left: 20px;
     padding-right: 20px;
+    align-items: center;
   }
 
   .text2 {

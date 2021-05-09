@@ -73,30 +73,7 @@
                      
                          }); 
                     }
-                    else if(el.className=="actionButtonVoir") {
-                  
-                   
-                        $.ajax({
-                            url : "myPatient2.php",
-                            type : "POST",
-                            data :{
-                                choice: el.value,
-                            },
-                            success : function(code_html, statut){
-                            
-                                document.location.href="myPatient2.php"; 
-                                
-                            },
-                     
-                            error : function(resultat, statut, erreur){
-                            },
-                                       
-                            complete : function(resultat, statut){
-                     
-                            }
-                     
-                         }); 
-                    }
+               
                  
                     
                     

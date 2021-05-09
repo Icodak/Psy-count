@@ -20,9 +20,8 @@
     </header>
 
     <?php
-	$information = initialisationPatient($_POST['ID']);
-    $_SESSION['addUser']=$_POST['ID'];
-    
+	$information = initialisationPatient($_POST['patientProfil']);
+    $_SESSION['addUser']=$_POST['patientProfil'];   
 	?>
 
 
