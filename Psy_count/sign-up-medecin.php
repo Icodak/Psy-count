@@ -10,11 +10,12 @@
     <link rel="stylesheet" href="css/style_Sign.css">
     <link rel="stylesheet" href="css/style.css">
     <script type="text/javascript" src="javaScript/javaScriptCode.js" async defer></script>
+    <script type="text/javascript" src="javaScript/javaScriptCodeVerification.js" async defer></script>
 </head>
 
 <body class="gray-background">
 
-    <form class="card white-background shadow" action="getInformation.php" method="post">
+    <form class="card white-background shadow" action="getInformation.php" method="post" onsubmit="return formVerificationMedecin()">
         <div class="select-menu">
             <ul>
                 <li><a href="sign-in.php" class="underline-link">S'identifier</a></li>
@@ -25,11 +26,11 @@
         <div class="input-field">
             <div>
                 <p>Prénom</p>
-                <div class="input-bar"><input type="text" required pattern="[A-Za-zÀ-ÖØ-öø-ÿ-]{4,255}" title="Votre prenom ne doit contenir que des lettres" name="FirstName" required minlength="4" /></div>
+                <div class="input-bar"><input type="text"  title="Votre prenom ne doit contenir que des lettres" name="FirstName"  /></div>
             </div>
             <div>
                 <p>Nom</p>
-                <div class="input-bar"><input type="text" required pattern="[A-Za-zÀ-ÖØ-öø-ÿ-]{4,255}" title="Votre nom ne doit contenir que des lettres" name="LastName" required minlength="4" /></div>
+                <div class="input-bar"><input type="text" title="Votre nom ne doit contenir que des lettres" name="LastName"  /></div>
             </div>
             <div>
                 <p>Date de naissance</p>
@@ -53,7 +54,7 @@
             </div>
             <div>
                 <p>Mot de passe</p>
-                <div class="input-bar"><input name="Password" class="showHide" type="password" required minlength="8" />
+                <div class="input-bar"><input name="Password" class="showHide" type="password"  />
                     <img src="images/eye.png" class="passwordImage" onclick="hidePassword()">
                     <img src="images/eyeHide.png" style="display:none;" class="passwordImage2" onclick="hidePassword()">
                 </div>

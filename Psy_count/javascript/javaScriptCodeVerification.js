@@ -28,11 +28,24 @@ function prenomNomVerification(nomOrPrenom,inputForm){
 }
 
 function dateDeNaissanceVerification(date,inputForm){
-    alert(typeof(date));
-
     return false;
     
 }
+
+function codePostalVerification(code,inputForm){
+    var codePostalRegex = new RegExp("[0-9]{5}");
+    if(code===""){
+        inputForm.style.border = "4px solid red";
+        return false;
+    }else if(codePostalRegex.test(code)==false){
+        return false;
+    }else{
+        inputForm.style.border = "none";
+        return true;
+    }
+   
+}
+
 
 function EmailVerification(email,inputForm){
     var EmailRegex = new RegExp("^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$");
@@ -55,7 +68,6 @@ function EmailVerification(email,inputForm){
 function motDePasseVerification(mdp,mdp2,inputForm1,inputForm2){
     var mdpRegex = new RegExp("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$");
 
-
     if(mdp!=mdp2)
     {
         inputForm1.style.border = "4px solid red";
@@ -75,16 +87,14 @@ function motDePasseVerification(mdp,mdp2,inputForm1,inputForm2){
 }
 
 
-function formVerification(){
-    var ici =  document.getElementById("form1");
+function formVerificationPatient(){
+    var ici =  document.forms[0];
     var input1 = ici['FirstName'];
     var input2 = ici['LastName'];
     var input3 = ici['dateDeNaissance'];
     var input4 = ici['Email'];
     var input5 = ici['Password'];
     var input6 = ici['password_verify'];
-
-  
 
     var email = ici['Email'].value;
     var mdp1 = ici['Password'].value;
@@ -99,7 +109,7 @@ function formVerification(){
     var result4 = motDePasseVerification(mdp1,mdp2,input5,input6);
     var result5 = dateDeNaissanceVerification(date,input3);
 
-    if(
+    return(
         result1
         &&
         result2
@@ -109,11 +119,22 @@ function formVerification(){
         result4
         &&
         result5
-    ){
-        return false;
-    }else{
-        return false;
-    }
-       
-  
+    )
+}
+
+
+function formVerificationMedecin(){
+    var ici =  document.forms[0];
+    var code = ici['codePostal'].value;
+    var input = ici['codePostal'];
+
+    var result1 = codePostalVerification(code,input);
+    var result2 = formVerificationPatient();
+    
+    return(
+        result1
+        &&
+        result2
+    )
+
 }
