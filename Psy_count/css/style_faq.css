@@ -4,6 +4,7 @@ section.question-container {
     flex-direction: column;
     align-items: center;
     padding: 20px;
+    min-height: 70vh;
 }
 
 .banner {
