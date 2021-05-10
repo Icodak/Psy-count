@@ -61,7 +61,8 @@ try{
                         echo "<img src='images_utilisateurs/" . $resultat[0][3] . "'>";     
                   }              
                 ?>        
-                            <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
+                            <input type="file" id="file" name="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
+                            <label for="file"> ok </label>
                           
                         </div>
 

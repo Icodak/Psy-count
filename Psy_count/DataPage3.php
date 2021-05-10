@@ -40,14 +40,14 @@
     <div class="wrapper2">
         <div class="main">
            <form method="post" action="myDataFonction.php">
-                <div class="frame-header">
+                <div class="frame-header shadow2">
                     <div>
                         <h1>
                             Modifier mon mot de passe
                         </h1>
                     </div>
                 </div>
-                <div class="topic-main">
+                <div class="topic-main shadow2">
                     <div class="topic-list">
 
                         <div class="topic-items">
@@ -58,7 +58,7 @@
                             </div>
                             <div class="topic-meta topic-right2">
 
-                                <input type="text" class="crayon1" name='mdp'>
+                                <input type="text" class="crayon1" required name='mdp'>
                             </div>
                         </div>
                         <div class="topic-items">
@@ -66,7 +66,7 @@
                                 <h3> Nouveau mot de passe : </h3>
                             </div>
                             <div class="topic-meta topic-right2">
-                                <input type="text" class="crayon2" name='newmdp'>
+                                <input type="text" class="crayon2" required name='newmdp'>
                             </div>
                         </div>
                         <div class="topic-items">
@@ -74,7 +74,7 @@
                                 <h3>Vérification du nouveau mot de passse : </h3>
                             </div>
                             <div class="topic-meta topic-right2">
-                                <input type="text" class="crayon3" name='newmdpverif'>
+                                <input type="text" class="crayon3" required name='newmdpverif'>
                             </div>
                         </div>
                     </div>

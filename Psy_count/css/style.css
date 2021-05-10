@@ -116,6 +116,10 @@ option {
     box-shadow: 0px 0px 5px rgb(224, 224, 224);
 }
 
+.shadow2{
+    box-shadow: 0 12px 16px 0 rgb(0 0 0 / 24%), 0 17px 50px 0 rgb(0 0 0 / 19%);
+}
+
 .button {
     border-radius: 30px;
     background-color: #aa3558;
