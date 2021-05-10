@@ -29,21 +29,33 @@ $values = getData($dbData, $dataType);
     </script>
 
     <script type="text/javascript" src="myData_Fonction.js">
-        google.charts.load('current', {
-            'packages': ['corechart']
-        });
+        function createChart(chartType) {
+            alert("YO");
+            google.charts.load('current', {
+                'packages': ['corechart']
+            });
 
-        var data = google.visualization.arrayToDataTable([
-            ['data_date', 'valeurs'],
-            <?php
-            for ($j = 0; $j <= count($values) - 1; $j++) {
-                echo "['" . $values[$j][0] . "'," . $values[$j][1] . "],";
-            }
-            ?>
-        ]);
- 
-        chart(chartType, data);
-        
+            var data = google.visualization.arrayToDataTable([
+                ['data_date', 'valeurs'],
+                <?php
+                for ($j = 0; $j <= count($values) - 1; $j++) {
+                    echo "['" . $values[$j][0] . "'," . $values[$j][1] . "],";
+                }
+                ?>
+            ]);
+
+            type1 = document.getElementById('piechart');
+            type2 = document.getElementById('linechart');
+
+            chart = chart(chartType, data, type1, type2);
+            //Afficher/Désafficher
+            /*if (chart.display == "none") {
+                document.querySelector("#piechart").hidden = true;
+
+            } else if (chart.display == "block") {
+                document.querySelector("#piechart").hidden = false;
+            }*/
+        }
     </script>
 </head>
 
@@ -56,10 +68,10 @@ $values = getData($dbData, $dataType);
     <div class="form">
         <h1>Test</h1>
         <p>Veuillez cliquer sur le choix d'affichage qui vous convient le mieux :</p>
-        <input type="button" onclick="test()" value="Voir mes données sous forme de camembert">
+        <input type="button" onclick="createChart('pieChart')" value="Voir mes données sous forme de camembert">
         <div id="piechart"></div>
 
-        <input type="button" onclick="chart('lineChart', data)" value="Voir mes données sous forme de courbe d'évolution">
+        <input type="button" onclick="createChart('lineChart')" value="Voir mes données sous forme de courbe d'évolution">
         <div id="linechart"></div>
     </div>
 

@@ -2,14 +2,14 @@ google.charts.load('current', {
     'packages': ['corechart']
 });
 
-function chart(chartType, data) {
+function chart(chartType, data, type1, type2) {
     alert("TEST");
-    if (chartType === 'pieChart') { //inverser data pour piechart
+    if (chartType == 'pieChart') { //inverser data pour piechart
         var options = {
             title: "Graphe de l'évolution de la température superficielle",
         };
-        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-    } else if (chartType === 'lineChart') {
+        var chart = new google.visualization.PieChart(type1);
+    } else if (chartType == 'lineChart') {
         var options = {
             title: "Courbe de l'évolution de la température superficielle",
             curveType: 'function',
@@ -17,18 +17,11 @@ function chart(chartType, data) {
                 position: 'bottom'
             }
         };
-        var chart = new google.visualization.LineChart(document.getElementById('linechart'));
+        var chart = new google.visualization.LineChart(type2);
     }
 
     chart.draw(data, options);
-
-    //Afficher/Désafficher
-    if (chart.display === "none") {
-        document.querySelector("#piechart").hidden = true;
-
-    } else if (chart.display === "block") {
-        document.querySelector("#piechart").hidden = false;
-    }
+    return chart;
 }
 
 function test(){

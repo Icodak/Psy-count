@@ -21,20 +21,6 @@ for ($i = 0; $i <= count($values) - 1; $i++) {
     print_r($array_data_date);
     print_r($array_data_value);
 }
-
-//Test :  envoi des données sur un fichier json
-/*$testGraph = fopen('temp_test.json', 'w');
-fwrite($testGraph, json_encode($values));
-fclose($testGraph);
-
-$fp = fopen('temp_date.json', 'w');
-fwrite($fp, json_encode($array_data_date));
-fclose($fp);
-
-$fp2 = fopen('temp_value.json', 'w');
-fwrite($fp2, json_encode($array_data_value));
-fclose($fp2);
-*/
 ?>
 
 <!doctype html>
@@ -49,24 +35,55 @@ fclose($fp2);
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
     <script type="text/javascript" src="javascript//javaScriptCode.js"></script>
 
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
+        var endMe1 = true;
+        var endMe2 = true;
         window.addEventListener('resize', reportWindowSize);
 
-        function reportWindowSize() {
-            //alert("Window size has changed!");
-            //document.getElementById('linechart').reload();
+        function reportWindowSize() { //Ce code est horrible haha sorry TuT
+            if (endMe1 === false) {
+                endMe1 = true;
+                pieChart();
+            }
+            if (endMe2 === false) {
+                endMe2 = true;
+                lineChart();
+            }
         }
-    </script>
 
-    <script type="text/javascript">
         google.charts.load('current', {
             'packages': ['corechart']
         });
 
-        function chart(chartType) {
+        function pieChart() { //pieChart Data is wrong, check what is wrong  (╯°Д°)╯
+            var data = google.visualization.arrayToDataTable([
+                ['data_date', 'valeurs'],
+                <?php
+                for ($j = 0; $j <= count($array_data_date) - 1; $j++) {
+                    echo "['" . $array_data_value[$j] . "'," . $array_data_date[$j] . "],";
+                }
+                ?>
+            ]);
 
+            var options = {
+                title: "Graphe de l'évolution de la température superficielle",
+            };
+            var chart = new google.visualization.PieChart(document.getElementById('pieChart'));
+
+            chart.draw(data, options);
+
+            if (endMe1 === true) {
+                chart.draw(data, options);
+                endMe1 = false;
+            } else {
+                chart.clearChart();
+                endMe1 = true;
+            }
+        }
+
+        function lineChart() {
             var data = google.visualization.arrayToDataTable([
                 ['data_date', 'valeurs'],
                 <?php
@@ -76,30 +93,36 @@ fclose($fp2);
                 ?>
             ]);
 
-            if (chartType === 'pieChart') { //inverser data pour piechart
-                var options = {
-                    title: "Graphe de l'évolution de la température superficielle",
-                };
-                var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-            } else if (chartType === 'lineChart') {
-                var options = {
-                    title: "Courbe de l'évolution de la température superficielle",
-                    curveType: 'function',
-                    legend: {
-                        position: 'bottom'
-                    }
-                };
-                var chart = new google.visualization.LineChart(document.getElementById('linechart'));
-            }
+            var options = {
+                title: "Courbe de l'évolution de la température superficielle",
+                curveType: 'function',
+                legend: {
+                    position: 'bottom'
+                }
+            };
+            var chart = new google.visualization.LineChart(document.getElementById('lineChart'));
 
             chart.draw(data, options);
 
-            //Afficher/Désafficher
-            if (chart.display === "none") {
-                document.querySelector("#piechart").hidden = true;
+            if (endMe2 === true) {
+                chart.draw(data, options);
+                endMe2 = false;
+            } else {
+                chart.clearChart();
+                endMe2 = true;
+            }
 
-            } else if (chart.display === "block") {
-                document.querySelector("#piechart").hidden = false;
+        }
+
+        function display(id) { //This works for all kinds of elements (except google charts :D)
+            var table = document.getElementById(id);
+            if (table.style.display == "") {
+                //alert("GIT");
+                table.style.display = "block";
+
+            } else if (table.style.display == "block") {
+                //alert("GUD");
+                table.style.display = "";
             }
         }
     </script>
@@ -114,11 +137,30 @@ fclose($fp2);
     <div class="form">
         <h1>Test</h1>
         <p>Veuillez cliquer sur le choix d'affichage qui vous convient le mieux :</p>
-        <input type="button" onclick="chart('pieChart')" value="Voir mes données sous forme de camembert">
-        <div id="piechart"></div>
+        <input type="button" onclick="display('hide')" value="Voir mes données sous forme de tableau">
+        <div id="hide">
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="2">Température superficielle de la peau</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    for ($j = 0; $j <= count($array_data_date) - 1; $j++) {
+                        echo "<tr><td>" . $array_data_date[$j] . "</td>";
+                        echo "<td>" . $array_data_value[$j] . "</td></tr>";
+                    }
+                    ?>
+                </tbody>
+            </table>
+        </div>
 
-        <input type="button" onclick="chart('lineChart')" value="Voir mes données sous forme de courbe d'évolution">
-        <div id="linechart"></div>
+        <input type="button" onclick="pieChart()" value="Voir mes données sous forme de camembert">
+        <div id="pieChart"></div>
+
+        <input type="button" onclick="lineChart()" value="Voir mes données sous forme de courbe d'évolution">
+        <div id="lineChart"></div>
     </div>
 
     <?php include("footer.php") ?>
