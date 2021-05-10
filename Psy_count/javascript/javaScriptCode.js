@@ -191,7 +191,7 @@ $(document).ready(function(){
     var tableau = new Array(checkboxcheck.length);
     if (confirm("Voulez vous vraiment supprimer ces utilisateurs ?"))
 {
-    for(var i=0, n=checkboxes.length;i<n;i++) {
+    for(var i=0; i<checkboxes.length;i++) {
         if(checkboxes[i].checked ==true){
             tableau[i]=checkboxes[i].id;
             $.ajax({
@@ -283,6 +283,7 @@ $(document).ready(function(){
                         data : "ModificationButton=" + checkboxes[i].id,
                         success : function(code_html, statut){
                             document.location.reload();
+                            
                         },
                  
                         error : function(resultat, statut, erreur){
@@ -304,7 +305,30 @@ $(document).ready(function(){
         
         });
 
+        $(document).ready(function(){
+        $('#select1').change(function(){
+            var selection = document.getElementById("select1");
+           $.ajax({
+            url : 'myPatientFonction.php',
+            type : 'POST',
+            data : "choice=" + selection.value,
+            success : function(code_html, statut){
+                document.location.reload();
+            },
+     
+            error : function(resultat, statut, erreur){
+              
+            },
+     
+            complete : function(resultat, statut){
+     
+            }
+     
+         });
+          
+        });
 
+ });
 
 
 

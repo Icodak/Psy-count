@@ -36,7 +36,6 @@ if (isset($_SESSION['showTable']) && $_SESSION['showTable']=='oui') {
     $resultat = tableCreationPatient($currentPage);
 } 
 
-
 $resultat3 = $resultat[0];
 $pages = $resultat[1];
 
@@ -47,11 +46,10 @@ $pages = $resultat[1];
             <h1>Gestion des patients</h1>
 
             <div class="selectButton">
-                <div>
-                    <input id="selector" name="SelectPatient" class="button" type="submit" value="Choisir">
-                </div>
+                
                 <div>
                     <select id="select1" name="type" placeholder="classement">
+                        <option value="">--Please choose an option--</option>
                         <option value="non">patients sans Medecin</option>
                         <option value="oui">Mes patients</option>
                     </select>

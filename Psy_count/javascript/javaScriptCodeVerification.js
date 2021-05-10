@@ -1,23 +1,8 @@
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 function prenomNomVerification(nomOrPrenom,inputForm){
     var nomPrenomRegex = new RegExp("^[A-Z][A-Za-z\é\è\ê\-]+$");
-    if(nomOrPrenom===""){
-        inputForm.style.border = "4px solid red";
-        return false; 
-    }else if(nomPrenomRegex.test(nomOrPrenom)==false){
+   
+    if(nomPrenomRegex.test(nomOrPrenom)==false){
         inputForm.style.border = "4px solid red";
         return false;
     }else{
@@ -28,16 +13,21 @@ function prenomNomVerification(nomOrPrenom,inputForm){
 }
 
 function dateDeNaissanceVerification(date,inputForm){
-    return false;
-    
+    var dateToday = new Date();
+    if(dateToday.getFullYear() - parseInt(date.substring(0,4),10)<15)
+    {
+        inputForm.style.border = "4px solid red";
+        return false;
+    }else{
+        inputForm.style.border = "none";
+        return true;
+    }   
 }
 
 function codePostalVerification(code,inputForm){
     var codePostalRegex = new RegExp("[0-9]{5}");
-    if(code===""){
-        inputForm.style.border = "4px solid red";
-        return false;
-    }else if(codePostalRegex.test(code)==false){
+   
+    if(codePostalRegex.test(code)==false){
         return false;
     }else{
         inputForm.style.border = "none";
@@ -50,10 +40,7 @@ function codePostalVerification(code,inputForm){
 function EmailVerification(email,inputForm){
     var EmailRegex = new RegExp("^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$");
 
-    if(email===""){
-        inputForm.style.border = "4px solid red";
-        return false;
-    }else if(EmailRegex.test(email)==false){
+   if(EmailRegex.test(email)==false){
         inputForm.style.border = "4px solid red";
         return false;
     }else{
