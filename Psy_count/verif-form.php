@@ -56,15 +56,25 @@
 
         
 
-    //function taille($bdd){
-       // $requete = 'SELECT nom FROM '
-    //}
+    function taille($bdd){
+       $requete = 'SELECT nom FROM ID_Patient, dateDeNaissance, ID_psy_data, ID_Utilisateur, ID_Medecin FROM patient';
+       $jointure = $bdd->prepare($requete);
+       $jointure -> execute();
+       $test = $jointure->fetchALL();
+       $taille = count($test);
+       return $taille;
+    }
 
-    // à compléter 
+    
     
 
     function collecte_donnees($bdd){
-        //TODO
+        $requete = 'SELECT nom FROM ID_Patient, dateDeNaissance, ID_psy_data, ID_Utilisateur, ID_Medecin FROM patient';
+        $jointure = $bdd->prepare($requete);
+        $jointure -> execute();
+        $test = $jointure->fetchALL();
+        $taille = count($test);
+        return $test;
     }
 
     function donnee_client($collecte_donnee, $nom_demande, $taille){
