@@ -29,7 +29,10 @@
             </div>
             <div>
                 <p>Mot de passe</p>
-                <div class="input-bar"><input name="Password" type="password" /></div>
+                <div class="input-bar"><input name="Password" class="showHide" type="password" required minlength="8" />
+                    <img src="images/eye.png" class="passwordImage" onclick="hidePassword()">
+                    <img src="images/eyeHide.png" style="display:none;" class="passwordImage2" onclick="hidePassword()">
+                </div>
             </div>
         </div>
         <div class="confirm-field">
