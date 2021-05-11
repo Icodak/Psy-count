@@ -10,7 +10,7 @@ function redIncorrectBorder (inputChoice){
 function Verification(item,verificationRegex,inputForm){
     
    if(verificationRegex.test(item)==false){
-    redIncorrectBorder (inputForm);
+    redIncorrectBorder(inputForm);
     return false;
    }else{
     inputForm.style.border = "none";
@@ -23,7 +23,7 @@ function dateDeNaissanceVerification(date,inputForm){
     var dateToday = new Date();
     if(dateToday.getFullYear() - parseInt(date.substring(0,4),10)<15)
     {
-        redIncorrectBorder (inputForm);
+        redIncorrectBorder(inputForm);
         return false;
     }else{
         inputForm.style.border = "none";

@@ -162,12 +162,13 @@ select {
 }
 
 .main {
-  display: flex;
   justify-content: center;
   height: auto;
 }
 
-
+section{
+  display: block;
+}
 
 
 @media only screen and (max-width: 800px) {

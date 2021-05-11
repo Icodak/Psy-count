@@ -7,6 +7,7 @@
     <link rel="icon" type="image/png" href="images/psy-fi.png" />
     <link rel="stylesheet" href="css/style_des_utilisateurs.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="css//style.css">
     <script type="text/javascript" src="javascript/javaScriptCode.js"></script>
 
 
@@ -17,7 +18,7 @@
         <?php include("menuBar.php") ?>
 
     </header>
-<section class="main">
+<div class="main">
 
     <?php include_once("gestionDesUtilisateursFonctionSql.php") ?>
 
@@ -37,7 +38,7 @@
     ?>
 
 
-    <div id="gestionUtilisateur">
+    <div id="gestionUtilisateur" class="shadow2">
 
         <h1>Gestion des Utilisateurs</h1>
         <?php include_once("popUpGestion.php") ?>
@@ -146,7 +147,7 @@
         <?php
         }
         ?>
-</section>
+</div>
         <section class="footer"><?php include("footer.php") ?></section>
         
 </body>
