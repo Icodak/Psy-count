@@ -11,14 +11,14 @@ session_start();
 <div id="Menu">
   <nav id="navbar">
     <span class="menuText" id="psyfimenutext"> Psy-fi</span>
-    <a href="accueil.php" class="menuText"> Accueil </a>
-    <a href="forum.php" class="menuText"> Forum </a>
+    <a href="accueilEN.php" class="menuText"> Home </a>
+    <a href="forumEN.php" class="menuText"> Forum </a>
 
     <?php
     if (isset($_SESSION['type'])) {
       if ($_SESSION['type'] == 'patient') {
     ?>
-        <a href="myData.php" class="menuText"> Mes données </a>
+        <a href="myDataEN.php" class="menuText"> My data </a>
 
     <?php
       }
@@ -28,7 +28,7 @@ session_start();
     if (isset($_SESSION['type'])) {
       if ($_SESSION['type'] == 'Admin') {
     ?>
-        <a href="gestionDesUtilisateurs.php" class="menuText"> Gestion des utilisateurs </a>
+        <a href="gestionDesUtilisateursEN.php" class="menuText"> User management </a>
     <?php
       }
     }
@@ -37,7 +37,7 @@ session_start();
     if (isset($_SESSION['type'])) {
       if ($_SESSION['type'] == 'Medecin') {
     ?>
-        <a href="" class="menuText"> Mes patients </a>
+        <a href="" class="menuText"> My patients </a>
 
     <?php
       }
@@ -45,8 +45,8 @@ session_start();
     ?>
 
 
-    <a href="faq.php" class="menuText"> FAQ </a>
-    <a href="accueil.php#menuBarAnchor" class="menuText"> A propos </a>
+    <a href="faqEN.php" class="menuText"> FAQ </a>
+    <a href="accueilEN.php#menuBarAnchor" class="menuText"> About </a>
 
 
     <?php
@@ -54,7 +54,7 @@ session_start();
       //Le formulaire de Contact normal est utilisable par les visiteurs
       //sinon il s'agit de la messagerie interne accessible par d'autres pages du site
     ?>
-      <a href="msg_interne.php" class="menuText"> Messagerie (en test) </a>
+      <a href="msg_interneEN.php" class="menuText"> Messaging </a>
     <?php
     }
     ?>
@@ -64,7 +64,7 @@ session_start();
       //Le formulaire de Contact normal est utilisable par les visiteurs
       //sinon il s'agit de la messagerie interne accessible par d'autres pages du site
     ?>
-      <a href="contact.php" class="menuText"> Contact </a>
+      <a href="contactEN.php" class="menuText"> Contact </a>
     <?php
     }
     ?>
@@ -73,7 +73,7 @@ session_start();
     if (isset($_SESSION['type']) && (isset($_SESSION['connexion']) || $_SESSION['connexion'] = 1)) {
       if ($_SESSION['type'] == 'patient') {
     ?>
-        <a href="contactPatient.php" class="menuText"> Consulter </a>
+        <a href="contactPatientEN.php" class="menuText"> Rendez-vous </a>
     <?php
       }
     }
@@ -83,7 +83,7 @@ session_start();
     if (!isset($_SESSION['connexion']) || $_SESSION['connexion'] != 1) {
     ?>
 
-      <a href="signIn.php"> <button class="button"> Connexion </button> </a>
+      <a href="signInEN.php"> <button class="button"> Login </button> </a>
 
     <?php
     }
@@ -92,18 +92,18 @@ session_start();
     <?php
     if (!isset($_SESSION['connexion']) || $_SESSION['connexion'] != 1) {
     ?>
-      <a href="signUpMedecin.php"> <button class="button"> Professionnel de santé ? </button> </a>
+      <a href="signUpMedecinEN.php"> <button class="button"> health professional ? </button> </a>
     <?php
     }
     ?>
 
-  <img src="images/translateButton.png" onclick="translateEn()"> 
+  <img src="images/translateButton.png" onclick="translateFR()"> 
 
     <?php
     if (isset($_SESSION['connexion'])) {
       if ($_SESSION['connexion'] == 1) {
     ?>
-        <a href="deconnexion.php"> <button class="button"> Déconnexion </button> </a>
+        <a href="deconnexionEN.php"> <button class="button"> Log out </button> </a>
     <?php
       }
     }

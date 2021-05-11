@@ -44,8 +44,10 @@ nav {
 }
 
 nav img{
-  width: 100px;
-  height: 100px;
+  width:35px;
+  height: 35px;
+  cursor: pointer;
+  margin-left: 1%;
 }
 
 
