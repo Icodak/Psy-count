@@ -40,6 +40,9 @@ function changeImageUsers($imageSize,$imageName,$imageTmpName){
     if($imageSize<$maxSize){
       $extensionFile=strtolower(substr(strrchr($imageName,'.'),1));
       if(in_array($extensionFile,$typeOfFiles)){
+        unlink("images_utilisateurs/".$_SESSION['ID'].".jpg");
+        unlink("images_utilisateurs/".$_SESSION['ID'].".png");
+        unlink("images_utilisateurs/".$_SESSION['ID'].".jpge");
         $chemin="images_utilisateurs/".$_SESSION['ID'].".".$extensionFile;
         $test = move_uploaded_file($imageTmpName,$chemin);
         if($test){

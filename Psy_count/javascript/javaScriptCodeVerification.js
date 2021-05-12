@@ -120,11 +120,3 @@ function formVerificationMedecin(){
     )
 }
 
-$(document).ready(function(){
-    $("input").change(function() {
-    if(changement){
-    formVerificationPatient();
-    }else{
-    }
-});
-});

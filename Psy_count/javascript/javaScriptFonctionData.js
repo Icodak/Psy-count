@@ -10,7 +10,8 @@
         contentType: false,  
         data : formData,      
         success : function(code_html, statut){
-            document.location.reload();
+            location.reload();
+         
         },
         error : function(resultat, statut, erreur){       
         },
