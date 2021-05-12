@@ -1,5 +1,5 @@
 
-
+var changement = false;
 
 // fonction pour changer la bordure des input si la valeur de l'input est mauvaise
 function redIncorrectBorder (inputChoice){
@@ -57,6 +57,7 @@ function motDePasseVerification(mdp,mdp2,inputForm1,inputForm2){
 
 // fonction signup-patient
 function formVerificationPatient(){
+    changement= !changement;
     var ici =  document.forms[0];
     var input1 = ici['FirstName'];
     var input2 = ici['LastName'];
@@ -101,6 +102,7 @@ function formVerificationPatient(){
 
 // fonction signup-Medecin
 function formVerificationMedecin(){
+   changement= !changement;
 
     var ici =  document.forms[0];
     var code = ici['codePostal'].value;
@@ -118,9 +120,11 @@ function formVerificationMedecin(){
     )
 }
 
-
 $(document).ready(function(){
-$("input").change(function() {
+    $("input").change(function() {
+    if(changement){
     formVerificationPatient();
+    }else{
+    }
 });
 });

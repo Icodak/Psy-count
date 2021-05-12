@@ -9,13 +9,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/style_Sign.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script type="text/javascript" src="javaScript/javaScriptCode.js" async defer></script>
     <script type="text/javascript" src="javaScript/javaScriptCodeVerification.js" async defer></script>
 </head>
 
 <body class="gray-background">
 
-    <form class="card white-background shadow" action="getInformation.php"  id="form1"  method="post" onchange="formVerificationPatient()" onsubmit=" return formVerificationPatient()">
+    <form class="card white-background shadow" action="getInformation.php"  id="form1"  method="post"  onsubmit=" return formVerificationPatient()">
         <div class="select-menu">
             <ul>
                 <li><a href="sign-in.php" class="underline-link">S'identifier</a></li>

@@ -5,9 +5,9 @@
     <meta charset="utf-8">
     <title>Gestion des utilisateurs</title>
     <link rel="icon" type="image/png" href="images/psy-fi.png" />
-    <link rel="stylesheet" href="css/style_des_utilisateurs.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <link rel="stylesheet" href="css//style.css">
+    <link rel="stylesheet" href="css/style_des_utilisateurs.css">
+    <link rel="stylesheet" href="css/style.css">
     <script type="text/javascript" src="javascript/javaScriptCode.js"></script>
 
 
@@ -57,7 +57,7 @@
         <?php
         if (!isset($_SESSION["hidde"]) || $_SESSION["hidde"] == 'false') {
         ?>
-            <div id="globalPage">
+            
                 <div id="actionButton">
                     <input class="button4" disabled type="button" id="ModifierButton" value="Modifier" name="Modifier">
                     <input class="button4" disabled type="button" id="SuppButton" value="Supprimer" name="supprimer">
@@ -66,13 +66,13 @@
                 </div>
 
                 <div id="tableau">
-                    <div id="subTable">
+               
                         <table>
 
                             <thead>
                                 <tr>
                                     <th>
-                                        <input type="checkbox" onclick="allSelect(this)">
+                                        <input class="text2"type="checkbox" onclick="allSelect(this)">
                                     </th>
                                     <th class="text2" align="left" colspan="1">id</th>
                                     <th class="text2" align="left" colspan="1">Nom</th>
@@ -125,7 +125,7 @@
                             <?php for ($page = 1; $page <= $pages; $page++) : ?>
 
 
-                                <div class="page-item <?= ($currentPage == $page) ? "active" : "" ?> ">
+                                <div class="page-items <?= ($currentPage == $page) ? "active" : "" ?> ">
                                     <a href="gestionDesUtilisateurs.php?page=<?= $page ?>" class="page-link"><?= $page ?></a>
                                 </div>
                             <?php endfor ?>
@@ -141,14 +141,14 @@
                                                                             } ?>" class="page-link ">»</a>
                             </div>
                         </div>
-                    </div>
+                   
                 </div>
-            </div>
+                </div>
         <?php
         }
         ?>
 </div>
-        <section class="footer"><?php include("footer.php") ?></section>
+      <?php include("footer.php") ?>
         
 </body>
 

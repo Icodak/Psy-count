@@ -46,23 +46,26 @@ table {
     padding-left: 20px;
     padding-right: 20px;
     align-items: center;
-  }
-
-  .text2 {
     border-bottom: solid purple;
   }
+
+
+
+  h1{
+    font-size: 50px;
+  }
+
+ 
   .page-item {
     border: 1px solid black;
+    padding: 8px;
     margin: 0 4px;
-    padding-left: 2px;
-    padding-right: 2px;
     text-align: center;
     border-radius: 5px;
     min-width: 30px;
   }
-.page-item a{
-    font-size: 40px;
-}
+
+  
 
 .pagination {
     display: flex;
