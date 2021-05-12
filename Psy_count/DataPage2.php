@@ -6,7 +6,8 @@
     <title>Mon profil</title>
     <link rel="icon" type="image/png" href="images/psy-fi.png" />
     <link rel="stylesheet" href="css/style_myData_2.css">
-    <script type="text/javascript" src="javascript//javaScriptCode.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="javascript/javaScriptFonctionData.js"></script>
 </head>
 
 <body>
@@ -49,6 +50,7 @@ try{
                     <div>
 
                         <div class="User-image">
+                         <label for="file"  > 
                             <?php
                   if($resultat[0][3]==NULL){
                    
@@ -60,10 +62,10 @@ try{
                             <?php                           
                         echo "<img src='images_utilisateurs/" . $resultat[0][3] . "'>";     
                   }              
+
                 ?>        
-                            <input type="file" id="file" name="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
-                            <label for="file"> ok </label>
-                          
+                              </label>
+                            <input type="file" id="file" hidden name="avatar" accept="image/png, image/jpeg">                       
                         </div>
 
 

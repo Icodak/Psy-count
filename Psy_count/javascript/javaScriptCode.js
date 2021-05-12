@@ -116,19 +116,9 @@ function hidePassword2(){
 
 
 
-function ActiveInputDataPage(){
-    var champ = document.getElementsByClassName("datainput");
-    for(var i=0, n=champ.length;i<n;i++) {
-        champ[i].disabled=false;
-      }
-}
 
 
-function modificationInformations(element){
-    var type = element.className;
-    var champ = document.getElementsByClassName(type);
-    champ[0].disabled=false;
-}
+
 
 
 
@@ -179,6 +169,8 @@ function verifyOneCheckBox(){
         return false;
     }
 }
+
+
 
 
 
@@ -330,6 +322,14 @@ $(document).ready(function(){
 
  });
 
+
+
+
+
+
+
+    
+ 
 
 
 

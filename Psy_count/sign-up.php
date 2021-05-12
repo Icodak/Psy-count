@@ -15,7 +15,7 @@
 
 <body class="gray-background">
 
-    <form class="card white-background shadow" action="getInformation.php"  id="form1"  method="post" onsubmit=" return formVerificationPatient()">
+    <form class="card white-background shadow" action="getInformation.php"  id="form1"  method="post" onchange="formVerificationPatient()" onsubmit=" return formVerificationPatient()">
         <div class="select-menu">
             <ul>
                 <li><a href="sign-in.php" class="underline-link">S'identifier</a></li>

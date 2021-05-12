@@ -34,15 +34,16 @@ function changeDataUsers($prenom,$nom,$Email,$dateDeNaissance){
   $req->execute([$dateDeNaissance,$_SESSION['ID']]);
 }
 
-function changeImageUsers($image){
+function changeImageUsers($imageSize,$imageName,$imageTmpName){
   $maxSize=4500000;
   $typeOfFiles=array('jpg','png','jpge');
-    if($image['size']<$maxSize){
-      $extensionFile=strtolower(substr(strrchr($image['name'],'.'),1));
+    if($imageSize<$maxSize){
+      $extensionFile=strtolower(substr(strrchr($imageName,'.'),1));
       if(in_array($extensionFile,$typeOfFiles)){
         $chemin="images_utilisateurs/".$_SESSION['ID'].".".$extensionFile;
-        $test = move_uploaded_file($image['tmp_name'],$chemin);
+        $test = move_uploaded_file($imageTmpName,$chemin);
         if($test){
+        
           $avatar=$_SESSION['ID'].".".$extensionFile;
           $dbco = new PDO("mysql:host=localhost;dbname=serveur_psy_fi",'root','');
           $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
@@ -89,14 +90,24 @@ if(isset($_POST['dataPageChange']))
   $Email=$_POST['Email'];
   $Prenom=$_POST['Prenom'];
   $nom=$_POST['nom'];
-  $image=$_FILES['avatar'];
-  session_start();
-  changeImageUsers($image);
-  changeDataUsers($Prenom,$nom,$Email,$dateDeNaissance);
-  header('Location: DataPage2.php'); 
 
+  session_start();
+  changeDataUsers($Prenom,$nom,$Email,$dateDeNaissance);
+  header('Location: DataPage2.php');
 
 }
+
+
+if(isset($_FILES['file']))
+{
+  $imageSize=$_FILES['file']['size'];
+  $imageName=$_FILES['file']['name'];
+  $imageTmp=$_FILES['file']['tmp_name'];
+  session_start();
+  changeImageUsers($imageSize,$imageName,$imageTmp);
+}
+
+
 
 if(isset($_POST['dataPageChange2']))
 {

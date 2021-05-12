@@ -102,7 +102,6 @@ function formVerificationPatient(){
 // fonction signup-Medecin
 function formVerificationMedecin(){
 
-
     var ici =  document.forms[0];
     var code = ici['codePostal'].value;
     var input = ici['codePostal'];
@@ -117,5 +116,11 @@ function formVerificationMedecin(){
         &&
         result2
     )
-
 }
+
+
+$(document).ready(function(){
+$("input").change(function() {
+    formVerificationPatient();
+});
+});
