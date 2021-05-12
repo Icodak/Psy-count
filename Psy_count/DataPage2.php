@@ -55,7 +55,7 @@ try{
                   if($resultat[0][3]==NULL){
                    
                     ?>
-                            <img src="images/backgroundImages vertical.png">
+                            <img src="images/default-user.png">
                             <?php
                   }else{
                     ?>

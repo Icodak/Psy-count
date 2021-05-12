@@ -60,10 +60,6 @@ function changeImageUsers($imageSize,$imageName,$imageTmpName){
   $_SESSION['errorImage']="votre images ne doit pas avoir une taille de plus de 5Mo";
 }
 }
-
-
-
-
 function updatePassword($motDePasse){
   $Password = password_hash($motDePasse, PASSWORD_DEFAULT);
   $dbco = new PDO("mysql:host=localhost;dbname=serveur_psy_fi",'root','');
@@ -97,7 +93,6 @@ if(isset($_POST['dataPageChange']))
 
 }
 
-
 if(isset($_FILES['file']))
 {
   $imageSize=$_FILES['file']['size'];
@@ -106,8 +101,6 @@ if(isset($_FILES['file']))
   session_start();
   changeImageUsers($imageSize,$imageName,$imageTmp);
 }
-
-
 
 if(isset($_POST['dataPageChange2']))
 {

@@ -44,14 +44,11 @@ var click = "true";
              }
 }}}
 
-function redirectionDataPage3(){
-    document.location.href="DataPage3.php";
-}
+
 
 function dataModification(){
     document.location.href="DataPage2.php";
 }
-
 
 function ReversedataModification(){
     document.location.href="myData.php";
@@ -72,10 +69,6 @@ function locationMyData(){
 function returnGestionPatient(){
     document.location.href="myPatient.php";
 }
-
-
-
-
 
 
 function hidePassword(){
@@ -116,13 +109,6 @@ function hidePassword2(){
 
 
 
-
-
-
-
-
-
-
 function allSelect(source){
     checkboxes = document.getElementsByName('checkBoxGestion');
   for(var i=0, n=checkboxes.length;i<n;i++) {
@@ -130,8 +116,6 @@ function allSelect(source){
   }
   checkboxcheckGestionsUtilisateurs();
 }
-
-
 
 function checkboxcheckGestionsUtilisateurs(){
 
@@ -169,11 +153,6 @@ function verifyOneCheckBox(){
         return false;
     }
 }
-
-
-
-
-
 
 
 
@@ -245,16 +224,9 @@ $(document).ready(function(){
           }
         }
     
-    
-            
-        
         });
         
         });
-
- 
-
-
 
 $(document).ready(function(){
  
