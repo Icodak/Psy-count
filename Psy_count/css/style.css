@@ -32,6 +32,20 @@ a {
     color: white;
 }
 
+.lighter {
+    font-weight: lighter;
+}
+
+.normal {
+    font-weight: normal;
+}
+.bold {
+    font-weight: bold;
+}
+.bolder {
+    font-weight: bolder;
+}
+
 .black-text {
     color: black;
 }
