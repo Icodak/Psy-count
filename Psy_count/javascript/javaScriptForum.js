@@ -202,7 +202,6 @@ function loadMessageUsers(topic_uuid) {
         }
     })
         .done(function (result) {
-            console.log(result);
             buildForumPage(result);
         })
         .fail(function (xhr, thrownError) {
@@ -213,9 +212,7 @@ function loadMessageUsers(topic_uuid) {
 
 function buildForumPage(messageArray) {
     var topicBody = document.getElementById("forum-messages");
-    console.log(messageArray);
     for (msg of messageArray) {
-
         topicBody.appendChild(messageObject("../../images_utilisateurs/" + msg.userProfile + ".png", msg.ID_utilisateur, msg.userFirstName, msg.userLastName, msg.userRank, msg.message, readableDate(msg.creationDate), msg.isModified, 0));
     }
 }
@@ -230,8 +227,9 @@ function messageObject(user_profile, user_id, user_firstName, user_lastName, use
     msgUserName.appendChild(document.createTextNode(user_firstName + " " + user_lastName));
     var msgUserRank = document.createElement("p");
     msgUserRank.appendChild(document.createTextNode(user_rank));
-    var msgText = document.createElement("pre");
-    msgText.appendChild(document.createTextNode(message));
+    var msgMessage = document.createElement("p");
+    msgMessage.appendChild(document.createTextNode(message));
+    var msgText = document.createElement("div");
     var msgMeta = document.createElement("div");
     var msgInfo = document.createElement("div");
     var msgDate = document.createElement("p");
@@ -247,7 +245,7 @@ function messageObject(user_profile, user_id, user_firstName, user_lastName, use
     msgAuthor.src = "../../images/author.png";
     msgAuthor.alt = "author";
 
-    msgContainer.className = "msg-container"
+    msgContainer.className = "msg-container shadow"
     msgData.className = "msg-data"
     msgUser.className = "msg-user"
     msgAuthor.className = "msg-author"
@@ -265,6 +263,7 @@ function messageObject(user_profile, user_id, user_firstName, user_lastName, use
     msgUser.appendChild(msgUserName);
     msgUser.appendChild(msgUserRank);
     msgData.appendChild(msgUser);
+    msgText.appendChild(msgMessage);
     msgData.appendChild(msgText);
     msgInfo.appendChild(msgDate);
     if (isModified != 0) {

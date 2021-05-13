@@ -9,6 +9,9 @@
 .forum-container {
     width: 80%;
     min-height: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 20px;
 }
 
 .forum-header {
@@ -59,7 +62,7 @@ input, textarea {
     padding: 5px 20px;
 }
 
-.topic-box *{
+.topic-box * {
     margin: 0px;
 }
 
@@ -89,7 +92,7 @@ input, textarea {
     align-items: center;
 }
 
-.topic-recent-data{
+.topic-recent-data {
     margin-left: 10px;
 }
 
@@ -101,23 +104,62 @@ img.topic-img {
     width: 40px;
 }
 
+.msg-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
 
-.msg-container {}
+.msg-data {
+    display: flex;
+    flex-direction: row;
 
-.msg-data {}
+}
 
-.msg-user {}
+.msg-meta {
+    display: flex;
+    flex-direction: row;
 
-.msg-author {}
+    background-color: rgb(197, 197, 197);
+}
 
-.msg-profile {}
+.msg-user, .msg-info {
+    display: flex;
+    padding: 0px 20px;
 
-.msg-text {}
+}
 
-.msg-meta {}
+p {margin: 0px;}
 
-.msg-info {}
+.msg-text .msg-tools {
+    display: flex;
 
-.msg-modified {}
+}
+.msg-text {
+    padding: 20px;
+}
 
-.msg-tools {}
+.msg-user {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(231, 231, 231);
+    padding: 5px;
+    width: 200px;
+    height: 200px;
+}
+
+.msg-user * {
+    margin: 0px;
+}
+
+
+.msg-author {
+    width: 20px;
+}
+
+.msg-profile {
+    width: 100px;
+}
