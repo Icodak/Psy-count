@@ -208,6 +208,10 @@ function addTopic() {
 
 }
 
+function buildForumPage() {
+
+}
+
 function topicValidation(title) {
     return title.match(/([A-Za-zÀ-ÖØ-öø-ÿ0-9])\w*|\s*/gi)
         .map(el => { if (el.match(/\s/)) { return "-"; } else { return el; } })

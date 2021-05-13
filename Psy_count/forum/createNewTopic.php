@@ -5,6 +5,8 @@ $msg = $_POST['msg'];
 $topic_id = uniqid();
 $usr_id = "0";
 $result = false;
+
+
 if (isset($_SESSION['type'])) {
     $usr_id = $_SESSION['ID'];
     try {
@@ -26,4 +28,45 @@ if (isset($_SESSION['type'])) {
     }
 }
 echo json_encode($result);
+
+$file = "topic/" . $topic_id . "-". "$topic_name" . ".php";
+
+$content = "<!DOCTYPE html>
+<html lang=\"en\">
+
+<head>
+    <meta charset=\"utf-8\">
+    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
+    <title>". $topic_name . "</title>
+    <meta name=\"description\" content=". substr($msg,0,min(200,strlen($msg))) . ">
+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
+    <meta topicID = " . $topic_id . ">
+    <link rel=\"stylesheet\" href=\"../../css/style.css\">
+    <link rel=\"stylesheet\" href=\"../../css/styleMenu.css\">
+    <link rel=\"stylesheet\" href=\"../../css/style_footer.css\">
+    <link rel=\"stylesheet\" href=\"../../css/style_forum.css\">
+    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js\"></script>
+    <script type=\"text/javascript\" src=\"../javaScript/javaScriptForum.js\" async defer></script>
+</head>
+
+<body onload=\"buildForumPage()\">
+    <?php include(\"../../menubar.php\") ?>
+
+    <section class=\"forum-background gray-background\">
+        <div class=\"forum-body shadow white-background\">
+            <div class=\"forum-title\">
+                <h1>" . $topic_name . "</h1>
+                </div>
+                <div class=\"forum-messages\" id=\"forum-messages\">
+    
+                </div>
+            </div>
+        </section>
+    
+        <?php include(\"../../footer.php\") ?>
+    </body>
+    
+    </html>";
+
+file_put_contents($file, $content, FILE_APPEND | LOCK_EX);
 ?>
