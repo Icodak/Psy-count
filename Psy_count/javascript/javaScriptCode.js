@@ -315,6 +315,7 @@ function create(q_txt, a_txt, id_faq) {
     var div_question = document.getElementById("question-container");
 
     arrow.src = "images/flecheBottom.png";
+    arrow.alt = "display/hide answer";
     answr.style.display = "none";
 
     contain.className = "container white-background";
