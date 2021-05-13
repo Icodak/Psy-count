@@ -4,6 +4,7 @@
 <head>
 	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Accueil</title>
+	<meta name="description" content="Page d'accueil de Psy-fi">
 	<link rel="icon" type="image/png" href="images/psy-fi.png" />
 	<link rel="stylesheet" href="css/styleAccueil.css">
 	<link rel="stylesheet" href="css/style.css">
@@ -43,7 +44,7 @@
 		<hr>
 		<div class="section-1-main">
 			<div class="section-1-column">
-				<img src="images/Placement_Area_ASSETsmallSIZED.png" alt="Photographie santé" />
+				<img src="images/Placement_Area_ASSETsmallSIZED.jpg" alt="Photographie santé" />
 				<h2>Bilan de santé </h2>
 				<p> Lorem ipsum dolor sit amet, consectetur<br>
 					adipiscing elit, sed do eiusmod tempor incididunt <br>
@@ -52,7 +53,7 @@
 				<div><button class="button">En savoir plus</button></div>
 			</div>
 			<div class="section-1-column">
-				<img src="images/Placement_Area_ASSETsmallSIZED_di.png" alt="Photographie hôpital" />
+				<img src="images/Placement_Area_ASSETsmallSIZED_di.jpg" alt="Photographie hôpital" />
 				<h2>Soutien des hopitaux</h2>
 				<p> Lorem ipsum dolor sit amet, consectetur<br>
 					adipiscing elit, sed do eiusmod tempor incididunt <br>
@@ -61,7 +62,7 @@
 				<div><button class="button">En savoir plus</button></div>
 			</div>
 			<div class="section-1-column">
-				<img src="images/Placement_Area_ASSETsmallSIZED_dy.png" alt="Photographie seniors heureux" />
+				<img src="images/Placement_Area_ASSETsmallSIZED_dy.jpg" alt="Photographie seniors heureux" />
 				<h2>Suivi des seniors</h2>
 				<p> Lorem ipsum dolor sit amet, consectetur<br>
 					adipiscing elit, sed do eiusmod tempor incididunt <br>
