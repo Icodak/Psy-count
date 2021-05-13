@@ -1,29 +1,86 @@
-function buildTopic() {
-
+function loadTopics() {
+    $.ajax({
+        url: "forum/loadTopic.php", type: "GET"
+    })
+        .done(function (result) {
+            buildTopics(result);
+        })
+        .fail(function (xhr, thrownError) {
+            console.log(xhr);
+            console.log(thrownError);
+        })
 }
 
-function topicObject(title, link, o_user, o_date, m_user, m_img, m_date, m_link) {
+function buildTopics(topicArray) {
+    var topicBody = document.getElementById("forum-body");
+    for (topic of JSON.parse(topicArray)) {
+        topicBody.appendChild(topicObject(topic.name, "#", topic.ID_creationUser, topic.creationDate, topic.ID_latestUser, "images_utilisateurs/default-user.png", topic.latestUpdate, "#", topic.viewCount, "55"));
+    }
+}
+
+function topicObject(title, o_link, o_user, o_date, m_user, m_img, m_date, m_link, view_count, response_count) {
     var topicBox = document.createElement("div");
     var topicLeft = document.createElement("div");
-    var topicOriginData = document.createElement("div");
+    var topicInfo = document.createElement("div");
     var topicTitleLink = document.createElement("a");
     var topicTitle = document.createElement("h3");
-    var topicOriginUserName = document.createElement("p");
-    var topicOriginDate = document.createElement("p");
+    topicTitle.appendChild(document.createTextNode(title));
+    var topicOriginInfo = document.createElement("p");
+    topicOriginInfo.appendChild(document.createTextNode("Par " + o_user + ", " + o_date));
+    var topicStat = document.createElement("div");
+    var topicViews = document.createElement("p");
+    topicViews.appendChild(document.createTextNode(view_count + " Vue(s)"));
+    var topicResponse = document.createElement("div");
+    topicResponse.appendChild(document.createTextNode(response_count + " Réponse(s)"));
     var topicRight = document.createElement("div");
-    var topicLatestData = document.createElement("div");
-    var topicLatestUserProfile = document.createElement("img");
-    var topicLatestUserName = document.createElement("h4");
-    var topicLatestDate = document.createElement("p");
-    var topicLatestLink = document.createElement("a");
+    var topicRecentImg = document.createElement("div");
+    var topicImg = document.createElement("img");
+    var topicRecentData = document.createElement("div");
+    var topicRecentInfo = document.createElement("p");
+    topicRecentInfo.appendChild(document.createTextNode(m_user));
+    var topicRecentLink = document.createElement("div");
+    var topicRecentDate = document.createElement("p");
+    topicRecentDate.appendChild(document.createTextNode(m_date));
 
-    topicBox.className = "topicBox";
-    topicLeft.className = "topicLeft";
-    topicOriginData.className = "topicOriginData";
-    topicTitleLink.className = "transparent-link";
-    topicRight.className = "topicRight";
-    topicLatestUserProfile.className = "topicLatestUserProfile";
-    topicLatestLink.className = "transparent-link";
+
+    topicImg.src = m_img;
+    topicImg.alt = "Recent User Profile";
+    topicTitleLink.href = o_link;
+    topicRecentLink.href = m_link;
+
+    topicBox.className = "topic-box shadow";
+    topicLeft.className = "topic-left";
+    topicInfo.className = "topic-info";
+    topicTitle.className = "bold";
+    topicOriginInfo.className = "topic-origin-info";
+    topicStat.className = "topic-stat";
+    topicViews.className = "topic-views bold";
+    topicResponse.className = "topic-response";
+    topicRight.className = "topic-right";
+    topicRecentImg.className = "topic-recent-img";
+    topicImg.className = "topic-img";
+    topicRecentData.className = "topic-recent-data";
+    topicRecentInfo.className = "bold";
+    topicRecentLink.className = "topic-recent-link";
+    topicRecentDate.className = "topic-recent-date";
+
+    topicTitleLink.appendChild(topicTitle);
+    topicInfo.appendChild(topicTitleLink);
+    topicInfo.appendChild(topicOriginInfo);
+    topicStat.appendChild(topicViews);
+    topicStat.appendChild(topicResponse);
+    topicLeft.appendChild(topicInfo);
+    topicLeft.appendChild(topicStat);
+    topicRecentImg.appendChild(topicImg);
+    topicRecentData.appendChild(topicRecentInfo);
+    topicRecentLink.appendChild(topicRecentDate);
+    topicRecentData.appendChild(topicRecentLink);
+    topicRight.appendChild(topicRecentImg);
+    topicRight.appendChild(topicRecentData);
+    topicBox.appendChild(topicLeft);
+    topicBox.appendChild(topicRight);
+
+    return topicBox;
 }
 
 function addTopic() {
@@ -54,7 +111,7 @@ function addTopic() {
         })
             .done(function (result) {
                 if (result) {
-                    document.location.href = "https://localhost/Psy-count/Psy_count/forum2.php";
+                    document.location.href = "https://localhost/Psy-count/Psy_count/forum.php";
                 } else {
                     document.location.href = "https://localhost/Psy-count/Psy_count/accueil.php";
                 }
