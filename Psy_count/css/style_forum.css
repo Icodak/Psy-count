@@ -80,7 +80,6 @@ input, textarea {
 .topic-origin-info, .topic-stat, .topic-recent-data, .topic-recent-img {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
 }
 

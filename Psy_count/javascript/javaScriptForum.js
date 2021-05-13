@@ -31,13 +31,73 @@ function loadMessageUsers(user) {
 }
 
 function readableDate(date) {
+    var time = new Date();
+    var timeToString = "";
+    time.setTime(Date.parse(date))
+    var deltaTime = Date.now() - time.getTime();
+    if (deltaTime < 86400000) { //<jour
+        timeToString += "Il y a ";
+        if (deltaTime < 3600000) { //<1h
 
+            if (deltaTime < 60000) {// <1min
+                timeToString += "quelque secondes";
+
+                } else {
+                    timeToString += Math.floor(deltaTime/60000) + " minutes";
+                }
+            } else {
+                timeToString += Math.floor(deltaTime/3600000) + " heures";
+            }
+        //Less than a day display in ...ago
+    } else {
+        //More than a day display in DD:MM
+        timeToString += "le " + time.getDate() + " ";
+        switch (time.getMonth()) {
+            case 0:
+                timeToString += "Janvier";
+                break;
+            case 1:
+                timeToString += "Fevrier";
+                break;
+            case 2:
+                timeToString += "Mars";
+                break;
+            case 3:
+                timeToString += "Avril";
+                break;
+            case 4:
+                timeToString += "Mai";
+                break;
+            case 5:
+                timeToString += "Juin";
+                break;
+            case 6:
+                timeToString += "Juillet";
+                break;
+            case 7:
+                timeToString += "Aout";
+                break;
+            case 8:
+                timeToString += "Septembre";
+                break;
+            case 9:
+                timeToString += "Octobre";
+                break;
+            case 10:
+                timeToString += "Novembre";
+                break;
+            case 11:
+                timeToString += "Decembre";
+                break;
+        }
+    }
+    return timeToString;
 }
 
 function buildTopics(topicArray) {
     var topicBody = document.getElementById("forum-body");
     for (topic of JSON.parse(topicArray)) {
-        topicBody.appendChild(topicObject(topic.name, "#", topic.originUserName, topic.creationDate, topic.latestUserName, "images_utilisateurs/" + topic.latestUserProfile + ".png", topic.latestUpdate, "#", topic.viewCount, topic.messageCount));
+        topicBody.appendChild(topicObject(topic.name, "#", topic.originUserName, readableDate(topic.creationDate), topic.latestUserName, "images_utilisateurs/" + topic.latestUserProfile + ".png", readableDate(topic.latestUpdate), "#", topic.viewCount, topic.messageCount));
     }
 }
 

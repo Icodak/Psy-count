@@ -30,7 +30,6 @@
 
             </div>
         </div>
-        <button class="button" onclick="loadMessageUsers(2)"></button>
 
     </section>
     <?php include("footer.php") ?>
