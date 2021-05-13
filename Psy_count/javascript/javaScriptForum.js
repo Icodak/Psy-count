@@ -12,23 +12,6 @@ function loadTopics() {
 }
 
 
-function loadMessageUsers(user) {
-    $.ajax({
-        url: "forum/loadMessageUsers.php",
-        type: "GET",
-        dataType: 'JSON',
-        data: {
-            usr: user
-        }
-    })
-        .done(function (result) {
-            console.log(result);
-        })
-        .fail(function (xhr, thrownError) {
-            console.log(xhr);
-            console.log(thrownError);
-        })
-}
 
 function readableDate(date) {
     var time = new Date();
@@ -42,12 +25,12 @@ function readableDate(date) {
             if (deltaTime < 60000) {// <1min
                 timeToString += "quelque secondes";
 
-                } else {
-                    timeToString += Math.floor(deltaTime/60000) + " minutes";
-                }
             } else {
-                timeToString += Math.floor(deltaTime/3600000) + " heures";
+                timeToString += Math.floor(deltaTime / 60000) + " minutes";
             }
+        } else {
+            timeToString += Math.floor(deltaTime / 3600000) + " heures";
+        }
         //Less than a day display in ...ago
     } else {
         //More than a day display in DD:MM
@@ -208,8 +191,91 @@ function addTopic() {
 
 }
 
-function buildForumPage() {
 
+function loadMessageUsers(topic_uuid) {
+    $.ajax({
+        url: "../loadMessage.php",
+        type: "GET",
+        dataType: 'JSON',
+        data: {
+            topic_uuid: topic_uuid
+        }
+    })
+        .done(function (result) {
+            console.log(result);
+            buildForumPage(result);
+        })
+        .fail(function (xhr, thrownError) {
+            console.log(xhr);
+            console.log(thrownError);
+        })
+}
+
+function buildForumPage(messageArray) {
+    var topicBody = document.getElementById("forum-messages");
+    console.log(messageArray);
+    for (msg of messageArray) {
+
+        topicBody.appendChild(messageObject("../../images_utilisateurs/" + msg.userProfile + ".png", msg.ID_utilisateur, msg.userFirstName, msg.userLastName, msg.userRank, msg.message, readableDate(msg.creationDate), msg.isModified, 0));
+    }
+}
+
+function messageObject(user_profile, user_id, user_firstName, user_lastName, user_rank, message, date, isModified, isAuthor) {
+    var msgContainer = document.createElement("div");
+    var msgData = document.createElement("div");
+    var msgUser = document.createElement("div");
+    var msgAuthor = document.createElement("img");
+    var msgProfile = document.createElement("img");
+    var msgUserName = document.createElement("p");
+    msgUserName.appendChild(document.createTextNode(user_firstName + " " + user_lastName));
+    var msgUserRank = document.createElement("p");
+    msgUserRank.appendChild(document.createTextNode(user_rank));
+    var msgText = document.createElement("pre");
+    msgText.appendChild(document.createTextNode(message));
+    var msgMeta = document.createElement("div");
+    var msgInfo = document.createElement("div");
+    var msgDate = document.createElement("p");
+    msgDate.appendChild(document.createTextNode(date));
+    var msgIsModified = document.createElement("p");
+    msgIsModified.appendChild(document.createTextNode("(Modifié)"));
+    var msgTools = document.createElement("div");
+    var usr_id = user_id;
+
+    msgProfile.src = user_profile;
+    msgProfile.alt = "Profil Utilisateur";
+
+    msgAuthor.src = "../../images/author.png";
+    msgAuthor.alt = "author";
+
+    msgContainer.className = "msg-container"
+    msgData.className = "msg-data"
+    msgUser.className = "msg-user"
+    msgAuthor.className = "msg-author"
+    msgProfile.className = "msg-profile"
+    msgText.className = "msg-text"
+    msgMeta.className = "msg-meta"
+    msgInfo.className = "msg-info"
+    msgIsModified.className = "msg-modified"
+    msgTools.className = "msg-tools"
+
+    if (isAuthor) {
+        msgUser.appendChild(msgIsAuthor);
+    }
+    msgUser.appendChild(msgProfile);
+    msgUser.appendChild(msgUserName);
+    msgUser.appendChild(msgUserRank);
+    msgData.appendChild(msgUser);
+    msgData.appendChild(msgText);
+    msgInfo.appendChild(msgDate);
+    if (isModified != 0) {
+        msgInfo.appendChild(msgIsModified);
+    }
+    msgMeta.appendChild(msgInfo);
+    msgMeta.appendChild(msgTools);
+    msgContainer.appendChild(msgData);
+    msgContainer.appendChild(msgMeta);
+
+    return msgContainer;
 }
 
 function topicValidation(title) {
