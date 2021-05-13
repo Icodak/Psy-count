@@ -11,10 +11,55 @@ function loadTopics() {
         })
 }
 
+function loadTopicUsers(o_user, m_user) {
+    return $.ajax({
+        url: "forum/loadTopicUsers.php",
+        type: "GET",
+        dataType: 'JSON',
+        data: {
+            o_usr: o_user,
+            m_usr: m_user
+        }
+    })
+        .done(function (result) {
+            return result;
+        })
+        .fail(function (xhr, thrownError) {
+            console.log(xhr);
+            console.log(thrownError);
+        })
+}
+
+function loadMessageUsers(user) {
+    $.ajax({
+        url: "forum/loadMessageUsers.php",
+        type: "GET",
+        dataType: 'JSON',
+        data: {
+            usr: user
+        }
+    })
+        .done(function (result) {
+            console.log(result);
+        })
+        .fail(function (xhr, thrownError) {
+            console.log(xhr);
+            console.log(thrownError);
+        })
+}
+
+function readableDate(date) {
+
+}
+
 function buildTopics(topicArray) {
     var topicBody = document.getElementById("forum-body");
     for (topic of JSON.parse(topicArray)) {
-        topicBody.appendChild(topicObject(topic.name, "#", topic.ID_creationUser, topic.creationDate, topic.ID_latestUser, "images_utilisateurs/default-user.png", topic.latestUpdate, "#", topic.viewCount, "55"));
+        var usrdata = loadTopicUsers(topic.ID_creationUser, topic.ID_latestUser);
+        console.log("aa");
+        console.log(usrdata);
+        console.log("aa");
+        /* topicBody.appendChild(topicObject(topic.name, "#", usrdata[0].O_User_Name, topic.creationDate, usrdata[1].M_User_Name, usrdata[1].M_User_Profile, topic.latestUpdate, "#", topic.viewCount, "55")); */
     }
 }
 
@@ -129,4 +174,8 @@ function topicValidation(title) {
     return title.match(/([A-Za-zÀ-ÖØ-öø-ÿ0-9])\w*|\s*/gi)
         .map(el => { if (el.match(/\s/)) { return "-"; } else { return el; } })
         .reduce((mono = "", el) => mono + el);
+}
+
+function onEditTopic() {
+
 }
