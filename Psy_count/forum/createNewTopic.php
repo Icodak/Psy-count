@@ -38,9 +38,9 @@ $content = "<!DOCTYPE html>
     <meta charset=\"utf-8\">
     <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
     <title>". $topic_name . "</title>
-    <meta name=\"description\" content=". substr($msg,0,min(200,strlen($msg))) . ">
+    <meta name=\"description\" content=\"". substr($msg,0,min(200,strlen($msg))) . "\">
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
-    <meta topicID = " . $topic_id . ">
+    <meta topicID = \"" . $topic_id . "\">
     <link rel=\"stylesheet\" href=\"../../css/style.css\">
     <link rel=\"stylesheet\" href=\"../../css/styleMenu.css\">
     <link rel=\"stylesheet\" href=\"../../css/style_footer.css\">
@@ -53,7 +53,7 @@ $content = "<!DOCTYPE html>
     <?php include(\"../../menubar.php\") ?>
 
     <section class=\"forum-background gray-background\">
-        <div class=\"forum-body shadow white-background\">
+        <div class=\"forum-container shadow white-background\">
             <div class=\"forum-title\">
                 <h1>" . $topic_name . "</h1>
                 </div>

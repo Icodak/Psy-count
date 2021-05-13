@@ -4,10 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>TITRETITRETITRE</title>
-    <meta name="description" content="DESCRIPTIONDESCRIPTIONDESCRIPTIONDESCRIPTIONDESCRIPTION">
+    <title>titre-de-sujet</title>
+    <meta name="description" content="message">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta topicID = "IDIDIDIDIDIIDIDDI">
+    <meta topicID = "609d306603b9b">
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/styleMenu.css">
     <link rel="stylesheet" href="../../css/style_footer.css">
@@ -20,17 +20,17 @@
     <?php include("../../menubar.php") ?>
 
     <section class="forum-background gray-background">
-        <div class="forum-body shadow white-background">
+        <div class="forum-container shadow white-background">
             <div class="forum-title">
-                <h1>TITRETITRETITRE</h1>
+                <h1>titre-de-sujet</h1>
+                </div>
+                <div class="forum-messages" id="forum-messages">
+    
+                </div>
             </div>
-            <div class="forum-messages" id="forum-messages">
-
-            </div>
-        </div>
-    </section>
-
-    <?php include("../../footer.php") ?>
-</body>
-
-</html>
+        </section>
+    
+        <?php include("../../footer.php") ?>
+    </body>
+    
+    </html>

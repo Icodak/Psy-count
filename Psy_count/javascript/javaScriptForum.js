@@ -97,7 +97,7 @@ function readableDate(date) {
 function buildTopics(topicArray) {
     var topicBody = document.getElementById("forum-body");
     for (topic of JSON.parse(topicArray)) {
-        topicBody.appendChild(topicObject(topic.name, "#", topic.originUserName, readableDate(topic.creationDate), topic.latestUserName, "images_utilisateurs/" + topic.latestUserProfile + ".png", readableDate(topic.latestUpdate), "#", topic.viewCount, topic.messageCount));
+        topicBody.appendChild(topicObject(topic.name, "forum/topic/" + topic.ID_topic + "-" + topic.name + ".php", topic.originUserName, readableDate(topic.creationDate), topic.latestUserName, "images_utilisateurs/" + topic.latestUserProfile + ".png", readableDate(topic.latestUpdate), "#", topic.viewCount, topic.messageCount));
     }
 }
 
