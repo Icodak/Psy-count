@@ -3,6 +3,36 @@
 $dbco = new PDO("mysql:host=localhost;dbname=serveur_psy_fi",'root','');
 $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+
+
+
+function selectInformationsPatient(){
+  try{
+    $dbco = new PDO("mysql:host=localhost;dbname=serveur_psy_fi",'root','');
+    $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $id=$_SESSION['ID'];
+
+    $req =  $dbco->prepare('SELECT nom,prenom,Email,images,motDePasse FROM utilisateur WHERE ID_Utilisateur=:ID_Utilisateur');
+    $req->execute(['ID_Utilisateur' => $id]);
+    $resultat = $req->fetchAll();
+
+    $req =  $dbco->prepare('SELECT dateDeNaissance FROM patient WHERE ID_Utilisateur=:ID_Utilisateur');
+    $req->execute(['ID_Utilisateur' => $id]);
+    $resultat2 = $req->fetchAll();
+
+
+    $resultatArray= array();
+    $resultatArray[0]=$resultat;
+    $resultatArray[1]=$resultat2;
+    return $resultatArray;
+}
+  catch(PDOException $e){
+  echo "Erreur : " . $e->getMessage();
+} 
+
+}
+
+
 function initialisation(){
     try{
       $dbco = new PDO("mysql:host=localhost;dbname=serveur_psy_fi",'root','');
@@ -40,13 +70,12 @@ function changeImageUsers($imageSize,$imageName,$imageTmpName){
     if($imageSize<$maxSize){
       $extensionFile=strtolower(substr(strrchr($imageName,'.'),1));
       if(in_array($extensionFile,$typeOfFiles)){
-        unlink("images_utilisateurs/".$_SESSION['ID'].".jpg");
-        unlink("images_utilisateurs/".$_SESSION['ID'].".png");
-        unlink("images_utilisateurs/".$_SESSION['ID'].".jpge");
+        foreach ($typeOfFiles as $value) {
+          unlink("images_utilisateurs/".$_SESSION['ID'].".".$value);
+      }
         $chemin="images_utilisateurs/".$_SESSION['ID'].".".$extensionFile;
         $test = move_uploaded_file($imageTmpName,$chemin);
-        if($test){
-        
+        if($test){       
           $avatar=$_SESSION['ID'].".".$extensionFile;
           $dbco = new PDO("mysql:host=localhost;dbname=serveur_psy_fi",'root','');
           $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 

@@ -24,15 +24,9 @@
 
 
     <div id="myDataPage">
-
         <div id="doctorPage">
-
             <div class="doctorData">
-
                 <img src="images/backgroundImages vertical.png">
-
-
-
                 <div class="doctorLabel">
                     <ul>
                         <li>

@@ -12,60 +12,30 @@
 
 <body>
     <header>
-        <?php include("menuBar.php") ?>
+        <?php include("menuBar.php") ;
+              include("myDataFonction.php");     
+              $outPut = selectInformationsPatient();
+              $resultat =  $outPut[0];
+              $resultat2 = $outPut[1];
+        ?>
     </header>
 
 
-    <?php
-
-
-try{
-    $dbco = new PDO("mysql:host=localhost;dbname=serveur_psy_fi",'root','');
-    $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $id=$_SESSION['ID'];
-
-    $req =  $dbco->prepare('SELECT nom,prenom,Email,images,motDePasse FROM utilisateur WHERE ID_Utilisateur=:ID_Utilisateur');
-    $req->execute(['ID_Utilisateur' => $id]);
-    $resultat = $req->fetchAll();
-
-    $req =  $dbco->prepare('SELECT dateDeNaissance FROM patient WHERE ID_Utilisateur=:ID_Utilisateur');
-    $req->execute(['ID_Utilisateur' => $id]);
-    $resultat2 = $req->fetchAll();
-}
-
-    catch(PDOException $e){
-
-  echo "Erreur : " . $e->getMessage();
-}    
-
-?>
-
-
-
     <div class="wrapper">
-
         <div class="main">
             <form method="post" action="myDataFonction.php" enctype="multipart/form-data">
                 <div class="frame-header">
                     <div>
-
                         <div class="User-image">
-                         <label for="file"  > 
-                            <?php
-                  if($resultat[0][3]==NULL){
-                   
-                    ?>
-                            <img src="images/default-user.png">
-                            <?php
-                  }else{
-                    ?>
-                            <?php                           
-                        echo "<img src='images_utilisateurs/" . $resultat[0][3] . "'>";     
+                            <label for="file">
+                                <?php if($resultat[0][3]==NULL){
+                               echo  "<img src=images/default-user.png>";                       
+                  }else{                                     
+                        echo "<img src='images_utilisateurs/".$resultat[0][3] ."?rand=". rand() ."'>";     
                   }              
-
-                ?>        
-                              </label>
-                            <input type="file" id="file" hidden name="avatar" accept="image/png, image/jpeg">                       
+                ?>
+                            </label>
+                            <input type="file" id="file" hidden name="avatar" accept="image/png, image/jpeg">
                         </div>
 
 
@@ -91,17 +61,17 @@ try{
 
 
                             <div class="topic-right2">
-                            <div class="topic-meta">
+                                <div class="topic-meta">
 
-                                <input type="text" class="crayon1 datainput" name='nom' disabled
-                                    value=<?php echo $resultat[0][0]?>>
-                            </div>
-                            <div class="inputImage">
-                                <button type="button" class="crayon1" onclick="modificationInformations(this)"> <img
-                                        src="images/crayon2.png">
-                                </button>
+                                    <input type="text" class="crayon1 datainput" name='nom' disabled
+                                        value=<?php echo $resultat[0][0]?>>
+                                </div>
+                                <div class="inputImage">
+                                    <button type="button" class="crayon1" onclick="modificationInformations(this)"> <img
+                                            src="images/crayon2.png">
+                                    </button>
 
-                            </div>
+                                </div>
                             </div>
                         </div>
 
@@ -114,18 +84,18 @@ try{
                             <div class="topic-right">
 
                                 <h3>Pr&eacutenom : </h3>
-                            </div >
+                            </div>
                             <div class="topic-right2">
-                            <div class="topic-meta">
+                                <div class="topic-meta">
 
-                                <input type="text" class="crayon2 datainput" name='Prenom' disabled
-                                    value=<?php echo $resultat[0][1]?>>
-                            </div>
-                            <div class="inputImage">
-                                <button type="button" class="crayon2" onclick="modificationInformations(this)"> <img
-                                        src="images/crayon2.png">
-                                </button>
-                            </div>
+                                    <input type="text" class="crayon2 datainput" name='Prenom' disabled
+                                        value=<?php echo $resultat[0][1]?>>
+                                </div>
+                                <div class="inputImage">
+                                    <button type="button" class="crayon2" onclick="modificationInformations(this)"> <img
+                                            src="images/crayon2.png">
+                                    </button>
+                                </div>
                             </div>
 
                         </div>
@@ -138,15 +108,15 @@ try{
                             </div>
 
                             <div class="topic-right2">
-                            <div class="topic-meta">
-                                <input type="text" class="crayon3 datainput" name='Email' disabled
-                                    value=<?php echo $resultat[0][2]?>>
-                            </div>
-                            <div class="inputImage">
-                                <button type="button" class="crayon3" onclick="modificationInformations(this)"> <img
-                                        src="images/crayon2.png">
-                                </button>
-                            </div>
+                                <div class="topic-meta">
+                                    <input type="text" class="crayon3 datainput" name='Email' disabled
+                                        value=<?php echo $resultat[0][2]?>>
+                                </div>
+                                <div class="inputImage">
+                                    <button type="button" class="crayon3" onclick="modificationInformations(this)"> <img
+                                            src="images/crayon2.png">
+                                    </button>
+                                </div>
                             </div>
 
 
@@ -159,16 +129,16 @@ try{
                                 <h3>Date de naissance : </h3>
                             </div>
                             <div class="topic-right2">
-                            <div class="topic-meta">
+                                <div class="topic-meta">
 
-                                <input type="text" class="crayon4 datainput" name='dateDeNaissance' disabled
-                                    value=<?php echo $resultat2[0][0]?>>
-                            </div>
-                            <div class="inputImage">
-                                <button type="button" class="crayon4" onclick="modificationInformations(this)"> <img
-                                        src="images/crayon2.png">
-                                </button>
-                            </div>
+                                    <input type="text" class="crayon4 datainput" name='dateDeNaissance' disabled
+                                        value=<?php echo $resultat2[0][0]?>>
+                                </div>
+                                <div class="inputImage">
+                                    <button type="button" class="crayon4" onclick="modificationInformations(this)"> <img
+                                            src="images/crayon2.png">
+                                    </button>
+                                </div>
                             </div>
 
                         </div>
@@ -180,21 +150,21 @@ try{
                                 <h3>Mot de passe : </h3>
                             </div>
                             <div class="topic-right2">
-                            <div class="topic-meta">
-                                <input type="password" class="crayon5 datainput" name='motDePasse' disabled
-                                    value="***************">
-                            </div>
-                            <div class="inputImage">
-                                <button type="button" class="crayon5" onclick="redirectionDataPage3()">
-                                    <img src="images/crayon2.png">
-                                </button>
-                            </div>
+                                <div class="topic-meta">
+                                    <input type="password" class="crayon5 datainput" name='motDePasse' disabled
+                                        value="***************">
+                                </div>
+                                <div class="inputImage">
+                                    <button type="button" class="crayon5" onclick="redirectionDataPage3()">
+                                        <img src="images/crayon2.png">
+                                    </button>
+                                </div>
                             </div>
 
                         </div>
                     </div>
 
-                   
+
                     <div class="data-button">
                         <div>
                             <input type="submit" onclick="ActiveInputDataPage()" name="dataPageChange"

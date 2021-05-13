@@ -23,14 +23,9 @@
 	$information = initialisationPatient($_POST['patientProfil']);
     $_SESSION['addUser']=$_POST['patientProfil'];   
 	?>
-
-
     <div id="myDataPage">
-
         <div id="doctorPage">
             <h1>Fiche du patient</h1>
-             
-
             <div class="doctorData">
             <?php
                 if($information[3]!=NULL){
@@ -41,8 +36,6 @@
                 }
                
             ?>
-
-
 
                 <div class="doctorLabel">
                     <ul>
