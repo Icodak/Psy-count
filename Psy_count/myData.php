@@ -5,8 +5,9 @@
     <meta charset="utf-8">
     <title>Mes données</title>
     <link rel="icon" type="image/png" href="images/psy-fi.png" />
-    <link rel="stylesheet" href="css/style_myData_.css">
+
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style_myData_.css">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
     <script type="text/javascript" src="javascript//javaScriptCode.js"></script>
 </head>
@@ -18,7 +19,7 @@
          include("myDataFonction.php") ;
          $informations = selectInformationsPatient()[0];
          $diagnosticText = selectInformationsPatient()[2];
-         $compteRendu = selectInformationsPatient()[3];
+         $compteRendu = selectInformationsPatient()[3];   
         ?>
     </header>
 
@@ -30,7 +31,12 @@
     <div id="myDataPage">
         <div id="doctorPage">
             <div class="doctorData">
-                <img src="images/backgroundImages vertical.png">
+                <?php if($informations[0][3]==NULL){
+                               echo  "<img src=images/default-user.png>";                       
+                  }else{                                     
+                        echo "<img src='images_utilisateurs/".$informations[0][3] ."?rand=". rand() ."'>";     
+                  }              
+                ?>
                 <div class="doctorLabel">
                     <ul>
                         <li>

@@ -35,10 +35,8 @@
                 }
                 else{
                     echo'<img src="images/backgroundImages vertical.png">';
-                }
-               
+                }    
             ?>
-
                 <div class="doctorLabel">
                     <ul>
                         <li>
