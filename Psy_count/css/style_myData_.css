@@ -13,6 +13,20 @@ body{
 	background-color: #f9f0f0;
 
 }
+.patient-Diagnostic{
+	height: 300px;
+	width: 80%;
+	word-break: break-all;
+	resize: none;
+	
+}
+
+
+
+.doctor-diagnostic{
+	min-height: 350px;
+	word-break: break-all;
+}
 
 .doctorText{
 	margin-bottom: 2%;

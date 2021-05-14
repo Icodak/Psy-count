@@ -14,8 +14,12 @@
 <body>
 
     <header>
-        <?php include("menuBar.php") ?>
-        <?php include("myDataFonction.php") ?>
+        <?php include("menuBar.php");
+         include("myDataFonction.php") ;
+         $informations = selectInformationsPatient()[0];
+         $diagnosticText = selectInformationsPatient()[2];
+         $compteRendu = selectInformationsPatient()[3];
+        ?>
     </header>
 
     <?php
@@ -59,8 +63,17 @@
 
             </div>
 
+            <p class="doctor-diagnostic">
+
+                <?php echo  $diagnosticText['diagnostic']?>
+
+            </p>
+
             <div class="consultButton">
-                <h4 class="consultbuttonText">Médecin traitant : </h4>
+                <?php echo  "<a  class='button'  href='pdf_utilisateurs/".$compteRendu['compteRendu']."' download='compte rendu ". $informations[0][0].$informations[0][1]."' >
+                <img class='upload-image' src='images/dowload.png'> Télécharger mon compte rendu</a>" ?>
+
+
                 <button class="button" onclick="dataModification()"> Modifier mes données </button>
                 <button class="button" onclick="requestContact()"> Consulter </button>
             </div>

@@ -38,6 +38,12 @@ body {
 .input-bar {
 	display: flex;
 }
+.passwordType{
+	border-bottom: 2px solid rgb(80, 80, 80);
+}
+.passwordType input{
+ 	border-bottom: none;
+}
 
 ul {
 	list-style: none;
@@ -49,9 +55,11 @@ li {
 	padding: 10px;
 }
 
-img {
+.input-bar img {
 	width: 52px;
 	object-fit: contain;
+	background-color: #f9f0f0;
+	border-radius: 0px;
 }
 
 label {

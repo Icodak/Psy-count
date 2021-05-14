@@ -83,9 +83,7 @@ input {
     font-size: 3.5vw;
 }
 
-input:hover {
-    border-bottom: 2px solid #6d2339;
-}
+
 
 input::placeholder {
     color: rgb(82, 82, 82);
@@ -140,8 +138,6 @@ option {
 
   
 
-
-
 .button:hover {
     transition: all 0.2s ease 0s;
     background-color: #6d2339;
@@ -162,6 +158,11 @@ option {
 .underline-link:hover {
     text-underline-offset: 10px;
     text-decoration: underline #aa3558 2px;
+}
+
+.upload-image{
+	width: 50px;
+	height:50px;
 }
 
 /* Media queries*/

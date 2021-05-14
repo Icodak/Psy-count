@@ -55,14 +55,14 @@
             </div>
             <div>
                 <p>Mot de passe</p>
-                <div class="input-bar"><input name="Password" class="showHide" required type="password"  />
+                <div class="input-bar passwordType"><input name="Password" class="showHide" required type="password"  />
                     <img src="images/eye.png" class="passwordImage" onclick="hidePassword()">
                     <img src="images/eyeHide.png" style="display:none;" class="passwordImage2" onclick="hidePassword()">
                 </div>
             </div>
             <div>
                 <p>Vérification du mot de passe</p>
-                <div class="input-bar"><input name="password_verify"  required class="showHide2" type="password" />
+                <div class="input-bar passwordType"><input name="password_verify"  required class="showHide2" type="password" />
                     <img src="images/eye.png" class="passwordImage" onclick="hidePassword2()">
                     <img src="images/eyeHide.png" style="display:none;" class="passwordImage2" onclick="hidePassword2()">
                 </div>

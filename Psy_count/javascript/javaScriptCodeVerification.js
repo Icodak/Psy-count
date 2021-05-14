@@ -33,8 +33,7 @@ function dateDeNaissanceVerification(date,inputForm){
 
 // fonction pour déterminer si le mot de passe est correct
 
-function motDePasseVerification(mdp,mdp2,inputForm1,inputForm2){
-    var mdpRegex = new RegExp("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$");
+function motDePasseVerification(mdp,mdp2,inputForm1,inputForm2,mdpRegex){
 
     if(mdp!=mdp2)
     {
@@ -63,8 +62,9 @@ function formVerificationPatient(){
     var input2 = ici['LastName'];
     var input3 = ici['dateDeNaissance'];
     var input4 = ici['Email'];
-    var input5 = ici['Password'];
-    var input6 = ici['password_verify'];
+    var input5 = document.getElementsByClassName("passwordType")[0];
+    var input6 = document.getElementsByClassName("passwordType")[1];
+
 
     var email = ici['Email'].value;
     var mdp1 = ici['Password'].value;
@@ -81,10 +81,10 @@ function formVerificationPatient(){
 
     var result1 =  Verification(prenom,nomPrenomRegex,input1);
     var result2 =  Verification(nom,nomPrenomRegex,input2);        
-    var result3 =  Verification(email,EmailRegex,input3);
+    var result3 =  Verification(email,EmailRegex,input4);
 
 
-    var result4 = motDePasseVerification(mdp1,mdp2,input5,input6);
+    var result4 = motDePasseVerification(mdp1,mdp2,input5,input6,mdpRegex);
     var result5 = dateDeNaissanceVerification(date,input3);
 
     return(

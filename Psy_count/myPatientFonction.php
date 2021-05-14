@@ -2,6 +2,7 @@
 
 
 
+
 function initialisationPatient($id){
   try{
     $dbco = new PDO("mysql:host=localhost;dbname=serveur_psy_fi",'root','');
@@ -21,6 +22,36 @@ function initialisationPatient($id){
   } 
 }
 
+
+function SelectPatientText($id)
+{
+  try{
+    $dbco = new PDO("mysql:host=localhost;dbname=serveur_psy_fi",'root','');
+    $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $req2 =  $dbco->prepare(
+      "SELECT diagnostic FROM patient WHERE ID_Utilisateur=?");
+    $req2->execute(array($id));
+    $resultat = $req2->fetch();
+    return $resultat;
+
+    }catch(PDOException $e){
+      echo "Erreur : " . $e->getMessage();
+    
+  }
+}
+
+function updatePatientText($id,$text){
+  try{
+  $dbco = new PDO("mysql:host=localhost;dbname=serveur_psy_fi",'root','');
+  $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  $req2 =  $dbco->prepare(
+    "UPDATE patient SET diagnostic=? WHERE ID_Utilisateur=?");
+  $req2->execute(array($text,$id));
+  }catch(PDOException $e){
+    echo "Erreur : " . $e->getMessage();
+  
+}
+}
 
 function addPatient($idUtilisateur_ofMedecin,$idUtilsiateur)
 {
@@ -134,6 +165,40 @@ function tableCreationMesPatient($currentPage){
 }
 
 
+
+function addPdfReport($imageSize,$imageName,$imageTmpName){
+  $maxSize=4500000;
+  $typeOfFiles=array('pdf');
+    if($imageSize<$maxSize){
+      $extensionFile=strtolower(substr(strrchr($imageName,'.'),1));
+      if(in_array($extensionFile,$typeOfFiles)){
+        foreach ($typeOfFiles as $value) {
+          unlink("pdf_utilisateurs/".$_SESSION['ID'].".".$value);
+      }
+        $chemin="pdf_utilisateurs/".$_SESSION['ID'].".".$extensionFile;
+        $test = move_uploaded_file($imageTmpName,$chemin);
+        if($test){       
+          $avatar=$_SESSION['ID'].".".$extensionFile;
+          $dbco = new PDO("mysql:host=localhost;dbname=serveur_psy_fi",'root','');
+          $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
+          $req =  $dbco->prepare(
+          "UPDATE utilisateur SET images=? WHERE ID_Utilisateur=?");
+          $req->execute([$avatar,$_SESSION['ID']]);
+        }else{
+          echo"transfert impossible, retentez ultérieument"; 
+      }
+    }else{
+      echo"votre images doit étre au format jpg/png/jpge";   
+    }
+}else{
+  echo"votre images ne doit pas avoir une taille de plus de 5Mo";
+}
+}
+
+
+
+
+
 if(isset($_POST['choice'])){
   session_start();
   $_SESSION['showTable']=$_POST['choice'];
@@ -149,4 +214,20 @@ if(isset($_POST['Add1'])){
   addPatient($_SESSION['ID'],$_POST['Add1']);
 }
    
+if(isset($_POST['patientText'])){
+  session_start();
+  updatePatientText($_SESSION['addUser'],$_POST['patientText']);
+}
+
+if(isset($_POST['patientText'])){
+  updatePatientText($_SESSION['addUser'],$_POST['patientText']);
+}
+
+if(isset($_FILES['file'])){
+  session_start();
+  $imageSize=$_FILES['file']['size'];
+  $imageName=$_FILES['file']['name'];
+  $imageTmp=$_FILES['file']['tmp_name'];
+  addPdfReport($imageSize,$imageName,$imageTmp);
+}
 ?>

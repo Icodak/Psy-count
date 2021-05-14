@@ -9,25 +9,27 @@
     <link rel="stylesheet" href="css/style_myData_.css">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script type="text/javascript" src="javascript//javaScriptCode.js"></script>
+    <script type="text/javascript" src="javascript//javaScriptFonctionPatient2.js"></script>
 </head>
 
 <body>
 
     <header>
-        <?php include("menuBar.php") ?>
-        <?php include("myPatientFonction.php") ?>
+        <?php 
+        include("menuBar.php"); 
+        include("myPatientFonction.php");        
+	    $information = initialisationPatient($_POST['patientProfil']);
+        $_SESSION['addUser']=$_POST['patientProfil'];  
+        $text = SelectPatientText($_SESSION['addUser']); 
+	    ?>
     </header>
 
-    <?php
-	$information = initialisationPatient($_POST['patientProfil']);
-    $_SESSION['addUser']=$_POST['patientProfil'];   
-	?>
+   
     <div id="myDataPage">
         <div id="doctorPage">
             <h1>Fiche du patient</h1>
             <div class="doctorData">
-            <?php
+                <?php
                 if($information[3]!=NULL){
                     echo "<img src='images_utilisateurs/" . $information[3] . "'>";   
                 }
@@ -68,28 +70,25 @@
 
 
             </div>
-            <div class="doctorText">
-            <textarea>blablablablablzblblablablablablzblablablablvablablablvblablablablablzblblablablablablzblablablablvablablablv
-            blablablablablzblblablablablablzblablablablvablablablvblablablablablzblblablablablablzblablablablvablablablv
-            blablablablablzblblablablablablzblablablablvablablablv
-            blablablablablzblblablablablablzblablablablvablablablv
-            blablablablablzblblablablablablzblablablablvablablablv
-            blablablablablzblblablablablablzblablablablvablablablv
-            blablablablablzblblablablablablzblablablablvablablablv
-            blablablablablzblblablablablablzblablablablvablablablv
-            blablablablablzblblablablablablzblablablablvablablablv
-            blablablablablzblblablablablablzblablablablvablablablv</textarea>
+
+            <div>
            
-            
+            <textarea class="patient-Diagnostic"><?php echo $text['diagnostic']?></textarea>
+
+
             </div>
 
 
             <div class="consultButton">
-                <button class="button" > Modifier mes données </button>     
-               <button class="button" onclick="returnGestionPatient()"> revenir à la page de gestion </button>
-              
-              <?php if($_SESSION['showTable']=='non'){
-                echo '<button class="button" id="addPatient"> ajouter ce Patient </button>';   
+                <button class="button" id="save-Diagnostic" > Enregistrer le diagnostic </button>
+                <a class="button" href="myPatient.php"> revenir à la page de gestion </a>
+
+                <?php if($_SESSION['showTable']=='oui'){
+                echo '<label class="button" for="file2">';
+                echo '<img class="upload-image" src="images/upload.png">';
+                echo 'uploader un compte rendu';
+                echo '</label>';
+                echo '<input id="file2" hidden type="file">';              
                 }
                 ?>
 

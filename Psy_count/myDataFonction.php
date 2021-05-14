@@ -20,10 +20,19 @@ function selectInformationsPatient(){
     $req->execute(['ID_Utilisateur' => $id]);
     $resultat2 = $req->fetchAll();
 
+    $req =  $dbco->prepare('SELECT diagnostic FROM patient WHERE ID_Utilisateur=:ID_Utilisateur');
+    $req->execute(['ID_Utilisateur' => $id]);
+    $resultat3 = $req->fetch();
+
+    $req =  $dbco->prepare('SELECT compteRendu FROM patient WHERE ID_Utilisateur=:ID_Utilisateur');
+    $req->execute(['ID_Utilisateur' => $id]);
+    $resultat4 = $req->fetch();
 
     $resultatArray= array();
     $resultatArray[0]=$resultat;
     $resultatArray[1]=$resultat2;
+    $resultatArray[2]=$resultat3;
+    $resultatArray[3]=$resultat4;
     return $resultatArray;
 }
   catch(PDOException $e){
@@ -92,6 +101,8 @@ function changeImageUsers($imageSize,$imageName,$imageTmpName){
   $_SESSION['errorImage']="votre images ne doit pas avoir une taille de plus de 5Mo";
 }
 }
+
+
 function updatePassword($motDePasse){
   $Password = password_hash($motDePasse, PASSWORD_DEFAULT);
   $dbco = new PDO("mysql:host=localhost;dbname=serveur_psy_fi",'root','');
