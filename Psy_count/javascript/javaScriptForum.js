@@ -209,19 +209,18 @@ function loadMessageUsers(topic_uuid) {
             console.log(thrownError);
         });
 
-        
+
 }
 
 function buildForumPage(messageArray) {
     var topicBody = document.getElementById("forum-messages");
     for (msg of messageArray) {
-        console.log(msg);
         var isAuthor = document.head.querySelector('meta[uaid]').attributes[0].value == msg.ID_utilisateur;
-        topicBody.appendChild(messageObject("../../images_utilisateurs/" + msg.userProfile, msg.ID_utilisateur, msg.userFirstName, msg.userLastName, msg.userRank, msg.message, readableDate(msg.creationDate), msg.isModified, isAuthor,msg.ID_message,msg.ID_topic));
+        topicBody.appendChild(messageObject("../../images_utilisateurs/" + msg.userProfile, msg.ID_utilisateur, msg.userFirstName, msg.userLastName, msg.userRank, msg.message, readableDate(msg.creationDate), msg.isModified, isAuthor, msg.ID_message, msg.ID_topic));
     }
 }
 
-function messageObject(user_profile, user_id, user_firstName, user_lastName, user_rank, message, date, isModified, isAuthor,msg_id,topic_id) {
+function messageObject(user_profile, user_id, user_firstName, user_lastName, user_rank, message, date, isModified, isAuthor, msg_id, topic_id) {
     var msgContainer = document.createElement("div");
     var msgData = document.createElement("div");
     var msgUser = document.createElement("div");
@@ -248,8 +247,8 @@ function messageObject(user_profile, user_id, user_firstName, user_lastName, use
     btnDelete.appendChild(document.createTextNode("Supprimer"));
 
 
-    msgContainer.setAttribute("uuid",user_id);
-    msgContainer.setAttribute("umid",msg_id);
+    msgContainer.setAttribute("uuid", user_id);
+    msgContainer.id = msg_id;
 
 
     msgProfile.src = user_profile;
@@ -268,21 +267,61 @@ function messageObject(user_profile, user_id, user_firstName, user_lastName, use
     msgInfo.className = "msg-info"
     msgIsModified.className = "msg-modified"
     msgTools.className = "msg-tools"
-    btnEdit.className = "button msg-edit lighter"
-    btnDelete.className = "button msg-suppr lighter"
+    btnEdit.className = "button msg-edit"
+    btnDelete.className = "button msg-suppr"
 
     btnEdit.onclick = function () {
+        btnEdit.disabled = true;
+        btnEdit.classList.remove("msg-edit");
+        btnEdit.classList.add("btn-disabled")
         $.ajax({
             url: "../editMessage.php",
             type: "POST",
             dataType: 'JSON',
             data: {
-                mu_id : user_id,
-                msg_id : msg_id
+                mu_id: user_id,
+                msg_id: msg_id
             }
         })
             .done(function (result) {
+                if (result.success) {
+                   
+                    var txtContainer = document.getElementById(msg_id).childNodes[0].childNodes[1];
+                    txtContainer.removeChild(txtContainer.lastChild);
+                    txtContainer.style.padding = "0px";
+                    var msgEdit = document.createElement("textarea");
+                    msgEdit.className = "msg-edit-field";
+                    msgEdit.value = result.msg[0].message;
+                    txtContainer.appendChild(msgEdit);
 
+                    var btnConfirm = document.createElement("button");
+                    btnConfirm.appendChild(document.createTextNode("Envoyer"));
+                    btnConfirm.className = "button msg-confirm"
+
+                    btnConfirm.onclick = function () {
+
+
+                        $.ajax({
+                            url: "../postEditMessage.php",
+                            type: "POST",
+                            dataType: 'JSON',
+                            data: {
+                                mu_id: user_id,
+                                msg_id: msg_id,
+                                msg: msgEdit.value
+                            }
+                        })
+                            .done(function (result) {
+                                document.location.reload();
+                                onEditTopic(topic_id);
+                            })
+                            .fail(function (xhr, thrownError) {
+                                console.log(xhr);
+                                console.log(thrownError);
+                            });
+                    }
+                    document.getElementById(msg_id).childNodes[1].childNodes[1].appendChild(btnConfirm);
+                }
             })
             .fail(function (xhr, thrownError) {
                 console.log(xhr);
@@ -296,13 +335,12 @@ function messageObject(user_profile, user_id, user_firstName, user_lastName, use
             type: "POST",
             dataType: 'JSON',
             data: {
-                mu_id : user_id,
-                msg_id : msg_id
+                mu_id: user_id,
+                msg_id: msg_id
             }
         })
             .done(function (result) {
                 document.location.reload();
-                console.log(topic_id);
                 onEditTopic(topic_id);
             })
             .fail(function (xhr, thrownError) {
@@ -321,9 +359,27 @@ function messageObject(user_profile, user_id, user_firstName, user_lastName, use
     msgText.appendChild(msgMessage);
     msgData.appendChild(msgText);
     msgInfo.appendChild(msgDate);
-    msgTools.appendChild(btnEdit);
-    msgTools.appendChild(btnDelete);
- 
+
+    $.ajax({
+        url: "../verifyUser.php",
+        type: "GET",
+        dataType: 'JSON',
+        data: {
+            mu_id: user_id,
+        }
+    })
+        .done(function (result) {
+            if (result.success){
+            msgTools.appendChild(btnEdit);
+            msgTools.appendChild(btnDelete);
+            }
+        })
+        .fail(function (xhr, thrownError) {
+            console.log(xhr);
+            console.log(thrownError);
+        });
+
+
     if (isModified != 0) {
         msgInfo.appendChild(msgIsModified);
     }
@@ -341,26 +397,21 @@ function topicValidation(title) {
         .reduce((mono = "", el) => mono + el);
 }
 
-function postResponse(field,usr_id,topic_id) {
+function postResponse(field, usr_id, topic_id) {
 
-    var msg =  field.children[1].value;
+    var msg = field.children[1].value;
 
-    if (msg){
+    if (msg) {
         document.getElementById("must_fill").style.display = "none";
-
-
-        console.log(usr_id);
-        console.log(msg);
-        console.log(topic_id);
 
         $.ajax({
             url: "../postNewMessage.php",
             type: "POST",
             dataType: 'JSON',
             data: {
-                topic_id : topic_id,
-                msg:msg,
-                usr_id : usr_id
+                topic_id: topic_id,
+                msg: msg,
+                usr_id: usr_id
             }
         })
             .done(function (result) {
@@ -383,7 +434,7 @@ function onEditTopic(topic_id) {
         type: "GET",
         dataType: 'JSON',
         data: {
-            topic_id : topic_id,
+            topic_id: topic_id,
         }
     })
         .done(function (result) {
