@@ -80,7 +80,7 @@ function readableDate(date) {
 function buildTopics(topicArray) {
     var topicBody = document.getElementById("forum-body");
     for (topic of JSON.parse(topicArray)) {
-        topicBody.appendChild(topicObject(topic.name, "forum/topic/" + topic.ID_topic + "-" + topic.name + ".php", topic.originUserName, readableDate(topic.creationDate), topic.latestUserName, "images_utilisateurs/" + topic.latestUserProfile + ".png", readableDate(topic.latestUpdate), "#", topic.viewCount, topic.messageCount));
+        topicBody.appendChild(topicObject(topic.name, "forum/topic/" + topic.ID_topic + "-" + topic.name + ".php", topic.originUserName, readableDate(topic.creationDate), topic.latestUserName, "images_utilisateurs/" + topic.latestUserProfile, readableDate(topic.latestUpdate), "#", topic.viewCount, topic.messageCount));
     }
 }
 
@@ -177,9 +177,9 @@ function addTopic() {
         })
             .done(function (result) {
                 if (result) {
-                    document.location.href = "https://localhost/Psy-count/Psy_count/forum.php";
+                    document.location.href = "http://localhost/Psy-count/Psy_count/forum.php";
                 } else {
-                    document.location.href = "https://localhost/Psy-count/Psy_count/accueil.php";
+                    document.location.href = "http://localhost/Psy-count/Psy_count/accueil.php";
                 }
             })
             .fail(function (xhr, thrownError) {
@@ -215,12 +215,13 @@ function loadMessageUsers(topic_uuid) {
 function buildForumPage(messageArray) {
     var topicBody = document.getElementById("forum-messages");
     for (msg of messageArray) {
+        console.log(msg);
         var isAuthor = document.head.querySelector('meta[uaid]').attributes[0].value == msg.ID_utilisateur;
-        topicBody.appendChild(messageObject("../../images_utilisateurs/" + msg.userProfile + ".png", msg.ID_utilisateur, msg.userFirstName, msg.userLastName, msg.userRank, msg.message, readableDate(msg.creationDate), msg.isModified, isAuthor));
+        topicBody.appendChild(messageObject("../../images_utilisateurs/" + msg.userProfile, msg.ID_utilisateur, msg.userFirstName, msg.userLastName, msg.userRank, msg.message, readableDate(msg.creationDate), msg.isModified, isAuthor,msg.ID_message,msg.ID_topic));
     }
 }
 
-function messageObject(user_profile, user_id, user_firstName, user_lastName, user_rank, message, date, isModified, isAuthor) {
+function messageObject(user_profile, user_id, user_firstName, user_lastName, user_rank, message, date, isModified, isAuthor,msg_id,topic_id) {
     var msgContainer = document.createElement("div");
     var msgData = document.createElement("div");
     var msgUser = document.createElement("div");
@@ -240,9 +241,16 @@ function messageObject(user_profile, user_id, user_firstName, user_lastName, use
     var msgIsModified = document.createElement("p");
     msgIsModified.appendChild(document.createTextNode("(Modifié)"));
     var msgTools = document.createElement("div");
-    var usr_id = user_id;
 
-    msgContainer.setAttribute("uuid",usr_id);
+    var btnEdit = document.createElement("button");
+    btnEdit.appendChild(document.createTextNode("Modifier"));
+    var btnDelete = document.createElement("button");
+    btnDelete.appendChild(document.createTextNode("Supprimer"));
+
+
+    msgContainer.setAttribute("uuid",user_id);
+    msgContainer.setAttribute("umid",msg_id);
+
 
     msgProfile.src = user_profile;
     msgProfile.alt = "Profil Utilisateur";
@@ -260,6 +268,48 @@ function messageObject(user_profile, user_id, user_firstName, user_lastName, use
     msgInfo.className = "msg-info"
     msgIsModified.className = "msg-modified"
     msgTools.className = "msg-tools"
+    btnEdit.className = "button msg-edit lighter"
+    btnDelete.className = "button msg-suppr lighter"
+
+    btnEdit.onclick = function () {
+        $.ajax({
+            url: "../editMessage.php",
+            type: "POST",
+            dataType: 'JSON',
+            data: {
+                mu_id : user_id,
+                msg_id : msg_id
+            }
+        })
+            .done(function (result) {
+
+            })
+            .fail(function (xhr, thrownError) {
+                console.log(xhr);
+                console.log(thrownError);
+            });
+    };
+
+    btnDelete.onclick = function () {
+        $.ajax({
+            url: "../deleteMessage.php",
+            type: "POST",
+            dataType: 'JSON',
+            data: {
+                mu_id : user_id,
+                msg_id : msg_id
+            }
+        })
+            .done(function (result) {
+                document.location.reload();
+                console.log(topic_id);
+                onEditTopic(topic_id);
+            })
+            .fail(function (xhr, thrownError) {
+                console.log(xhr);
+                console.log(thrownError);
+            });
+    };
 
     if (isAuthor) {
         msgUser.appendChild(msgAuthor);
@@ -271,6 +321,9 @@ function messageObject(user_profile, user_id, user_firstName, user_lastName, use
     msgText.appendChild(msgMessage);
     msgData.appendChild(msgText);
     msgInfo.appendChild(msgDate);
+    msgTools.appendChild(btnEdit);
+    msgTools.appendChild(btnDelete);
+ 
     if (isModified != 0) {
         msgInfo.appendChild(msgIsModified);
     }

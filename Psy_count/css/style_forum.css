@@ -121,22 +121,45 @@ img.topic-img {
     display: flex;
     flex-direction: row;
     background-color: rgb(197, 197, 197);
+    justify-content: space-between;
 }
 
 .msg-user, .msg-info {
     display: flex;
     padding: 0px 20px;
+    text-align: center;
+    align-items: center;
+}
+
+.msg-suppr, .msg-edit{
+    padding: 8px 18px;
+    text-align: center;
+    align-items: center;
+    margin: 0px 5px;
+    background-color: rgb(231, 231, 231);
+    color: rgb(80, 80, 80);
+}
+
+
+.msg-suppr:hover, .msg-edit:hover {
+    letter-spacing: 0.2px;
+    color: white;
+    background-color: #aa3558;
 }
 
 p {
     margin: 0px;
 }
 
-.msg-text .msg-tools {
+.msg-tools {
     display: flex;
+    justify-content: right;
+    flex-direction: row;
+    padding: 3px;
 }
 
 .msg-text {
+    display: flex;
     padding: 20px;
     width: 80%;
 }
@@ -171,6 +194,10 @@ p {
 
 .msg-profile {
     width: 100px;
+}
+
+.msg-modified {
+    margin-left: 5px;
 }
 
 .response-container {

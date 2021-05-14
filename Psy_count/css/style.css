@@ -111,7 +111,6 @@ input:hover, textarea:hover {
 
 input::placeholder, textarea::placeholder {
     color: rgb(82, 82, 82);
-    background-color: white;
     border: none;
 }
 
