@@ -60,6 +60,11 @@ $content = "<!DOCTYPE html>
                 <div class=\"forum-messages\" id=\"forum-messages\">
     
                 </div>
+                <?php error_reporting(E_ERROR | E_WARNING | E_PARSE);
+                if (isset($" . "_SESSION['type'])) {
+                    include(\"../response.php\");
+                }
+                ?>
             </div>
         </section>
     

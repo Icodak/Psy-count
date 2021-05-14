@@ -207,7 +207,9 @@ function loadMessageUsers(topic_uuid) {
         .fail(function (xhr, thrownError) {
             console.log(xhr);
             console.log(thrownError);
-        })
+        });
+
+        
 }
 
 function buildForumPage(messageArray) {
@@ -281,6 +283,41 @@ function topicValidation(title) {
     return title.match(/([A-Za-zÀ-ÖØ-öø-ÿ0-9])\w*|\s*/gi)
         .map(el => { if (el.match(/\s/)) { return "-"; } else { return el; } })
         .reduce((mono = "", el) => mono + el);
+}
+
+function postResponse(field,usr_id,topic_id) {
+
+    var msg =  field.children[1].value;
+
+    if (msg){
+        document.getElementById("must_fill").style.display = "none";
+
+
+        console.log(usr_id);
+        console.log(msg);
+        console.log(topic_id);
+
+        $.ajax({
+            url: "../postNewMessage.php",
+            type: "POST",
+            dataType: 'JSON',
+            data: {
+                topic_id : topic_id,
+                msg:msg,
+                usr_id : usr_id
+            }
+        })
+            .done(function (result) {
+                document.location.reload();
+            })
+            .fail(function (xhr, thrownError) {
+                console.log(xhr);
+                console.log(thrownError);
+            });
+
+    } else {
+        document.getElementById("must_fill").style.display = "flex";
+    }
 }
 
 function onEditTopic() {

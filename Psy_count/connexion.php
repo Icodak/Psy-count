@@ -32,7 +32,7 @@ try{
 
       //  selectionner l'id de l'utilisateur
       $req3 =  $dbco->prepare(
-      'SELECT ID_Utilisateur FROM utilisateur where Email=:Email ');
+      'SELECT ID_Utilisateur, images FROM utilisateur where Email=:Email ');
       $req3->execute(array('Email' => $Email));
       $resultat2 = $req3->fetch();
   
@@ -64,7 +64,7 @@ try{
         $_SESSION['type']=$resultat3['permission_lvl'];
         $_SESSION['connexion']='1';
         $_SESSION['ID']=$resultat2['ID_Utilisateur'];
-        $_SESSION['image']=$resultat4['images'];
+        $_SESSION['image']=$resultat2['images'];
         header('Location: accueil.php');
       }
       else {

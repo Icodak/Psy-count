@@ -7,7 +7,7 @@
     <title>nouveau-sujet</title>
     <meta name="description" content="un message">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta topicID = "609d3434430f5">
+    <meta topicID="609d3434430f5">
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/styleMenu.css">
     <link rel="stylesheet" href="../../css/style_footer.css">
@@ -23,14 +23,20 @@
         <div class="forum-container shadow white-background">
             <div class="forum-title">
                 <h1>nouveau-sujet</h1>
-                </div>
-                <div class="forum-messages" id="forum-messages">
-    
-                </div>
             </div>
-        </section>
-    
-        <?php include("../../footer.php") ?>
-    </body>
-    
-    </html>
+            <div class="forum-messages" id="forum-messages">
+
+            </div>
+            <?php error_reporting(E_ERROR | E_WARNING | E_PARSE);
+            if (isset($_SESSION['type'])) {
+                include("../response.php");
+            }
+            ?>
+        </div>
+
+    </section>
+
+    <?php include("../../footer.php") ?>
+</body>
+
+</html>
