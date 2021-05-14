@@ -215,7 +215,8 @@ function loadMessageUsers(topic_uuid) {
 function buildForumPage(messageArray) {
     var topicBody = document.getElementById("forum-messages");
     for (msg of messageArray) {
-        topicBody.appendChild(messageObject("../../images_utilisateurs/" + msg.userProfile + ".png", msg.ID_utilisateur, msg.userFirstName, msg.userLastName, msg.userRank, msg.message, readableDate(msg.creationDate), msg.isModified, 0));
+        var isAuthor = document.head.querySelector('meta[uaid]').attributes[0].value == msg.ID_utilisateur;
+        topicBody.appendChild(messageObject("../../images_utilisateurs/" + msg.userProfile + ".png", msg.ID_utilisateur, msg.userFirstName, msg.userLastName, msg.userRank, msg.message, readableDate(msg.creationDate), msg.isModified, isAuthor));
     }
 }
 
@@ -241,6 +242,8 @@ function messageObject(user_profile, user_id, user_firstName, user_lastName, use
     var msgTools = document.createElement("div");
     var usr_id = user_id;
 
+    msgContainer.setAttribute("uuid",usr_id);
+
     msgProfile.src = user_profile;
     msgProfile.alt = "Profil Utilisateur";
 
@@ -259,7 +262,7 @@ function messageObject(user_profile, user_id, user_firstName, user_lastName, use
     msgTools.className = "msg-tools"
 
     if (isAuthor) {
-        msgUser.appendChild(msgIsAuthor);
+        msgUser.appendChild(msgAuthor);
     }
     msgUser.appendChild(msgProfile);
     msgUser.appendChild(msgUserName);
@@ -309,6 +312,7 @@ function postResponse(field,usr_id,topic_id) {
         })
             .done(function (result) {
                 document.location.reload();
+                onEditTopic(topic_id);
             })
             .fail(function (xhr, thrownError) {
                 console.log(xhr);
@@ -320,6 +324,20 @@ function postResponse(field,usr_id,topic_id) {
     }
 }
 
-function onEditTopic() {
+function onEditTopic(topic_id) {
+    $.ajax({
+        url: "../onEditTopic.php",
+        type: "GET",
+        dataType: 'JSON',
+        data: {
+            topic_id : topic_id,
+        }
+    })
+        .done(function (result) {
+        })
+        .fail(function (xhr, thrownError) {
+            console.log(xhr);
+            console.log(thrownError);
+        });
 
 }

@@ -138,6 +138,12 @@ p {
 
 .msg-text {
     padding: 20px;
+    width: 80%;
+}
+
+.msg-text * {
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .msg-user {
@@ -145,9 +151,10 @@ p {
     align-items: center;
     justify-content: center;
     background-color: rgb(231, 231, 231);
-    padding: 5px;
+    padding: 30px 5px 5px 5px;
     width: 200px;
     height: 200px;
+    position: relative;
 }
 
 .msg-user * {
@@ -155,7 +162,11 @@ p {
 }
 
 .msg-author {
-    width: 20px;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
 }
 
 .msg-profile {
@@ -168,12 +179,13 @@ p {
     padding: 20px;
     flex-direction: column;
 }
-.response-field{
+
+.response-field {
     display: flex;
     flex-direction: row;
 }
 
-.response-submit{
+.response-submit {
     display: none;
     margin-top: 20px;
     width: 100%;
@@ -189,7 +201,6 @@ p {
     margin: 5px 75px;
 }
 
-
 .small-img {
     width: 60px;
     height: 60px;
@@ -201,6 +212,4 @@ textarea.response {
     width: 100%;
     height: 40px;
     transition: all 0.2s ease 0s;
-
-
 }

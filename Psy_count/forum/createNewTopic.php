@@ -41,6 +41,7 @@ $content = "<!DOCTYPE html>
     <meta name=\"description\" content=\"". substr($msg,0,min(200,strlen($msg))) . "\">
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
     <meta topicID = \"" . $topic_id . "\">
+    <meta UAID = \"" . $usr_id . "\">
     <link rel=\"stylesheet\" href=\"../../css/style.css\">
     <link rel=\"stylesheet\" href=\"../../css/styleMenu.css\">
     <link rel=\"stylesheet\" href=\"../../css/style_footer.css\">
