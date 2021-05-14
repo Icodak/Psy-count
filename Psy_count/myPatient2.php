@@ -68,8 +68,14 @@
 
 
             </div>
+           
 
             <div>
+            <div class="confirmation">
+                
+               <span id="confirmationText"></span>
+             
+         </div>
            
             <textarea class="patient-Diagnostic"><?php echo $text['diagnostic']?></textarea>
 
@@ -78,17 +84,19 @@
 
 
             <div class="consultButton">
-                <button class="button" id="save-Diagnostic" > Enregistrer le diagnostic </button>
-                <a class="button" href="myPatient.php"> revenir à la page de gestion </a>
-
-                <?php if($_SESSION['showTable']=='oui'){
-                echo '<label class="button" for="file2">';
+            <?php if($_SESSION['showTable']=='oui'){
+                echo '<label class="button2" for="file2">';
                 echo '<img class="upload-image" src="images/upload.png">';
-                echo 'uploader un compte rendu';
+                echo 'uploader<br> un compte rendu';
                 echo '</label>';
                 echo '<input id="file2" hidden type="file">';              
                 }
                 ?>
+                <a class="button2" href="myPatient.php">  page de gestion </a>
+                <button class="button2" id="save-Diagnostic" > Enregistrer le diagnostic </button>
+                
+
+           
 
             </div>
         </div>

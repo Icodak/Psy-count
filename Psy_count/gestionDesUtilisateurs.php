@@ -49,7 +49,7 @@
         ?>
 
             <form method="post" action="gestionFonction.php">
-                <input type="submit" class="button5" value="Ajouter un profil" name="Ajouter">
+                <input type="submit" class="button2" value="Ajouter un profil" name="Ajouter">
             </form>
         <?php
         }
@@ -59,9 +59,9 @@
         ?>
             
                 <div id="actionButton">
-                    <input class="button4" disabled type="button" id="ModifierButton" value="Modifier" name="Modifier">
-                    <input class="button4" disabled type="button" id="SuppButton" value="Supprimer" name="supprimer">
-                    <input class="button4" disabled type="button" id="banButton" value="Bannir" name="Bannir">
+                    <input class="button2 buttonAction" disabled type="button" id="ModifierButton" value="Modifier" name="Modifier">
+                    <input class="button2 buttonAction" disabled type="button" id="SuppButton" value="Supprimer" name="supprimer">
+                    <input class="button2 buttonAction" disabled type="button" id="banButton" value="Bannir" name="Bannir">
 
                 </div>
 

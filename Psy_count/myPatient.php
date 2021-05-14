@@ -7,7 +7,6 @@
     <link rel="icon" type="image/png" href="images/psy-fi.png" />
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style_myPatient.css">
-
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script type="text/javascript" src="javascript/javaScriptCode.js"></script>
@@ -43,8 +42,19 @@ $pages = $resultat[1];
 ?>
 
         <div class="gestionDesPatients shadow2">
+          
+    <div class="Menu-And-Text">
+     <img id="image-Menu" onclick=" showMenu()" src="images/menu.png">
+     <img id="image-Menu2" onclick="HideMenu()" src="images/cross.png">
+        <ul class="Menu-lines">
+            <li><a href="myPatient.php">Mes patients</a></li>
+            <li><a href="myPatient.php">Mes informations</a></li>
+        </ul>
+    </div>
 
-            <h1>Gestion des patients</h1>
+
+                <h1>Gestion des patients</h1>
+          
 
             <div class="selectButton">
 
@@ -141,8 +151,8 @@ $pages = $resultat[1];
                 </div>
 
             </div>
-       
-        <?php
+
+            <?php
     
     ?>
 

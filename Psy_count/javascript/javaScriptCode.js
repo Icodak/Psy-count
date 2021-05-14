@@ -120,7 +120,7 @@ function allSelect(source){
 function checkboxcheckGestionsUtilisateurs(){
 
     var element = document.getElementsByClassName("checkBoxUtilisateurs");
-    var button  = document.getElementsByClassName("button4");
+    var button  = document.getElementsByClassName("buttonAction");
 
     for(var i=0, n=element.length;i<n;i++) {
         if(element[i].checked!=true){

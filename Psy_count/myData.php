@@ -76,12 +76,12 @@
             </p>
 
             <div class="consultButton">
-                <?php echo  "<a  class='button'  href='pdf_utilisateurs/".$compteRendu['compteRendu']."' download='compte rendu ". $informations[0][0].$informations[0][1]."' >
-                <img class='upload-image' src='images/dowload.png'> Télécharger mon compte rendu</a>" ?>
+                <?php echo  "<a  class='button2'  href='pdf_utilisateurs/".$compteRendu['compteRendu']."' download='compte rendu ". $informations[0][0].$informations[0][1]."' >
+                <img class='upload-image' src='images/dowload.png'> Télécharger<br> mon compte rendu</a>" ?>
 
 
-                <button class="button" onclick="dataModification()"> Modifier mes données </button>
-                <button class="button" onclick="requestContact()"> Consulter </button>
+                <button class="button2" onclick="dataModification()"> Modifier mes données </button>
+                <button class="button2" onclick="requestContact()"> Consulter </button>
             </div>
         </div>
 

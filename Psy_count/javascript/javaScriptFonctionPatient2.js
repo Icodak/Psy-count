@@ -2,12 +2,21 @@ $(document).ready(function(){
     $("#save-Diagnostic").click(function(){
 
     var text = document.getElementsByClassName("patient-Diagnostic")[0].value;
+    var text2 = "Diagnostic bien enregistré !"
             $.ajax({
                 url : 'myPatientFonction.php',
                 type : 'POST',
                 data : "patientText=" + text,
                 success : function(code_html, statut){
+                   $("#confirmationText").text(text2);
+                   $("#confirmationText").css('background-color', '#01d758')
+                   setTimeout(function (){
+
                     document.location.reload();
+                  
+                  }, 2000); 
+                  
+
                 },
          
                 error : function(resultat, statut, erreur){
@@ -43,3 +52,6 @@ $(document).ready(function(){
      });
     });
 }); 
+
+
+  
