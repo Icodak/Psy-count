@@ -48,7 +48,7 @@ $pages = $resultat[1];
      <img id="image-Menu2" onclick="HideMenu()" src="images/cross.png">
         <ul class="Menu-lines">
             <li><a href="myPatient.php">Mes patients</a></li>
-            <li><a href="myPatient.php">Mes informations</a></li>
+            <li><a href="myDataDoctor.php">Mon profil</a></li>
         </ul>
     </div>
 

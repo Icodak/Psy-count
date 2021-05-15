@@ -74,7 +74,7 @@ function formVerificationPatient(){
     var date = ici['dateDeNaissance'].value;
 
     var nomPrenomRegex = new RegExp("^[A-Z][A-Za-z\é\è\ê\-]+$");
-    var EmailRegex = new RegExp("^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$");
+    var EmailRegex = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
     var mdpRegex = new RegExp("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$");
 
 
@@ -86,6 +86,7 @@ function formVerificationPatient(){
 
     var result4 = motDePasseVerification(mdp1,mdp2,input5,input6,mdpRegex);
     var result5 = dateDeNaissanceVerification(date,input3);
+    alert(result3);
 
     return(
         result1
@@ -99,7 +100,6 @@ function formVerificationPatient(){
         result5
     )
 }
-
 // fonction signup-Medecin
 function formVerificationMedecin(){
    changement= !changement;
