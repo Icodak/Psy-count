@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/style_myData_2.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script type="text/javascript" src="javascript/javaScriptFonctionData.js"></script>
+    <script type="text/javascript" src="javascript/javaScriptCodeVerification.js"></script>
 </head>
 
 <body>
@@ -23,7 +24,7 @@
 
     <div class="wrapper">
         <div class="main">
-            <form method="post" action="myDataFonction.php" enctype="multipart/form-data">
+            <form method="post" action="myDataFonction.php" enctype="multipart/form-data" onsubmit=" return formDataVerificationPatient()" >
                 <div class="frame-header">
                     <div>
                         <div class="User-image">
@@ -131,7 +132,7 @@
                             <div class="topic-right2">
                                 <div class="topic-meta">
 
-                                    <input type="text" class="crayon4 datainput" name='dateDeNaissance' disabled
+                                    <input type="date" class="crayon4 datainput" name='dateDeNaissance' disabled
                                         value=<?php if(!empty($resultat2[0][0])){ echo $resultat2[0][0];}?>>
                                 </div>
                                 <div class="inputImage">

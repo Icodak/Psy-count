@@ -209,6 +209,7 @@ if(isset($_POST['dataPageChangeMedecin']))
   $specialite=$_POST['specialite'];
   session_start();
   changeDataMedecin($Prenom,$nom,$Email,$specialite,$telephone,$codePostal);
+  header('Location: myDataDoctor.php');
 }
 
 

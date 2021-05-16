@@ -77,14 +77,14 @@
              
          </div>
            
-            <textarea class="patient-Diagnostic" maxlength="1234"><?php echo $text['diagnostic']?></textarea>
+            <textarea class="patient-Diagnostic" maxlength="1234"><?php if(isset($_SESSION['showTable'])&&$_SESSION['showTable']=='oui'){ echo $text['diagnostic'];}?></textarea>
 
 
             </div>
 
 
             <div class="consultButton">
-            <?php if($_SESSION['showTable']=='oui'){
+            <?php if( isset($_SESSION['showTable'])&&$_SESSION['showTable']=='oui'){
                 echo '<label class="button2" for="file2">';
                 echo '<img class="upload-image" src="images/upload.png">';
                 echo 'uploader<br> un compte rendu';
@@ -93,7 +93,10 @@
                 }
                 ?>
                 <a class="button2" href="myPatient.php">  page de gestion </a>
-                <button class="button2" id="save-Diagnostic" > Enregistrer le diagnostic </button>
+            <?php if( isset($_SESSION['showTable'])&&$_SESSION['showTable']=='oui'){  
+                echo"<button class='button2' id='save-Diagnostic' > Enregistrer le diagnostic </button>";
+            }
+            ?>
                 
 
            

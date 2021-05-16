@@ -68,9 +68,15 @@
                             <input type="submit" name="dataPageChange2" value="Enregistrer" class="button">
                         </div>
                         <div>
-                            <a href="DataPage2.php" class="button">
-                                Annuler
-                            </a>
+                            <?php                  
+                              if($_SESSION['type']=="patient"){
+                            echo"<a href='DataPage2.php' class='button'>";
+                              }else if($_SESSION['type']=="Medecin"){
+                             echo"<a href='myDataDoctor.php' class='button'>";      
+                              }                
+                            echo"Annuler";
+                            echo"</a>";                    
+                            ?>
                         </div>
 
                     </div>

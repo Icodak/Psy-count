@@ -56,7 +56,7 @@ function motDePasseVerification(mdp,mdp2,inputForm1,inputForm2,mdpRegex){
 
 // fonction signup-patient
 function formVerificationPatient(){
-    changement= !changement;
+
     var ici =  document.forms[0];
     var input1 = ici['FirstName'];
     var input2 = ici['LastName'];
@@ -64,7 +64,6 @@ function formVerificationPatient(){
     var input4 = ici['Email'];
     var input5 = document.getElementsByClassName("passwordType")[0];
     var input6 = document.getElementsByClassName("passwordType")[1];
-
 
     var email = ici['Email'].value;
     var mdp1 = ici['Password'].value;
@@ -77,16 +76,12 @@ function formVerificationPatient(){
     var EmailRegex = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
     var mdpRegex = new RegExp("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$");
 
-
-
     var result1 =  Verification(prenom,nomPrenomRegex,input1);
     var result2 =  Verification(nom,nomPrenomRegex,input2);        
     var result3 =  Verification(email,EmailRegex,input4);
 
-
     var result4 = motDePasseVerification(mdp1,mdp2,input5,input6,mdpRegex);
     var result5 = dateDeNaissanceVerification(date,input3);
-    alert(result3);
 
     return(
         result1
@@ -118,5 +113,43 @@ function formVerificationMedecin(){
         &&
         result2
     )
+}
+
+function formDataVerificationPatient(){
+    var ici =  document.forms[0];
+   
+    var input1 = ici['nom'];
+    var input2 = ici['Prenom'];
+    var input3 = ici['Email'];
+    var input4 = ici['dateDeNaissance'];
+
+   
+    var email = ici['Email'].value;
+    var prenom = ici['Prenom'].value;
+    var nom = ici['nom'].value;
+    
+    var date = ici['dateDeNaissance'].value;
+    
+    var nomPrenomRegex = new RegExp("^[A-Z][A-Za-z\é\è\ê\-]+$");
+    var EmailRegex = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
+    
+   
+    var result1 =  Verification(prenom,nomPrenomRegex,input2);
+
+    var result2 =  Verification(nom,nomPrenomRegex,input1);        
+    var result3 =  Verification(email,EmailRegex,input3);
+    var result4 =  dateDeNaissanceVerification(date,input4);
+   
+
+    return(
+        result1
+        &&
+        result2
+        &&
+        result3
+        &&
+        result4
+    )
+
 }
 
