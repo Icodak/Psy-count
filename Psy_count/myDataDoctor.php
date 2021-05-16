@@ -26,6 +26,7 @@
         ?>
     </header>
 
+ 
 
 
     <div class="wrapper">
@@ -35,12 +36,16 @@
 
                     <div class="User-image">
                         <div class="Menu-And-Text">
+                            <div>
                             <img id="image-Menu" onclick=" showMenu()" src="images/menu.png">
                             <img id="image-Menu2" onclick="HideMenu()" src="images/cross.png">
+                            </div>
+                            <div>
                             <ul class="Menu-lines">
                                 <li><a href="myPatient.php">Mes patients</a></li>
                                 <li><a href="myDataDoctor.php">Mon profil</a></li>
                             </ul>
+                            </div>
                         </div>
 
                     </div>
@@ -86,7 +91,7 @@
                             <div class="topic-right2">
                                 <div class="topic-meta">
 
-                                    <input type="text" class="crayon1 datainput" name='nom' disabled value=>
+                                    <input type="text" class="crayon1 datainput" name='nom' disabled value=<?php if(!empty($resultat[0][0])){ echo $resultat[0][0];}?>>
                                 </div>
                                 <div class="inputImage">
                                     <button type="button" class="crayon1" onclick="modificationInformations(this)"> <img
@@ -110,7 +115,7 @@
                             <div class="topic-right2">
                                 <div class="topic-meta">
 
-                                    <input type="text" class="crayon2 datainput" name='Prenom' disabled value=>
+                                    <input type="text" class="crayon2 datainput" name='Prenom' disabled value=<?php if(!empty($resultat[0][1])){ echo $resultat[0][1];}?>>
                                 </div>
                                 <div class="inputImage">
                                     <button type="button" class="crayon2" onclick="modificationInformations(this)"> <img
@@ -130,7 +135,7 @@
 
                             <div class="topic-right2">
                                 <div class="topic-meta">
-                                    <input type="text" class="crayon3 datainput" name='Email' disabled value=>
+                                    <input type="text" class="crayon3 datainput" name='Email' disabled value=<?php if(!empty($resultat[0][2])){ echo $resultat[0][2];}?>>
                                 </div>
                                 <div class="inputImage">
                                     <button type="button" class="crayon3" onclick="modificationInformations(this)"> <img
@@ -151,7 +156,7 @@
                             <div class="topic-right2">
                                 <div class="topic-meta">
 
-                                    <input type="text" class="crayon4 datainput" name='telephone' disabled value=>
+                                    <input type="text" class="crayon4 datainput" name='telephone' disabled value=<?php if(!empty($resultat2[0][2])){ echo $resultat2[0][2];}?>>
                                 </div>
                                 <div class="inputImage">
                                     <button type="button" class="crayon4" onclick="modificationInformations(this)"> <img
@@ -170,10 +175,10 @@
                             <div class="topic-right2">
                                 <div class="topic-meta">
 
-                                    <input type="text" class="crayon4 datainput" name='telephone' disabled value=>
+                                    <input type="text" class="crayon5 datainput" name='codePostal' disabled value=<?php if(!empty($resultat2[0][0])){ echo $resultat2[0][0];}?>>
                                 </div>
                                 <div class="inputImage">
-                                    <button type="button" class="crayon4" onclick="modificationInformations(this)"> <img
+                                    <button type="button" class="crayon5" onclick="modificationInformations(this)"> <img
                                             src="images/crayon2.png">
                                     </button>
                                 </div>
@@ -188,10 +193,10 @@
                             <div class="topic-right2">
                                 <div class="topic-meta">
 
-                                    <input type="text" class="crayon4 datainput" name='telephone' disabled value=>
+                                    <input type="text" class="crayon6 datainput" name='specialite' disabled value=<?php if(!empty($resultat2[0][1])){ echo $resultat2[0][1];}?>>
                                 </div>
                                 <div class="inputImage">
-                                    <button type="button" class="crayon4" onclick="modificationInformations(this)"> <img
+                                    <button type="button" class="crayon6" onclick="modificationInformations(this)"> <img
                                             src="images/crayon2.png">
                                     </button>
                                 </div>
@@ -206,11 +211,11 @@
                             </div>
                             <div class="topic-right2">
                                 <div class="topic-meta">
-                                    <input type="password" class="crayon5 datainput" name='motDePasse' disabled
+                                    <input type="password" class="crayon7 datainput" name='motDePasse' disabled
                                         value="***************">
                                 </div>
                                 <div class="inputImage">
-                                    <button type="button" class="crayon5" onclick="redirectionDataPage3()">
+                                    <button type="button" class="crayon7" onclick="redirectionDataPage3()">
                                         <img src="images/crayon2.png">
                                     </button>
                                 </div>
@@ -220,7 +225,7 @@
                     </div>
                     <div class="data-button">
                         <div>
-                            <input type="submit" onclick="ActiveInputDataPage()" name="dataPageChange"
+                            <input type="submit" onclick="ActiveInputDataPage()" name="dataPageChangeMedecin"
                                 value="Enregistrer" class="button">
                         </div>
                     </div>

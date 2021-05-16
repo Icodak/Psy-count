@@ -20,20 +20,24 @@
 ul{
   list-style-type : none;
   color: #aa3558;
-
+  margin-block-start: 0em;
+  margin-block-end: 0em;
 }
 
 .Menu-lines{
   display: none;
 }
 
+h1{
+  margin-block-start: 0.3em;
+  margin-block-end: 0.3em;
+}
+
+
 .Menu-And-Text{
-  margin-top: 1%;
   display: flex;
   width: 300px;
-  position: absolute;
-  top: 13%;
-
+  align-items: center;
 }
 
 #image-Menu2{

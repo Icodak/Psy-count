@@ -2,14 +2,13 @@
 
 
 
-.Menu-lines{
-    width: 250px;
-  }
+
   
   ul{
     list-style-type : none;
     color: #aa3558;
-  
+    margin-block-start: 0em;
+    margin-block-end: 0em;
   }
   
   .Menu-lines{
@@ -19,7 +18,8 @@
   .Menu-And-Text{
     display: flex;
     width: 300px;
-    position: absolute;
+    align-items: center;
+    position: static;
   }
   a:hover{
     text-decoration: underline solid purple;

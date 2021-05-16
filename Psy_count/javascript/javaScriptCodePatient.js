@@ -88,7 +88,6 @@ function showMenu()
     var element3 = document.getElementById("image-Menu");
     var element4 = document.getElementsByClassName("Menu-lines")[0];
 
-    element1.style.border = " 2px solid purple";
     element2.style.display="block";
     element3.style.display="none";
     element4.style.display="block";

@@ -19,7 +19,8 @@
          include("myDataFonction.php") ;
          $informations = selectInformationsPatient()[0];
          $diagnosticText = selectInformationsPatient()[2];
-         $compteRendu = selectInformationsPatient()[3];   
+         $compteRendu = selectInformationsPatient()[3]; 
+         $informationsMedecin=  selectInformationsMyMedecin($_SESSION['ID']);  
         ?>
     </header>
 
@@ -30,11 +31,13 @@
 
     <div id="myDataPage">
         <div id="doctorPage">
+            <h1>Mon medecin</h1>
             <div class="doctorData">
+                
                 <?php if($informations[0][3]==NULL){
                                echo  "<img src=images/default-user.png>";                       
                   }else{                                     
-                        echo "<img src='images_utilisateurs/".$informations[0][3] ."?rand=". rand() ."'>";     
+                        echo "<img src='images_utilisateurs/".$informationsMedecin[0][3] ."?rand=". rand() ."'>";     
                   }              
                 ?>
                 <div class="doctorLabel">
@@ -42,21 +45,21 @@
                         <li>
                             <?php
 							 
-							  echo $_SESSION['DataEmail'];
+							  echo $informationsMedecin[0][2];
 							  ?>
                             <hr size=3 class="sepator1">
 
                         </li>
                         <li>
                             <?php
-							  echo $_SESSION['DataNom'];
+							  echo $informationsMedecin[0][0];
 							  ?>
                             <hr size=3 class="sepator1">
 
                         </li>
                         <li>
                             <?php
-							  echo $_SESSION['DataPrenom'];
+							  echo $informationsMedecin[0][1];
 							  ?>
                             <hr size=3 class="sepator1">
                         </li>
@@ -68,12 +71,11 @@
 
 
             </div>
+            <div>
+        
+                <textarea class="patient-Diagnostic" maxlength="1234"><?php echo $diagnosticText['diagnostic']?></textarea>
 
-            <p class="doctor-diagnostic">
-
-                <?php echo  $diagnosticText['diagnostic']?>
-
-            </p>
+            </div>
 
             <div class="consultButton">
                 <?php echo  "<a  class='button2'  href='pdf_utilisateurs/".$compteRendu['compteRendu']."' download='compte rendu ". $informations[0][0].$informations[0][1]."' >

@@ -21,6 +21,10 @@ body{
 	
 }
 
+h1{
+	margin-block-start: 0em;
+    margin-block-end: 0.2em;
+}
 .confirmation{	
 	text-align: center;
 	display: flex;
