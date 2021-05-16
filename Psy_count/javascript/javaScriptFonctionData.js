@@ -22,7 +22,7 @@
 }); 
 function ActiveInputDataPage(){
     var champ = document.getElementsByClassName("datainput");
-    for(var i=0, n=champ.length;i<n;i++) {
+    for(var i=0, n=champ.length-1;i<n;i++) {
         champ[i].disabled=false;
       }
 }

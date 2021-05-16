@@ -84,7 +84,7 @@ $res->execute();
 $resultat = $res->fetch();
 $nbUsers = (int) $resultat['nb_users'];
 // On détermine le nombre d'articles par page
-$parPage = 3;
+$parPage = 5;
 // On calcule le nombre de pages total
 $pages = ceil($nbUsers / $parPage);
 // Calcul du 1er article de la page
@@ -135,7 +135,7 @@ function tableCreationMesPatient($currentPage){
     
     $nbUsers = (int) $resultat['nb_users'];
     // On détermine le nombre d'articles par page
-    $parPage = 3;
+    $parPage = 5;
     // On calcule le nombre de pages total
     $pages = ceil($nbUsers / $parPage);
     // Calcul du 1er article de la page
