@@ -67,6 +67,9 @@ for ($i = 0; $i <= count($values) - 1; $i++) {
                 ?>
             ]);
 
+            //Grouper si data[?][i] = data[?][i+1] et retourner dans data [?][i] ???
+
+
             var options = {
                 title: "Graphe de l'évolution de la température superficielle",
             };

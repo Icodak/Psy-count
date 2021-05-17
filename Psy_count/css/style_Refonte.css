@@ -139,3 +139,29 @@ optgroup {
       height: auto;
       object-fit: scale-down;
   }
+
+  /*Place holder pour Msg interne...*/
+.niceBox {
+	border-radius: 5px;
+	bottom: 0;
+	z-index: 100;
+	display: block;
+	margin: 5% 12%;
+	padding: 2%;
+	position: relative;
+	/*position: absolute;*/
+	background-color: rgb(0, 0, 0);
+	/* Fallback color */
+	background-color: rgba(255, 255, 255, 0.6);
+	/* Black w/opacity/see-through */
+	box-sizing: border-box;
+	box-shadow: 0px 0px 10px rgb(189, 189, 189);
+}
+
+table{
+    width: 100%;
+}
+td,tr{
+    border-bottom: 2px solid #aa3558;
+    padding: 2%;
+}
