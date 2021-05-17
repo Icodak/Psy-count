@@ -71,6 +71,7 @@
 
 
             </div>
+            <h1>Mon diagnostic</h1>
             <div>
         
                 <textarea class="patient-Diagnostic" maxlength="1234"><?php echo $diagnosticText['diagnostic']?></textarea>
