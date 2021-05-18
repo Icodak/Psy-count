@@ -133,6 +133,7 @@ main{
     display: flex;
     justify-content: center;
     text-align: center;
+    height: 95vh;
 }
 form{
   display: flex;

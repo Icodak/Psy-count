@@ -124,10 +124,6 @@ function changeDataMedecin($prenom,$nom,$Email,$specialite,$telephone,$codePosta
     "UPDATE medecin SET codePostalCabinet=?,specialite=?,telephonePortable=? WHERE ID_Utilisateur=?");
   $req->execute([$codePostal,$specialite,$telephone,$_SESSION['ID']]);
 
-  echo $specialite;
-  echo $telephone;
-  echo $codePostal;
-
 }
 
 
@@ -207,9 +203,12 @@ if(isset($_POST['dataPageChangeMedecin']))
   $telephone=$_POST['telephone'];
   $codePostal=$_POST['codePostal'];
   $specialite=$_POST['specialite'];
+
+  
   session_start();
   changeDataMedecin($Prenom,$nom,$Email,$specialite,$telephone,$codePostal);
   header('Location: myDataDoctor.php');
+  
 }
 
 

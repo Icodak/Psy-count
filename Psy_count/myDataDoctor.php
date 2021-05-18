@@ -187,8 +187,8 @@
                             <div class="topic-right2">
                                 <div class="topic-meta">
 
-                                    <select class="crayon6 datainput" disabled name="specialite" id="pet-select"
-                                        placeholder=<?php if(!empty($resultat2[0][1])){ echo $resultat2[0][1];}?>>
+                                    <select class="crayon6 datainput" disabled name="specialite" id="pet-select">
+                                        <option value=""><?php if(!empty($resultat2[0][1])){ echo $resultat2[0][1];}?></option>
                                         <option value="Anesthésiologie">Anesthésiologie</option>
                                         <option value="Cardiologie">Cardiologie</option>
                                         <option value="Andrologie">Andrologie</option>
