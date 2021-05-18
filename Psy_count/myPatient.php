@@ -11,6 +11,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script type="text/javascript" src="javascript/javaScriptCode.js"></script>
     <script type="text/javascript" src="javascript/javaScriptCodePatient.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="la page de gestion des Medecins de psy-fi">
 </head>
 
 <body>
@@ -43,14 +45,7 @@ $pages = $resultat[1];
 
         <div class="gestionDesPatients shadow2">
           
-    <div class="Menu-And-Text">
-     <img id="image-Menu" onclick=" showMenu()" src="images/menu.png">
-     <img id="image-Menu2" onclick="HideMenu()" src="images/cross.png">
-        <ul class="Menu-lines">
-            <li><a href="myPatient.php">Mes patients</a></li>
-            <li><a href="myDataDoctor.php">Mon profil</a></li>
-        </ul>
-    </div>
+ 
 
 
                 <h1>Gestion des patients</h1>
@@ -99,10 +94,13 @@ $pages = $resultat[1];
                             <td class="text2" align="left"> <?php echo  $resultat3[$i][1] ?> </td>
                             <td class="text2" align="left"> <?php echo  $resultat3[$i][2] ?> </td>
                             <td class="text2 flex-column" align="left">
+
+                            <?php if(isset($_SESSION['showTable']) && $_SESSION['showTable']=='oui'){?>
                                 <form method="post" action="myPatient2.php">
                                     <button name="patientProfil" class="actionButtonVoir" title="voir le profil"
                                         value=<?php echo $resultat3[$i][3] ?>><img src="images/look.png"> </button>
                                 </form>
+                            <?php } ?>
 
                                 <?php if(isset($_SESSION['showTable']) && $_SESSION['showTable']=='oui'){
                                     echo'<input  type="image" class="actionButtonSupprimer" title="Supprimer ce patient" src="images/suppr.png" value='.$resultat3[$i][3],' >';

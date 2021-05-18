@@ -5,11 +5,12 @@
     <meta charset="utf-8">
     <title>Mes données</title>
     <link rel="icon" type="image/png" href="images/psy-fi.png" />
-
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style_myData_.css">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
     <script type="text/javascript" src="javascript//javaScriptCode.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="page d'accés aux données du patient">
 </head>
 
 <body>
@@ -35,9 +36,9 @@
             <div class="doctorData">
                 
                 <?php if($informations[0][3]==NULL){
-                               echo  "<img src=images/default-user.png>";                       
+                               echo  "<img alt='image du patient' src=images/default-user.png>";                       
                   }else{                                     
-                        echo "<img src='images_utilisateurs/".$informationsMedecin[0][3] ."?rand=". rand() ."'>";     
+                        echo "<img  alt='image du patient' src='images_utilisateurs/".$informationsMedecin[0][3] ."?rand=". rand() ."'>";     
                   }              
                 ?>
                 <div class="doctorLabel">
@@ -71,16 +72,17 @@
 
 
             </div>
-            <h1>Mon diagnostic</h1>
+            
+            <label for="diagnostic-text"><h1>Mon diagnostic</h1></label>
             <div>
         
-                <textarea class="patient-Diagnostic" maxlength="1234"><?php echo $diagnosticText['diagnostic']?></textarea>
+                <textarea class="patient-Diagnostic"  id="diagnostic-text"  maxlength="1234"><?php echo $diagnosticText['diagnostic']?></textarea>
 
             </div>
 
             <div class="consultButton">
                 <?php echo  "<a  class='button2'  href='pdf_utilisateurs/".$compteRendu['compteRendu']."' download='compte rendu ". $informations[0][0].$informations[0][1]."' >
-                <img class='upload-image' src='images/dowload.png'> Télécharger<br> mon compte rendu</a>" ?>
+                <img class='upload-image' alt='icone de telechargement' src='images/dowload.png'> Télécharger<br> mon compte rendu</a>" ?>
 
 
                 <button class="button2" onclick="dataModification()"> Modifier mes données </button>
@@ -96,7 +98,7 @@
                 <div class="graph">
                     <h1>Cardiaque</h1>
 
-                    <img class="responsive" src="images/frequence.jpg">
+                    <img class="responsive" alt="image d'ilustration frequence cardiaque" src="images/frequence.jpg">
 
 
 
@@ -105,7 +107,7 @@
                 <div class="graph">
                     <h1>Tonalité</h1>
 
-                    <img class="responsive" src="images/voice.jpg">
+                    <img class="responsive" alt="image d'ilustration tonalité" src="images/voice.jpg">
 
                 </div>
 
@@ -115,14 +117,14 @@
                 <div class="graph">
                     <h1>Température</h1>
 
-                    <a href="myData_Temperature.php"><img class="responsive" src="images/temperature2.jpg"></a>
+                    <a href="myData_Temperature.php"><img class="responsive"  alt="image d'ilustration temperature" src="images/temperature2.jpg"></a>
 
                 </div>
 
                 <div class="graph">
                     <h1>Réaction</h1>
 
-                    <img class="responsive" src="images//reaction2.jpg">
+                    <img class="responsive" alt="image d'ilustration reaction" src="images//reaction2.jpg">
 
                 </div>
             </div>

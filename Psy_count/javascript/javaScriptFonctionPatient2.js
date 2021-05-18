@@ -8,15 +8,7 @@ $(document).ready(function(){
                 type : 'POST',
                 data : "patientText=" + text,
                 success : function(code_html, statut){
-                   $("#confirmationText").text(text2);
-                   $("#confirmationText").css('background-color', '#01d758')
-                   setTimeout(function (){
-
-                    document.location.reload();
-                  
-                  }, 2000); 
-                  
-
+                  alert("Modification enregistré");
                 },
          
                 error : function(resultat, statut, erreur){

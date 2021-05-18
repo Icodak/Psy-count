@@ -153,3 +153,15 @@ function formDataVerificationPatient(){
 
 }
 
+function formDataVerificationPasswordChange(){
+    var ici =  document.forms[0];
+    var mdpRegex = new RegExp("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$");
+  
+    var input1 = ici['mdp'];
+    var input2 = ici['newmdp'];
+    var input3 = ici['newmdpverif'];
+    
+
+
+    return motDePasseVerification(mdp,mdp2,inputForm1,inputForm2,mdpRegex)
+}

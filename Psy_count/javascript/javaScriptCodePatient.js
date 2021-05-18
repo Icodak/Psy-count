@@ -5,7 +5,8 @@
             var el= e.target; 
 
                 if(el.className=="actionButtonSupprimer"){
-                
+                    if(confirm("Voulez vous vraiment supprimer ce patient ?"))
+                    {
                     $.ajax({
                         url : "myPatientFonction.php",
                         type : "POST",
@@ -26,6 +27,7 @@
                  
                      });  
                     } 
+                }
                     else if(el.className=="actionButtonAjouter") {
                  
                         $.ajax({
@@ -36,6 +38,7 @@
                             },
                             success : function(code_html, statut){
                                 document.location.reload();
+                                alert("patient ajouté avec succès")
                             },
                      
                             error : function(resultat, statut, erreur){
@@ -106,5 +109,10 @@ function HideMenu()
     element4.style.display="none";
 }
     
+
+function customAlert(){
+
+}
+
 
 

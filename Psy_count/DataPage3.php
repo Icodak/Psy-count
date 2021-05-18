@@ -19,7 +19,7 @@
 
     <div class="wrapper2">
         <div class="main">
-           <form method="post" action="myDataFonction.php">
+           <form method="post" action="myDataFonction.php" onsubmit="return formVerificationMedecin()">
                 <div class="frame-header shadow2">
                     <div>
                         <h1>

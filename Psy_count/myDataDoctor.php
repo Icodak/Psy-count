@@ -34,27 +34,15 @@
             <form method="post" action="myDataFonction.php" enctype="multipart/form-data">
                 <div class="frame-header">
 
-                    <div class="User-image">
-                        <div class="Menu-And-Text">
-                            <div>
-                                <img id="image-Menu" onclick=" showMenu()" src="images/menu.png">
-                                <img id="image-Menu2" onclick="HideMenu()" src="images/cross.png">
-                            </div>
-                            <div>
-                                <ul class="Menu-lines">
-                                    <li><a href="myPatient.php">Mes patients</a></li>
-                                    <li><a href="myDataDoctor.php">Mon profil</a></li>
-                                </ul>
-                            </div>
-                        </div>
 
-                    </div>
 
                     <h1>
                         Mon profil
                     </h1>
 
-                    <div>
+                    <div class="User-image">
+
+
 
 
 
@@ -68,6 +56,7 @@
 
                         </label>
                         <input type="file" id="file" hidden name="avatar" accept="image/png, image/jpeg">
+
                     </div>
 
 
@@ -198,7 +187,8 @@
                             <div class="topic-right2">
                                 <div class="topic-meta">
 
-                                    <select class="crayon6 datainput" disabled name="specialite" id="pet-select" placeholder=<?php if(!empty($resultat2[0][1])){ echo $resultat2[0][1];}?>>
+                                    <select class="crayon6 datainput" disabled name="specialite" id="pet-select"
+                                        placeholder=<?php if(!empty($resultat2[0][1])){ echo $resultat2[0][1];}?>>
                                         <option value="Anesthésiologie">Anesthésiologie</option>
                                         <option value="Cardiologie">Cardiologie</option>
                                         <option value="Andrologie">Andrologie</option>

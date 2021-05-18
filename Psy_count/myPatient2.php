@@ -69,13 +69,8 @@
 
             </div>
            
-
+                    <h1>Diagnostic du patient</h1>
             <div>
-            <div class="confirmation">
-                
-               <span id="confirmationText"></span>
-             
-         </div>
            
             <textarea class="patient-Diagnostic" maxlength="1234"><?php if(isset($_SESSION['showTable'])&&$_SESSION['showTable']=='oui'){ echo $text['diagnostic'];}?></textarea>
 
@@ -86,13 +81,12 @@
             <div class="consultButton">
             <?php if( isset($_SESSION['showTable'])&&$_SESSION['showTable']=='oui'){
                 echo '<label class="button2" for="file2">';
-                echo '<img class="upload-image" src="images/upload.png">';
+                echo '<img class="upload-image"src="images/upload.png">';
                 echo 'uploader<br> un compte rendu';
                 echo '</label>';
-                echo '<input id="file2" hidden type="file">';              
+                echo '<input id="file2"  accept=".pdf" hidden type="file">';              
                 }
                 ?>
-                <a class="button2" href="myPatient.php">  page de gestion </a>
             <?php if( isset($_SESSION['showTable'])&&$_SESSION['showTable']=='oui'){  
                 echo"<button class='button2' id='save-Diagnostic' > Enregistrer le diagnostic </button>";
             }

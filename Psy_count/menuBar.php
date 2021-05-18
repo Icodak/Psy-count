@@ -35,6 +35,7 @@ session_start();
       if ($_SESSION['type'] == 'Medecin') {
     ?>
         <a href="myPatient.php" class="menuText"> Mes patients </a>
+        <a href="myDataDoctor.php" class="menuText"> Mon compte </a>
 
     <?php
       }
