@@ -7,6 +7,8 @@
     <link rel="icon" type="image/png" href="images/psy-fi.png" />
     <link rel="stylesheet" href="css//style.css">
     <link rel="stylesheet" href="css//style_Refonte.css">
+    <meta name="description" content="page de messagerie interne de psy-fi">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <header>
@@ -102,7 +104,7 @@
             </form>
 
         </div>
-        <img src="images/psy-fi.png">
+        <img alt="logo de psy-fi" src="images/psy-fi.png">
     </div>
 
     <div class="niceBox">
