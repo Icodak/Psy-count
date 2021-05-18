@@ -76,10 +76,10 @@
                                     <th>
                                         <input class="text2"type="checkbox" onclick="allSelect(this)">
                                     </th>
-                                    <th class="text2" align="left" colspan="1">id</th>
+                                    <th class="text2 responsiveTable" align="left" colspan="1">id</th>
                                     <th class="text2" align="left" colspan="1">Nom</th>
                                     <th class="text2" align="left" colspan="1">Prénom</th>
-                                    <th class="text2" align="left" colspan="1">Email</th>
+                                    <th class="text2 responsiveTable" align="left" colspan="1">Email</th>
                                     <th class="text2" align="left" colspan="1">Permission</th>
 
                                 </tr>
@@ -98,10 +98,10 @@
                                         <td>
                                             <input type="checkbox" name="checkBoxGestion" class="checkBoxUtilisateurs" onclick="checkboxcheckGestionsUtilisateurs()" id=<?php echo  $resultat3[$i][0] ?>>
                                         </td>
-                                        <td class="text2" align="left"> <?php echo  $resultat3[$i][0] ?></td>
+                                        <td class="text2 responsiveTable" align="left"> <?php echo  $resultat3[$i][0] ?></td>
                                         <td class="text2" align="left"> <?php echo  $resultat3[$i][1] ?> </td>
                                         <td class="text2" align="left"> <?php echo  $resultat3[$i][2] ?> </td>
-                                        <td class="text2" align="left"> <?php echo  $resultat3[$i][3] ?> </td>
+                                        <td class="text2 responsiveTable" align="left"> <?php echo  $resultat3[$i][3] ?> </td>
                                         <td class="text2 " align="left"> <?php echo  $resultat3[$i][4] ?> </td>
 
                                     </tr>
