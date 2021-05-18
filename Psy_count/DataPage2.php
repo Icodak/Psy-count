@@ -9,6 +9,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script type="text/javascript" src="javascript/javaScriptFonctionData.js"></script>
     <script type="text/javascript" src="javascript/javaScriptCodeVerification.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="page d'accés aux données du patient">
 </head>
 
 <body>
@@ -32,7 +34,7 @@
                                 <?php if($resultat[0][3]==NULL){
                                echo  "<img src=images/default-user.png>";                       
                   }else{                                     
-                        echo "<img src='images_utilisateurs/".$resultat[0][3] ."?rand=". rand() ."'>";     
+                        echo "<img alt='mon image de profil' src='images_utilisateurs/".$resultat[0][3] ."?rand=". rand() ."'>";     
                   }              
                 ?>
                             </label>
@@ -68,7 +70,7 @@
                                         value=<?php if(!empty($resultat[0][0])){ echo $resultat[0][0];}?>>
                                 </div>
                                 <div class="inputImage">
-                                    <button type="button" class="crayon1" onclick="modificationInformations(this)"> <img
+                                    <button type="button" class="crayon1" onclick="modificationInformations(this)"> <img alt="crayon pour modifier"
                                             src="images/crayon2.png">
                                     </button>
 
@@ -93,7 +95,7 @@
                                         value=<?php if(!empty($resultat[0][1])){ echo $resultat[0][1];}?>>
                                 </div>
                                 <div class="inputImage">
-                                    <button type="button" class="crayon2" onclick="modificationInformations(this)"> <img
+                                    <button type="button" class="crayon2" onclick="modificationInformations(this)"> <img alt="crayon pour modifier"
                                             src="images/crayon2.png">
                                     </button>
                                 </div>
@@ -114,7 +116,7 @@
                                         value=<?php if(!empty($resultat[0][2])){ echo $resultat[0][2];}?>>
                                 </div>
                                 <div class="inputImage">
-                                    <button type="button" class="crayon3" onclick="modificationInformations(this)"> <img
+                                    <button type="button" class="crayon3" onclick="modificationInformations(this)"> <img alt="crayon pour modifier"
                                             src="images/crayon2.png">
                                     </button>
                                 </div>
@@ -136,7 +138,7 @@
                                         value=<?php if(!empty($resultat2[0][0])){ echo $resultat2[0][0];}?>>
                                 </div>
                                 <div class="inputImage">
-                                    <button type="button" class="crayon4" onclick="modificationInformations(this)"> <img
+                                    <button type="button" class="crayon4" onclick="modificationInformations(this)"> <img alt="crayon pour modifier"
                                             src="images/crayon2.png">
                                     </button>
                                 </div>
@@ -157,7 +159,7 @@
                                 </div>
                                 <div class="inputImage">
                                     <button type="button" class="crayon5" onclick="redirectionDataPage3()">
-                                        <img src="images/crayon2.png">
+                                        <img alt="crayon pour modifier"  src="images/crayon2.png">
                                     </button>
                                 </div>
                             </div>

@@ -86,7 +86,6 @@
 
 
                 <button class="button2" onclick="dataModification()"> Modifier mes données </button>
-                <button class="button2" onclick="requestContact()"> Consulter </button>
             </div>
         </div>
 
