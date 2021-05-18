@@ -22,18 +22,29 @@
 <script type="text/javascript">
     $(document).ready(function() {
         $(".form").hide(); //Check pk je peux pas juste hide flex_column
-        $("img").hide();
+        $("img").hide(); //Avec l'image ça rend pas ouf
+        $('#sendBox').hide();
+
         $("#closeContactForm").click(function() {
-            alert("Git");
             $(".form").hide();
             //$("img").hide();
-            $("div [class = 'niceBox']").show();
+            $('#sendBox').hide();
+            $("#receptBox").show();
         });
         $("#openContactForm").click(function() {
-            alert("Gud");
             $(".form").show();
             //$("img").show();
-            $("div [class = 'niceBox']").hide();
+            $("#receptBox").hide();
+        });
+
+        $("#openReceptBox").click(function() {
+            $('#sendBox').hide();
+            $("#receptBox").show();
+        });
+
+        $("#openSendBox").click(function() {
+            $("#sendBox").show();
+            $("#receptBox").hide();
         });
     });
 
@@ -82,86 +93,105 @@
 
     ?>
 
-    <div class="background"></div>
-    <?php //Tenter de mettre des conditions sur la Form
-    /*if (isset($warning)) {
+    <section>
+        <div class="background"></div>
+        <?php //Tenter de mettre des conditions sur la Form
+        /*if (isset($warning)) {
         echo "<div class='warning'>" . $warning . "</div>";
     }
     */ ?>
 
-    <div class="flex_column">
-        <nav class="niceBox">
-            <button id="openContactForm" class="form_button"> Nouveau Message </button>
-        </nav>
+        <div class="flex_column">
+            <nav class="niceBox">
+                <button id="openContactForm" class="form_button"> Nouveau message </button>
+                <button id="openReceptBox" class="form_button"> Boite de réception </button>
+                <button id="openSendBox" class="form_button"> Boite d'envoi </button>
+            </nav>
 
-        <!-- Boîte de réception -->
-        <div class="niceBox">
-            <table>
-                <?php
-                include('msg_interneFonction.php');
-                $youvegotmail = getMail($dbMsgInt);
+            <!-- Boîte de réception -->
+            <div id="receptBox" class="niceBox">
+                <table>
+                    <?php
+                    include('msg_interneFonction.php');
+                    $youvegotmail = getRecep($dbMsgInt);
 
-                function openMail($youvegotmail)
-                {
-                    for ($j = 0; $j < count($youvegotmail); $j += 1) {
-                        for ($i = 1; $i <= count($youvegotmail[0]) - 6; $i += 6) {
-                            echo "<tr><td>";
-                            echo "<a href='msg_interneBox.php?read_msg=" . $youvegotmail[$j][5 * $i] . "' onclick='pop_up(this);' >" . "Message De : " . $youvegotmail[$j][$i] . " Sujet : " . $youvegotmail[$j][4 * $i] . " Le : " . $youvegotmail[$j][3 * $i] . "</a>";
-                            //echo "<div>" . $youvegotmail[$j][5 * $i] . "</div>";
-                            echo "</td></tr>";
+                    function openMail($youvegotmail)
+                    {
+                        for ($j = 0; $j < count($youvegotmail); $j += 1) {
+                            for ($i = 1; $i <= count($youvegotmail[0]) - 6; $i += 6) {
+                                echo "<tr><td>";
+                                echo "<a href='msg_interneBox.php?read_msg=" . $youvegotmail[$j][5 * $i] . "' onclick='pop_up(this);' >" . "Message De : " . $youvegotmail[$j][$i] . " Sujet : " . $youvegotmail[$j][4 * $i] . " Le : " . $youvegotmail[$j][3 * $i] . "</a>";
+                                //echo "<div>" . $youvegotmail[$j][5 * $i] . "</div>";
+                                echo "</td></tr>";
+                            }
                         }
                     }
-                }
 
-                if (empty($youvegotmail)) {
-                    echo "Vous n'avez pas de nouveau message.";
-                } else {
-                    openMail($youvegotmail);
-                }
+                    if (empty($youvegotmail)) {
+                        echo "Vous n'avez pas de nouveau message.";
+                    } else {
+                        openMail($youvegotmail);
+                    }
 
-                ?>
-            </table>
+                    ?>
+                </table>
+            </div>
+
+            <!-- Boîte d'envoi -->
+            <div id="sendBox" class="niceBox">
+                <table>
+                    <?php
+                    $youvesentmail = getSend($dbMsgInt);
+
+                    if (empty($youvesentmail)) {
+                        echo "Vous n'avez pas envoyé de nouveau message.";
+                    } else {
+                        openMail($youvesentmail);
+                    }
+
+                    ?>
+                </table>
+            </div>
+
+            <!-- Formulaire de contact / création de message -->
+            <div class="form">
+                <button id="closeContactForm" class="form_button"> X </button>
+                <form action="msg_interne.php" method="POST" autocomplete="off">
+
+                    <div class="form_group"> <label class="form_label" for="text"> Je souhaite contacter : </label>
+                        <select class="form_content" name="msg_destinataire">
+                            <optgroup>
+                                <?php while ($d = $recipient_from_users->fetch()) { ?>
+                                    <option><?=
+                                            //$d['nom'] . " " . $d['prenom'] //?= == php echo
+                                            $d['Email']
+                                            ?></option>
+                                <?php } ?>
+                            </optgroup>
+                        </select>
+                    </div>
+
+                    <div class="form_group"> <label class="form_label" for="text"> Sujet du message </label>
+                        <input class="form_content" type="text" name="msgSubject_Cct" placeholder="ex : Contact avec l'administrateur PSY-fi..."> </label>
+                    </div>
+
+                    <div class="form_group">
+                        <label class="form_label" for="text"> Message </label>
+                        <textarea class="form_content" name="msg_Cct" placeholder="Veuillez écrire votre message..."></textarea>
+                    </div>
+
+                    <div class="form_group">
+                        <button class="form_button" type="submit" name="submit"> Envoyer </button>
+                        <button class="form_button" type="reset"> Annuler </button>
+                    </div>
+                </form>
+
+            </div>
+            <img alt="logo de psy-fi" src="images/psy-fi.png">
         </div>
-
-        <!-- Formulaire de contact / création de message -->
-        <div class="form">
-            <button id="closeContactForm" class="form_button"> X </button>
-            <form action="msg_interne.php" method="POST" autocomplete="off">
-
-                <div class="form_group"> <label class="form_label" for="text"> Je souhaite contacter : </label>
-                    <select class="form_content" name="msg_destinataire">
-                        <optgroup>
-                            <?php while ($d = $recipient_from_users->fetch()) { ?>
-                                <option><?=
-                                        //$d['nom'] . " " . $d['prenom'] //?= == php echo
-                                        $d['Email']
-                                        ?></option>
-                            <?php } ?>
-                        </optgroup>
-                    </select>
-                </div>
-
-                <div class="form_group"> <label class="form_label" for="text"> Sujet du message </label>
-                    <input class="form_content" type="text" name="msgSubject_Cct" placeholder="ex : Contact avec l'administrateur PSY-fi..."> </label>
-                </div>
-
-                <div class="form_group">
-                    <label class="form_label" for="text"> Message </label>
-                    <textarea class="form_content" name="msg_Cct" placeholder="Veuillez écrire votre message..."></textarea>
-                </div>
-
-                <div class="form_group">
-                    <button class="form_button" type="submit" name="submit"> Envoyer </button>
-                    <button class="form_button" type="reset"> Annuler </button>
-                </div>
-            </form>
-
-        </div>
-        <img alt="logo de psy-fi" src="images/psy-fi.png">
-    </div>
+    </section>
+    <?php include("footer.php") ?>
 
 </body>
-
-<?php include("footer.php") ?>
 
 </html>
