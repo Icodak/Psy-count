@@ -54,7 +54,7 @@
                 </select>
             </div>
             <div>
-                <p>Mot de passe</p>
+                <p>Mot de passe ( au moins 8 caractéres dont 1 miniscule, 1 majuscule et 1 caractére spécial)</p>
                 <div class="input-bar passwordType"><input name="Password" class="showHide" required type="password"  />
                     <img src="images/eye.png" class="passwordImage" onclick="hidePassword()">
                     <img src="images/eyeHide.png" style="display:none;" class="passwordImage2" onclick="hidePassword()">

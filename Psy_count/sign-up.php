@@ -34,7 +34,7 @@
                 <div class="input-bar"><input type="text" required name="LastName"  /></div>
             </div>
             <div>
-                <p>Date de naissance</p>
+                <p>Date de naissance (vous devez avoir 15 ans pour utiliser notre service)</p>
                 <div class="input-bar"><input name="dateDeNaissance"  required type="date" /></div>
             </div>
             <div>
@@ -42,7 +42,7 @@
                 <div class="input-bar"><input name="Email"  required type="email" /></div>
             </div>
             <div>
-                <p>Mot de passe</p>
+                <p>Mot de passe ( au moins 8 caractéres dont 1 miniscule, 1 majuscule et 1 caractére spécial) </p>
                 <div class="input-bar passwordType"><input name="Password"  required class="showHide" type="password" />
                     <img src="images/eye.png" class="passwordImage" onclick="hidePassword()">
                     <img src="images/eyeHide.png" style="display:none;" class="passwordImage2" onclick="hidePassword()">

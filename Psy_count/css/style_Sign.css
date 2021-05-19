@@ -27,6 +27,7 @@ body {
 	justify-content: space-around;
 	display: flex;
 	flex-direction: row;
+
 }
 
 .confirm-field>div {
@@ -48,6 +49,8 @@ body {
 ul {
 	list-style: none;
 	padding: 0px;
+	display: flex;
+	justify-content: center;
 }
 
 li {
