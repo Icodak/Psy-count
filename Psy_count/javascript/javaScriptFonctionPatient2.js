@@ -1,3 +1,5 @@
+
+
 $(document).ready(function(){
     $("#save-Diagnostic").click(function(){
 
@@ -8,7 +10,7 @@ $(document).ready(function(){
                 type : 'POST',
                 data : "patientText=" + text,
                 success : function(code_html, statut){
-                  alert("Modification enregistré");
+                    diagnosticBoxCorrect();
                 },
          
                 error : function(resultat, statut, erreur){

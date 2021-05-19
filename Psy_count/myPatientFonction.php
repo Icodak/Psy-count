@@ -1,4 +1,8 @@
+
+
+
 <?php
+
 
 
 
@@ -49,8 +53,7 @@ function updatePatientText($id,$text){
   $req2->execute(array($text,$id));
   }catch(PDOException $e){
     echo "Erreur : " . $e->getMessage();
-  
-}
+  }
 }
 
 function addPatient($idUtilisateur_ofMedecin,$idUtilsiateur)

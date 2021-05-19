@@ -8,8 +8,10 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style_myData_.css">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
+    <link rel="stylesheet" href="css/style_alert_box.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script type="text/javascript" src="javascript//javaScriptFonctionPatient2.js"></script>
+    <script type="text/javascript" src="javaScript/javaScriptFonctionAlertBox.js"></script>
 </head>
 
 <body>
