@@ -8,8 +8,8 @@ session_start(); // On démarre la session AVANT toute chose
         la valeur des attributs name comme clé 
        */
 
-     $FirstName = $_POST['FirstName']; 
-     $LastName = $_POST['LastName']; 
+     $FirstName = mb_convert_case($_POST['FirstName'] , MB_CASE_TITLE);
+     $LastName = mb_convert_case($_POST['LastName'] , MB_CASE_TITLE);
      $Email = $_POST['Email'];
      $Password = password_hash($_POST['Password'], PASSWORD_DEFAULT);
      $Password_verify = $_POST['password_verify'];

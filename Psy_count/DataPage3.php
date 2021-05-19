@@ -7,6 +7,9 @@
     <link rel="icon" type="image/png" href="images/psy-fi.png" />
     <link rel="stylesheet" href="css//style_myData_2.css">
     <script type="text/javascript" src="javascript//javaScriptCode.js"></script>
+    <script type="text/javascript" src="javascript/javaScriptCodeVerification.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="page pour modifier le mot de passe de l'utilisateur">
 </head>
 
 <body>
@@ -19,7 +22,7 @@
 
     <div class="wrapper2">
         <div class="main">
-           <form method="post" action="myDataFonction.php" onsubmit="return formVerificationMedecin()">
+           <form method="post" action="myDataFonction.php" onsubmit="return formDataVerificationPasswordChange()">
                 <div class="frame-header shadow2">
                     <div>
                         <h1>

@@ -42,10 +42,7 @@ $premier = ($currentPage * $parPage) - $parPage;
 if( !isset( $_SESSION['type']) || $_SESSION['type']!='Admin'){
   header('Location: accueil.php');
 }
-
-
   try{
-
               $dbco = new PDO("mysql:host=localhost;dbname=serveur_psy_fi",'root','');
               $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -57,7 +54,6 @@ if( !isset( $_SESSION['type']) || $_SESSION['type']!='Admin'){
               $Resultat[0]=$resultat3;
               $Resultat[1]=$pages;
               return $Resultat;
-
       } catch(PDOException $e){
      echo "Erreur : " . $e->getMessage();
       }

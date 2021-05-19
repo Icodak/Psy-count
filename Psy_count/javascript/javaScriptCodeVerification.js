@@ -72,7 +72,7 @@ function formVerificationPatient(){
     var nom = ici['LastName'].value;
     var date = ici['dateDeNaissance'].value;
 
-    var nomPrenomRegex = new RegExp("^[A-Z][A-Za-z\é\è\ê\-]+$");
+    var nomPrenomRegex =  /^[a-zA-Z\-]+$/;
     var EmailRegex = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
     var mdpRegex = new RegExp("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$");
 
@@ -130,15 +130,17 @@ function formDataVerificationPatient(){
     
     var date = ici['dateDeNaissance'].value;
     
-    var nomPrenomRegex = new RegExp("^[A-Z][A-Za-z\é\è\ê\-]+$");
+    var nomPrenomRegex = /^[a-zA-Z\-]+$/;
     var EmailRegex = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
     
-   
+
     var result1 =  Verification(prenom,nomPrenomRegex,input2);
 
     var result2 =  Verification(nom,nomPrenomRegex,input1);        
     var result3 =  Verification(email,EmailRegex,input3);
     var result4 =  dateDeNaissanceVerification(date,input4);
+
+  
    
 
     return(
@@ -157,11 +159,11 @@ function formDataVerificationPasswordChange(){
     var ici =  document.forms[0];
     var mdpRegex = new RegExp("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$");
   
-    var input1 = ici['mdp'];
     var input2 = ici['newmdp'];
     var input3 = ici['newmdpverif'];
+
+    var newmdp =  ici['newmdp'].value;
+    var newmdpVerif = ici['newmdpverif'].value;
     
-
-
-    return motDePasseVerification(mdp,mdp2,inputForm1,inputForm2,mdpRegex)
+    return motDePasseVerification(newmdp, newmdpVerif,input2,input3,mdpRegex);
 }

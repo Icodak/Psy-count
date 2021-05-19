@@ -15,7 +15,8 @@
 
 <body>
     <header>
-        <?php include("menuBar.php") ;
+        <?php 
+              include("menuBar.php") ;
               include("myDataFonction.php");     
               $outPut = selectInformationsPatient();
               $resultat =  $outPut[0];

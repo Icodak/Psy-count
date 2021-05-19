@@ -21,6 +21,7 @@
         <div class="footer-column">
             <h2> Ressources </h2>
             <a href="faq.php">FAQ </a>
+            <a href="forum.php">Forum </a>
         </div>
     </section>
     <section class="last-footer">
