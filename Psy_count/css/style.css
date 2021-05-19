@@ -217,3 +217,24 @@ option {
         font-size: 20px;
     }
 }
+
+.left-text {
+    text-align: left;
+
+}
+.right-text {
+    text-align: right;
+}
+
+.center-text{
+    text-align: center;
+}
+
+.justify-text {
+    text-align: justify;
+}
+
+.icon {
+    width: 16px;
+    height: 16px;
+}

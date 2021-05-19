@@ -112,8 +112,12 @@ img.topic-img {
     border-radius: 5px;
 }
 
+.input-field {
+    width: 100%;
+}
+
 .msg-data {
-    background-color: white;
+    background-color: #e9e5e6;
     overflow: hidden;
     display: flex;
     flex-direction: row;
@@ -186,6 +190,7 @@ p {
     display: flex;
     padding: 20px;
     width: calc(100% - 210px);
+    background-color: white;
 }
 
 .msg-text * {

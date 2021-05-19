@@ -17,10 +17,8 @@ session_start();
 
     <?php
     error_reporting(E_ERROR | E_WARNING | E_PARSE);
-    if (isset($_SESSION['type'])) {
-        if ($_SESSION['type'] == 'Admin') {
-            echo "<script type=\"text/javascript\" src=\"javaScript/javaScriptAdmin.js\"></script>";
-        } 
+    if (isset($_SESSION['type']) && $_SESSION['type'] == 'Admin') {
+        echo "<script type=\"text/javascript\" src=\"javaScript/javaScriptAdmin.js\"></script>";
     } else {
         echo "<script type=\"text/javascript\" src=\"javaScript/javaScriptCode.js\"></script>";
     }

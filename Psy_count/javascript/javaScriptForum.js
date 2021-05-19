@@ -285,7 +285,7 @@ function messageObject(user_profile, user_id, user_firstName, user_lastName, use
         })
             .done(function (result) {
                 if (result.success) {
-                   
+
                     var txtContainer = document.getElementById(msg_id).childNodes[0].childNodes[1];
                     txtContainer.removeChild(txtContainer.lastChild);
                     txtContainer.style.padding = "0px";
@@ -369,9 +369,9 @@ function messageObject(user_profile, user_id, user_firstName, user_lastName, use
         }
     })
         .done(function (result) {
-            if (result.success){
-            msgTools.appendChild(btnEdit);
-            msgTools.appendChild(btnDelete);
+            if (result.success) {
+                msgTools.appendChild(btnEdit);
+                msgTools.appendChild(btnDelete);
             }
         })
         .fail(function (xhr, thrownError) {
@@ -444,4 +444,26 @@ function onEditTopic(topic_id) {
             console.log(thrownError);
         });
 
+}
+
+
+function getTextSelection(balise,classe) {
+    var sel = window.getSelection();
+    if (sel.rangeCount) {
+        var parentEl = sel.getRangeAt(0).commonAncestorContainer;
+        while (parentEl.nodeType != 1 || parentEl.id != "editable-content") {
+            parentEl = parentEl.parentNode;
+            console.log(parentEl.id);
+            console.log("called")
+        }
+        console.log(parentEl.id)
+        if (parentEl.id == "editable-content") {
+            var range = sel.getRangeAt(0).cloneRange();
+            var markerTextChar = range.extractContents();
+            var markerEl = document.createElement(balise);
+            markerEl.className = classe;
+            markerEl.appendChild(markerTextChar);
+            range.insertNode(markerEl);
+        }
+    }
 }

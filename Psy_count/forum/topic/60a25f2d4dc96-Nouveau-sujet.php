@@ -4,10 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>top</title>
-    <meta name="description" content="top top top">
+    <title>Nouveau-sujet</title>
+    <meta name="description" content="Message de l'auteur du sujet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta topicID = "609e90f956965">
+    <meta topicID = "60a25f2d4dc96">
     <meta UAID = "10">
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/styleMenu.css">
@@ -17,13 +17,13 @@
     <script type="text/javascript" src="../../javaScript/javaScriptForum.js" async defer></script>
 </head>
 
-<body onload="loadMessageUsers('609e90f956965')">
+<body onload="loadMessageUsers('60a25f2d4dc96')">
     <?php include("../../menubar.php") ?>
 
     <section class="forum-background gray-background">
         <div class="forum-container shadow white-background">
             <div class="forum-title">
-                <h1>top</h1>
+                <h1>Nouveau-sujet</h1>
                 </div>
                 <div class="forum-messages" id="forum-messages">
     

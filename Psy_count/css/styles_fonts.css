@@ -5,6 +5,7 @@
     url("../fonts/POPPINS-BOLD.TTF") format("truetype"),
     url("../fonts/POPPINS-EXTRABOLD.TTF") format("truetype");
     font-weight: lighter, normal, bold, bolder;
+    font-display: swap;
 }
 html {
     font-family: poppins;
