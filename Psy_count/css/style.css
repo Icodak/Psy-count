@@ -235,6 +235,48 @@ option {
 }
 
 .icon {
+    display: flex;
     width: 16px;
     height: 16px;
+    font-size: 20px;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.rainbow{
+    animation: rainbow 3s linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes rainbow{
+    100%,0%{
+        color: #BEF899;
+    }
+    12.5%{
+        color: #9AD9DF;
+    }
+    25%{
+        color: #B4BFF9;
+    }
+    37.5%{
+        color: #EFA9EE;
+    }
+    50%{
+        color: #FEB4AD;
+    }
+    62.5%{
+        color: #FFB370;
+    }
+    75%{
+        color: #FCDF70;
+    }
+    87.5%{
+        color: #D6F896;
+    }
+}
+
+.button-content {
+    display: flex;
+    align-items: center;
 }
