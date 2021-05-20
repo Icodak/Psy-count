@@ -1,6 +1,5 @@
 
 .alert-box{
-    border: 2px solid black;
     display: flex;
     justify-content: center;
     z-index: 999;
@@ -18,7 +17,6 @@
 .button-box {
     background-color: #aa3558;
     border: none;
-    display: flex;
     font-weight: lighter;
     text-align: center;
     text-decoration: none;
@@ -30,7 +28,7 @@
     padding: 10px;
     align-items: center;
     font-size: 20px;
-    min-width: 150px;
+    max-width: 80px;
 }
 
 .button-box:hover{

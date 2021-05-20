@@ -210,6 +210,9 @@ section{
 
 @media only screen and (max-width: 851px) {
 
+  .checkboxButton{
+    margin-right: 23px;
+  }
   td, th {
     padding-left: 0px;
     padding-right: 0px;
@@ -231,5 +234,13 @@ section{
  h1{
    font-size: 30px;
  }
+}
+@media only screen and (max-width: 300px) {
+.responsiveTable2{
+  display: none;
+}
 
+#gestionUtilisateur{
+  padding:0px;
+}
 }

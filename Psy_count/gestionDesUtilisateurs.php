@@ -37,6 +37,12 @@
     $resultat = tableCreation($currentPage);
     $resultat3 = $resultat[0];
     $pages = $resultat[1];
+    $pagesLimit=3;
+    $pageLimit=1;
+    if (isset($_GET['pageLimit']) && isset($_GET['pagesLimit'])) {
+        $pageLimit=$_GET['pageLimit'];
+        $pagesLimit=$_GET['pagesLimit'];
+    } 
     ?>
 
 
@@ -73,14 +79,13 @@
 
                             <thead>
                                 <tr>
-                                    <th>
-                                        <input class="text2"type="checkbox" onclick="allSelect(this)">
-                                    </th>
+                                   
+                                    <th><input class="text2 checkboxButton" type="checkbox" onclick="allSelect(this)"></th>
                                     <th class="text2 responsiveTable" align="left" colspan="1">id</th>
                                     <th class="text2" align="left" colspan="1">Nom</th>
                                     <th class="text2" align="left" colspan="1">Prénom</th>
                                     <th class="text2 responsiveTable" align="left" colspan="1">Email</th>
-                                    <th class="text2" align="left" colspan="1">Permission</th>
+                                    <th class="text2 responsiveTable2" align="left" colspan="1">Permission</th>
 
                                 </tr>
                             </thead>
@@ -102,7 +107,7 @@
                                         <td class="text2" align="left"> <?php echo  $resultat3[$i][1] ?> </td>
                                         <td class="text2" align="left"> <?php echo  $resultat3[$i][2] ?> </td>
                                         <td class="text2 responsiveTable" align="left"> <?php echo  $resultat3[$i][3] ?> </td>
-                                        <td class="text2 " align="left"> <?php echo  $resultat3[$i][4] ?> </td>
+                                        <td class="text2 responsiveTable2" align="left"> <?php echo  $resultat3[$i][4] ?> </td>
 
                                     </tr>
                                 </tbody>
@@ -114,34 +119,7 @@
 
                         </table>
 
-                        <div class="pagination">
-
-
-                            <div class="page-items <?= ($currentPage == 1) ? "disabled" : "" ?>">
-                                <a href="gestionDesUtilisateurs.php?page=<?php if ($currentPage == 1) {
-                                                                                echo $currentPage;
-                                                                            } else {
-                                                                                echo $currentPage - 1;
-                                                                            } ?>" class="page-link">«</a>
-                            </div>
-                            <?php for ($page = 1; $page <= $pages; $page++) : ?>
-
-
-                                <div class="page-items <?= ($currentPage == $page) ? "active" : "" ?> ">
-                                    <a href="gestionDesUtilisateurs.php?page=<?= $page ?>" class="page-link"><?= $page ?></a>
-                                </div>
-                            <?php endfor ?>
-
-
-
-
-                            <div class="page-items <?= ($currentPage == $pages) ? "disabled" : "" ?>">
-                                <a href="gestionDesUtilisateurs.php?page=<?php if ($currentPage == $pages) {
-                                                                                echo $currentPage;
-                                                                            } else {
-                                                                                echo $currentPage + 1;
-                                                                            } ?>" class="page-link ">»</a>
-                            </div>
+                        <?php include("pagination.php") ?>
                         </div>
                    
                 </div>
