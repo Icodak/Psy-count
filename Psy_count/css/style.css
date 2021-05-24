@@ -39,15 +39,25 @@ a {
 .normal {
     font-weight: normal;
 }
+
 .bold {
     font-weight: bold;
 }
+
 .bolder {
     font-weight: bolder;
 }
 
 .black-text {
     color: black;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.anti-italic {
+    font-style: normal;
 }
 
 h1, .important-text {
@@ -91,7 +101,7 @@ hr {
     margin: 20px 0px;
 }
 
-input, textarea {
+input, textarea, .text-content {
     font-family: "poppins", sans-serif, monospace;
     background-color: #f9f0f0;
     color: #6d2339;
@@ -103,9 +113,10 @@ input, textarea {
     align-items: center;
     width: 100%;
     font-size: 3.5vw;
+    height: auto;
 }
 
-input:hover, textarea:hover {
+input:hover, textarea:hover, .text-content:hover {
     border-bottom: 2px solid #6d2339;
 }
 
@@ -114,9 +125,11 @@ input::placeholder, textarea::placeholder {
     border: none;
 }
 
-textarea {
+textarea, .text-content {
+    transition: all 0.3s ease 0s;
+    overflow-wrap: break-word;
+    hyphens: auto;
     resize: none;
-    min-height: 200px;
 }
 
 select {
@@ -183,6 +196,10 @@ option {
     text-decoration: underline #aa3558 2px;
 }
 
+.anti-underline {
+    text-decoration: none;
+}
+
 .dark-link {
     text-decoration: none;
     color: black;
@@ -195,7 +212,7 @@ option {
 /* Media queries*/
 
 @media (min-width: 550px) {
-    input, p, a, li, .button, select, textarea {
+    input, p, a, li, .button, select, textarea, .text-content {
         font-size: 3vw;
     }
     nav p, nav a, nav .button {
@@ -204,7 +221,7 @@ option {
 }
 
 @media (min-width: 900px) {
-    input, p, a, li, .button, select, textarea {
+    input, p, a, li, .button, select, textarea, .text-content {
         font-size: 2vw;
     }
     nav p, nav a, nav .button {
@@ -213,25 +230,21 @@ option {
 }
 
 @media (min-width: 1200px) {
-    input, p, a, li, .button, nav p, nav a, nav .button, select, textarea {
+    input, p, a, li, .button, nav p, nav a, nav .button, select, textarea, .text-content {
         font-size: 20px;
     }
 }
 
-.left-text {
+.left-text, .left-text * {
     text-align: left;
-
 }
-.right-text {
+
+.right-text, .right-text * {
     text-align: right;
 }
 
-.center-text{
+.center-text, .center-text * {
     text-align: center;
-}
-
-.justify-text {
-    text-align: justify;
 }
 
 .icon {
@@ -241,42 +254,16 @@ option {
     font-size: 20px;
     align-items: center;
     justify-content: center;
-    
-}
-
-.rainbow{
-    animation: rainbow 3s linear;
-    animation-iteration-count: infinite;
-}
-
-@keyframes rainbow{
-    100%,0%{
-        color: #BEF899;
-    }
-    12.5%{
-        color: #9AD9DF;
-    }
-    25%{
-        color: #B4BFF9;
-    }
-    37.5%{
-        color: #EFA9EE;
-    }
-    50%{
-        color: #FEB4AD;
-    }
-    62.5%{
-        color: #FFB370;
-    }
-    75%{
-        color: #FCDF70;
-    }
-    87.5%{
-        color: #D6F896;
-    }
 }
 
 .button-content {
     display: flex;
     align-items: center;
+    padding: 10px;
+}
+
+.button-content>* {
+    margin: 1px;
+    border-radius: 2px;
+    background-color: #b6a4a4;
 }

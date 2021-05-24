@@ -156,7 +156,6 @@ function addTopic() {
     var isValid = true;
 
     for (el of topicInput) {
-        console.log(el.getElementsByClassName("input-field")[0].value);
         if (!el.getElementsByClassName("input-field")[0].value) {
             el.getElementsByClassName("must-fill")[0].style.display = "block";
             isValid = false;
@@ -446,22 +445,27 @@ function onEditTopic(topic_id) {
 
 }
 
-
-function getTextSelection(balise,classe) {
+function getTextSelection(classe, anticlasse) {
     var sel = window.getSelection();
     if (sel.rangeCount) {
+        //if selection is not null
         var parentEl = sel.getRangeAt(0).commonAncestorContainer;
-        while (parentEl.nodeType != 1 || parentEl.id != "editable-content") {
+        while (parentEl.nodeType != 1 && parentEl.id != "editable-content" && parentEl.classList != classe) {
             parentEl = parentEl.parentNode;
-            console.log(parentEl.id);
-            console.log("called")
         }
-        console.log(parentEl.id)
-        if (parentEl.id == "editable-content") {
+
+        if (document.getElementById("editable-content").contains(parentEl)) {
+            //check if selected content can be edited
             var range = sel.getRangeAt(0).cloneRange();
             var markerTextChar = range.extractContents();
-            var markerEl = document.createElement(balise);
-            markerEl.className = classe;
+            var markerEl = document.createElement('span');
+            if (parentEl.classList.value.toUpperCase() == classe.toUpperCase()) {
+                //Remove effect
+                markerEl.className = anticlasse;
+            } else {
+                //Add effect
+                markerEl.className = classe;
+            }
             markerEl.appendChild(markerTextChar);
             range.insertNode(markerEl);
         }
