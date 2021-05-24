@@ -1,9 +1,5 @@
 
-
-
 <?php
-
-
 
 
 
@@ -159,9 +155,6 @@ function tableCreationMesPatient($currentPage){
                   $Resultat[0]=$resultat3;
                   $Resultat[1]=$pages;
                   return $Resultat;
-
-
-    
     } catch(PDOException $e){
          echo "Erreur : " . $e->getMessage();
     }

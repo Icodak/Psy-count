@@ -38,7 +38,7 @@
                             },
                             success : function(code_html, statut){
                                 document.location.reload();
-                                alert("patient ajouté avec succès")
+                                diagnosticBoxCorrect("Nouveau patient ajouté avec succés");                               
                             },
                      
                             error : function(resultat, statut, erreur){
@@ -82,35 +82,6 @@
         });
 
 
-        
-
-function showMenu()
-{
-    var element1 = document.getElementsByClassName("Menu-And-Text")[0];
-    var element2 = document.getElementById("image-Menu2");
-    var element3 = document.getElementById("image-Menu");
-    var element4 = document.getElementsByClassName("Menu-lines")[0];
-
-    element2.style.display="block";
-    element3.style.display="none";
-    element4.style.display="block";
-}
-
-function HideMenu()
-{
-    var element1 = document.getElementsByClassName("Menu-And-Text")[0];
-    var element2 = document.getElementById("image-Menu2");
-    var element3 = document.getElementById("image-Menu");
-    var element4 = document.getElementsByClassName("Menu-lines")[0];
-
-    element1.style.border = "none";
-    element2.style.display="none";
-    element3.style.display="block";
-    element4.style.display="none";
-}
-    
-
-function customAlert(){
 
 }
 

@@ -7,9 +7,11 @@
     <link rel="icon" type="image/png" href="images/psy-fi.png" />
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style_myPatient.css">
+    <link rel="stylesheet" href="css/style_alert_box.css">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script type="text/javascript" src="javascript/javaScriptCode.js"></script>
+    <script type="text/javascript" src="javascript/javaScriptFonctionAlertBox.js"></script>
     <script type="text/javascript" src="javascript/javaScriptCodePatient.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="la page de gestion des Medecins de psy-fi">
@@ -44,12 +46,12 @@ $pages = $resultat[1];
 ?>
 
         <div class="gestionDesPatients shadow2">
-          
- 
 
 
-                <h1>Gestion des patients</h1>
-          
+
+
+            <h1>Gestion des patients</h1>
+
 
             <div class="selectButton">
 
@@ -71,15 +73,14 @@ $pages = $resultat[1];
                     <thead>
                         <tr>
 
-                            <th class="text2" align="left" colspan="1">Nom</th>
-                            <th class="text2" align="left" colspan="1">Prénom</th>
-                            <th class="text2" align="left" colspan="1">Email</th>
-                            <th class="text2" align="left" colspan="1">Actions</th>
-
+                            <th class="text2" align="left" colspan="1"><h2>Nom</h2></th>
+                            <th class="text2" align="left" colspan="1"><h2>Prénom</h2></th>
+                            <th class="text2 responsivePatient" align="left" colspan="1"><h2>Email</h2></th>
+                            <th class="text2" align="left" colspan="1"><h2>Actions</h2></th>
                         </tr>
                     </thead>
-
-                    <?php
+                    <tbody>
+                        <?php
 
 
 
@@ -87,34 +88,34 @@ $pages = $resultat[1];
 
                         ?>
 
-                    <tbody>
+
                         <tr>
 
-                            <td class="text2" align="left"> <?php echo  $resultat3[$i][0] ?> </td>
-                            <td class="text2" align="left"> <?php echo  $resultat3[$i][1] ?> </td>
-                            <td class="text2" align="left"> <?php echo  $resultat3[$i][2] ?> </td>
-                            <td class="text2 flex-column" align="left">
-
-                            <?php if(isset($_SESSION['showTable']) && $_SESSION['showTable']=='oui'){?>
+                            <td class="text2" align="left"><h2><?php echo  $resultat3[$i][0] ?> </h2></td>
+                            <td class="text2" align="left"><h2> <?php echo  $resultat3[$i][1] ?> </h2></td>
+                            <td class="text2 responsivePatient" align="left"><h2> <?php echo  $resultat3[$i][2] ?> </h2></td>
+                            <td class="text2 " align="left">
+                                <?php if(isset($_SESSION['showTable']) && $_SESSION['showTable']=='oui'){?>
                                 <form method="post" action="myPatient2.php">
                                     <button name="patientProfil" class="actionButtonVoir" title="voir le profil"
                                         value=<?php echo $resultat3[$i][3] ?>><img src="images/look.png"> </button>
                                 </form>
-                            <?php } ?>
+                                <?php } ?>
 
                                 <?php if(isset($_SESSION['showTable']) && $_SESSION['showTable']=='oui'){
                                     echo'<input  type="image" class="actionButtonSupprimer" title="Supprimer ce patient" src="images/suppr.png" value='.$resultat3[$i][3],' >';
                                     }else{
                                     echo'<input  type="image" class="actionButtonAjouter" title="Ajouter un Utilisateur" src="images/ADD.png" value='.$resultat3[$i][3],'>';   
-                                    }?>
-                            </td>
+                                    }?></td>
+                            
                         </tr>
-                    </tbody>
 
 
-                    <?php
+
+                        <?php
                         }
                         ?>
+                    </tbody>
 
                 </table>
 

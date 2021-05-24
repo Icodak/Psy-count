@@ -4,13 +4,12 @@ $(document).ready(function(){
     $("#save-Diagnostic").click(function(){
 
     var text = document.getElementsByClassName("patient-Diagnostic")[0].value;
-    var text2 = "Diagnostic bien enregistré !"
             $.ajax({
                 url : 'myPatientFonction.php',
                 type : 'POST',
                 data : "patientText=" + text,
                 success : function(code_html, statut){
-                    diagnosticBoxCorrect();
+                    diagnosticBoxCorrect("Votre nouveau diagnostic est bien enregistré");
                 },
          
                 error : function(resultat, statut, erreur){

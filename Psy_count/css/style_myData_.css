@@ -130,17 +130,37 @@ li{
 	margin-top: 10%;
 	display: flex;
 	justify-content: space-around;
+	flex-direction: column;
 }
 .graph{
 	margin-left: 2%;
 	margin-right: 2%;
 
 }
+
+.button2{
+	width: 240px;
+	height: 70px;
+}
+.doctorData{
+	flex-direction: column;
+}
+ul{
+	padding-inline-start: 0px;
+}
+
+.consultButton{
+	flex-direction: column;
+	align-items: center;
+}
+
+#doctorPage{
+	max-height: none;
+}
+
 .graphPage{
 	margin-left:0%;
 	margin-bottom: 10%;
 }
-.doctorLabel{
-	margin-right: 2%;
-}
+
 }
