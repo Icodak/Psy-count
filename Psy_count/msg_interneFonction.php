@@ -24,7 +24,20 @@
 
         return $youvegotmail;
     }
+
+    function delete($dbMsgInt, $msgChoosen)
+    {
+        $deleteMsg = $dbMsgInt->prepare(
+            'DELETE
+            FROM msg_interne
+            WHERE msg_content = ?'
+        );
+        $deleteMsg->execute(array($msgChoosen));
+        echo "Message supprimé.";
+    }
     ?>
+
+    
 
    
             

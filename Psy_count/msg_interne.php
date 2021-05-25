@@ -21,20 +21,21 @@
 
 <script type="text/javascript">
     $(document).ready(function() {
+        //id='openMessage" . $i . "' onclick='pop_up(this);'  href='msg_interneBox.php?read_msg=" . $youvegotmail[$j][5 * $i] . "
         $(".form").hide(); //Check pk je peux pas juste hide flex_column
-        $("img").hide(); //Avec l'image ça rend pas ouf
+        $("img[alt='logo de psy-fi']").hide(); //Avec l'image ça rend pas ouf
         $('#sendBox').hide();
 
         $("#closeContactForm").click(function() {
-            $(".form").hide();
+            $("#form").hide();
             //$("img").hide();
             $('#sendBox').hide();
-            $("#receptBox").show();
+            //$("#receptBox").show();
         });
         $("#openContactForm").click(function() {
-            $(".form").show();
+            $("#form").show();
             //$("img").show();
-            $("#receptBox").hide();
+            //$("#receptBox").hide();
         });
 
         $("#openReceptBox").click(function() {
@@ -46,7 +47,19 @@
             $("#sendBox").show();
             $("#receptBox").hide();
         });
+
+        $("a[class='hidden']").click(function(event) {
+            $("#openMessage" + event.target.id).show();
+        });
+
+        $("button[name='X']").click(function(event) {
+            $("#openMessage" + event.target.id).hide();
+        });
     });
+
+    /*function pop_up(this) {
+        this.id
+    }*/
 
     /*//Mauvaise idée tant pis
     function pop_up(url) {
@@ -115,22 +128,31 @@
                     include('msg_interneFonction.php');
                     $youvegotmail = getRecep($dbMsgInt);
 
-                    function openMail($youvegotmail)
+                    function openMail($youvegotmail, $isSend)
                     {
+                        $confirm = 'Etes-vous sûr de vouloir supprimer ce message ? Il sera également supprimé pour votre correspondant.';
                         for ($j = 0; $j < count($youvegotmail); $j += 1) {
                             for ($i = 1; $i <= count($youvegotmail[0]) - 6; $i += 6) {
                                 echo "<tr><td>";
-                                echo "<a href='msg_interneBox.php?read_msg=" . $youvegotmail[$j][5 * $i] . "' onclick='pop_up(this);' >" . "Message De : " . $youvegotmail[$j][$i] . " Sujet : " . $youvegotmail[$j][4 * $i] . " Le : " . $youvegotmail[$j][3 * $i] . "</a>";
-                                //echo "<div>" . $youvegotmail[$j][5 * $i] . "</div>";
+                                echo "<a name='hidden' id='" . $j . $isSend . "'>" . "Message De : " . $youvegotmail[$j][$i] . " Sujet : " . $youvegotmail[$j][4 * $i] . " Le : " . $youvegotmail[$j][3 * $i] . "</a>";
+                                echo "<a class='eraseMsg' href='msg_interne.php?msg=" . $youvegotmail[$j][5 * $i] . "' onclick='return confirm(" . $confirm . ")'><img src='images/erase.png' alt='eraseMsg'></a>";
+                                //echo "<input type='image' value='Vérifier'onclick='return confirm(" . $confirm . ")' src='images/erase.png'>";
+                                echo "<div id='openMessage" . $j . $isSend . "' class='form'><span>" . $youvegotmail[$j][5 * $i] . "</span>
+                                <button id='" . $j . $isSend . "' class='form_button' name='X'> X </button>
+                                </div>";
                                 echo "</td></tr>";
                             }
                         }
                     }
 
+                    if (isset($_GET['msg'])) {
+                        delete($dbMsgInt, htmlspecialchars($_GET['msg']));
+                    }
+
                     if (empty($youvegotmail)) {
                         echo "Vous n'avez pas de nouveau message.";
                     } else {
-                        openMail($youvegotmail);
+                        openMail($youvegotmail, 0);
                     }
 
                     ?>
@@ -146,7 +168,7 @@
                     if (empty($youvesentmail)) {
                         echo "Vous n'avez pas envoyé de nouveau message.";
                     } else {
-                        openMail($youvesentmail);
+                        openMail($youvesentmail, 1);
                     }
 
                     ?>
@@ -154,8 +176,7 @@
             </div>
 
             <!-- Formulaire de contact / création de message -->
-            <div class="form">
-                <button id="closeContactForm" class="form_button"> X </button>
+            <div id="form" class="form">
                 <form action="msg_interne.php" method="POST" autocomplete="off">
 
                     <div class="form_group"> <label class="form_label" for="text"> Je souhaite contacter : </label>
@@ -182,7 +203,7 @@
 
                     <div class="form_group">
                         <button class="form_button" type="submit" name="submit"> Envoyer </button>
-                        <button class="form_button" type="reset"> Annuler </button>
+                        <button id="closeContactForm" class="form_button" type="reset"> Annuler </button>
                     </div>
                 </form>
 

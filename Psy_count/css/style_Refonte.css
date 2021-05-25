@@ -1,37 +1,39 @@
 /*REFONTE CSS*/
-html, body{
+
+html, body {
     box-sizing: border-box;
     margin: 0px;
     border: 0px;
 }
 
-.headerText{
+.headerText {
     text-align: center;
     color: #aa3558;
     height: 20vh;
 }
 
-.warning{
-    color:#aa3558;
-    margin-left: 23%; /*A CHANGER*/
+.warning {
+    color: #aa3558;
+    margin-left: 23%;
+    /*A CHANGER*/
 }
 
 /*POLICY*/
 
-.policy_box{
+.policy_box {
     background-color: white;
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
     width: 80%;
     /*height: 502px;*/
     padding: 2%;
     margin: 20%;
 }
 
-
 /*CONTACT/MESSAGERIE*/
-.form{
+
+.form {
     background-color: white;
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
     width: 100%;
     /*height: 502px;*/
     height: fit-content;
@@ -45,7 +47,7 @@ html, body{
     width: 100%;
 }
 
-.flex_column{
+.flex_column {
     display: flex;
     flex-wrap: column wrap;
     width: 100%;
@@ -53,42 +55,42 @@ html, body{
     padding: 2%;
 }
 
-.form_field{
+.form_field {
     display: flex;
 }
 
-.form_group{
+.form_group {
     width: 100%;
 }
 
-.flex_row{
+.flex_row {
     display: flex;
     flex-wrap: row wrap;
 }
 
-.form_content{
+.form_content {
     border-bottom: 2px solid gray;
-    display: fixed;   
+    display: fixed;
     width: 95%;
     outline: none;
     padding: 2%;
     resize: none;
 }
 
-.form_content:hover{
+.form_content:hover {
     resize: none;
     border-bottom: 2px solid #aa3558;
     background: none;
     transition-duration: 0.2s;
 }
 
-.form_label{
+.form_label {
     display: block;
     padding: 2%;
     margin-top: 2%;
 }
 
-input[type=text], select, textarea, option{
+input[type=text], select, textarea, option {
     resize: none;
     border-bottom: 2px solid grey;
     border-top: none;
@@ -99,16 +101,17 @@ input[type=text], select, textarea, option{
     font-family: "poppins";
 }
 
-optgroup { 
+optgroup {
     font-family: "poppins";
 }
 
-.form_content::placeholder { 
-    font-family : "poppins";
+.form_content::placeholder {
+    font-family: "poppins";
     font-size: 15px;
 }
 
 /*Boutons*/
+
 .form_button {
     background-color: white;
     color: #aa3558;
@@ -121,48 +124,68 @@ optgroup {
     border-radius: 1px;
     width: 100%;
     font-size: 20px;
-  }
-  
+}
+
 .form_button:hover {
     background-color: #aa3558;
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
     color: white;
     transition-duration: 0.5s;
-  }
-
-  .image-scale {
-      width: 100%;
-  }
-
-  img {
-      width: 100%;
-      height: auto;
-      object-fit: scale-down;
-  }
-
-  /*Place holder pour Msg interne...*/
-.niceBox {
-	border-radius: 5px;
-	bottom: 0;
-	z-index: 100;
-	display: block;
-    height: fit-content;
-	margin: 2%;
-	padding: 2%;
-	position: relative;
-	/*position: absolute;*/
-	background-color: rgb(0, 0, 0);
-	/* Fallback color */
-	background-color: rgba(255, 255, 255, 0.6);
-	/* Black w/opacity/see-through */
-	box-sizing: border-box;
-	box-shadow: 0px 0px 10px rgb(189, 189, 189);
 }
 
-table{
+.image-scale {
     width: 100%;
 }
-td,tr{
+
+img {
+    width: 100%;
+    height: auto;
+    object-fit: scale-down;
+}
+
+/*Place holder pour Msg interne...*/
+
+.niceBox {
+    border-radius: 5px;
+    bottom: 0;
+    z-index: 100;
+    display: block;
+    height: fit-content;
+    margin: 2%;
+    padding: 2%;
+    position: relative;
+    /*position: absolute;*/
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(255, 255, 255, 0.6);
+    /* Black w/opacity/see-through */
+    box-sizing: border-box;
+    box-shadow: 0px 0px 10px rgb(189, 189, 189);
+}
+
+table {
+    width: 100%;
+}
+
+td, tr {
     border-bottom: 2px solid #aa3558;
     padding: 2%;
+}
+
+td{
+    display: flex;
+}
+
+.eraseMsg{
+    float: right;
+    width: 50px;
+    height: 50px;
+    background: none;
+    border: none;
+}
+
+button[name=X]{
+    width: 30px;
+    margin-top: 0%;
+    float: right;
 }
