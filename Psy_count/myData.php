@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style_myData_.css">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script type="text/javascript" src="javascript//javaScriptCode.js"></script>
+    <script type="text/javascript" src="javascript//javaScriptFonctionData.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="page d'accés aux données du patient">
 </head>
@@ -35,7 +37,7 @@
             <h1>Mon medecin</h1>
             <div class="doctorData">
                 
-                <?php if($informations[0][3]==NULL){
+                <?php if($informationsMedecin[0][3]==NULL){
                                echo  "<img alt='image du patient' src=images/default-user.png>";                       
                   }else{                                     
                         echo "<img  alt='image du patient' src='images_utilisateurs/".$informationsMedecin[0][3] ."?rand=". rand() ."'>";     

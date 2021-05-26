@@ -20,6 +20,9 @@
      });
     });
 }); 
+
+
+
 function ActiveInputDataPage(){
     var champ = document.getElementsByClassName("datainput");
     for(var i=0, n=champ.length-1;i<n;i++) {
@@ -35,3 +38,5 @@ function modificationInformations(element){
 function redirectionDataPage3(){
     document.location.href="DataPage3.php";
 }
+
+

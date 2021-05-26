@@ -29,6 +29,7 @@
         <div>
             <a href="policy.php">Politique de confidentialité </a>
             <a href="TermsOfUse.php">Conditions d'utilisation </a>
+            <a href="accueil.php#menuBarAnchor" class="menuText"> A propos </a>
         </div>
     </section>
 </footer>

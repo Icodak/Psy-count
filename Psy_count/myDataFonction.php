@@ -34,8 +34,7 @@ function selectInformationsPatient(){
 }
   catch(PDOException $e){
   echo "Erreur : " . $e->getMessage();
-} 
-}
+}}
 
 
 function selectInformationsMedecin(){
@@ -59,10 +58,7 @@ function selectInformationsMedecin(){
 }
   catch(PDOException $e){
   echo "Erreur : " . $e->getMessage();
-} 
-
-}
-
+}}
 
 function selectInformationsMyMedecin($idPatient){
   $dbco = new PDO("mysql:host=localhost;dbname=serveur_psy_fi",'root','');
@@ -77,9 +73,6 @@ function selectInformationsMyMedecin($idPatient){
   return $resultat2;
 }
 
-
-
-
 function initialisation(){
     try{
       $dbco = new PDO("mysql:host=localhost;dbname=serveur_psy_fi",'root','');
@@ -90,17 +83,14 @@ function initialisation(){
         $resultat = $req->fetchAll();
         $_SESSION['DataEmail']=$resultat[0][0];
         $_SESSION['DataNom']=$resultat[0][1];
-        $_SESSION['DataPrenom']=$resultat[0][2];
-        
+        $_SESSION['DataPrenom']=$resultat[0][2];      
       }    
       catch(PDOException $e){
-
       echo "Erreur : " . $e->getMessage();
     } 
 }
 
 function changeDataUsers($prenom,$nom,$Email,$dateDeNaissance){
-
   $dbco = new PDO("mysql:host=localhost;dbname=serveur_psy_fi",'root','');
   $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
   $req =  $dbco->prepare(

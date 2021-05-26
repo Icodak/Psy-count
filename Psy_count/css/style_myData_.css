@@ -15,9 +15,11 @@ body{
 }
 .patient-Diagnostic{
 	height: 300px;
-	width: 80%;
+	width: 85%;
 	word-break: break-all;
 	resize: none;
+	background-color: #F3EFEE;
+	padding: 10px;
 	
 }
 
@@ -39,7 +41,9 @@ h1{
 	margin-bottom: 2%;
 }
 
-
+#save-Diagnostic{
+	background-color: grey;
+}
 
 .doctor-diagnostic{
 	min-height: 350px;
@@ -139,11 +143,12 @@ li{
 }
 
 .button2{
-	width: 240px;
-	height: 70px;
+	width: 270px;
+	height: 80px;
 }
 .doctorData{
 	flex-direction: column;
+	align-items: center;
 }
 ul{
 	padding-inline-start: 0px;
@@ -162,5 +167,12 @@ ul{
 	margin-left:0%;
 	margin-bottom: 10%;
 }
+
+.doctorData img{
+	max-width: 180px;
+	
+}
+
+
 
 }

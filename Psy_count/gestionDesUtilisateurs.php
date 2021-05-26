@@ -21,13 +21,13 @@
         <?php include("menuBar.php") ?>
 
     </header>
-<div class="main">
+    <div class="main">
 
-    <?php include_once("gestionDesUtilisateursFonctionSql.php") ?>
+        <?php include_once("gestionDesUtilisateursFonctionSql.php") ?>
 
 
 
-    <?php
+        <?php
 
     // On détermine sur quelle page on se trouve
     if (isset($_GET['page']) && !empty($_GET['page'])) {
@@ -47,51 +47,46 @@
     ?>
 
 
-    <div id="gestionUtilisateur" class="shadow2">
+        <div id="gestionUtilisateur" class="shadow2">
 
-        <h1>Gestion des Utilisateurs</h1>
-        <?php include_once("popUpGestion.php") ?>
-        <?php include_once("popUpGestion2.php") ?>
-
-        <?php
+            <h1>Gestion des Utilisateurs</h1>
+            <?php include_once("popUpGestion.php") ?>
+            <?php include_once("popUpGestion2.php") ?>
+    
+            <?php
         if (!isset($_SESSION["hidde"]) || $_SESSION["hidde"] == 'false') {
         ?>
 
-            <form method="post" action="gestionFonction.php">
-                <input type="submit" class="button2" value="Ajouter un profil" name="Ajouter">
-            </form>
-        <?php
-        }
-        ?>
-        <?php
-        if (!isset($_SESSION["hidde"]) || $_SESSION["hidde"] == 'false') {
-        ?>
-            
-                <div id="actionButton">
-                    <input class="button2 buttonAction" disabled type="button" id="ModifierButton" value="Modifier" name="Modifier">
-                    <input class="button2 buttonAction" disabled type="button" id="SuppButton" value="Supprimer" name="supprimer">
-                    <input class="button2 buttonAction" disabled type="button" id="banButton" value="Bannir" name="Bannir">
+            <div id="actionButton">
 
-                </div>
-
-                <div id="tableau">
+                <input type="submit" class="button2 "  id="AjouterButton" value="Ajouter un profil" name="Ajouter">
                
-                        <table>
+                <input class="button2 buttonAction" disabled type="button" id="ModifierButton" value="Modifier"
+                    name="Modifier">
+                <input class="button2 buttonAction" disabled type="button" id="SuppButton" value="Supprimer"
+                    name="supprimer">
+              
 
-                            <thead>
-                                <tr>
-                                   
-                                    <th><input class="text2 checkboxButton" type="checkbox" onclick="allSelect(this)"></th>
-                                    <th class="text2 responsiveTable" align="left" colspan="1">id</th>
-                                    <th class="text2" align="left" colspan="1">Nom</th>
-                                    <th class="text2" align="left" colspan="1">Prénom</th>
-                                    <th class="text2 responsiveTable" align="left" colspan="1">Email</th>
-                                    <th class="text2 responsiveTable2" align="left" colspan="1">Permission</th>
+            </div>
 
-                                </tr>
-                            </thead>
+            <div id="tableau">
 
-                            <?php
+                <table>
+
+                    <thead>
+                        <tr>
+
+                            <th><input class="text2 checkboxButton" type="checkbox" onclick="allSelect(this)"></th>
+                            <th class="text2 responsiveTable" align="left" colspan="1">id</th>
+                            <th class="text2" align="left" colspan="1">Nom</th>
+                            <th class="text2" align="left" colspan="1">Prénom</th>
+                            <th class="text2 responsiveTable" align="left" colspan="1">Email</th>
+                            <th class="text2 responsiveTable2" align="left" colspan="1">Permission</th>
+
+                        </tr>
+                    </thead>
+
+                    <?php
 
 
 
@@ -99,38 +94,39 @@
 
                             ?>
 
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <input type="checkbox" name="checkBoxGestion" class="checkBoxUtilisateurs" onclick="checkboxcheckGestionsUtilisateurs()" id=<?php echo  $resultat3[$i][0] ?>>
-                                        </td>
-                                        <td class="text2 responsiveTable" align="left"> <?php echo  $resultat3[$i][0] ?></td>
-                                        <td class="text2" align="left"> <?php echo  $resultat3[$i][1] ?> </td>
-                                        <td class="text2" align="left"> <?php echo  $resultat3[$i][2] ?> </td>
-                                        <td class="text2 responsiveTable" align="left"> <?php echo  $resultat3[$i][3] ?> </td>
-                                        <td class="text2 responsiveTable2" align="left"> <?php echo  $resultat3[$i][4] ?> </td>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="checkBoxGestion" class="checkBoxUtilisateurs"
+                                    onclick="checkboxcheckGestionsUtilisateurs()" id=<?php echo  $resultat3[$i][0] ?>>
+                            </td>
+                            <td class="text2 responsiveTable" align="left"> <?php echo  $resultat3[$i][0] ?></td>
+                            <td class="text2" align="left"> <?php echo  $resultat3[$i][1] ?> </td>
+                            <td class="text2" align="left"> <?php echo  $resultat3[$i][2] ?> </td>
+                            <td class="text2 responsiveTable" align="left"> <?php echo  $resultat3[$i][3] ?> </td>
+                            <td class="text2 responsiveTable2" align="left"> <?php echo  $resultat3[$i][4] ?> </td>
 
-                                    </tr>
-                                </tbody>
+                        </tr>
+                    </tbody>
 
 
-                            <?php
+                    <?php
                             }
                             ?>
 
-                        </table>
+                </table>
 
-                        <?php include("pagination.php") ?>
-                        </div>
-                   
-                </div>
-                </div>
-        <?php
+                <?php include("pagination.php") ?>
+            </div>
+
+        </div>
+    </div>
+    <?php
         }
         ?>
-</div>
-      <?php include("footer.php") ?>
-        
+    </div>
+    <?php include("footer.php") ?>
+
 </body>
 
 

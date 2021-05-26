@@ -29,6 +29,10 @@ body {
 	flex-direction: row;
 
 }
+.confirm-field input{
+	width: 150px;
+}
+
 
 .confirm-field>div {
 	display: flex;

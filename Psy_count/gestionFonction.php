@@ -14,12 +14,10 @@ if(isset($_POST['Ajouter']))
     header('Location: gestionDesUtilisateurs.php');
 
 }
-
 ?>
 
 
 <?php
-
 if(isset($_POST['idTable'])){
 
     $ID = json_decode($_POST['idTable']);
@@ -92,12 +90,10 @@ if(isset($_POST['typeId7'])){
 
 
 if(isset($_POST['Ajouter'])){
-
     $_SESSION["gestionModification"]='true';
     header('Location: gestionDesUtilisateurs.php');
-    
-
 }
+
 
 
 if(isset($_POST['ModificationButton'])){
@@ -119,12 +115,9 @@ if(isset($_POST['typeId5'])){
     $Email=$_POST['Email'];
 
     try{
-
     $sql = "INSERT INTO utilisateur(motDePasse,nom,prenom,Email,permission_lvl)
     VALUES('$Password','$LastName','$FirstName','$Email','$permission')"; 
     $dbco->exec($sql);
-
-
 
     }catch(PDOException $e){
         echo "Erreur : " . $e->getMessage();

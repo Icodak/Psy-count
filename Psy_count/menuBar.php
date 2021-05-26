@@ -41,7 +41,6 @@ session_start();
     }
     ?>
 
-    <a href="accueil.php#menuBarAnchor" class="menuText"> A propos </a>
 
 
     <?php

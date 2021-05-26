@@ -46,5 +46,15 @@ $(document).ready(function(){
     });
 }); 
 
+$(document).ready(function(){
+    $('#diagnostic-text-doctor').keypress(function(){
+        var button = document.getElementById('save-Diagnostic');
+        button.disabled=false;
+        button.style.backgroundColor="#aa3558";
+});
+});  
+
+
+
 
   

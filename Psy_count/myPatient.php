@@ -19,42 +19,29 @@
 
 <body>
     <header>
-        <?php include("menuBar.php") ?>
+        <?php include("menuBar.php") ;
+        include("myPatientFonction.php");
 
+        // On détermine sur quelle page on se trouve
+        if(isset($_GET['page']) && !empty($_GET['page'])) {$currentPage = (int) strip_tags($_GET['page']);
+        }else {$currentPage = 1;}
+        if (isset($_SESSION['showTable']) && $_SESSION['showTable']=='oui') {
+        $resultat = tableCreationMesPatient($currentPage);
+        }else{
+         $resultat = tableCreationPatient($currentPage);
+        } 
+        $resultat3 = $resultat[0];
+        $pages = $resultat[1];
+?>
     </header>
     <main>
 
-        <?php
- include("myPatientFonction.php");
 
-// On détermine sur quelle page on se trouve
-if (isset($_GET['page']) && !empty($_GET['page'])) {
-    $currentPage = (int) strip_tags($_GET['page']);
-} else {
-    $currentPage = 1;
-}
 
-if (isset($_SESSION['showTable']) && $_SESSION['showTable']=='oui') {
-    $resultat = tableCreationMesPatient($currentPage);
-}else{
-    $resultat = tableCreationPatient($currentPage);
-} 
-
-$resultat3 = $resultat[0];
-$pages = $resultat[1];
-
-?>
 
         <div class="gestionDesPatients shadow2">
-
-
-
-
             <h1>Gestion des patients</h1>
-
-
             <div class="selectButton">
-
                 <div>
                     <select id="select1" name="type" placeholder="classement">
                         <option value="">--Please choose an option--</option>
@@ -63,20 +50,23 @@ $pages = $resultat[1];
                     </select>
                 </div>
             </div>
-
-
-
             <div id="tableau">
-
                 <table>
-
                     <thead>
                         <tr>
 
-                            <th class="text2" align="left" colspan="1"><h2>Nom</h2></th>
-                            <th class="text2" align="left" colspan="1"><h2>Prénom</h2></th>
-                            <th class="text2 responsivePatient" align="left" colspan="1"><h2>Email</h2></th>
-                            <th class="text2" align="left" colspan="1"><h2>Actions</h2></th>
+                            <th class="text2" align="left" colspan="1">
+                                <h2>Nom</h2>
+                            </th>
+                            <th class="text2" align="left" colspan="1">
+                                <h2>Prénom</h2>
+                            </th>
+                            <th class="text2 responsivePatient" align="left" colspan="1">
+                                <h2>Email</h2>
+                            </th>
+                            <th class="text2" align="left" colspan="1">
+                                <h2>Actions</h2>
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -91,9 +81,15 @@ $pages = $resultat[1];
 
                         <tr>
 
-                            <td class="text2" align="left"><h2><?php echo  $resultat3[$i][0] ?> </h2></td>
-                            <td class="text2" align="left"><h2> <?php echo  $resultat3[$i][1] ?> </h2></td>
-                            <td class="text2 responsivePatient" align="left"><h2> <?php echo  $resultat3[$i][2] ?> </h2></td>
+                            <td class="text2" align="left">
+                                <h2><?php echo  $resultat3[$i][0] ?> </h2>
+                            </td>
+                            <td class="text2" align="left">
+                                <h2> <?php echo  $resultat3[$i][1] ?> </h2>
+                            </td>
+                            <td class="text2 responsivePatient" align="left">
+                                <h2> <?php echo  $resultat3[$i][2] ?> </h2>
+                            </td>
                             <td class="text2 " align="left">
                                 <?php if(isset($_SESSION['showTable']) && $_SESSION['showTable']=='oui'){?>
                                 <form method="post" action="myPatient2.php">
@@ -106,8 +102,9 @@ $pages = $resultat[1];
                                     echo'<input  type="image" class="actionButtonSupprimer" title="Supprimer ce patient" src="images/suppr.png" value='.$resultat3[$i][3],' >';
                                     }else{
                                     echo'<input  type="image" class="actionButtonAjouter" title="Ajouter un Utilisateur" src="images/ADD.png" value='.$resultat3[$i][3],'>';   
-                                    }?></td>
-                            
+                                    }?>
+                            </td>
+
                         </tr>
 
 
@@ -154,17 +151,6 @@ $pages = $resultat[1];
             <?php
     
     ?>
-
-
-
-
-
-
-
-
-
-
-
 
     </main>
 

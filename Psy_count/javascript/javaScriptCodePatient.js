@@ -37,8 +37,7 @@
                                 Add1: el.value,
                             },
                             success : function(code_html, statut){
-                                document.location.reload();
-                                diagnosticBoxCorrect("Nouveau patient ajouté avec succés");                               
+                                diagnosticBoxCorrect("Nouveau patient ajouté avec succés");                              
                             },
                      
                             error : function(resultat, statut, erreur){
@@ -83,7 +82,7 @@
 
 
 
-}
+
 
 
 

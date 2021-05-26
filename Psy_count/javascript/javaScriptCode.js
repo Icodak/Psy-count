@@ -121,12 +121,14 @@ function checkboxcheckGestionsUtilisateurs(){
 
     var element = document.getElementsByClassName("checkBoxUtilisateurs");
     var button  = document.getElementsByClassName("buttonAction");
-
+    
     for(var i=0, n=element.length;i<n;i++) {
         if(element[i].checked!=true){
             for(var p=0, f=button.length;p<f;p++) {
+               
                 button[p].disabled=true;
                 button[p].style.backgroundColor ="grey";
+                
             }
            
         }else{
@@ -136,6 +138,10 @@ function checkboxcheckGestionsUtilisateurs(){
             } 
             break;
         }
+    }
+    if(verifyOneCheckBox()){
+        button[0].disabled=true;
+        button[0].style.backgroundColor ="grey";
     }
 }
 
@@ -153,6 +159,22 @@ function verifyOneCheckBox(){
         return false;
     }
 }
+
+function verifyZeroCheckBox(){
+    var count =0;
+    var element = document.getElementsByClassName("checkBoxUtilisateurs");
+    for(var i=0, n=element.length;i<n;i++) {
+        if(element[i].checked==true){
+            count+=1;
+        }
+    }
+    if(count=0){
+        return true;
+    }else{
+        return false;
+    }
+}
+
 
 
 function create(q_txt, a_txt, id_faq) {
@@ -346,7 +368,32 @@ $(document).ready(function(){
 
     
  
+ $(document).ready(function(){
+    $('#AjouterButton').click(function(){
+        alert('ok');
+        var selection = document.getElementById("AjouterButton");
+      
+       $.ajax({
+        url : 'gestionFonction.php',
+        type : 'POST',
+        data : "Ajouter=" + selection.value,
+        success : function(code_html, statut){
+            document.location.reload();
+        },
+ 
+        error : function(resultat, statut, erreur){
+          
+        },
+ 
+        complete : function(resultat, statut){
+ 
+        }
+ 
+     });
+      
+    });
 
+});
 
 
     

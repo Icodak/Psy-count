@@ -26,27 +26,27 @@
         </div>
         <div class="input-field">
             <div>
-                <p>Prénom</p>
+                <p>Prénom*</p>
                 <div class="input-bar"><input type="text" required title="Votre prenom ne doit contenir que des lettres" name="FirstName"  /></div>
             </div>
             <div>
-                <p>Nom</p>
+                <p>Nom*</p>
                 <div class="input-bar"><input type="text" required title="Votre nom ne doit contenir que des lettres" name="LastName"  /></div>
             </div>
             <div>
-                <p>Date de naissance</p>
+                <p>Date de naissance*</p>
                 <div class="input-bar"><input name="dateDeNaissance" required type="date" /></div>
             </div>
             <div>
-                <p>Email</p>
+                <p>Email*</p>
                 <div class="input-bar"><input name="Email" required type="email" /></div>
             </div>
             <div>
-                <p>Code postal de cabinet</p>
+                <p>Code postal de cabinet*</p>
                 <div class="input-bar"><input name="codePostal"  required type="text" /></div>
             </div>
             <div>
-                <p>Spécialité</p>
+                <p>Spécialité*</p>
                 <select name="specialite" id="pet-select" placeholder="spécialité">
                     <option value="Anesthésiologie">Anesthésiologie</option>
                     <option value="Cardiologie">Cardiologie</option>
@@ -54,7 +54,7 @@
                 </select>
             </div>
             <div>
-                <p>Mot de passe ( au moins 8 caractéres dont 1 miniscule, 1 majuscule et 1 caractére spécial)</p>
+                <p>Mot de passe* ( au moins 8 caractéres dont 1 miniscule, 1 majuscule et 1 caractére spécial)</p>
                 <div class="input-bar passwordType"><input name="Password" class="showHide" required type="password"  />
                     <img src="images/eye.png" class="passwordImage" onclick="hidePassword()">
                     <img src="images/eyeHide.png" style="display:none;" class="passwordImage2" onclick="hidePassword()">

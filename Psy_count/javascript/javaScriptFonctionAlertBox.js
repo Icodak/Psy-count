@@ -20,12 +20,14 @@ function diagnosticBoxCorrect(text){
     buttonContainer.appendChild(button);
     box.appendChild(buttonContainer);
     
-
     document.body.appendChild(box);
 
+ 
     button.onclick = function() 
     {
+        document.location.reload(); 
         document.body.removeChild(box);
     } 
 }
+
 

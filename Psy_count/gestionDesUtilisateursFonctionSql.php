@@ -1,5 +1,3 @@
-
-
 <?php
 
 function modificationUtilisateur($ID)
@@ -12,14 +10,10 @@ $req2 =  $dbco->prepare(
 $req2->execute(array(":ID_Utilisateur"=>$ID));
 $resultat3 = $req2->fetchAll();
 return $resultat3 ;
-
 }catch(PDOException $e){
 echo "Erreur : " . $e->getMessage();
 }
-
 }
-
-
 
 
 function tableCreation($currentPage){
@@ -33,7 +27,7 @@ $exec = $res->execute();
 $resultat = $res->fetch();
 $nbUsers = (int) $resultat['nb_users'];
 // On détermine le nombre d'articles par page
-$parPage = 2;
+$parPage = 8;
 // On calcule le nombre de pages total
 $pages = ceil($nbUsers / $parPage);
 // Calcul du 1er article de la page

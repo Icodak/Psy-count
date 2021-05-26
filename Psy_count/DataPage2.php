@@ -35,7 +35,7 @@
                                 <?php if($resultat[0][3]==NULL){
                                echo  "<img src=images/default-user.png>";                       
                   }else{                                     
-                        echo "<img alt='mon image de profil' src='images_utilisateurs/".$resultat[0][3] ."?rand=". rand() ."'>";     
+                        echo "<img alt='mon image de profil' title='changer ma photo de profil' src='images_utilisateurs/".$resultat[0][3] ."?rand=". rand() ."'>";     
                   }              
                 ?>
                             </label>

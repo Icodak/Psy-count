@@ -13,8 +13,14 @@ html, body {
 #actionButton input{
   margin-right:1%;
   margin-left: 1%;
+  width: 20%;
+  font-size: 22px;
+}
+
+#actionButton input[type="button"]{
   background-color: grey;
 }
+
 
 
 body {
@@ -25,65 +31,16 @@ li {
   list-style: none;
 }
 
-.button4 {
-  background-color: grey;
-  border: none;
-  color: white;
-  padding: 10px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
-  margin: 4px 2px;
-  cursor: pointer;
-  min-width: 150px;
-  border-radius: 30px;
 
-}
 
 input[type="checkbox"]{
   transform: scale(2);
   /*zoom: 1.5;*/
 }
-input[type="button"]{
-  width: 20%;
-  font-size: 17px;
-}
 
-input[type="submit"]{
-  width: 40%;
-  font-size: 17px;
-}
 
-.button5 {
-  background-color: #aa3558;
-  border: none;
-  color: white;
-  padding: 10px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
-  margin: 4px 2px;
-  cursor: pointer;
-  margin-bottom: 20px;
-  border-radius: 30px;
-}
 
-.button3 {
-  background-color: #aa3558;
-  border: none;
-  color: white;
-  padding: 10px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
-  margin: 4px 2px;
-  cursor: pointer;
-  max-width: 150px;
-  border-radius: 30px;
-}
+
 
 #globalPage {
   display: block;
@@ -96,9 +53,10 @@ table {
   border-spacing: 0px 30px;
   background-color: white;
   margin-bottom: 20px;
+  font-size: 22px;
 }
 
-input[type='text'] {
+input {
   background-color: white;
   border: none;
   font-size: 20px;
@@ -176,8 +134,6 @@ td, th {
   padding-bottom: 20px;
 }
 
-
-
 form {
   text-align: center;
   display: flex;
@@ -209,6 +165,9 @@ section{
 
 
 @media only screen and (max-width: 851px) {
+  #actionButton input{
+   width: 85%;
+  }
 
   .checkboxButton{
     margin-right: 23px;

@@ -6,9 +6,9 @@
     <title>Mes données</title>
     <link rel="icon" type="image/png" href="images/psy-fi.png" />
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style_alert_box.css">
     <link rel="stylesheet" href="css/style_myData_.css">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
-    <link rel="stylesheet" href="css/style_alert_box.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script type="text/javascript" src="javascript//javaScriptFonctionPatient2.js"></script>
     <script type="text/javascript" src="javaScript/javaScriptFonctionAlertBox.js"></script>
@@ -74,7 +74,7 @@
                     <h1>Diagnostic du patient</h1>
             <div>
            
-            <textarea class="patient-Diagnostic" maxlength="1234"><?php if(isset($_SESSION['showTable'])&&$_SESSION['showTable']=='oui'){ echo $text['diagnostic'];}?></textarea>
+            <textarea class="patient-Diagnostic"  id="diagnostic-text-doctor" maxlength="1234"><?php if(isset($_SESSION['showTable'])&&$_SESSION['showTable']=='oui'){ echo $text['diagnostic'];}?></textarea>
 
 
             </div>
@@ -84,13 +84,21 @@
             <?php if( isset($_SESSION['showTable'])&&$_SESSION['showTable']=='oui'){
                 echo '<label class="button2" for="file2">';
                 echo '<img class="upload-image"src="images/upload.png">';
-                echo 'uploader<br> un compte rendu';
+                echo 'Charger<br> un compte rendu';
                 echo '</label>';
                 echo '<input id="file2"  accept=".pdf" hidden type="file">';              
                 }
                 ?>
             <?php if( isset($_SESSION['showTable'])&&$_SESSION['showTable']=='oui'){  
-                echo"<button class='button2' id='save-Diagnostic' > Enregistrer le diagnostic </button>";
+                     echo '<label class="button2" id="save-Diagnostic" for="file3" >';
+                     echo '<img class="upload-image"src="images/enregistrer.png">';
+                     echo 'Enregistrer<br> le diagnostic';
+                     echo '</label>';
+                     echo '<input id="file3"  accept=".pdf" type="button" hidden >';   
+
+
+
+            
             }
             ?>
                 
