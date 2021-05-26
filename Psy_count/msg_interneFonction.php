@@ -30,7 +30,7 @@
         $deleteMsg = $dbMsgInt->prepare(
             'DELETE
             FROM msg_interne
-            WHERE msg_content = ?'
+            WHERE ID_Message = ?'
         );
         $deleteMsg->execute(array($msgChoosen));
         echo "Message supprimé.";

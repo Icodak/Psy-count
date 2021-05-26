@@ -48,13 +48,17 @@
             $("#receptBox").hide();
         });
 
-        $("a[class='hidden']").click(function(event) {
+        $("a").click(function(event) {
             $("#openMessage" + event.target.id).show();
         });
 
         $("button[name='X']").click(function(event) {
             $("#openMessage" + event.target.id).hide();
         });
+
+        function demo() {
+            alert("text");
+        }
     });
 
     /*function pop_up(this) {
@@ -79,7 +83,7 @@
                 $msg_destinataire = htmlspecialchars($_POST['msg_destinataire']);
                 $sujet = htmlspecialchars($_POST['msgSubject_Cct']);
                 $message = htmlspecialchars($_POST['msg_Cct']);
-                echo $msg_destinataire . "\n"; //Destinataire
+                //echo $msg_destinataire . "\n"; //Destinataire
 
                 $msg_envoyeur = $dbMsgInt->prepare(
                     'SELECT Email 
@@ -88,14 +92,14 @@
                 );
                 $msg_envoyeur->execute(array($_SESSION['ID']));
                 $msg_envoyeur = $msg_envoyeur->fetch();
-                echo $msg_envoyeur[0] . "\n"; //Envoyeur
+                //echo $msg_envoyeur[0] . "\n"; //Envoyeur
 
                 $add_msg =
                     "INSERT INTO msg_interne (ID_Message, ID_Expediteur, ID_Destinataire, msg_date, msg_subject, msg_content)
                     VALUES ('', '$msg_envoyeur[0]', '$msg_destinataire', NOW(), '$sujet', '$message')" //Mettre des '' else it doesn't work/recognizes strings
                 ;
                 $dbMsgInt->exec($add_msg);
-                echo "Message envoyé dans la BDD :D";
+                //echo "Message bien envoyé.";
             }
         } else {
             $warning = "Veuillez compléter tous les champs.";
@@ -114,7 +118,7 @@
     }
     */ ?>
 
-        <div class="flex_column">
+        <div class="flex-column">
             <nav class="niceBox">
                 <button id="openContactForm" class="form_button"> Nouveau message </button>
                 <button id="openReceptBox" class="form_button"> Boite de réception </button>
@@ -122,94 +126,96 @@
             </nav>
 
             <!-- Boîte de réception -->
-            <div id="receptBox" class="niceBox">
-                <table>
-                    <?php
-                    include('msg_interneFonction.php');
-                    $youvegotmail = getRecep($dbMsgInt);
+            <div class = "flex-colW">
+                <div id="receptBox" class="niceBox">
+                    <table>
+                        <?php
+                        include('msg_interneFonction.php');
+                        $youvegotmail = getRecep($dbMsgInt);
 
-                    function openMail($youvegotmail, $isSend)
-                    {
-                        $confirm = 'Etes-vous sûr de vouloir supprimer ce message ? Il sera également supprimé pour votre correspondant.';
-                        for ($j = 0; $j < count($youvegotmail); $j += 1) {
-                            for ($i = 1; $i <= count($youvegotmail[0]) - 6; $i += 6) {
-                                echo "<tr><td>";
-                                echo "<a name='hidden' id='" . $j . $isSend . "'>" . "Message De : " . $youvegotmail[$j][$i] . " Sujet : " . $youvegotmail[$j][4 * $i] . " Le : " . $youvegotmail[$j][3 * $i] . "</a>";
-                                echo "<a class='eraseMsg' href='msg_interne.php?msg=" . $youvegotmail[$j][5 * $i] . "' onclick='return confirm(" . $confirm . ")'><img src='images/erase.png' alt='eraseMsg'></a>";
-                                //echo "<input type='image' value='Vérifier'onclick='return confirm(" . $confirm . ")' src='images/erase.png'>";
-                                echo "<div id='openMessage" . $j . $isSend . "' class='form'><span>" . $youvegotmail[$j][5 * $i] . "</span>
+                        function openMail($youvegotmail, $isSend)
+                        {
+                            $confirm = 'Etes-vous sûr de vouloir supprimer ce message ? Il sera également supprimé pour votre correspondant.';
+                            for ($j = 0; $j < count($youvegotmail); $j += 1) {
+                                for ($i = 1; $i <= count($youvegotmail[0]) - 6; $i += 6) {
+                                    echo "<tr><td>";
+                                    echo "<a id='" . $j . $isSend . "'>" . "Message De : " . $youvegotmail[$j][$i] . " Sujet : " . $youvegotmail[$j][4 * $i] . " Le : " . $youvegotmail[$j][3 * $i] . "</a>";
+                                    echo "<a class='eraseMsg' href='msg_interne.php?msg=" . $youvegotmail[$j][$i - 1] . "' onclick=\"demo();\"><img src='images/erase.png' alt='eraseMsg'></a>";
+                                    //echo "<input class='eraseMsg' type='button' onclick='demo();' src='images/erase.png'>";
+                                    echo "<div id='openMessage" . $j . $isSend . "' class='form'><span>" . $youvegotmail[$j][5 * $i] . "</span>
                                 <button id='" . $j . $isSend . "' class='form_button' name='X'> X </button>
                                 </div>";
-                                echo "</td></tr>";
+                                    echo "</td></tr>";
+                                }
                             }
                         }
-                    }
 
-                    if (isset($_GET['msg'])) {
-                        delete($dbMsgInt, htmlspecialchars($_GET['msg']));
-                    }
+                        if (empty($youvegotmail)) {
+                            echo "Vous n'avez pas de nouveau message.";
+                        } else {
+                            openMail($youvegotmail, 0);
+                            if (isset($_GET['msg'])) {
+                                delete($dbMsgInt, htmlspecialchars($_GET['msg']));
+                            }
+                        }
 
-                    if (empty($youvegotmail)) {
-                        echo "Vous n'avez pas de nouveau message.";
-                    } else {
-                        openMail($youvegotmail, 0);
-                    }
+                        ?>
+                    </table>
+                </div>
 
-                    ?>
-                </table>
-            </div>
+                <!-- Boîte d'envoi -->
+                <div id="sendBox" class="niceBox">
+                    <table>
+                        <?php
+                        $youvesentmail = getSend($dbMsgInt);
 
-            <!-- Boîte d'envoi -->
-            <div id="sendBox" class="niceBox">
-                <table>
-                    <?php
-                    $youvesentmail = getSend($dbMsgInt);
+                        if (empty($youvesentmail)) {
+                            echo "Vous n'avez pas envoyé de nouveau message.";
+                        } else {
+                            openMail($youvesentmail, 1);
+                        }
 
-                    if (empty($youvesentmail)) {
-                        echo "Vous n'avez pas envoyé de nouveau message.";
-                    } else {
-                        openMail($youvesentmail, 1);
-                    }
+                        ?>
+                    </table>
+                </div>
 
-                    ?>
-                </table>
-            </div>
+                <!-- Formulaire de contact / création de message -->
+                <div id="form" class="form">
+                    <form action="msg_interne.php" method="POST" autocomplete="off">
 
-            <!-- Formulaire de contact / création de message -->
-            <div id="form" class="form">
-                <form action="msg_interne.php" method="POST" autocomplete="off">
+                        <div class="form_group"> <label class="form_label" for="text"> Je souhaite contacter : </label>
+                            <select class="form_content" name="msg_destinataire">
+                                <optgroup>
+                                    <?php while ($d = $recipient_from_users->fetch()) { ?>
+                                        <option><?=
+                                                //$d['nom'] . " " . $d['prenom'] //?= == php echo
+                                                $d['Email']
+                                                ?></option>
+                                    <?php } ?>
+                                </optgroup>
+                            </select>
+                        </div>
 
-                    <div class="form_group"> <label class="form_label" for="text"> Je souhaite contacter : </label>
-                        <select class="form_content" name="msg_destinataire">
-                            <optgroup>
-                                <?php while ($d = $recipient_from_users->fetch()) { ?>
-                                    <option><?=
-                                            //$d['nom'] . " " . $d['prenom'] //?= == php echo
-                                            $d['Email']
-                                            ?></option>
-                                <?php } ?>
-                            </optgroup>
-                        </select>
-                    </div>
+                        <div class="form_group"> <label class="form_label" for="text"> Sujet du message </label>
+                            <input class="form_content" type="text" name="msgSubject_Cct" placeholder="ex : Contact avec l'administrateur PSY-fi..."> </label>
+                        </div>
 
-                    <div class="form_group"> <label class="form_label" for="text"> Sujet du message </label>
-                        <input class="form_content" type="text" name="msgSubject_Cct" placeholder="ex : Contact avec l'administrateur PSY-fi..."> </label>
-                    </div>
+                        <div class="form_group">
+                            <label class="form_label" for="text"> Message </label>
+                            <textarea class="form_content" name="msg_Cct" placeholder="Veuillez écrire votre message..."></textarea>
+                        </div>
 
-                    <div class="form_group">
-                        <label class="form_label" for="text"> Message </label>
-                        <textarea class="form_content" name="msg_Cct" placeholder="Veuillez écrire votre message..."></textarea>
-                    </div>
+                        <div class="form_group">
+                            <button class="form_button" type="submit" name="submit"> Envoyer </button>
+                            <button id="closeContactForm" class="form_button" type="reset"> Annuler </button>
+                        </div>
+                    </form>
 
-                    <div class="form_group">
-                        <button class="form_button" type="submit" name="submit"> Envoyer </button>
-                        <button id="closeContactForm" class="form_button" type="reset"> Annuler </button>
-                    </div>
-                </form>
-
+                </div>
             </div>
             <img alt="logo de psy-fi" src="images/psy-fi.png">
         </div>
+
     </section>
     <?php include("footer.php") ?>
 
