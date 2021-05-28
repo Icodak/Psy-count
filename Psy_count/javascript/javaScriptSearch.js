@@ -1,30 +1,30 @@
-function buildSearchBar(div) {
-
-    var prenom_txt = document.createTextNode("Prénom");
-    var prenom_p = document.createElement("p");
-    prenom_p.appendChild(prenom_txt);
-    var prenom_div = document.createElement("div");
-    var prenom_input = document.createElement("input");
-    var prenom_list = document.createElement("ul");
-    prenom_div.appendChild(prenom_input);
-    prenom_div.appendChild(prenom_list);
-    prenom_div.classList = "search-div";
-    prenom_list.classList = "search-list";
+function buildSearchInput(title, type) {
+    var div = document.createElement("div");
+    var search_txt = document.createTextNode(title);
+    var search_p = document.createElement("p");
+    search_p.appendChild(search_txt);
+    var search_div = document.createElement("div");
+    var search_input = document.createElement("input");
+    var search_list = document.createElement("ul");
+    search_div.appendChild(search_input);
+    search_div.appendChild(search_list);
+    search_div.classList = "search-div";
+    search_list.classList = "search-list";
 
     function cleanList() {
-        while (prenom_list.firstChild) {
-            prenom_list.firstChild.remove()
+        while (search_list.firstChild) {
+            search_list.firstChild.remove()
         }
     }
 
-    prenom_input.oninput = function () {
+    search_input.oninput = function () {
         $.ajax({
             url: "searchQuery.php",
             type: "GET",
             dataType: 'JSON',
             data: {
-                search_value: prenom_input.value + "%",
-                search_type: `prenom`
+                search_value: search_input.value + "%",
+                search_type: type
             }
         })
             .done(function (result) {
@@ -33,15 +33,15 @@ function buildSearchBar(div) {
                 //populate list
                 for (res of result) {
                     (function () {
-                        var prenom_li_txt = document.createTextNode(res[0]);
-                        var prenom_li = document.createElement("li");
-                        prenom_li.onclick = function () {
-                            prenom_input.value = prenom_li.textContent;
+                        var search_li_txt = document.createTextNode(res[0]);
+                        var search_li = document.createElement("li");
+                        search_li.onclick = function () {
+                            search_input.value = search_li.textContent;
                             cleanList();
                         };
-                        console.log(prenom_li);
-                        prenom_li.appendChild(prenom_li_txt);
-                        prenom_list.appendChild(prenom_li);
+                        console.log(search_li);
+                        search_li.appendChild(search_li_txt);
+                        search_list.appendChild(search_li);
                     })()
                 }
                 console.log(result);
@@ -54,11 +54,18 @@ function buildSearchBar(div) {
 
     };
 
-    prenom_list.onblur = function () {
+    search_list.onblur = function () {
         cleanList();
     }
 
-    div.appendChild(prenom_p);
-    div.appendChild(prenom_div);
+    div.appendChild(search_p);
+    div.appendChild(search_div);
 
+    return div;
+
+}
+
+function buildSearchBar(div){
+    div.appendChild(buildSearchInput("Prénom", "prenom"));
+    div.appendChild(buildSearchInput("Nom", "nom"));
 }
