@@ -274,6 +274,7 @@ option {
 
 .search-div {
     position: relative;
+    display: flex;
 }
 
 .search-list {
@@ -283,4 +284,24 @@ option {
 
 ul {
     list-style: none;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    
+}
+
+li {
+    padding: 5px;
+}
+
+
+li:nth-child(even) {
+    background-color: #f8e6e6;
+}
+li:nth-child(odd) {
+    background-color: #ecdbdb;
+}
+
+li:hover {
+    background-color: #cca7a7;
 }
