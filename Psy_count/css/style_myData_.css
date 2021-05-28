@@ -5,7 +5,7 @@ html, body {
 body{
 	position: relative;
 }
-#myDataPage{
+.myDataPage{
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
@@ -60,7 +60,6 @@ hr{
 }
 #doctorPage{
 	padding: 20px;
-	width: 100%;
 	display: flex;
 	flex-direction: column;
 	max-width: 600px;
@@ -125,7 +124,7 @@ li{
 	height: 30%;
 }
 @media only screen and (max-width: 1300px) {
-#myDataPage{
+.myDataPage{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -141,6 +140,7 @@ li{
 	margin-right: 2%;
 
 }
+
 
 .button2{
 	width: 270px;
@@ -173,6 +173,9 @@ ul{
 	
 }
 
-
+.subgraphPage img{
+	width: 520px;
+	height:320px;
+}
 
 }

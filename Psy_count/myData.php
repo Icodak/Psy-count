@@ -32,7 +32,7 @@
 	?>
 
 
-    <div id="myDataPage">
+    <div class="myDataPage">
         <div id="doctorPage">
             <h1>Mon medecin</h1>
             <div class="doctorData">

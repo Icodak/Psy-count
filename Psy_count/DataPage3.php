@@ -19,10 +19,9 @@
         ?>
     </header>
 
-
     <div class="wrapper2">
         <div class="main">
-           <form method="post" action="myDataFonction.php" onsubmit="return formDataVerificationPasswordChange()">
+            <form method="post" action="myDataFonction.php" onsubmit="return formDataVerificationPasswordChange()">
                 <div class="frame-header shadow2">
                     <div>
                         <h1>
@@ -63,7 +62,7 @@
                     </div>
 
                     <div class="error-message">
-                    <?php if(!empty($_SESSION['messageData'])){echo $_SESSION['messageData'];}?>
+                        <?php if(!empty($_SESSION['messageData'])){echo $_SESSION['messageData'];}?>
                     </div>
 
                     <div class="data-button">

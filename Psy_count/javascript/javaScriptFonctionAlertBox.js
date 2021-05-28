@@ -22,6 +22,7 @@ function diagnosticBoxCorrect(text){
     
     document.body.appendChild(box);
 
+
  
     button.onclick = function() 
     {

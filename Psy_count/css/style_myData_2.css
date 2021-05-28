@@ -348,7 +348,17 @@ form{
 	form{
 		width: 100%;
 	}
+	.main{
+		margin-bottom: 60px;
+	}
+	.topic-right h3{
+		font-size: 15px;
+	}
+	h1{
+		text-align: center;
+	}
 }
+
 @media (max-width: 300px) {
 	.topic-right2{
 		flex-direction: column;

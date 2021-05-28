@@ -297,6 +297,7 @@ $(document).ready(function(){
 $(document).ready(function(){
  
         $("#ModifierButton").click(function(){
+            alert('ok');
     
          if(verifyOneCheckBox()) 
          {

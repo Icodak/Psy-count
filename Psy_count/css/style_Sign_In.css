@@ -238,6 +238,10 @@ button:focus {
 	align-items: center;
 }
 
+
+
+
+
 @media (min-width: 550px) {
 	.latoType, p, a, .button {
 		font-size: 18px;

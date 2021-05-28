@@ -18,7 +18,7 @@
 
     <header>
         <?php 
-        include("menuBar.php"); 
+        include("menuBar.php");
         include("myPatientFonction.php");        
 	    $information = initialisationPatient($_POST['patientProfil']);
         $_SESSION['addUser']=$_POST['patientProfil'];  
@@ -27,7 +27,7 @@
     </header>
 
    
-    <div id="myDataPage">
+    <div class="myDataPage">
         <div id="doctorPage">
             <h1>Fiche du patient</h1>
             <div class="doctorData">
@@ -90,15 +90,12 @@
                 }
                 ?>
             <?php if( isset($_SESSION['showTable'])&&$_SESSION['showTable']=='oui'){  
-                     echo '<label class="button2" id="save-Diagnostic" for="file3" >';
+                     echo '<label class="button2" id="save-Diagnostic" disabled for="file3" >';
                      echo '<img class="upload-image"src="images/enregistrer.png">';
                      echo 'Enregistrer<br> le diagnostic';
                      echo '</label>';
                      echo '<input id="file3"  accept=".pdf" type="button" hidden >';   
-
-
-
-            
+      
             }
             ?>
                 

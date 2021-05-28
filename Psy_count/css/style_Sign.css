@@ -9,6 +9,10 @@ body {
 	height: 100%;
 }
 
+form{
+	position: relative;
+}
+
 .card {
 	display: flex;
 	margin:30px 0px;
@@ -21,7 +25,11 @@ body {
 	display: flex;
 	flex-direction: column;
 }
-
+.radio-choice{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
 .confirm-field {
 	padding: 20px;
 	justify-content: space-around;
@@ -33,6 +41,14 @@ body {
 	width: 150px;
 }
 
+.radio{
+	display: flex;
+	text-align: center;
+	align-items: center;
+	flex-direction: row;
+	justify-content: space-around;
+	font-size: 25px;
+}
 
 .confirm-field>div {
 	display: flex;
