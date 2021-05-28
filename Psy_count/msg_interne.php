@@ -25,15 +25,19 @@
         $(".form").hide(); //Check pk je peux pas juste hide flex_column
         $("img[alt='logo de psy-fi']").hide(); //Avec l'image ça rend pas ouf
         $('#sendBox').hide();
+        $("#openMessage").prop('disabled', false);
+        $("#openMessage2").prop('disabled', true);
 
         $("#closeContactForm").click(function() {
             $("#form").hide();
             //$("img").hide();
-            $('#sendBox').hide();
+            //$('#sendBox').hide();
             //$("#receptBox").show();
         });
         $("#openContactForm").click(function() {
             $("#form").show();
+            $("#openMessage").hide();
+            $("#openMessage2").hide();
             //$("img").show();
             //$("#receptBox").hide();
         });
@@ -41,19 +45,61 @@
         $("#openReceptBox").click(function() {
             $('#sendBox').hide();
             $("#receptBox").show();
+            $("#openMessage2").hide();
+            $("#openMessage").prop('disabled', false);
+            $("#openMessage2").prop('disabled', true);
         });
 
         $("#openSendBox").click(function() {
             $("#sendBox").show();
             $("#receptBox").hide();
+            $("#openMessage").hide();
+            $("#openMessage").prop('disabled', true);
+            $("#openMessage2").prop('disabled', false);
         });
 
         $("a").click(function(event) {
-            $("#openMessage" + event.target.id).show();
+            var confirm = true;
+            if ($("#form").is(":visible")) {
+                confirm = confirm("Voulez-vous arrêter d'écrire votre message ?");
+                alert(confirm);
+            }
+            id_msg = event.target.name;
+            $.ajax({
+                    url: "msg_interneFonction2.php",
+                    type: "POST",
+                    data: {
+                        id_msg: id_msg
+                    }
+                })
+                .done(function(result) {
+                    if (confirm) {
+                        if (!$('#openMessage').prop('disabled')) {
+                            $("#msg_content").html(result);
+                            $("#openMessage").show();
+                        }
+                        if (!$('#openMessage2').prop('disabled')) {
+                            $("#msg_content2").html(result);
+                            $("#openMessage2").show();
+                        }
+                    }
+                    //jQuery(this).prev("button").attr("closeMessage",id_msg);
+                })
+                .fail(function(err, thrownError) {
+                    console.log(err);
+                    console.log(thrownError);
+                })
+            //async = false
+
+            //$("#openMessage" + event.target.id).show();
         });
 
-        $("button[name='X']").click(function(event) {
-            $("#openMessage" + event.target.id).hide();
+        $("button[id='closeMessage']").click(function(event) {
+            $("#openMessage").hide();
+        });
+
+        $("button[id='closeMessage2']").click(function(event) {
+            $("#openMessage2").hide();
         });
 
         function demo() {
@@ -126,7 +172,7 @@
             </nav>
 
             <!-- Boîte de réception -->
-            <div class = "flex-colW">
+            <div class="flex-colW">
                 <div id="receptBox" class="niceBox">
                     <table>
                         <?php
@@ -139,79 +185,101 @@
                             for ($j = 0; $j < count($youvegotmail); $j += 1) {
                                 for ($i = 1; $i <= count($youvegotmail[0]) - 6; $i += 6) {
                                     echo "<tr><td>";
-                                    echo "<a id='" . $j . $isSend . "'>" . "Message De : " . $youvegotmail[$j][$i] . " Sujet : " . $youvegotmail[$j][4 * $i] . " Le : " . $youvegotmail[$j][3 * $i] . "</a>";
+                                    if ($isSend == 0) {
+                                        $rec = "Message de : " . $youvegotmail[$j][$i];
+                                    } else {
+                                        $rec = "Message à : " . $youvegotmail[$j][$i * 2];
+                                    }
+
+                                    echo "<a id='" . $j . $isSend . "' name='" . $youvegotmail[$j][$i - 1] . "'>" . $rec . " Sujet : " . $youvegotmail[$j][4 * $i] . " Le : " . $youvegotmail[$j][3 * $i] . "</a>";
                                     echo "<a class='eraseMsg' href='msg_interne.php?msg=" . $youvegotmail[$j][$i - 1] . "' onclick=\"demo();\"><img src='images/erase.png' alt='eraseMsg'></a>";
                                     //echo "<input class='eraseMsg' type='button' onclick='demo();' src='images/erase.png'>";
-                                    echo "<div id='openMessage" . $j . $isSend . "' class='form'><span>" . $youvegotmail[$j][5 * $i] . "</span>
+                                    /*echo "<div id='openMessage" . $j . $isSend . "' class='form2'><span>" . $youvegotmail[$j][5 * $i] . "</span>
                                 <button id='" . $j . $isSend . "' class='form_button' name='X'> X </button>
-                                </div>";
+                                </div>";*/
                                     echo "</td></tr>";
+                                    //$openMsg = [$j, $i, $isSend, $youvegotmail];
                                 }
                             }
+                            //return $openMsg;
+                            //print_r($openMsg);
                         }
 
                         if (empty($youvegotmail)) {
-                            echo "Vous n'avez pas de nouveau message.";
+                            echo "Vous avez 0 nouveau message.";
                         } else {
-                            openMail($youvegotmail, 0);
+                            $openMsg = openMail($youvegotmail, 0);
                             if (isset($_GET['msg'])) {
                                 delete($dbMsgInt, htmlspecialchars($_GET['msg']));
                             }
-                        }
 
                         ?>
                     </table>
                 </div>
-
-                <!-- Boîte d'envoi -->
-                <div id="sendBox" class="niceBox">
-                    <table>
-                        <?php
-                        $youvesentmail = getSend($dbMsgInt);
-
-                        if (empty($youvesentmail)) {
-                            echo "Vous n'avez pas envoyé de nouveau message.";
-                        } else {
-                            openMail($youvesentmail, 1);
+            <?php
+                            //    openMsg($openMsg[0], $openMsg[1], $openMsg[2], $openMsg[3]);
+                            echo "<div id='openMessage' class='form'><span id='msg_content'></span><button id='closeMessage' class='form_button' name='X'> X </button></div>";
                         }
+            ?>
 
-                        ?>
-                    </table>
+            <!-- Boîte d'envoi -->
+            <div id="sendBox" class="niceBox">
+                <table>
+                    <?php
+                    $youvesentmail = getSend($dbMsgInt);
+
+                    if (empty($youvesentmail)) {
+                        echo "Vous avez envoyé 0 nouveau message.";
+                    } else {
+
+                        openMail($youvesentmail, 1);
+
+
+                    ?>
+                </table>
+            </div>
+        <?php
+                        //   openMsg($openMsg[0], $openMsg[1], $openMsg[2], $openMsg[3]);
+                        //}
+                        //echo "<div id='openMessage2' class='form'></div>";
+                        //echo "<button id='closeMessage2' class='form_button' name='X'> X </button>";
+                        echo "<div id='openMessage2' class='form'><span id='msg_content2'></span><button id='closeMessage2' class='form_button' name='X'> X </button></div>";
+                    }
+        ?>
+
+        <!-- Formulaire de contact / création de message -->
+        <div id="form" class="form">
+            <form action="msg_interne.php" method="POST" autocomplete="off">
+
+                <div class="form_group"> <label class="form_label" for="text"> Je souhaite contacter : </label>
+                    <select class="form_content" name="msg_destinataire">
+                        <optgroup>
+                            <?php while ($d = $recipient_from_users->fetch()) { ?>
+                                <option><?=
+                                        //$d['nom'] . " " . $d['prenom'] //?= == php echo
+                                        $d['Email']
+                                        ?></option>
+                            <?php } ?>
+                        </optgroup>
+                    </select>
                 </div>
 
-                <!-- Formulaire de contact / création de message -->
-                <div id="form" class="form">
-                    <form action="msg_interne.php" method="POST" autocomplete="off">
-
-                        <div class="form_group"> <label class="form_label" for="text"> Je souhaite contacter : </label>
-                            <select class="form_content" name="msg_destinataire">
-                                <optgroup>
-                                    <?php while ($d = $recipient_from_users->fetch()) { ?>
-                                        <option><?=
-                                                //$d['nom'] . " " . $d['prenom'] //?= == php echo
-                                                $d['Email']
-                                                ?></option>
-                                    <?php } ?>
-                                </optgroup>
-                            </select>
-                        </div>
-
-                        <div class="form_group"> <label class="form_label" for="text"> Sujet du message </label>
-                            <input class="form_content" type="text" name="msgSubject_Cct" placeholder="ex : Contact avec l'administrateur PSY-fi..."> </label>
-                        </div>
-
-                        <div class="form_group">
-                            <label class="form_label" for="text"> Message </label>
-                            <textarea class="form_content" name="msg_Cct" placeholder="Veuillez écrire votre message..."></textarea>
-                        </div>
-
-                        <div class="form_group">
-                            <button class="form_button" type="submit" name="submit"> Envoyer </button>
-                            <button id="closeContactForm" class="form_button" type="reset"> Annuler </button>
-                        </div>
-                    </form>
-
+                <div class="form_group"> <label class="form_label" for="text"> Sujet du message </label>
+                    <input class="form_content" type="text" name="msgSubject_Cct" placeholder="ex : Contact avec l'administrateur PSY-fi..."> </label>
                 </div>
+
+                <div class="form_group">
+                    <label class="form_label" for="text"> Message </label>
+                    <textarea class="form_content" name="msg_Cct" placeholder="Veuillez écrire votre message..."></textarea>
+                </div>
+
+                <div class="form_group">
+                    <button class="form_button" type="submit" name="submit"> Envoyer </button>
+                    <button id="closeContactForm" class="form_button" type="reset"> Annuler </button>  <!--onclick="return confirm('bruh');"-->
+                </div>
+            </form>
+
+        </div>
             </div>
             <img alt="logo de psy-fi" src="images/psy-fi.png">
         </div>

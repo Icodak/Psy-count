@@ -1,4 +1,11 @@
  <?php
+    function openMsg($j, $i, $isSend, $youvegotmail)
+    {
+        echo "<div id='openMessage" . $j . $isSend . "' class='form'><span>" . $youvegotmail[$j][5 * $i] . "</span>
+    <button id='" . $j . $isSend . "' class='form_button' name='X'> X </button>
+    </div>";
+    }
+
     function getRecep($dbMsgInt)
     {
         $youvegotmail = $dbMsgInt->prepare(

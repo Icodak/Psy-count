@@ -32,6 +32,7 @@ html, body {
 /*CONTACT/MESSAGERIE*/
 
 .form {
+    border-radius: 5px;
     background-color: white;
     box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
     width: 100%;
@@ -39,6 +40,7 @@ html, body {
     height: fit-content;
     padding: 2%;
     min-width: 50%;
+    margin: 2% 0% 2% 2%;
 }
 
 .enbas {
@@ -204,3 +206,8 @@ button[name=X]{
     flex-flow: row;
     width: 100%;
 }
+
+.flex-colW:first-of-type{
+    margin-right: 2%;
+}
+
