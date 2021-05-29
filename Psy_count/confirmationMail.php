@@ -1,5 +1,8 @@
-
 <?php
+
+if(isset($_POST['code']))
+{
+
 
 try{
 	ini_set('sendmail_from', 'tullinnicolas@gmail.com');
@@ -7,14 +10,17 @@ try{
     error_reporting( E_ALL );
     $from = "tullinnicolas@gmail.com";
     $to = "tullinnicolas@gmail.com";
-    $subject = "Essai de PHP Mail";
-    $message = "Votre Code de verification est : ";
+    $subject = "Essai de PHP Mail ";
+    $message = "Votre Code de verification est : \$_POST['code']\ ";
     $headers = "De :" . $from;
     mail($to,$subject,$message, $headers);
     echo 'message envoyé';
 }
- catch(PDOException $e){
+catch(PDOException $e){
         echo "Erreur : " . $e->getMessage();
       }  
+
+    }
+
 
 ?>

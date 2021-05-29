@@ -4,7 +4,7 @@ var click = "true";
  function checkboxcheck(){
  
    		var element = document.getElementById("checkbox");
-   		var button  = document.getElementById("submit");
+   		var button  = document.getElementById("submit-patient");
 
         if(element.checked==true){
         		button.disabled=false;

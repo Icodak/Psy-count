@@ -10,15 +10,16 @@
     <link rel="stylesheet" href="css/style_Sign.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style_Radio.css">
+    <link rel="stylesheet" href="css/style_alert_box.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script type="text/javascript" src="javaScript/javaScriptCode.js" async defer></script>
     <script type="text/javascript" src="javaScript/javaScriptCodeVerification.js" async defer></script>
+    <script type="text/javascript" src="javascript/javaScriptEmailCode.js"></script>
 </head>
 
 <body class="gray-background">
 
-    <form class="card white-background shadow" action="getInformation.php" id="form1" method="post"
-        onsubmit=" return formVerificationPatient()">
+    <form class="card white-background shadow" action="getInformation.php" id="form1" method="post">
         <div class="select-menu">
             <ul>
                 <li><a href="sign-in.php" class="underline-link">S'identifier</a></li>
@@ -38,11 +39,11 @@
             <div class="custom-chexbox">
                 <p>Sexe*</p>
                <div class="radio-choice">
-                    <input type="radio" name="demo2" class="manWoman Man" id="demo2-a" checked>
-                    <label for="demo2-a">Homme</label>
-                    <input type="radio" name="demo2" class="manWoman Woman" id="demo2-b">
-                    <label for="demo2-b">Femme</label>
-                    </div>
+                    <input type="radio" name="genre" class="manWoman Man" id="radio1-up" checked>
+                    <label for="radio1-up">Homme</label>
+                    <input type="radio" name="genre" class="manWoman Woman" id="radio2-up">
+                    <label for="radio2-up">Femme</label>
+                </div>
             </div>
 
             <div>
@@ -79,8 +80,9 @@
 
         </div>
         <div class="confirm-field" id="signUpBlock">
-            <input class="button" type="submit" style="background-color: grey;" name="submit" value="S'inscrire"
-                id="submit">
+            <input class="button"  style="background-color: grey;" name="submit" value="S'inscrire"
+            onclick=" return formVerificationPatient()" disabled  id="submit-patient">
+
             <input class="button" type="button" onclick="locationAccueil()" value="Quitter">
         </div>
         <div class="white-color">

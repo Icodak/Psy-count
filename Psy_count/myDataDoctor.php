@@ -12,6 +12,8 @@
     <script type="text/javascript" src="javascript/javaScriptCode.js"></script>
     <script type="text/javascript" src="javascript/javaScriptCodePatient.js"></script>
     <script type="text/javascript" src="javascript/javaScriptFonctionData.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="page de donnée du medecin">
 </head>
 
 <body>

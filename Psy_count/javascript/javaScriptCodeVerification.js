@@ -1,10 +1,36 @@
 
-var changement = false;
+
+
+
+
+
+
+
+$(document).ready(function(){
+    $('#submit-patient').click(function(){
+        var passwordString ="";
+        var password = [8];
+        for (let pas = 0; pas < 8; pas++) {
+            password[pas]=getRandomInt(9);
+            var passwordString = passwordString+password[pas].toString();
+        }
+
+
+        formVerificationPatient(passwordString);
+
+
+    });
+}); 
+
+
+
+
 
 // fonction pour changer la bordure des input si la valeur de l'input est mauvaise
 function redIncorrectBorder (inputChoice){
     inputChoice.style.border="3px dashed red";
 }
+
 
 // fonction generale de verification des inputs
 function Verification(item,verificationRegex,inputForm){
@@ -55,7 +81,7 @@ function motDePasseVerification(mdp,mdp2,inputForm1,inputForm2,mdpRegex){
 }
 
 // fonction signup-patient
-function formVerificationPatient(){
+function formVerificationPatient(password){
 
     var ici =  document.forms[0];
     var input1 = ici['FirstName'];
@@ -83,17 +109,18 @@ function formVerificationPatient(){
     var result4 = motDePasseVerification(mdp1,mdp2,input5,input6,mdpRegex);
     var result5 = dateDeNaissanceVerification(date,input3);
 
-    return(
-        result1
-        &&
-        result2
-        &&
-        result3
-        &&
-        result4
-        &&
-        result5
-    )
+    if( result1&&result2&&result3&&result4&&result5)
+        {
+            popUpEmail("Un mail vient de vous étre envoyé rentrer le code",password);
+        }else{
+            return false;
+        }
+    
+
+
+    
+
+
 }
 // fonction signup-Medecin
 function formVerificationMedecin(){
@@ -114,6 +141,13 @@ function formVerificationMedecin(){
         result2
     )
 }
+
+
+
+
+
+
+
 
 function formDataVerificationPatient(){
     var ici =  document.forms[0];
@@ -139,9 +173,6 @@ function formDataVerificationPatient(){
     var result2 =  Verification(nom,nomPrenomRegex,input1);        
     var result3 =  Verification(email,EmailRegex,input3);
     var result4 =  dateDeNaissanceVerification(date,input4);
-
-  
-   
 
     return(
         result1

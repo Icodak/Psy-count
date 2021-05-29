@@ -5,13 +5,15 @@
     <meta charset="utf-8">
     <title>Mes données</title>
     <link rel="icon" type="image/png" href="images/psy-fi.png" />
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style_alert_box.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style_myData_.css">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script type="text/javascript" src="javascript//javaScriptFonctionPatient2.js"></script>
     <script type="text/javascript" src="javaScript/javaScriptFonctionAlertBox.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="page de donnée du patient pour le medecin">
 </head>
 
 <body>
@@ -90,7 +92,7 @@
                 }
                 ?>
             <?php if( isset($_SESSION['showTable'])&&$_SESSION['showTable']=='oui'){  
-                     echo '<label class="button2" id="save-Diagnostic" disabled for="file3" >';
+                     echo '<label class="button2"   for="file3"  id="save-Diagnostic" >';
                      echo '<img class="upload-image"src="images/enregistrer.png">';
                      echo 'Enregistrer<br> le diagnostic';
                      echo '</label>';

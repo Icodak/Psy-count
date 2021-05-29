@@ -17,16 +17,15 @@ session_start(); // On démarre la session AVANT toute chose
 
      if($_POST['type']=='patient'){
         $dateOfBirth=$_POST['dateDeNaissance'];
+        $gender=$_POST['genre'];
      }else{
         $PostalCode=$_POST['codePostal'];
         $PhoneNumber=$_POST['telephone']; 
         $speciality=$_POST['specialite']; 
      }
      
-
-     if( password_verify($Password_verify, $Password)){
-      if(filter_var($Email, FILTER_VALIDATE_EMAIL)){
-        
+     if(password_verify($Password_verify, $Password)){
+      if(filter_var($Email, FILTER_VALIDATE_EMAIL)){    
             $_SESSION['message']='';  
 
             try{
@@ -54,8 +53,8 @@ session_start(); // On démarre la session AVANT toute chose
                         VALUES('$Password','$LastName','$FirstName','$Email','$type')"; 
                 $dbco->exec($sql);
 
-                $sql = "INSERT INTO patient(dateDeNaissance,ID_Utilisateur)
-                        VALUES('$dateOfBirth',(SELECT ID_Utilisateur from utilisateur where Email='$Email'))"; 
+                $sql = "INSERT INTO patient(dateDeNaissance,genre,ID_Utilisateur)
+                        VALUES('$dateOfBirth','$gender',(SELECT ID_Utilisateur from utilisateur where Email='$Email'))"; 
                 $dbco->exec($sql);
 
               }else{

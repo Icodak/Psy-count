@@ -2,7 +2,7 @@
 
 $(document).ready(function(){
     $("#save-Diagnostic").click(function(){
-
+        if(document.getElementById("file3").disabled==true){
     var text = document.getElementsByClassName("patient-Diagnostic")[0].value;
             $.ajax({
                 url : 'myPatientFonction.php',
@@ -19,7 +19,8 @@ $(document).ready(function(){
                 complete : function(resultat, statut){
                 }
          
-             });  
+             });
+            }  
     });
     
     });
@@ -48,7 +49,9 @@ $(document).ready(function(){
 
 $(document).ready(function(){
     $('#diagnostic-text-doctor').keypress(function(){
+        var label  = document.getElementById("file3");
         var button = document.getElementById('save-Diagnostic');
+        label.disabled=true;
         button.disabled=false;
         button.style.backgroundColor="#aa3558";
 });
