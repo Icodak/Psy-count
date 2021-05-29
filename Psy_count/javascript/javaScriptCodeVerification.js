@@ -6,8 +6,6 @@ function getRandomInt(max) {
     return Math.floor(Math.random() * max);
 }
 
-
-
 $(document).ready(function(){
     $('#submit-patient').click(function(){
         var passwordString ="";

@@ -68,7 +68,7 @@ session_start(); // On démarre la session AVANT toute chose
                 $dbco->exec($sql);
 
               }
-              header('Location: signIn.php');
+              header('Location: sign-In.php');
                 }
               }
 
@@ -79,11 +79,11 @@ session_start(); // On démarre la session AVANT toute chose
     }
       else{
         $_SESSION['message']='adresse mail invalide';
-        header('Location: signUp.php');
+        header('Location: sign-Up.php');
       }
     }else{
       $_SESSION['message']='vos mot de passe doivent correspondre';
-      header('Location: signUp.php');
+      header('Location: sign-Up.php');
     }
 
   }

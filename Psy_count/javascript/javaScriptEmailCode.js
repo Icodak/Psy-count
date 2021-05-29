@@ -1,14 +1,16 @@
 
 function popUpEmail(text,code){
   
-
+    var numberOfTry=3;
     var box = document.createElement("div");
     var text2 = "Valider";
     var button = document.createElement("input");
     var textContainer = document.createElement("h1");
     var buttonContainer = document.createElement("div");
     var passwordContainer = document.createElement("div");
+    var errorMessage = document.createElement("p");
 
+    
     box.setAttribute("class","alert-box2 shadow2");
     box.setAttribute("id","box-patient-verification");
     passwordContainer.setAttribute("class","passwordInput");
@@ -64,27 +66,27 @@ function popUpEmail(text,code){
         
        var form = document.forms["form1"];
        HTMLFormElement.prototype.submit.call(form);
+      
 
       }else{
-        alert('fail');
+        if(numberOfTry==0)
+        {
+          document.body.removeChild(box);
+        }
+        errorMessage.innerHTML="code incorrect encore "+numberOfTry+" tentatives";
+        for (let pas = 0; pas < 8; pas++) {
+          document.getElementsByClassName("InputEmailVerification")[pas].value="";
+      }
+        numberOfTry--
       }
     };
-
-
-
-
-
-
-
-
-
-
-
 
     box.appendChild(textContainer);
     box.appendChild(passwordContainer);
     buttonContainer.appendChild(button);
     box.appendChild(buttonContainer);
+    box.appendChild(errorMessage);
+
     
     document.body.appendChild(box);
 
