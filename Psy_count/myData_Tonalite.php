@@ -1,11 +1,3 @@
-<?php
-$dbData = new PDO("mysql:host=localhost;dbname=serveur_psy_fi", 'root', '');
-$dbData->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-$dataType = 'Tonalite';
-include "myData_Fonction.php";
-$values = getData($dbData, $dataType);
-?>
-
 <!doctype html>
 <html lang="fr">
 
@@ -25,7 +17,15 @@ $values = getData($dbData, $dataType);
 <body>
 
     <header>
-        <?php include("menuBar.php") ?>
+        <?php include("menuBar.php");
+        $dbData = new PDO("mysql:host=localhost;dbname=serveur_psy_fi", 'root', '');
+        $dbData->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $dataType = 'Tonalite';
+        include "myData_Fonction.php";
+        $values = getData($dbData, $dataType);
+        $_SESSION['dataType'] = $dataType;
+        ?>
     </header>
 
     <div class="form">
@@ -40,7 +40,7 @@ $values = getData($dbData, $dataType);
                     </tr>
                 </thead>
                 <tbody>
-                    <?php forTable($values);?>
+                    <?php forTable($values); ?>
                 </tbody>
             </table>
         </div>

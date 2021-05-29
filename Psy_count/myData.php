@@ -105,7 +105,7 @@
                 <div class="graph">
                     <h1>Réaction</h1>
 
-                    <a href="myData_Reaction.php"><img class="responsive" src="images//reaction2.jpg"></a>
+                    <a href="myData_Reflexes.php"><img class="responsive" src="images//reaction2.jpg"></a>
 
                 </div>
             </div>
