@@ -2,7 +2,9 @@
 
 
 
-
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+}
 
 
 
@@ -14,11 +16,8 @@ $(document).ready(function(){
             password[pas]=getRandomInt(9);
             var passwordString = passwordString+password[pas].toString();
         }
-
-
         formVerificationPatient(passwordString);
-
-
+        
     });
 }); 
 
@@ -111,7 +110,7 @@ function formVerificationPatient(password){
 
     if( result1&&result2&&result3&&result4&&result5)
         {
-            popUpEmail("Un mail vient de vous étre envoyé rentrer le code",password);
+            popUpEmail("Un mail vient de vous étre envoyé, rentrez le code pour confirmer votre inscription",password);
         }else{
             return false;
         }

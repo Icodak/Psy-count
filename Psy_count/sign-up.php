@@ -81,7 +81,7 @@
         </div>
         <div class="confirm-field" id="signUpBlock">
             <input class="button"  style="background-color: grey;" name="submit" value="S'inscrire"
-            onclick=" return formVerificationPatient()" disabled  id="submit-patient">
+             disabled  id="submit-patient">
 
             <input class="button" type="button" onclick="locationAccueil()" value="Quitter">
         </div>

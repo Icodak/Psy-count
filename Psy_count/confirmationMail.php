@@ -11,7 +11,7 @@ try{
     $from = "tullinnicolas@gmail.com";
     $to = "tullinnicolas@gmail.com";
     $subject = "Essai de PHP Mail ";
-    $message = "Votre Code de verification est : \$_POST['code']\ ";
+    $message = "Votre Code de verification est ";
     $headers = "De :" . $from;
     mail($to,$subject,$message, $headers);
     echo 'message envoyé';

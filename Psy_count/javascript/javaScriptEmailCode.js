@@ -1,5 +1,6 @@
 
 function popUpEmail(text,code){
+  
 
     var box = document.createElement("div");
     var text2 = "Valider";
@@ -9,6 +10,7 @@ function popUpEmail(text,code){
     var passwordContainer = document.createElement("div");
 
     box.setAttribute("class","alert-box2 shadow2");
+    box.setAttribute("id","box-patient-verification");
     passwordContainer.setAttribute("class","passwordInput");
     button.setAttribute("id","submit-valdiation-code")
     button.setAttribute("class","button-box");
@@ -21,21 +23,13 @@ function popUpEmail(text,code){
     for (let pas = 0; pas < 8; pas++) {
         var newInput = document.createElement("input");
         newInput.setAttribute("class","InputEmailVerification");
+        newInput.maxLength=1;
         passwordContainer.appendChild(newInput);
     }
 
+    $(box).ready(function(){
+        console.log(code);
 
-    box.appendChild(textContainer);
-    box.appendChild(passwordContainer);
-    buttonContainer.appendChild(button);
-    box.appendChild(buttonContainer);
-    
-    document.body.appendChild(box);
-
-
-
-    button.onclick = function () {
-        alert('ok');
         $.ajax({
             url : 'confirmationMail.php',
             type : 'POST',
@@ -52,8 +46,49 @@ function popUpEmail(text,code){
      
             }
      
-         });
-    }
+         }); 
+
+       
+    }); 
+
+    button.onclick = function () {
+      verificationInput = document.getElementsByClassName("InputEmailVerification");    
+      var passwordStringConfirm ="";
+      for(var i=0, n=verificationInput.length;i<n;i++)
+      {
+            var passwordStringConfirm = passwordStringConfirm+verificationInput[i].value.toString();
+      }
+      if(passwordStringConfirm===code)
+      {
+      
+        
+       var form = document.forms["form1"];
+       HTMLFormElement.prototype.submit.call(form);
+
+      }else{
+        alert('fail');
+      }
+    };
+
+
+
+
+
+
+
+
+
+
+
+
+    box.appendChild(textContainer);
+    box.appendChild(passwordContainer);
+    buttonContainer.appendChild(button);
+    box.appendChild(buttonContainer);
+    
+    document.body.appendChild(box);
+
+ 
     
 }
 
@@ -61,9 +96,7 @@ function popUpEmail(text,code){
 
 
 
-function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
-}
+
 
 
 
