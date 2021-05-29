@@ -1,6 +1,7 @@
 /*REFONTE CSS*/
 
 html, body {
+    position: relative;
     box-sizing: border-box;
     margin: 0px;
     border: 0px;
@@ -211,3 +212,10 @@ button[name=X]{
     margin-right: 2%;
 }
 
+a{
+    word-break: break-word;
+}
+
+.niceMsg{
+    width: 70%;
+}

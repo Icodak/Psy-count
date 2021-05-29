@@ -1,7 +1,7 @@
 <?php
 $dbData = new PDO("mysql:host=localhost;dbname=serveur_psy_fi", 'root', '');
 $dbData->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-$dataType = 'Cardiaque';
+$dataType = 'Tonalite';
 include "myData_Fonction.php";
 $values = getData($dbData, $dataType);
 ?>
@@ -36,7 +36,7 @@ $values = getData($dbData, $dataType);
             <table>
                 <thead>
                     <tr>
-                        <th colspan="2">Mesures de fréquence cardiaque</th>
+                        <th colspan="2">Scores des mesures de tonalité</th>
                     </tr>
                 </thead>
                 <tbody>

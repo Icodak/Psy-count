@@ -1,7 +1,11 @@
 <?php
 $dbData = new PDO("mysql:host=localhost;dbname=serveur_psy_fi", 'root', '');
 $dbData->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$dataType = 'Temperature';
+include "myData_Fonction.php";
+$values = getData($dbData, $dataType);
 
+/*
 $fetchTemp = $dbData->query(
     'SELECT data_date,valeurs
     FROM mesures
@@ -14,13 +18,14 @@ $values = $fetchTemp->fetchAll();
 for ($i = 0; $i <= count($values) - 1; $i++) {
     //print_r($values[$i][0]);
     $array_data_date[$i] = $values[$i][0];
-    echo "\n\r";
+    //echo "\n\r";
     //print_r($values[$i][1]);
-    echo "\n\r";
+    //echo "\n\r";
     $array_data_value[$i] = $values[$i][1];
-    print_r($array_data_date);
-    print_r($array_data_value);
+    //print_r($array_data_date);
+    //print_r($array_data_value);
 }
+*/
 ?>
 
 <!doctype html>
@@ -37,8 +42,8 @@ for ($i = 0; $i <= count($values) - 1; $i++) {
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-        var endMe1 = true;
+    <script type="text/javascript" src="myData_Fonction.js">
+        /*var endMe1 = true;
         var endMe2 = true;
         window.addEventListener('resize', reportWindowSize);
 
@@ -61,9 +66,10 @@ for ($i = 0; $i <= count($values) - 1; $i++) {
             var data = google.visualization.arrayToDataTable([
                 ['data_date', 'valeurs'],
                 <?php
+                /*
                 for ($j = 0; $j <= count($array_data_date) - 1; $j++) {
                     echo "['" . $array_data_value[$j] . "'," . $array_data_date[$j] . "],";
-                }
+                }*/
                 ?>
             ]);
 
@@ -90,9 +96,9 @@ for ($i = 0; $i <= count($values) - 1; $i++) {
             var data = google.visualization.arrayToDataTable([
                 ['data_date', 'valeurs'],
                 <?php
-                for ($j = 0; $j <= count($array_data_date) - 1; $j++) {
+                /*for ($j = 0; $j <= count($array_data_date) - 1; $j++) {
                     echo "['" . $array_data_date[$j] . "'," . $array_data_value[$j] . "],";
-                }
+                }*/
                 ?>
             ]);
 
@@ -127,7 +133,7 @@ for ($i = 0; $i <= count($values) - 1; $i++) {
                 //alert("GUD");
                 table.style.display = "";
             }
-        }
+        }*/
     </script>
 </head>
 
@@ -150,10 +156,11 @@ for ($i = 0; $i <= count($values) - 1; $i++) {
                 </thead>
                 <tbody>
                     <?php
-                    for ($j = 0; $j <= count($array_data_date) - 1; $j++) {
+                    /*for ($j = 0; $j <= count($array_data_date) - 1; $j++) {
                         echo "<tr><td>" . $array_data_date[$j] . "</td>";
                         echo "<td>" . $array_data_value[$j] . "</td></tr>";
-                    }
+                    }*/
+                    forTable($values);
                     ?>
                 </tbody>
             </table>

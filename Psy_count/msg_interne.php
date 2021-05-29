@@ -191,8 +191,8 @@
                                         $rec = "Message à : " . $youvegotmail[$j][$i * 2];
                                     }
 
-                                    echo "<a id='" . $j . $isSend . "' name='" . $youvegotmail[$j][$i - 1] . "'>" . $rec . " Sujet : " . $youvegotmail[$j][4 * $i] . " Le : " . $youvegotmail[$j][3 * $i] . "</a>";
-                                    echo "<a class='eraseMsg' href='msg_interne.php?msg=" . $youvegotmail[$j][$i - 1] . "' onclick=\"demo();\"><img src='images/erase.png' alt='eraseMsg'></a>";
+                                    echo "<div class='niceMsg'><a id='" . $j . $isSend . "' name='" . $youvegotmail[$j][$i - 1] . "'>" . $rec . " Sujet : " . $youvegotmail[$j][4 * $i] . " Le : " . $youvegotmail[$j][3 * $i] . "</a></div>";
+                                    echo "<div><a class='eraseMsg' href='msg_interne.php?msg=" . $youvegotmail[$j][$i - 1] . "' onclick=\"demo();\"><img src='images/erase.png' alt='eraseMsg' class='eraseMsg'></a></div>";
                                     //echo "<input class='eraseMsg' type='button' onclick='demo();' src='images/erase.png'>";
                                     /*echo "<div id='openMessage" . $j . $isSend . "' class='form2'><span>" . $youvegotmail[$j][5 * $i] . "</span>
                                 <button id='" . $j . $isSend . "' class='form_button' name='X'> X </button>
@@ -275,18 +275,20 @@
 
                 <div class="form_group">
                     <button class="form_button" type="submit" name="submit"> Envoyer </button>
-                    <button id="closeContactForm" class="form_button" type="reset"> Annuler </button>  <!--onclick="return confirm('bruh');"-->
+                    <button id="closeContactForm" class="form_button" type="reset"> Annuler </button>
+                    <!--onclick="return confirm('bruh');"-->
                 </div>
             </form>
 
         </div>
             </div>
+            
             <img alt="logo de psy-fi" src="images/psy-fi.png">
         </div>
 
     </section>
     <?php include("footer.php") ?>
-
 </body>
+
 
 </html>

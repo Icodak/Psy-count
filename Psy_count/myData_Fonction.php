@@ -21,5 +21,12 @@ function forData($values){
         echo "['" . $values[$j][0] . "'," . $values[$j][1] . "],";
     }
 }
+
+function forTable($values){
+    for ($j = 0; $j <= count($values) - 1; $j++) {
+        echo "<tr><td>" . $values[$j][0] . "</td>";
+        echo "<td>" . $values[$j][1] . "</td></tr>";
+    }
+}
 ?>
 
