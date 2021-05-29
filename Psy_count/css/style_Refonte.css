@@ -53,7 +53,7 @@ html, body {
 .flex_column {
     display: flex;
     flex-wrap: column wrap;
-    width: 100%;
+    /*width: 100%;*/
     margin: 0% 10% 2% 10%;
     padding: 2%;
 }
@@ -101,7 +101,6 @@ input[type=text], select, textarea, option {
     border-right: none;
     background: none;
     padding: 2%;
-    font-family: "poppins";
 }
 
 optgroup {
