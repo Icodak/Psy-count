@@ -31,33 +31,35 @@ function popUpEmail(text,code){
     box.appendChild(buttonContainer);
     
     document.body.appendChild(box);
-    
 
-    $(document).ready(function(){
-        $('#submit-valdiation-code').click(function(){
-           
-            $.ajax({
-                url : 'confirmationMail.php',
-                type : 'POST',
-                data : "code=" + code,
-                success : function(code_html, statut){
-                    alert(code_html);
-                },
-         
-                error : function(resultat, statut, erreur){
-                  
-                },
-         
-                complete : function(resultat, statut){
-         
-                }
-         
-             });
-    
-        });
-    }); 
 
+
+    button.onclick = function () {
+        alert('ok');
+        $.ajax({
+            url : 'confirmationMail.php',
+            type : 'POST',
+            data : "code=" + code,
+            success : function(code_html, statut){
+                alert(code_html);
+            },
+     
+            error : function(resultat, statut, erreur){
+              
+            },
+     
+            complete : function(resultat, statut){
+     
+            }
+     
+         });
+    }
+    
 }
+
+
+
+
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
