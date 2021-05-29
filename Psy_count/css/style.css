@@ -188,6 +188,44 @@ option {
 	height:50px;
 }
 
+.search-bar {
+    display: flex;
+}
+
+.search-div {
+    position: relative;
+    display: flex;
+}
+
+.search-list {
+    position: absolute;
+    top: 100%;
+}
+
+.search-bar ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    
+}
+
+.search-bar li {
+    padding: 5px;
+}
+
+
+.search-bar li:nth-child(even) {
+    background-color: #f8e6e6;
+}
+.search-bar li:nth-child(odd) {
+    background-color: #ecdbdb;
+}
+
+.search-bar li:hover {
+    background-color: #cca7a7;
+}
+
 /* Media queries*/
 
 @media (min-width: 550px) {

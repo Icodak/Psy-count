@@ -9,8 +9,9 @@ function popUpEmail(text,code){
     var buttonContainer = document.createElement("div");
     var passwordContainer = document.createElement("div");
     var errorMessage = document.createElement("p");
+    var overlay =  document.createElement("div");
 
-    
+    overlay.setAttribute("class","overlay");
     box.setAttribute("class","alert-box2 shadow2");
     box.setAttribute("id","box-patient-verification");
     passwordContainer.setAttribute("class","passwordInput");
@@ -87,7 +88,8 @@ function popUpEmail(text,code){
     box.appendChild(buttonContainer);
     box.appendChild(errorMessage);
 
-    
+
+    document.body.appendChild(overlay);
     document.body.appendChild(box);
 
  

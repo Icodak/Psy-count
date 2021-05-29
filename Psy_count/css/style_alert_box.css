@@ -49,6 +49,18 @@
     max-width: 120px;
 }
 
+.overlay {
+    position: fixed;
+    left: 0px;
+    top:0px;
+    background-color: rgba(0,0 ,0 , 0.5);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: block;
+}
+
+
 .button-box:hover{
     transition: all 0.2s ease 0s;
     background-color: #6d2339;
