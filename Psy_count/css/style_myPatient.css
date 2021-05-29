@@ -46,6 +46,11 @@ h2{
   align-items: center;
 }
 
+.recherche{
+  display: flex;
+  flex-direction: row;
+}
+
 #image-Menu2{
   display: none;
   float: left;
@@ -116,7 +121,7 @@ input[type="checkbox"]{
   }
 .selectButton{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
 
 }

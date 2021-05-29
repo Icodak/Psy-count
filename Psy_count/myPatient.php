@@ -42,12 +42,13 @@
         <div class="gestionDesPatients shadow2">
             <h1>Gestion des patients</h1>
             <div class="selectButton">
-                <div>
+                <div class="recherche">
                     <select id="select1" name="type" placeholder="classement">
                         <option value="">--Please choose an option--</option>
                         <option value="non">patients sans Medecin</option>
                         <option value="oui">Mes patients</option>
                     </select>
+                    <?php include("searchbar.php");  ?>
                 </div>
             </div>
             <div id="tableau">

@@ -14,7 +14,7 @@ $(document).ready(function(){
             password[pas]=getRandomInt(9);
             var passwordString = passwordString+password[pas].toString();
         }
-        formVerificationPatient(passwordString);
+        formVerificationPatient(passwordString,document.getElementsByTagName("Email").value);
         
     });
 }); 
@@ -78,7 +78,7 @@ function motDePasseVerification(mdp,mdp2,inputForm1,inputForm2,mdpRegex){
 }
 
 // fonction signup-patient
-function formVerificationPatient(password){
+function formVerificationPatient(password,Email){
 
     var ici =  document.forms[0];
     var input1 = ici['FirstName'];
@@ -108,7 +108,7 @@ function formVerificationPatient(password){
 
     if( result1&&result2&&result3&&result4&&result5)
         {
-            popUpEmail("Un mail vient de vous étre envoyé, rentrez le code pour confirmer votre inscription",password);
+            popUpEmail("Un mail vient de vous étre envoyé, rentrez le code pour confirmer votre inscription",password,Email);
         }else{
             return false;
         }

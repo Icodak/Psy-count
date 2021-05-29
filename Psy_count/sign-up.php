@@ -53,7 +53,7 @@
             </div>
             <div>
                 <p>Email*</p>
-                <div class="input-bar"><input name="Email" required type="email" /></div>
+                <div class="input-bar"><input name="Email" required type="email"  /></div>
             </div>
             <div>
                 <p>Mot de passe* ( au moins 8 caractéres dont 1 minuscule, 1 majuscule et 1 caractére spécial) </p>

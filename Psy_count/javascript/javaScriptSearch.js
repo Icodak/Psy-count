@@ -11,6 +11,8 @@ function buildSearchInput(title, type) {
     search_div.classList = "search-div";
     search_list.classList = "search-list";
 
+    div.setAttribute("class","text-And-input");
+
     function cleanList() {
         while (search_list.firstChild) {
             search_list.firstChild.remove()

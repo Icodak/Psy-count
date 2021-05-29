@@ -1,5 +1,5 @@
 
-function popUpEmail(text,code){
+function popUpEmail(text,code,Email){
   
     var numberOfTry=3;
     var box = document.createElement("div");
@@ -35,8 +35,11 @@ function popUpEmail(text,code){
 
         $.ajax({
             url : 'confirmationMail.php',
-            type : 'POST',
-            data : "code=" + code,
+            type : 'post',
+            data :{      
+                 'codeEmail': code,
+                 'EmailName': Email
+            },
             success : function(code_html, statut){
                 alert(code_html);
             },
@@ -73,6 +76,7 @@ function popUpEmail(text,code){
         if(numberOfTry==0)
         {
           document.body.removeChild(box);
+          document.body.removeChild(overlay);
         }
         errorMessage.innerHTML="code incorrect encore "+numberOfTry+" tentatives";
         for (let pas = 0; pas < 8; pas++) {

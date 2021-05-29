@@ -214,6 +214,11 @@ option {
     padding: 5px;
 }
 
+.text-And-input{
+    display: flex;
+    flex-direction: row;
+}
+
 
 .search-bar li:nth-child(even) {
     background-color: #f8e6e6;
