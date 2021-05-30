@@ -1,5 +1,5 @@
 <?php
-$msg_envoi = false;
+/*$msg_envoi = false;
 
 try {
     if (isset($_POST['submit']) && isset($_POST["mail_Cct"]) && $_POST["mail_Cct"] != '') { //Check if we have an email
@@ -26,7 +26,7 @@ try {
     }
 } catch (Exception $e) {
     echo "Erreur :", $e->getMessage(), "\n";
-}
+}*/
 ?>
 
 <!doctype html>
@@ -46,6 +46,11 @@ try {
         <h2 class="headerText"> Une question ? Contactez-nous !</h2>
     </div>
 </header>
+
+
+<?php
+include "contact_Fonction2.php";
+?>
 
 <body>
 <?php

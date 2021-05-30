@@ -1,5 +1,5 @@
 <?php
-if (isset($_SESSION['type'])) {
+if (isset($_SESSION['type']) && !empty($_SESSION['type'])) {
     if ($_SESSION['type'] == 'patient') {
         //echo 'Test messagerie patient : ' . $_SESSION['ID'] . "\n\r";
         //Trouver ID_Medecin à partir de ID_Utilisateur du patient
@@ -84,9 +84,7 @@ if (isset($_SESSION['type'])) {
         );
         $allUsersMail->execute(array($_SESSION['ID']));
         $allUsersMail = $allUsersMail->fetchAll();
-    } else {
-        return;
-    }
+    } 
 
     //Get nom, prenom, Email, from ID_Utilisateur pour auto remplir le formulaire
     $user_data = $dbMsg->prepare(
@@ -100,4 +98,5 @@ if (isset($_SESSION['type'])) {
     $_SESSION["user_prenom"] = $user_data["prenom"];
     $_SESSION["user_nom"] = $user_data["nom"];
     $_SESSION["user_mail"] = $user_data["Email"];
+
 }

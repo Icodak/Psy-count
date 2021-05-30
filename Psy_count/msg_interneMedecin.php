@@ -74,7 +74,7 @@
 
                 <!-- Formulaire de contact / création de message -->
                 <div id="form" class="form">
-                    <form action="msg_internePatient.php" method="POST" autocomplete="off">
+                    <form action="msg_interneMedecin.php" method="POST" autocomplete="off">
 
                         <div class="form_group"> <label class="form_label" for="text"> Je souhaite contacter : </label>
                             <select class="form_content" name="msg_destinataire">

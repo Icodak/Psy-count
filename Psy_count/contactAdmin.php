@@ -32,13 +32,13 @@ include "contact_Fonction.php";
             </h3>
         </div>
     <?php
-        header("Refresh: 5;URL=contactMedecin.php");
+        header("Refresh: 5;URL=contactAdmin.php");
     else :
     ?>
 
         <div class="flex_column">
             <div class="form">
-                <form action="contactMedecin.php" method="POST" autocomplete="off">
+                <form action="contactAdmin.php" method="POST" autocomplete="off">
 
                     <div class="form_group"> <label class="form_label" for="text"> Je souhaite contacter : </label>
                         <select class="form_content" name="msg_destinataire">
