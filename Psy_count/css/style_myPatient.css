@@ -48,7 +48,19 @@ h2{
 
 .recherche{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
+}
+
+#select1{
+  width: 60%;
+  margin-bottom: 1%;
+}
+
+#searchButton{
+  max-width: 30%;
+  margin-left: 2%;
+  box-shadow:none;
 }
 
 #image-Menu2{

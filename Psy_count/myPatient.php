@@ -28,8 +28,12 @@
         if (isset($_SESSION['showTable']) && $_SESSION['showTable']=='oui') {
         $resultat = tableCreationMesPatient($currentPage);
         }else{
-         $resultat = tableCreationPatient($currentPage);
+        $resultat = tableCreationPatient($currentPage);
         } 
+        if(isset($_SESSION['researchPatient']))
+        {
+        $resultat = tableCreationResearchPatient($currentPage,$searchTable);
+        }
         $resultat3 = $resultat[0];
         $pages = $resultat[1];
 ?>

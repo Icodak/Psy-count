@@ -67,9 +67,34 @@ function addPatient($idUtilisateur_ofMedecin,$idUtilsiateur)
   }
   catch(PDOException $e){
     echo "Erreur : " . $e->getMessage();
-  
 }
 }
+
+
+function tableCreationResearchPatient($currentPage,$searchTable)
+{
+// On détermine le nombre total d'elements
+
+$nbUsers = count($searchTable);
+// On détermine le nombre d'elements par page
+$parPage = 4;
+// On calcule le nombre de pages total
+$pages = ceil($nbUsers / $parPage);
+// Calcul du 1er element de la page
+$premier = ($currentPage * $parPage) - $parPage;
+$resultTable=[];
+for ($i =$premier ; $i <= $parPage; $i++) {
+  $resultTable[$i]=$searchTable[$i];
+}
+$Resultat=array();
+$Resultat[0]=$resultTable;
+$Resultat[1]=$pages;
+return $Resultat;
+
+}
+
+
+
 
 
 function tableCreationPatient($currentPage){

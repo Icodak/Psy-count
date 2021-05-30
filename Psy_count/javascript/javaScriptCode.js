@@ -344,7 +344,7 @@ $(document).ready(function(){
             type : 'POST',
             data : "choice=" + selection.value,
             success : function(code_html, statut){
-                document.location.reload();
+                unlockSearchInput();
             },
      
             error : function(resultat, statut, erreur){
@@ -361,6 +361,15 @@ $(document).ready(function(){
 
  });
 
+ function unlockSearchInput(){
+    $('#tableau').load('myPatient.php #tableau');
+    var inputToUnlock = document.getElementsByClassName("search-div");
+    for (let pas = 0; pas < inputToUnlock.length; pas++) {
+        inputToUnlock[pas].childNodes[0].disabled=false;
+    }
+    document.getElementById("searchButton").disabled=false;
+    
+}
 
 
 

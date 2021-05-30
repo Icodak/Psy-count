@@ -36,10 +36,8 @@ function popUpEmail(text,code,Email){
         $.ajax({
             url : 'confirmationMail.php',
             type : 'post',
-            data :{      
-                 'codeEmail': code,
-                 'EmailName': Email
-            },
+            data : 'codeEmail=' + code + '&EmailName=' + Email,      
+             
             success : function(code_html, statut){
                 alert(code_html);
             },
