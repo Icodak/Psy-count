@@ -179,7 +179,7 @@
                         include('msg_interneFonction.php');
                         $youvegotmail = getRecep($dbMsgInt);
 
-                        function openMail($youvegotmail, $isSend)
+                        /*function openMail($youvegotmail, $isSend)
                         {
                             $confirm = 'Etes-vous sûr de vouloir supprimer ce message ? Il sera également supprimé pour votre correspondant.';
                             for ($j = 0; $j < count($youvegotmail); $j += 1) {
@@ -196,19 +196,19 @@
                                     //echo "<input class='eraseMsg' type='button' onclick='demo();' src='images/erase.png'>";
                                     /*echo "<div id='openMessage" . $j . $isSend . "' class='form2'><span>" . $youvegotmail[$j][5 * $i] . "</span>
                                 <button id='" . $j . $isSend . "' class='form_button' name='X'> X </button>
-                                </div>";*/
+                                </div>";//
                                     echo "</td></tr>";
                                     //$openMsg = [$j, $i, $isSend, $youvegotmail];
                                 }
                             }
                             //return $openMsg;
                             //print_r($openMsg);
-                        }
+                        }*/
 
                         if (empty($youvegotmail)) {
                             echo "Vous avez 0 nouveau message.";
                         } else {
-                            $openMsg = openMail($youvegotmail, 0);
+                            //$openMsg = openMail($youvegotmail, 0);
                             if (isset($_GET['msg'])) {
                                 delete($dbMsgInt, htmlspecialchars($_GET['msg']));
                             }
@@ -232,7 +232,7 @@
                         echo "Vous avez envoyé 0 nouveau message.";
                     } else {
 
-                        openMail($youvesentmail, 1);
+                        //openMail($youvesentmail, 1);
 
 
                     ?>

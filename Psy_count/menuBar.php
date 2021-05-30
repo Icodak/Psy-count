@@ -48,11 +48,23 @@ session_start();
 
     <?php
     if (isset($_SESSION['connexion']) && $_SESSION['connexion'] == 1) {
+      if ($_SESSION['type'] == 'patient') {
     ?>
-      <a href="msg_interne.php" class="menuText"> Messagerie </a>
+      <a href="msg_internePatient.php" class="menuText"> Messagerie </a>
     <?php
     }
+    if ($_SESSION['type'] == 'Medecin') {
     ?>
+      <a href="msg_interneMedecin.php" class="menuText"> Messagerie </a>
+    <?php
+    }
+    if ($_SESSION['type'] == 'Admin') {
+    ?>
+      <a href="msg_interneAdmin.php" class="menuText"> Messagerie </a>
+  <?php
+    }
+  }
+  ?>
 
     <?php
     if (!isset($_SESSION['connexion']) || $_SESSION['connexion'] != 1) {

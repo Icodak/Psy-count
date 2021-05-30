@@ -176,11 +176,11 @@ td, tr {
     padding: 2%;
 }
 
-td{
+td {
     display: flex;
 }
 
-.eraseMsg{
+.eraseMsg {
     float: right;
     width: 50px;
     height: 50px;
@@ -189,32 +189,36 @@ td{
     border: none;
 }
 
-button[name=X]{
+button[name=X] {
     width: 30px;
     margin: 0% auto;
     float: right;
 }
 
-.flex-column{
+.flex-column {
     flex-flow: column;
     margin: 0% 10% 0% 10%;
     width: 100%;
 }
 
-.flex-colW{
+.flex-colW {
     display: flex;
     flex-flow: row;
     width: 100%;
 }
 
-.flex-colW:first-of-type{
+.flex-colW:first-of-type {
     margin-right: 2%;
 }
 
-a{
+a {
     word-break: break-word;
 }
 
-.niceMsg{
+.niceMsg {
     width: 70%;
+}
+
+.niceMsg>a {
+    cursor: pointer;
 }
