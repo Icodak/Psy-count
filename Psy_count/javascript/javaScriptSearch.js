@@ -90,7 +90,6 @@ function createButtonResearch(Text){
                 researchElementTwo: SecondInputVal
             },
             success: function (result) {
-                alert(result);
                 $('#tableau').load('myPatient.php #tableau');
                 $('#logicpage').load('myPatient.php #logicpage');
             }

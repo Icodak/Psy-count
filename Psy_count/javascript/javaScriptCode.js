@@ -297,7 +297,7 @@ $(document).ready(function(){
 $(document).ready(function(){
  
         $("#ModifierButton").click(function(){
-            alert('ok');
+            
     
          if(verifyOneCheckBox()) 
          {
@@ -313,8 +313,7 @@ $(document).ready(function(){
                         type : 'POST',
                         data : "ModificationButton=" + checkboxes[i].id,
                         success : function(code_html, statut){
-                            document.location.reload();
-                            
+                            document.location.reload();        
                         },
                  
                         error : function(resultat, statut, erreur){
@@ -380,7 +379,6 @@ $(document).ready(function(){
  
  $(document).ready(function(){
     $('#AjouterButton').click(function(){
-        alert('ok');
         var selection = document.getElementById("AjouterButton");
       
        $.ajax({

@@ -39,7 +39,13 @@ input[type="checkbox"]{
 }
 
 
+.section-gestion-utilisateurs{
+display: flex;
+width: 100%;
+align-items: center;
+justify-content: center;
 
+}
 
 
 #globalPage {
@@ -66,8 +72,8 @@ input {
   display: flex;
     flex-direction: column;
     text-align: center;
-    width: 80%;
     padding-right: 2%;
+    width: 100%;
     padding-left: 2%;
     min-height: 60vh;
     margin-bottom: 3%;
@@ -157,12 +163,16 @@ select {
   display: flex;
     justify-content: center;
     text-align: center;
+    width: 90%;
 }
 
 section{
   display: block;
 }
-
+.popUp{
+  display: flex;
+  flex-direction: column;
+}
 
 @media only screen and (max-width: 851px) {
   #actionButton input{

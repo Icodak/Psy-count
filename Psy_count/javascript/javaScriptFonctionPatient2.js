@@ -3,7 +3,7 @@
 $(document).ready(function(){
     $("#save-Diagnostic").click(function(){
         if(document.getElementById("file3").disabled==true){
-    var text = document.getElementsByClassName("patient-Diagnostic")[0].value;
+        var text = document.getElementsByClassName("patient-Diagnostic")[0].value;
             $.ajax({
                 url : 'myPatientFonction.php',
                 type : 'POST',
@@ -36,8 +36,7 @@ $(document).ready(function(){
         contentType: false,  
         data : formData,      
         success : function(code_html, statut){
-            document.location.reload();       
-            alert(code_html);    
+            document.location.reload();        
         },
         error : function(resultat, statut, erreur){       
         },

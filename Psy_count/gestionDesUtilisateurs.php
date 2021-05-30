@@ -21,6 +21,7 @@
         <?php include("menuBar.php") ?>
 
     </header>
+    <section class="section-gestion-utilisateurs">
     <div class="main">
 
         <?php include_once("gestionDesUtilisateursFonctionSql.php") ?>
@@ -125,8 +126,9 @@
         }
         ?>
     </div>
+    </section>
     <?php include("footer.php") ?>
-
+   
 </body>
 
 

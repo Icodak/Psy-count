@@ -12,6 +12,8 @@
         if(isset($_SESSION["gestionModification"])&&$_SESSION["gestionModification"]=='true'){
         ?>
 
+
+    
     <form method="post" action="gestionFonction.php">
     <select name="permission" id="pet-select" placeholder="spécialité">
                                  <option value=""selected disabled hidden id="placeholderType2">niveau de permission</option>
@@ -22,7 +24,7 @@
 
 
     
-    <input name="typeId4" type="submit" class="button3" value="choisir" name="Ajouter">
+    <input name="typeId4" type="submit" class="button2" value="choisir" name="Ajouter">
     </form>
 <?php
 
@@ -83,8 +85,8 @@
          </div>
             <div>
 
-    <input type="submit" class='button3' name="typeId5" value="valider">
-    <input type="submit" class='button3' name="typeId6" value="annuler">
+    <input type="submit" class='button2' name="typeId5" value="valider">
+    <input type="submit" class='button2' name="typeId6" value="annuler">
 </div>
 </div>
 
@@ -153,8 +155,8 @@
          </div>
             <div>
 
-    <input type="submit" class='button3' name="typeId5" value="valider">
-    <input type="submit" class='button3' name="typeId6" value="annuler">
+    <input type="submit" class='button2' name="typeId5" value="valider">
+    <input type="submit" class='button2' name="typeId6" value="annuler">
 </div>
 </div>
 
@@ -219,10 +221,10 @@
          </div>
             <div>
 
-    <input type="submit" class='button3' name="typeId5" value="valider">
+    <input type="submit" class='button2' name="typeId5" value="valider">
 
 
-    <input type="submit" class='button3' name="typeId6" value="annuler">
+    <input type="submit" class='button2' name="typeId6" value="annuler">
 </div>
 </div>
 
