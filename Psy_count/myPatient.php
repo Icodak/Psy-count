@@ -18,7 +18,7 @@
 </head>
 
 <body>
-    <header>
+    <header id="logicpage">
         <?php include("menuBar.php") ;
         include("myPatientFonction.php");
 
@@ -30,10 +30,11 @@
         }else{
         $resultat = tableCreationPatient($currentPage);
         } 
-        if(isset($_SESSION['researchPatient']))
+        if(isset($_SESSION['researchPatient'])&&$_SESSION['researchPatient']!=[])
         {
-        $resultat = tableCreationResearchPatient($currentPage,$searchTable);
+        $resultat = tableCreationResearchPatient($currentPage,$_SESSION['researchPatient']);
         }
+        
         $resultat3 = $resultat[0];
         $pages = $resultat[1];
 ?>

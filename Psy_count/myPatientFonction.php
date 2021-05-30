@@ -82,9 +82,11 @@ $parPage = 4;
 $pages = ceil($nbUsers / $parPage);
 // Calcul du 1er element de la page
 $premier = ($currentPage * $parPage) - $parPage;
-$resultTable=[];
+$resultTable=array();
 for ($i =$premier ; $i <= $parPage; $i++) {
+  if(isset($searchTable[$i])){
   $resultTable[$i]=$searchTable[$i];
+  }
 }
 $Resultat=array();
 $Resultat[0]=$resultTable;
@@ -222,6 +224,7 @@ function addPdfReport($imageSize,$imageName,$imageTmpName){
 
 if(isset($_POST['choice'])){
   session_start();
+  $_SESSION['researchPatient']=[]; 
   $_SESSION['showTable']=$_POST['choice'];
 }
 

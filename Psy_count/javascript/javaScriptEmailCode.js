@@ -31,12 +31,18 @@ function popUpEmail(text,code,Email){
     }
 
     $(box).ready(function(){
+      alert(code);
+      alert(Email);
         console.log(code);
 
         $.ajax({
             url : 'confirmationMail.php',
             type : 'post',
-            data : 'codeEmail=' + code + '&EmailName=' + Email,      
+            data :
+            {
+              codeEmail:code,
+              EmailName:Email
+            },      
              
             success : function(code_html, statut){
                 alert(code_html);

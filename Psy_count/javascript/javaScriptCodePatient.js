@@ -53,7 +53,7 @@
 
                    else if(el.name=="SelectPatient") {
                   
-                        var element  = document.getElementById("select1");                  
+                        var element  = document.getElementById("select1");                 
                         choice = element.selectedIndex 
                         valeur_cherchee = element.options[choice].value; 
                         $.ajax({

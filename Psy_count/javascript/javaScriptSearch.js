@@ -31,6 +31,7 @@ function buildSearchInput(title, type) {
             }
         })
             .done(function (result) {
+                console.log(result);
                 //clean list
                 cleanList();
                 //populate list
@@ -79,7 +80,7 @@ function createButtonResearch(Text){
     {
         var searchDiv = document.getElementsByClassName("search-div");
         firstInputVal = searchDiv[0].childNodes[0].value; 
-        SecondInputVal =searchDiv[1].childNodes[0].value; 
+        SecondInputVal = searchDiv[1].childNodes[0].value; 
 
         $.ajax({
             url: "researchPatient.php",
@@ -90,7 +91,8 @@ function createButtonResearch(Text){
             },
             success: function (result) {
                 alert(result);
-                document.location.reload()
+                $('#tableau').load('myPatient.php #tableau');
+                $('#logicpage').load('myPatient.php #logicpage');
             }
         });
     }

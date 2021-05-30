@@ -14,7 +14,7 @@ $(document).ready(function(){
             password[pas]=getRandomInt(9);
             var passwordString = passwordString+password[pas].toString();
         }
-        formVerificationPatient(passwordString,document.getElementsByTagName("Email").value);
+        formVerificationPatient(passwordString,document.getElementsByClassName("Email-to-verify")[0].value);
         
     });
 }); 
