@@ -94,8 +94,6 @@
     </form>
 
 </body>
-<script>
-document.getElementById("submit").disabled = true;
-</script>
+
 
 </html>
