@@ -1,6 +1,6 @@
 @font-face {
     font-family: "poppins";
-    src: url("../fonts/POPPINS-LIGHT.TTF") format("truetype"), url("../fonts/POPPINS-REGULAR.TTF") format("truetype"), url("../fonts/POPPINS-BOLD.TTF") format("truetype"), url("../fonts/POPPINS-EXTRABOLD.TTF") format("truetype");
+    src: url("/fonts/POPPINS-LIGHT.TTF") format("truetype"), url("../fonts/POPPINS-REGULAR.TTF") format("truetype"), url("../fonts/POPPINS-BOLD.TTF") format("truetype"), url("../fonts/POPPINS-EXTRABOLD.TTF") format("truetype");
     font-weight: lighter, normal, bold, bolder;
 }
 
@@ -10,21 +10,14 @@ html, body {
     border: 0px;
     margin: 0px;
     padding: 0px;
-    min-height: 100vh;
 }
 
-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-p, a, li {
+p, a {
     font-size: 3.5vw;
 }
 
 a {
-    color: #aa3558;
+    color: #6d2339;
     text-decoration: none;
 }
 
@@ -82,17 +75,12 @@ input {
     background-color: #f9f0f0;
     color: #6d2339;
     border: none;
-    display: flex;
     border-bottom: 2px solid rgb(80, 80, 80);
     padding: 10px;
     text-align: left;
     align-items: center;
     width: 100%;
     font-size: 3.5vw;
-}
-
-input:hover {
-    border-bottom: 2px solid #6d2339;
 }
 
 input[type=button]:hover{
@@ -106,8 +94,7 @@ input::placeholder {
 }
 
 input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active {
-    -webkit-box-shadow: 0 0 0 1000px #f9f0f0 inset;
-    font-family: "poppins", sans-serif, monospace;
+    background-color: #f9f0f0;
 }
 
 select {
@@ -126,7 +113,11 @@ option {
 }
 
 .shadow {
-    box-shadow: 0px 0px 5px rgb(85, 85, 85);
+    box-shadow: 0px 0px 5px rgb(224, 224, 224);
+}
+
+.shadow2{
+    box-shadow: 0 12px 16px 0 rgb(0 0 0 / 24%), 0 17px 50px 0 rgb(0 0 0 / 19%);
 }
 
 .button {
@@ -138,14 +129,39 @@ option {
     font-weight: lighter;
     letter-spacing: 0.2px;
     padding: 10px 20px;
-    margin: 0px 10px;
     text-align: center;
-    justify-content: center;
     text-decoration: none;
     display: flex;
     cursor: pointer;
     transition: all 0.2s ease 0s;
+    justify-content: center;
 }
+
+.button2 {
+    background-color: #aa3558;
+    border: none;
+    display: flex;
+    font-weight: lighter;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    color: white;
+    box-shadow: 0 5px 10px 0 rgb(0 0 0 / 24%), 0 10px 25px 0 rgb(0 0 0 / 19%);
+    transition: all 0.5s ease 0s;
+    justify-content: center;
+    padding: 10px;
+    align-items: center;
+    font-size: 15px;
+    min-width: 150px;
+}
+
+
+.button2:hover{
+    transition: all 0.2s ease 0s;
+    background-color: #6d2339;
+    letter-spacing: 1px; 
+}
+
 
 .button:hover {
     transition: all 0.2s ease 0s;
@@ -169,15 +185,58 @@ option {
     text-decoration: underline #aa3558 2px;
 }
 
-.underline {
-    text-underline-offset: 10px;
-    text-decoration: underline #aa3558 2px;
+.upload-image{
+	width: 50px;
+	height:50px;
+}
+
+.search-bar {
+    display: flex;
+}
+
+.search-div {
+    position: relative;
+    display: flex;
+}
+
+.search-list {
+    position: absolute;
+    top: 100%;
+}
+
+.search-bar ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    
+}
+
+.search-bar li {
+    padding: 5px;
+}
+
+.text-And-input{
+    display: flex;
+    flex-direction: row;
+}
+
+
+.search-bar li:nth-child(even) {
+    background-color: #f8e6e6;
+}
+.search-bar li:nth-child(odd) {
+    background-color: #ecdbdb;
+}
+
+.search-bar li:hover {
+    background-color: #cca7a7;
 }
 
 /* Media queries*/
 
 @media (min-width: 550px) {
-    input, p, a,li,  .button, select {
+    input, p, a, .button, select {
         font-size: 3vw;
     }
     nav p, nav a, nav .button {
@@ -186,7 +245,7 @@ option {
 }
 
 @media (min-width: 900px) {
-    input, p, a,li, .button, select {
+    input, p, a, .button, select {
         font-size: 2vw;
     }
     nav p, nav a, nav .button {
@@ -195,7 +254,7 @@ option {
 }
 
 @media (min-width: 1200px) {
-    input, p, a,li, .button, nav p, nav a, nav .button, select {
+    input, p, a, .button, nav p, nav a, nav .button, select {
         font-size: 20px;
     }
 }

@@ -2,7 +2,7 @@
 $dbMsgInt = new PDO("mysql:host=localhost;dbname=serveur_psy_fi", 'root', '');
 $dbMsgInt->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-if (isset($_POST['id_msg'])){
+if (isset($_POST['id_msg']) && !empty($_POST['id_msg'])){
     $id_msg = htmlspecialchars($_POST['id_msg']);
     $result = $dbMsgInt->prepare(
         'SELECT msg_content

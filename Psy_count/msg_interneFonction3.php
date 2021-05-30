@@ -33,7 +33,7 @@ try {
                 VALUES ('', '$msg_envoyeur[0]', '$msg_destinataire', NOW(), '$sujet', '$message')" //Mettre des '' else it doesn't work/recognizes strings
             ;
             $dbMsg->exec($add_msg);
-            echo "Message bien envoyé.";
+            echo "<span class='alert'>Message bien envoyé.</span>";
         }
     } else {
         $warning = "Veuillez compléter tous les champs.";

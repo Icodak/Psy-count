@@ -2,7 +2,7 @@
 
     function openMail($youvegotmail, $isSend,$userType)
     {
-        $confirm = 'Etes-vous sûr de vouloir supprimer ce message ? Il sera également supprimé pour votre correspondant.';
+        echo "<table class='wideT'>";
         for ($j = 0; $j < count($youvegotmail); $j += 1) {
             for ($i = 1; $i <= count($youvegotmail[0]) - 6; $i += 6) {
                 echo "<tr><td>";
@@ -11,20 +11,21 @@
                 } else {
                     $rec = "Message à : " . $youvegotmail[$j][$i * 2];
                 }
-                echo "<div class='niceMsg'><a id='" . $j . $isSend . "' name='" . $youvegotmail[$j][$i - 1] . "'>" . $rec . " Sujet : " . $youvegotmail[$j][4 * $i] . " Le : " . $youvegotmail[$j][3 * $i] . "</a></div>";
+                echo "<div class='niceMsg'><a class='clickMsg' id='" . $j . $isSend . "' name='" . $youvegotmail[$j][$i - 1] . "'>" . $rec . " Sujet : " . $youvegotmail[$j][4 * $i] . " Le : " . $youvegotmail[$j][3 * $i] . "</a></div>";
                 if($userType == "patient"){
-                    echo "<div><a class='eraseMsg' href='msg_internePatient.php?msg=" . $youvegotmail[$j][$i - 1] . "'img src='images/erase.png' alt='eraseMsg' class='eraseMsg'></a></div>";
+                    echo "<a class='eraseMsg' href='msg_internePatient.php?msg=" . $youvegotmail[$j][$i - 1] . "'><img src='images/erase.png' alt='eraseMsg' class='eraseMsg'></a>";
                 }
                 if($userType == "Medecin"){
-                    echo "<div><a class='eraseMsg' href='msg_interneMedecin.php?msg=" . $youvegotmail[$j][$i - 1] . "'><img src='images/erase.png' alt='eraseMsg' class='eraseMsg'></a></div>";
+                    echo "<a class='eraseMsg' href='msg_interneMedecin.php?msg=" . $youvegotmail[$j][$i - 1] . "'><img src='images/erase.png' alt='eraseMsg' class='eraseMsg'></a>";
                 }
                 if($userType == "Admin"){
-                    echo "<div><a class='eraseMsg' href='msg_interneAdmin.php?msg=" . $youvegotmail[$j][$i - 1] . "'><img src='images/erase.png' alt='eraseMsg' class='eraseMsg'></a></div>";
+                    echo "<a class='eraseMsg' href='msg_interneAdmin.php?msg=" . $youvegotmail[$j][$i - 1] . "'><img src='images/erase.png' alt='eraseMsg' class='eraseMsg'></a>";
                 }
                 //echo "<div><a class='eraseMsg' href='msg_interne.php?msg=" . $youvegotmail[$j][$i - 1] . "' onclick=\"demo();\"><img src='images/erase.png' alt='eraseMsg' class='eraseMsg'></a></div>";
                 echo "</td></tr>";
             }
         }
+        echo "</table>";
     }
 
     function openMsg($j, $i, $isSend, $youvegotmail)
@@ -68,7 +69,7 @@
             WHERE ID_Message = ?'
         );
         $deleteMsg->execute(array($msgChoosen));
-        echo "Message supprimé.";
+        echo "<span class='alert'>Message supprimé.</span>";
     }
     ?>
 

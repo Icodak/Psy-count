@@ -167,8 +167,26 @@ img {
     width: 100%;
 }
 
-table {
+/*.flex-colW > div > div{
+    flex-flow: column-reverse;
+}*/
+
+.wideT{
     width: 100%;
+}
+
+div[id=receptBox] > div{
+    flex-flow: column-reverse;
+    width: 100%;
+}
+div[id=sendBox] > div{
+    flex-flow: column-reverse;
+    width: 100%;
+}
+
+.alert{
+    color: #aa3558;
+    margin: auto 10%;
 }
 
 td, tr {
@@ -208,7 +226,7 @@ button[name=X] {
 }
 
 .flex-colW:first-of-type {
-    margin-right: 2%;
+    /*margin-right: 2%;*/
 }
 
 a {
@@ -216,9 +234,10 @@ a {
 }
 
 .niceMsg {
-    width: 70%;
+    width: 100%;
 }
 
 .niceMsg>a {
     cursor: pointer;
 }
+
