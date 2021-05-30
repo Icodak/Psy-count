@@ -65,16 +65,18 @@ try {
     } 
     ?>
 -->
-    <?php
+<?php
     if ($msg_envoi) :
     ?>
         <div>
-            <h3 class="headerText"> Message bien reçu. Nous vous recontacterons prochainement.</h2>
+            <h3 class="headerText"> Message bien envoyé. Nous vous recontacterons prochainement.</br>
+                Vous allez être redirigé vers la page de contact dans 5 secondes.
+            </h3>
         </div>
     <?php
+        header("Refresh: 5;URL=contactPatient.php");
     else :
     ?>
-
 
         <div class="flex_column">
             <div class="form">

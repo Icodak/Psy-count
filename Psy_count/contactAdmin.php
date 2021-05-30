@@ -32,18 +32,21 @@ include "contact_Fonction.php";
             </h3>
         </div>
     <?php
-        header("Refresh: 5;URL=contactPatient.php");
+        header("Refresh: 5;URL=contactMedecin.php");
     else :
     ?>
 
         <div class="flex_column">
             <div class="form">
-                <form action="contactPatient.php" method="POST" autocomplete="off">
+                <form action="contactMedecin.php" method="POST" autocomplete="off">
 
                     <div class="form_group"> <label class="form_label" for="text"> Je souhaite contacter : </label>
                         <select class="form_content" name="msg_destinataire">
-                            <option value="medTraitant">Mon médecin traitant</option>
-                            <option value="adminContact">L'administrateur PSY-fi</option>
+                            <optgroup>
+                                <?php foreach ($allUsersMail as $values) {
+                                    echo "<option>" . $values['Email'] . "</option>";
+                                } ?>
+                            </optgroup>
                         </select>
                     </div>
 

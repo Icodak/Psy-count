@@ -15,7 +15,7 @@
 <header>
     <div>
         <?php include("menuBar.php") ?>
-        <h2 class="headerText"> Consultation et Aide</h2>
+        <h2 class="headerText"> Messages</h2>
     </div>
 </header>
 
