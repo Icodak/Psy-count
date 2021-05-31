@@ -125,13 +125,12 @@ input::placeholder, textarea::placeholder {
 input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active {
     background-color: #f9f0f0;
 }
-  
+
 textarea, .text-content {
     transition: all 0.3s ease 0s;
     overflow-wrap: break-word;
     hyphens: auto;
     resize: none;
-
 }
 
 select {
@@ -153,7 +152,7 @@ option {
     box-shadow: 0px 0px 5px rgb(224, 224, 224);
 }
 
-.shadow2{
+.shadow2 {
     box-shadow: 0 12px 16px 0 rgb(0 0 0 / 24%), 0 17px 50px 0 rgb(0 0 0 / 19%);
 }
 
@@ -193,13 +192,11 @@ option {
     border-radius: 5px;
 }
 
-
-.button2:hover{
+.button2:hover {
     transition: all 0.2s ease 0s;
     background-color: #6d2339;
-    letter-spacing: 1px; 
+    letter-spacing: 1px;
 }
-
 
 .button:hover {
     transition: all 0.2s ease 0s;
@@ -223,9 +220,9 @@ option {
     text-decoration: underline #aa3558 2px;
 }
 
-.upload-image{
-	width: 50px;
-	height:50px;
+.upload-image {
+    width: 50px;
+    height: 50px;
 }
 
 .search-bar {
@@ -247,22 +244,21 @@ option {
     margin: 0px;
     padding: 0px;
     width: 100%;
-    
 }
 
 .search-bar li {
     padding: 5px;
 }
 
-.text-And-input{
+.text-And-input {
     display: flex;
     flex-direction: row;
 }
 
-
 .search-bar li:nth-child(even) {
     background-color: #f8e6e6;
 }
+
 .search-bar li:nth-child(odd) {
     background-color: #ecdbdb;
 }
@@ -284,31 +280,74 @@ option {
     color: rgb(36, 36, 36);
 }
 
-/* Media queries*/
-
-@media (min-width: 550px) {
-
-    input, p, a, li, .button, select, textarea, .text-content {
-        font-size: 3vw;
-    }
-    nav p, nav a, nav .button {
-        font-size: 15px;
-    }
+#Menu {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 10px 0px;
+    background-color: #ffffff56;
 }
 
-@media (min-width: 900px) {
-    input, p, a, li, .button, select, textarea, .text-content {
-        font-size: 2vw;
-    }
-    nav p, nav a, nav .button {
-        font-size: 15px;
-    }
+#burger {
+    display: flex;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
 }
 
-@media (min-width: 1200px) {
-    input, p, a, li, .button, nav p, nav a, nav .button, select, textarea, .text-content {
-        font-size: 20px;
-    }
+#psyfimenutext {
+    font-weight: bold;
+    font-size: 150%;
+}
+
+.menuText {
+    margin: 10px;
+}
+
+.menuText:hover {
+    text-underline-offset: 10px;
+    text-decoration: underline #aa3558 2px;
+}
+
+#psyfimenutext:hover {
+    text-decoration: none;
+}
+
+#navlist {display: none;
+justify-content: center;}
+
+#navbar {
+    width: 100%;
+    margin: 0px;
+    justify-content: flex-end;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+#navbar > * {
+    padding: 10px;
+
+}
+
+#navlist > * {
+
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+nav {
+    border: none;
+}
+
+nav img {
+    width: 100px;
+    height: 100px;
 }
 
 .left-text, .left-text * {
@@ -363,9 +402,96 @@ ul {
     margin: 0px;
     padding: 0px;
     width: 100%;
-    
 }
 
-#pieChart * , #lineChart *{
+#pieChart *, #lineChart * {
     font-family: "poppins", sans-serif, monospace;
+}
+
+
+footer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: rgb(71, 0, 34);
+  }
+  
+  footer a {
+    color: inherit;
+  }
+  
+  section {
+    width: 100%;
+    display: flex;
+  }
+  
+  .footer-general {
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    padding: 50px 0px;
+  }
+  
+  .footer-column {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0px;
+    padding: 0px 20px;
+  }
+  
+  .last-footer {
+    color: white;
+    background-color: rgb(54, 0, 26);
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2px 0px;
+  }
+  
+  .last-footer a {
+    margin: 0px 10px;
+  }
+
+/* Media queries*/
+
+@media (min-width: 550px) {
+    input, p, a, li, .button, select, textarea, .text-content {
+        font-size: 3vw;
+    }
+    nav p, nav a, nav .button {
+        font-size: 15px;
+    }
+}
+
+@media (min-width: 900px) {
+    input, p, a, li, .button, select, textarea, .text-content {
+        font-size: 2vw;
+    }
+    .last-footer {
+        flex-direction: row;
+      }
+      .footer-general {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+      }
+    #burger {
+        display: none;
+    }
+    #navlist {display: flex;}
+
+    #navbar {
+        justify-content: center;
+        flex-direction: row;
+    }
+    nav p, nav a, nav .button {
+        font-size: 15px;
+    }
+}
+
+@media (min-width: 1200px) {
+    input, p, a, li, .button, nav p, nav a, nav .button, select, textarea, .text-content {
+        font-size: 20px;
+    }
 }

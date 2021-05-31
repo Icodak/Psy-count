@@ -10,7 +10,6 @@
     <meta topicID = "60b0e65ac9ba4">
     <meta UAID = "10">
     <link rel="stylesheet" href="../../css/style.css">
-    <link rel="stylesheet" href="../../css/styleMenu.css">
     <link rel="stylesheet" href="../../css/style_footer.css">
     <link rel="stylesheet" href="../../css/style_forum.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

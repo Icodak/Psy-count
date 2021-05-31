@@ -1,10 +1,4 @@
-<!doctype html>
-<html lang="fr">
 
-<head>
-    <link rel="stylesheet" href="css/style_footer.css">
-    <link rel="stylesheet" href="css/styles.css">
-</head>
 <footer>
     <section class="footer-general">
         <div class="footer-column">
@@ -14,9 +8,6 @@
                 01 23 45 67 89</p>
         </div>
         <div class="footer-column">
-            <h2> Accessibilité </h2>
-            <a href="#">Thème</a>
-            <a href="#">Langue</a>
         </div>
         <div class="footer-column">
             <h2> Ressources </h2>

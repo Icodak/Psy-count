@@ -6,11 +6,6 @@
   background-color: #ffffff56;
 }
 
-a {
-  text-decoration: none;
-  color: black;
-}
-
 #psyfimenutext {
   display: none;
   margin-right: 10%;
@@ -48,34 +43,6 @@ nav img{
   height: 100px;
 }
 
-
-nav .button {
-  border-radius: 30px;
-  background-color: #aa3558;
-  color: white;
-  font-size: 3.5vw;
-  border: none;
-  letter-spacing: 0.2px;
-  padding: 10px 20px;
-  margin: 0px 10px;
-  text-align: center;
-  text-decoration: none;
-  display: flex;
-  cursor: pointer;
-  transition: all 0.2s ease 0s;
-}
-
-nav .button:hover{
-  transition: all 0.2s ease 0s;
-  background-color: #6d2339;
-  letter-spacing: 1px;
-}
-
-nav .button:active {
-  transition: all 0.1s ease 0s;
-  background-color: rgb(184, 38, 99);
-  letter-spacing: 0px;
-}
 
 nav p, nav a, nav .button {
   font-size: 2vw;
