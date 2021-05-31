@@ -5,9 +5,13 @@
     <meta charset="utf-8">
     <title>Gestion des utilisateurs</title>
     <link rel="icon" type="image/png" href="images/psy-fi.png" />
-    <link rel="stylesheet" href="css/style_des_utilisateurs.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/style_des_utilisateurs.css">
+    <link rel="stylesheet" href="css/style.css">
     <script type="text/javascript" src="javascript/javaScriptCode.js"></script>
+    <script type="text/javascript" src="javaScript/javaScriptFonctionAlertBox.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="la page de gestion des administrateur de psy-fi">
 
 
 </head>
@@ -17,13 +21,14 @@
         <?php include("menuBar.php") ?>
 
     </header>
-<section class="main">
+    <section class="section-gestion-utilisateurs">
+    <div class="main">
 
-    <?php include_once("gestionDesUtilisateursFonctionSql.php") ?>
+        <?php include_once("gestionDesUtilisateursFonctionSql.php") ?>
 
 
 
-    <?php
+        <?php
 
     // On détermine sur quelle page on se trouve
     if (isset($_GET['page']) && !empty($_GET['page'])) {
@@ -34,55 +39,55 @@
     $resultat = tableCreation($currentPage);
     $resultat3 = $resultat[0];
     $pages = $resultat[1];
+    $pagesLimit=3;
+    $pageLimit=1;
+    if (isset($_GET['pageLimit']) && isset($_GET['pagesLimit'])) {
+        $pageLimit=$_GET['pageLimit'];
+        $pagesLimit=$_GET['pagesLimit'];
+    } 
     ?>
 
 
-    <div id="gestionUtilisateur">
+        <div id="gestionUtilisateur" class="shadow2">
 
-        <h1>Gestion des Utilisateurs</h1>
-        <?php include_once("popUpGestion.php") ?>
-        <?php include_once("popUpGestion2.php") ?>
-
-        <?php
+            <h1>Gestion des Utilisateurs</h1>
+            <?php include_once("popUpGestion.php") ?>
+            <?php include_once("popUpGestion2.php") ?>
+    
+            <?php
         if (!isset($_SESSION["hidde"]) || $_SESSION["hidde"] == 'false') {
         ?>
 
-            <form method="post" action="gestionFonction.php">
-                <input type="submit" class="button5" value="Ajouter un profil" name="Ajouter">
-            </form>
-        <?php
-        }
-        ?>
-        <?php
-        if (!isset($_SESSION["hidde"]) || $_SESSION["hidde"] == 'false') {
-        ?>
-            <div id="globalPage">
-                <div id="actionButton">
-                    <input class="button4" disabled type="button" id="ModifierButton" value="Modifier" name="Modifier">
-                    <input class="button4" disabled type="button" id="SuppButton" value="Supprimer" name="supprimer">
-                    <input class="button4" disabled type="button" id="banButton" value="Bannir" name="Bannir">
+            <div id="actionButton">
 
-                </div>
+                <input type="submit" class="button2 "  id="AjouterButton" value="Ajouter un profil" name="Ajouter">
+               
+                <input class="button2 buttonAction" disabled type="button" id="ModifierButton" value="Modifier"
+                    name="Modifier">
+                <input class="button2 buttonAction" disabled type="button" id="SuppButton" value="Supprimer"
+                    name="supprimer">
+              
 
-                <div id="tableau">
-                    <div id="subTable">
-                        <table>
+            </div>
 
-                            <thead>
-                                <tr>
-                                    <th>
-                                        <input type="checkbox" onclick="allSelect(this)">
-                                    </th>
-                                    <th class="text2" align="left" colspan="1">id</th>
-                                    <th class="text2" align="left" colspan="1">Nom</th>
-                                    <th class="text2" align="left" colspan="1">Prénom</th>
-                                    <th class="text2" align="left" colspan="1">Email</th>
-                                    <th class="text2" align="left" colspan="1">Permission</th>
+            <div id="tableau">
 
-                                </tr>
-                            </thead>
+                <table>
 
-                            <?php
+                    <thead>
+                        <tr>
+
+                            <th><input class="text2 checkboxButton" type="checkbox" onclick="allSelect(this)"></th>
+                            <th class="text2 responsiveTable" align="left" colspan="1">id</th>
+                            <th class="text2" align="left" colspan="1">Nom</th>
+                            <th class="text2" align="left" colspan="1">Prénom</th>
+                            <th class="text2 responsiveTable" align="left" colspan="1">Email</th>
+                            <th class="text2 responsiveTable2" align="left" colspan="1">Permission</th>
+
+                        </tr>
+                    </thead>
+
+                    <?php
 
 
 
@@ -90,65 +95,40 @@
 
                             ?>
 
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <input type="checkbox" name="checkBoxGestion" class="checkBoxUtilisateurs" onclick="checkboxcheckGestionsUtilisateurs()" id=<?php echo  $resultat3[$i][0] ?>>
-                                        </td>
-                                        <td class="text2" align="left"> <?php echo  $resultat3[$i][0] ?></td>
-                                        <td class="text2" align="left"> <?php echo  $resultat3[$i][1] ?> </td>
-                                        <td class="text2" align="left"> <?php echo  $resultat3[$i][2] ?> </td>
-                                        <td class="text2" align="left"> <?php echo  $resultat3[$i][3] ?> </td>
-                                        <td class="text2 " align="left"> <?php echo  $resultat3[$i][4] ?> </td>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="checkBoxGestion" class="checkBoxUtilisateurs"
+                                    onclick="checkboxcheckGestionsUtilisateurs()" id=<?php echo  $resultat3[$i][0] ?>>
+                            </td>
+                            <td class="text2 responsiveTable" align="left"> <?php echo  $resultat3[$i][0] ?></td>
+                            <td class="text2" align="left"> <?php echo  $resultat3[$i][1] ?> </td>
+                            <td class="text2" align="left"> <?php echo  $resultat3[$i][2] ?> </td>
+                            <td class="text2 responsiveTable" align="left"> <?php echo  $resultat3[$i][3] ?> </td>
+                            <td class="text2 responsiveTable2" align="left"> <?php echo  $resultat3[$i][4] ?> </td>
 
-                                    </tr>
-                                </tbody>
+                        </tr>
+                    </tbody>
 
 
-                            <?php
+                    <?php
                             }
                             ?>
 
-                        </table>
+                </table>
 
-                        <div class="pagination">
-
-
-                            <div class="page-items <?= ($currentPage == 1) ? "disabled" : "" ?>">
-                                <a href="gestionDesUtilisateurs.php?page=<?php if ($currentPage == 1) {
-                                                                                echo $currentPage;
-                                                                            } else {
-                                                                                echo $currentPage - 1;
-                                                                            } ?>" class="page-link">«</a>
-                            </div>
-                            <?php for ($page = 1; $page <= $pages; $page++) : ?>
-
-
-                                <div class="page-item <?= ($currentPage == $page) ? "active" : "" ?> ">
-                                    <a href="gestionDesUtilisateurs.php?page=<?= $page ?>" class="page-link"><?= $page ?></a>
-                                </div>
-                            <?php endfor ?>
-
-
-
-
-                            <div class="page-items <?= ($currentPage == $pages) ? "disabled" : "" ?>">
-                                <a href="gestionDesUtilisateurs.php?page=<?php if ($currentPage == $pages) {
-                                                                                echo $currentPage;
-                                                                            } else {
-                                                                                echo $currentPage + 1;
-                                                                            } ?>" class="page-link ">»</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <?php include("pagination.php") ?>
             </div>
-        <?php
+
+        </div>
+    </div>
+    <?php
         }
         ?>
-</section>
-        <section class="footer"><?php include("footer.php") ?></section>
-        
+    </div>
+    </section>
+    <?php include("footer.php") ?>
+   
 </body>
 
 

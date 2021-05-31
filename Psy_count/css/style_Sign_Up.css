@@ -33,6 +33,7 @@ body{
 	font-size: 3.4vw;
 }
 
+
 .latoType:hover {
 	border-bottom: 4px solid #6d2339;
 }
@@ -232,7 +233,6 @@ input[id="checkbox"]{
 #quitter2 {
 	min-width: 130px;
 }
-
 
 
 li{

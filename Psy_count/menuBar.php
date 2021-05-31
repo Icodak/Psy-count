@@ -9,7 +9,6 @@ session_start();
   <nav id="navbar">
     <span class="menuText" id="psyfimenutext"> Psy-fi</span>
     <a href="accueil.php" class="menuText"> Accueil </a>
-    <a href="forum.php" class="menuText"> Forum </a>
 
     <?php
     if (isset($_SESSION['type'])) {
@@ -34,7 +33,8 @@ session_start();
     if (isset($_SESSION['type'])) {
       if ($_SESSION['type'] == 'Medecin') {
     ?>
-        <a href="" class="menuText"> Mes patients </a>
+        <a href="myPatient.php" class="menuText"> Mes patients </a>
+        <a href="myDataDoctor.php" class="menuText"> Mon compte </a>
 
     <?php
       }
@@ -98,7 +98,7 @@ session_start();
     if (!isset($_SESSION['connexion']) || $_SESSION['connexion'] != 1) {
     ?>
 
-      <a href="sign-in.php"> <button class="button"> Login </button> </a>
+      <a href="sign-In.php"> <button class="button"> Login </button> </a>
 
     <?php
     }

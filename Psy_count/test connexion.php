@@ -6,9 +6,9 @@ try{
     ini_set( 'display_errors', 1 );
     error_reporting( E_ALL );
     $from = "tullinnicolas@gmail.com";
-    $to = "amanda.dieuaide@gmail.com";
+    $to = "tullinnicolas@gmail.com";
     $subject = "Essai de PHP Mail";
-    $message = "mouton";
+    $message = "Votre Code de verification est : ";
     $headers = "De :" . $from;
     mail($to,$subject,$message, $headers);
     echo 'message envoyé';

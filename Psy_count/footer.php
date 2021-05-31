@@ -21,6 +21,7 @@
         <div class="footer-column">
             <h2> Ressources </h2>
             <a href="faq.php">FAQ </a>
+            <a href="forum.php">Forum </a>
         </div>
     </section>
     <section class="last-footer">
@@ -28,6 +29,7 @@
         <div>
             <a href="policy.php">Politique de confidentialité </a>
             <a href="TermsOfUse.php">Conditions d'utilisation </a>
+            <a href="accueil.php#menuBarAnchor" class="menuText"> A propos </a>
         </div>
     </section>
 </footer>

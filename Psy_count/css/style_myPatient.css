@@ -1,0 +1,194 @@
+.gestionDesPatients{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 80%;
+    padding-right: 2%;
+    padding-left: 2%;
+    min-height: 60vh ;
+    margin-bottom: 1%;
+    box-shadow: 0 12px 16px 0 rgb(0 0 0 / 24%), 0 17px 50px 0 rgb(0 0 0 / 19%);
+    margin-top: 2%;
+}
+
+
+.Menu-lines{
+  width: 250px;
+}
+
+ul{
+  list-style-type : none;
+  color: #aa3558;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+}
+
+.Menu-lines{
+  display: none;
+}
+
+h1{
+  margin-block-start: 0.3em;
+  margin-block-end: 0.3em;
+  font-size: 50px;
+}
+h2{
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  padding: 2px;
+}
+
+
+.Menu-And-Text{
+  display: flex;
+  width: 300px;
+  align-items: center;
+}
+
+.recherche{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#select1{
+  width: 60%;
+  margin-bottom: 1%;
+}
+
+#searchButton{
+  max-width: 30%;
+  margin-left: 2%;
+  box-shadow:none;
+}
+
+#image-Menu2{
+  display: none;
+  float: left;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+#image-Menu{
+  float: left;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+input[type="image"]{
+  border-bottom: none;
+  background-color: white;
+  width: 75px;
+  height: 50px;
+}
+button[name="patientProfil"]{
+  width: 80px;
+  height: 50px;
+  background: transparent;
+  border: none ;
+  font-size:0;
+  cursor: pointer;
+}
+    
+.flex-column{
+  display: flex;
+  flex-direction: row;
+}
+
+table {
+    margin-top: 5px;
+    width: 100%;
+    background-color: white;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+  }
+
+  td, th {
+    align-items: center;
+    border-bottom: solid purple;
+    height: 100px;
+ }
+  .page-item {
+    border: 1px solid black;
+    padding: 8px;
+    margin: 0 4px;
+    text-align: center;
+    border-radius: 5px;
+    min-width: 30px;
+  }
+
+.pagination {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+    justify-content: center;
+  }
+  
+input[type="checkbox"]{
+    transform: scale(2);
+    /*zoom: 1.5;*/
+  }
+.selectButton{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+select{
+    width: auto;
+}
+main{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+form{
+  display: flex;
+  flex-direction: row;
+}
+
+a:hover{
+  text-decoration: underline solid purple;
+ }
+
+ @media only screen and (max-width:1100px) {
+ 
+ .gestionDesPatients {
+  width: 100%;
+}
+  .responsivePatient{
+    display: none;
+  }
+
+ #actionButton{
+   flex-direction: column;
+   align-items: center;
+ }
+ #actionButton input{
+   margin-bottom: 2%;
+ }
+ h1{
+   font-size: 30px;
+ }
+
+ .flex-column{
+  flex-direction: column;
+  justify-content: center;
+}
+
+td,th{
+  padding: 0px;
+}
+
+}
+@media only screen and (max-width:800px) {
+table h2{
+  width: 90px;
+  overflow:scroll;
+}
+}
+
+

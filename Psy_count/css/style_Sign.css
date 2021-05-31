@@ -7,6 +7,11 @@ body {
 	justify-content: center;
 	align-items: center;
 	height: 100%;
+	position: relative;
+}
+
+form{
+	position: relative;
 }
 
 .card {
@@ -21,12 +26,29 @@ body {
 	display: flex;
 	flex-direction: column;
 }
-
+.radio-choice{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
 .confirm-field {
 	padding: 20px;
 	justify-content: space-around;
 	display: flex;
 	flex-direction: row;
+
+}
+.confirm-field input{
+	width: 150px;
+}
+
+.radio{
+	display: flex;
+	text-align: center;
+	align-items: center;
+	flex-direction: row;
+	justify-content: space-around;
+	font-size: 25px;
 }
 
 .confirm-field>div {
@@ -38,10 +60,18 @@ body {
 .input-bar {
 	display: flex;
 }
+.passwordType{
+	border-bottom: 2px solid rgb(80, 80, 80);
+}
+.passwordType input{
+ 	border-bottom: none;
+}
 
 ul {
 	list-style: none;
 	padding: 0px;
+	display: flex;
+	justify-content: center;
 }
 
 li {

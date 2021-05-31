@@ -6,10 +6,13 @@ function buildSearchInput(title, type) {
     var search_div = document.createElement("div");
     var search_input = document.createElement("input");
     var search_list = document.createElement("ul");
+    search_input.disabled=true;
     search_div.appendChild(search_input);
     search_div.appendChild(search_list);
     search_div.classList = "search-div";
     search_list.classList = "search-list";
+
+    div.setAttribute("class","text-And-input");
 
     function cleanList() {
         while (search_list.firstChild) {
@@ -60,12 +63,44 @@ function buildSearchInput(title, type) {
 
     div.appendChild(search_p);
     div.appendChild(search_div);
-
     return div;
 
 }
 
+function createButtonResearch(Text){
+    var button = document.createElement("input");
+    button.setAttribute("class","button2");
+    button.setAttribute("type","button");
+    button.setAttribute("id","searchButton");
+    button.disabled=true;
+    button.value=Text;
+
+    button.onclick = function()
+    {
+        var searchDiv = document.getElementsByClassName("search-div");
+        firstInputVal = searchDiv[0].childNodes[0].value; 
+        SecondInputVal = searchDiv[1].childNodes[0].value; 
+
+        $.ajax({
+            url: "researchPatient.php",
+            type: "post",
+            data: {
+                researchElementOne: firstInputVal,
+                researchElementTwo: SecondInputVal
+            },
+            success: function (result) {
+                $('#tableau').load('myPatient.php #tableau');
+                $('#logicpage').load('myPatient.php #logicpage');
+            }
+        });
+    }
+
+    return button;
+}
+
+
 function buildSearchBar(div){
     div.appendChild(buildSearchInput("Prénom", "prenom"));
     div.appendChild(buildSearchInput("Nom", "nom"));
+    div.appendChild( createButtonResearch("rechercher"));
 }

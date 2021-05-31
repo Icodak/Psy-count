@@ -5,81 +5,64 @@
     <meta charset="utf-8">
     <title>Mon profil</title>
     <link rel="icon" type="image/png" href="images/psy-fi.png" />
-    <link rel="stylesheet" href="css//style_myData_.css">
+    <link rel="stylesheet" href="css//style_myData_2.css">
     <script type="text/javascript" src="javascript//javaScriptCode.js"></script>
+    <script type="text/javascript" src="javascript/javaScriptCodeVerification.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="page pour modifier le mot de passe de l'utilisateur">
 </head>
 
 <body>
     <header>
-        <?php include("menuBar.php") ?>
+        <?php 
+              include("menuBar.php") ;
+        ?>
     </header>
-
-
-    <?php
-
-
-    try {
-        $dbco = new PDO("mysql:host=localhost;dbname=serveur_psy_fi", 'root', '');
-        $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $id = $_SESSION['ID'];
-
-        $req =  $dbco->prepare('SELECT nom,prenom,Email,images FROM utilisateur WHERE ID_Utilisateur=:ID_Utilisateur');
-        $req->execute(['ID_Utilisateur' => $id]);
-        $resultat = $req->fetchAll();
-
-        $req =  $dbco->prepare('SELECT dateDeNaissance FROM patient WHERE ID_Utilisateur=:ID_Utilisateur');
-        $req->execute(['ID_Utilisateur' => $id]);
-        $resultat2 = $req->fetchAll();
-    } catch (PDOException $e) {
-
-        echo "Erreur : " . $e->getMessage();
-    }
-
-    ?>
 
     <div class="wrapper2">
         <div class="main">
-           <form method="post" action="myDataFonction.php">
-                <div class="frame-header">
+            <form method="post" action="myDataFonction.php" onsubmit="return formDataVerificationPasswordChange()">
+                <div class="frame-header shadow2">
                     <div>
                         <h1>
                             Modifier mon mot de passe
                         </h1>
                     </div>
                 </div>
-                <div class="topic-main">
+                <div class="topic-main shadow2">
                     <div class="topic-list">
 
                         <div class="topic-items">
-                            <div class=" change-password">
+
+                            <div class=" change-password topic-right">
 
                                 <h3>Votre mot de passe : </h3>
                             </div>
-                            <div class="topic-meta">
+                            <div class="topic-meta topic-right2">
 
-                                <input type="text" class="crayon1" name='mdp'>
+                                <input type="text" class="crayon1" required name='mdp'>
                             </div>
                         </div>
                         <div class="topic-items">
-                            <div class=" change-password">
+                            <div class=" change-password topic-right">
                                 <h3> Nouveau mot de passe : </h3>
                             </div>
-                            <div class="topic-meta">
-                                <input type="text" class="crayon2" name='newmdp'>
+                            <div class="topic-meta topic-right2">
+                                <input type="text" class="crayon2" required name='newmdp'>
                             </div>
                         </div>
                         <div class="topic-items">
-                            <div class=" change-password">
+                            <div class=" change-password topic-right">
                                 <h3>Vérification du nouveau mot de passse : </h3>
                             </div>
-                            <div class="topic-meta">
-                                <input type="text" class="crayon3" name='newmdpverif'>
+                            <div class="topic-meta topic-right2">
+                                <input type="text" class="crayon3" required name='newmdpverif'>
                             </div>
                         </div>
                     </div>
 
                     <div class="error-message">
-                    <?php if(!empty($_SESSION['messageData'])){echo $_SESSION['messageData'];}?>
+                        <?php if(!empty($_SESSION['messageData'])){echo $_SESSION['messageData'];}?>
                     </div>
 
                     <div class="data-button">
@@ -87,9 +70,15 @@
                             <input type="submit" name="dataPageChange2" value="Enregistrer" class="button">
                         </div>
                         <div>
-                            <a href="DataPage2.php" class="button">
-                                Annuler
-                            </a>
+                            <?php                  
+                              if($_SESSION['type']=="patient"){
+                            echo"<a href='DataPage2.php' class='button'>";
+                              }else if($_SESSION['type']=="Medecin"){
+                             echo"<a href='myDataDoctor.php' class='button'>";      
+                              }                
+                            echo"Annuler";
+                            echo"</a>";                    
+                            ?>
                         </div>
 
                     </div>

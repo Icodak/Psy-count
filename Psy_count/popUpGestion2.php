@@ -9,7 +9,6 @@
        
 ?>
 
-
 <form method="post" action="gestionFonction.php">
     <div id="add">
         <div>
@@ -54,8 +53,8 @@
          </div>
             <div>
 
-    <input type="submit" class='button3' name="typeId7" value="Modifier">
-    <input type="submit" class='button3' name="typeId6" value="annuler">
+    <input type="submit" class='button2' name="typeId7" value="Modifier">
+    <input type="submit" class='button2' name="typeId6" value="annuler">
 </div>
 </div>
 

@@ -8,8 +8,8 @@ session_start(); // On démarre la session AVANT toute chose
         la valeur des attributs name comme clé 
        */
 
-     $FirstName = $_POST['FirstName']; 
-     $LastName = $_POST['LastName']; 
+     $FirstName = mb_convert_case($_POST['FirstName'] , MB_CASE_TITLE);
+     $LastName = mb_convert_case($_POST['LastName'] , MB_CASE_TITLE);
      $Email = $_POST['Email'];
      $Password = password_hash($_POST['Password'], PASSWORD_DEFAULT);
      $Password_verify = $_POST['password_verify'];
@@ -17,16 +17,15 @@ session_start(); // On démarre la session AVANT toute chose
 
      if($_POST['type']=='patient'){
         $dateOfBirth=$_POST['dateDeNaissance'];
+        $gender=$_POST['genre'];
      }else{
         $PostalCode=$_POST['codePostal'];
         $PhoneNumber=$_POST['telephone']; 
         $speciality=$_POST['specialite']; 
      }
      
-
-     if( password_verify($Password_verify, $Password)){
-      if(filter_var($Email, FILTER_VALIDATE_EMAIL)){
-        
+     if(password_verify($Password_verify, $Password)){
+      if(filter_var($Email, FILTER_VALIDATE_EMAIL)){    
             $_SESSION['message']='';  
 
             try{
@@ -54,8 +53,8 @@ session_start(); // On démarre la session AVANT toute chose
                         VALUES('$Password','$LastName','$FirstName','$Email','$type')"; 
                 $dbco->exec($sql);
 
-                $sql = "INSERT INTO patient(dateDeNaissance,ID_Utilisateur)
-                        VALUES('$dateOfBirth',(SELECT ID_Utilisateur from utilisateur where Email='$Email'))"; 
+                $sql = "INSERT INTO patient(dateDeNaissance,genre,ID_Utilisateur)
+                        VALUES('$dateOfBirth','$gender',(SELECT ID_Utilisateur from utilisateur where Email='$Email'))"; 
                 $dbco->exec($sql);
 
               }else{
@@ -69,7 +68,7 @@ session_start(); // On démarre la session AVANT toute chose
                 $dbco->exec($sql);
 
               }
-              header('Location: sign-in.php');
+              header('Location: sign-In.php');
                 }
               }
 
@@ -80,11 +79,11 @@ session_start(); // On démarre la session AVANT toute chose
     }
       else{
         $_SESSION['message']='adresse mail invalide';
-        header('Location: sign-up.php');
+        header('Location: sign-Up.php');
       }
     }else{
       $_SESSION['message']='vos mot de passe doivent correspondre';
-      header('Location: sign-up.php');
+      header('Location: sign-Up.php');
     }
 
   }

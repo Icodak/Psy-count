@@ -1,20 +1,36 @@
+
+<script type="text/javascript" src="javaScript/javaScriptFonctionAlertBox.js"></script>
+
+
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style_alert_box.css">
+
+
+<body>
+
+</body>
+
 <?php
-session_start(); 
+
+                echo
+                "<script type=\"text/javascript\">
+                diagnosticBox();
+                </script>";
+
 ?>
 
-<?php
 
 
-    $pwdHashed = "112";
-    $pwdHashed2= "122";
-    $Password = password_hash($pwdHashed, PASSWORD_DEFAULT);
-    $checkPwd = password_verify( $pwdHashed2, $Password);
 
-    if ($checkPwd==true ) {
-       echo 'reussi';
-    }else{
-      echo 'non';
-    }
+
+
+
+
+
+
+
+
 
 
 

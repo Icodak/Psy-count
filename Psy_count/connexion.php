@@ -58,7 +58,7 @@ try{
 
           if(count($resultat4)!=0){
             $_SESSION['message2']= 'votre compte est banni contactez un administrateur';
-            header('Location: sign-in.php');
+            header('Location: sign-In.php');
           }else{
       if ($isPasswordCorrect) {
         $_SESSION['type']=$resultat3['permission_lvl'];
@@ -69,7 +69,7 @@ try{
       }
       else {
         $_SESSION['message2']= 'mot de passe ou Email incorrect';
-        header('Location: sign-in.php');
+        header('Location: sign-In.php');
       }
       }
     }

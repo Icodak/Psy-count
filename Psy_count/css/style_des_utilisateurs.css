@@ -7,7 +7,21 @@ html, body {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin-top: 2%;
+  margin-bottom: 2%;
 }
+#actionButton input{
+  margin-right:1%;
+  margin-left: 1%;
+  width: 20%;
+  font-size: 22px;
+}
+
+#actionButton input[type="button"]{
+  background-color: grey;
+}
+
+
 
 body {
   position: relative;
@@ -17,56 +31,22 @@ li {
   list-style: none;
 }
 
-.button4 {
-  background-color: grey;
-  border: none;
-  color: white;
-  padding: 10px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
-  margin: 4px 2px;
-  cursor: pointer;
-  min-width: 150px;
-  border-radius: 30px;
 
-}
 
 input[type="checkbox"]{
   transform: scale(2);
   /*zoom: 1.5;*/
 }
 
-.button5 {
-  background-color: #aa3558;
-  border: none;
-  color: white;
-  padding: 10px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
-  margin: 4px 2px;
-  cursor: pointer;
-  margin-bottom: 20px;
-  border-radius: 30px;
+
+.section-gestion-utilisateurs{
+display: flex;
+width: 100%;
+align-items: center;
+justify-content: center;
+
 }
 
-.button3 {
-  background-color: #aa3558;
-  border: none;
-  color: white;
-  padding: 10px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
-  margin: 4px 2px;
-  cursor: pointer;
-  max-width: 150px;
-  border-radius: 30px;
-}
 
 #globalPage {
   display: block;
@@ -77,29 +57,39 @@ table {
   margin-top: 5px;
   width: 100%;
   border-spacing: 0px 30px;
-  border: 2px solid black;
   background-color: white;
   margin-bottom: 20px;
-  font-size: 40px;
+  font-size: 22px;
 }
 
-input[type='text'] {
+input {
   background-color: white;
   border: none;
   font-size: 20px;
 }
 
 #gestionUtilisateur {
-  height: max(calc(100vh - 340px),100%);
-  text-align: center;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: white;
+    flex-direction: column;
+    text-align: center;
+    padding-right: 2%;
+    width: 100%;
+    padding-left: 2%;
+    min-height: 60vh;
+    margin-bottom: 3%;
+    box-shadow: 0 12px 16px 0 rgb(0 0 0 / 24%), 0 17px 50px 0 rgb(0 0 0 / 19%);
+    margin-top: 2%;
+
 }
 
 .text2 {
   border-bottom: solid purple;
+}
+
+h1{
+  font-size: 50px;
+  margin-block-start: 0.1em;
+  margin-block-end: 0.1em;
 }
 
 #subTable {
@@ -112,27 +102,31 @@ input[type='text'] {
 .pagination {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   margin-bottom: 20px;
 }
 
 .page-item {
   border: 1px solid black;
-  padding: 8px;
-  margin: 0 4px;
-  font-size: 35px;
-  text-align: center;
-  border-radius: 5px;
-  min-width: 25px;
+    margin: 0 4px;
+    padding-left: 2px;
+    padding-right: 2px;
+    text-align: center;
+    border-radius: 5px;
+    min-width: 30px;
+}
+
+ a {
+  font-size: 40px;
 }
 
 .page-items {
   border: 1px solid black;
   padding: 8px;
   margin: 0 4px;
-  font-size: 35px;
   text-align: center;
   border-radius: 5px;
+  min-width: 30px;
 }
 
 div {
@@ -142,12 +136,15 @@ div {
 td, th {
   padding-left: 20px;
   padding-right: 20px;
+  padding-left: 20px;
+  padding-bottom: 20px;
 }
 
 form {
   text-align: center;
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
 
 
@@ -164,20 +161,55 @@ select {
 
 .main {
   display: flex;
-  justify-content: center;
-  height: auto;
+    justify-content: center;
+    text-align: center;
+    width: 90%;
 }
 
+section{
+  display: block;
+}
+.popUp{
+  display: flex;
+  flex-direction: column;
+}
 
+@media only screen and (max-width: 851px) {
+  #actionButton input{
+   width: 85%;
+  }
 
-
-@media only screen and (max-width: 800px) {
-  table {
-    border-spacing: 0px 10px;
-    font-size: 10px;
+  .checkboxButton{
+    margin-right: 23px;
   }
   td, th {
-    padding-left: 2px;
-    padding-right: 2px;
+    padding-left: 0px;
+    padding-right: 0px;
   }
+
+  #gestionUtilisateur {
+    width: 100%;
+  }
+ .responsiveTable{
+   display: none;
+ }
+ #actionButton{
+   flex-direction: column;
+   align-items: center;
+ }
+ #actionButton input{
+   margin-bottom: 2%;
+ }
+ h1{
+   font-size: 30px;
+ }
+}
+@media only screen and (max-width: 300px) {
+.responsiveTable2{
+  display: none;
+}
+
+#gestionUtilisateur{
+  padding:0px;
+}
 }
