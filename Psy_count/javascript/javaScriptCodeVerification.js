@@ -79,7 +79,19 @@ function motDePasseVerification(mdp,mdp2,inputForm1,inputForm2,mdpRegex){
 
 // fonction signup-patient
 function formVerificationPatient(password,Email){
+   var tableau = verificationSignUp();
 
+    if( tableau[0]&&tableau[1]&&tableau[2]&&tableau[3]&&tableau[4])
+        {
+            popUpEmail("Un mail vient de vous étre envoyé, rentrez le code pour confirmer votre inscription",password,Email);
+        }else{
+            return false;
+        }
+}
+
+
+function verificationSignUp(){
+    
     var ici =  document.forms[0];
     var input1 = ici['FirstName'];
     var input2 = ici['LastName'];
@@ -106,19 +118,17 @@ function formVerificationPatient(password,Email){
     var result4 = motDePasseVerification(mdp1,mdp2,input5,input6,mdpRegex);
     var result5 = dateDeNaissanceVerification(date,input3);
 
-    if( result1&&result2&&result3&&result4&&result5)
-        {
-            popUpEmail("Un mail vient de vous étre envoyé, rentrez le code pour confirmer votre inscription",password,Email);
-        }else{
-            return false;
-        }
-    
-
-
-    
-
-
+    var tableau = new Array(5);
+    tableau[0]=result1;
+    tableau[1]=result2;
+    tableau[2]=result3;
+    tableau[3]=result4;
+    tableau[4]=result5;
+    return  tableau;
 }
+
+
+
 // fonction signup-Medecin
 function formVerificationMedecin(){
    changement= !changement;
@@ -130,7 +140,16 @@ function formVerificationMedecin(){
     var codePostalRegex = new RegExp("[0-9]{5}");
 
     var result1 = Verification(code,codePostalRegex,input);  
-    var result2 = formVerificationPatient();
+    var tableau = verificationSignUp();
+  
+    if( tableau[0]&&tableau[1]&&tableau[2]&&tableau[3]&&tableau[4])
+        {
+           var result2 = true;
+        }else{
+           var result2 = false;
+        }
+
+  
     
     return(
         result1

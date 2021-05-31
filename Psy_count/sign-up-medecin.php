@@ -77,7 +77,7 @@
 
         </div>
         <div class="confirm-field" id="signUpBlock">
-            <input class="button" type="submit" style="background-color: grey;" name="submit" value="S'inscrire" id="submit-patient">
+            <input class="button" type="submit" style="background-color: grey;" name="submit" value="S'inscrire" class="create-account" id="submit-Medecin">
             <input class="button" type="button" onclick="locationAccueil()" value="Quitter">
         </div>
         <div class="white-color">
@@ -88,8 +88,6 @@
     </form>
 
 </body>
-<script>
-    document.getElementById("submit").disabled = true;
-</script>
+
 
 </html>
