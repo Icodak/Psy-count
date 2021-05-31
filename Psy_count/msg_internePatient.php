@@ -19,7 +19,7 @@
     </div>
 </header>
 
-<script type="text/javascript" src='msg_interneFonction.js'></script>
+<script type="text/javascript" src='javascript/msg_interneFonction.js'></script>
 
 <body>
     <?php
