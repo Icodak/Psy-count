@@ -33,9 +33,11 @@
     <section>
         <div class="flex-column">
             <nav class="niceBox">
-                <button id="openContactForm" class="form_button"> Nouveau message </button>
-                <button id="openReceptBox" class="form_button"> Boite de réception </button>
-                <button id="openSendBox" class="form_button"> Boite d'envoi </button>
+                <div class="nicer-box">
+                <button id="openContactForm" class="button2"> Nouveau message </button>
+                <button id="openReceptBox" class="button2"> Boite de réception </button>
+                <button id="openSendBox" class="button2"> Boite d'envoi </button>
+                </div>
             </nav>
 
             <div class="flex-colW">
@@ -95,8 +97,10 @@
                         </div>
 
                         <div class="form_group">
-                            <button class="form_button" type="submit" name="submit"> Envoyer </button>
-                            <button id="closeContactForm" class="form_button"> Annuler </button>
+                        <div class="form-button">
+                            <button class="button" type="submit" name="submit"> Envoyer </button>
+                            <button id="closeContactForm" class="button"> Annuler </button>
+                        </div>
                         </div>
                     </form>
 

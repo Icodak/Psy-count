@@ -77,7 +77,7 @@
 
         </div>
         <div class="confirm-field" id="signUpBlock">
-            <input class="button" type="submit" style="background-color: grey;" name="submit" value="S'inscrire" id="submit">
+            <input class="button" type="submit" style="background-color: grey;" name="submit" value="S'inscrire" id="submit-patient">
             <input class="button" type="button" onclick="locationAccueil()" value="Quitter">
         </div>
         <div class="white-color">

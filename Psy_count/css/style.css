@@ -108,6 +108,10 @@ input, textarea, .text-content {
     height: auto;
 }
 
+input:disabled {
+    background-color: hsl(0, 5%, 84%);
+}
+
 input:hover, textarea:hover, .text-content:hover {
     border-bottom: 2px solid #6d2339;
     cursor: pointer;
@@ -184,7 +188,7 @@ option {
     justify-content: center;
     padding: 10px;
     align-items: center;
-    font-size: 15px;
+    font-size: 20px;
     min-width: 150px;
     border-radius: 5px;
 }

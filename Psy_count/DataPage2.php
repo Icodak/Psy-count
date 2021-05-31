@@ -6,6 +6,7 @@
     <title>Mon profil</title>
     <link rel="icon" type="image/png" href="images/psy-fi.png" />
     <link rel="stylesheet" href="css/style_myData_2.css">
+    <link rel="stylesheet" href="css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script type="text/javascript" src="javascript/javaScriptFonctionData.js"></script>
     <script type="text/javascript" src="javascript/javaScriptCodeVerification.js"></script>
@@ -15,31 +16,32 @@
 
 <body>
     <header>
-        <?php 
-              include("menuBar.php") ;
-              include("myDataFonction.php");     
-              $outPut = selectInformationsPatient();
-              $resultat =  $outPut[0];
-              $resultat2 = $outPut[1];
+        <?php
+        include("menuBar.php");
+        include("myDataFonction.php");
+        $outPut = selectInformationsPatient();
+        $resultat =  $outPut[0];
+        $resultat2 = $outPut[1];
         ?>
     </header>
 
 
     <div class="wrapper">
         <div class="main">
-            <form method="post" action="myDataFonction.php" enctype="multipart/form-data" onsubmit=" return formDataVerificationPatient()" >
+            <form method="post" action="myDataFonction.php" enctype="multipart/form-data" onsubmit=" return formDataVerificationPatient()">
                 <div class="frame-header">
                     <div>
                         <div class="User-image">
-                            <label for="file">
-                                <?php if($resultat[0][3]==NULL){
-                               echo  "<img src=images/default-user.png>";                       
-                  }else{                                     
-                        echo "<img alt='mon image de profil' title='changer ma photo de profil' src='images_utilisateurs/".$resultat[0][3] ."?rand=". rand() ."'>";     
-                  }              
-                ?>
+                            <label for="file" style="display: flex;">
+                                <?php if ($resultat[0][3] == NULL) {
+                                    echo  "<img src=images/default-user.png>";
+                                } else {
+                                    echo "<img alt='mon image de profil' title='changer ma photo de profil' src='images_utilisateurs/" . $resultat[0][3] . "?rand=" . rand() . "'>";
+                                }
+                                ?>
+                                <input type="file" id="file" hidden name="avatar" accept="image/png, image/jpeg">
                             </label>
-                            <input type="file" id="file" hidden name="avatar" accept="image/png, image/jpeg">
+                            
                         </div>
 
 
@@ -67,12 +69,12 @@
                             <div class="topic-right2">
                                 <div class="topic-meta">
 
-                                    <input type="text" class="crayon1 datainput" name='nom' disabled
-                                        value=<?php if(!empty($resultat[0][0])){ echo $resultat[0][0];}?>>
+                                    <input type="text" class="crayon1 datainput" name='nom' disabled value=<?php if (!empty($resultat[0][0])) {
+                                                                                                                echo $resultat[0][0];
+                                                                                                            } ?>>
                                 </div>
                                 <div class="inputImage">
-                                    <button type="button" class="crayon1" onclick="modificationInformations(this)"> <img alt="crayon pour modifier"
-                                            src="images/crayon2.png">
+                                    <button type="button" class="crayon1" onclick="modificationInformations(this)"> <img alt="crayon pour modifier" src="images/crayon2.png">
                                     </button>
 
                                 </div>
@@ -92,12 +94,12 @@
                             <div class="topic-right2">
                                 <div class="topic-meta">
 
-                                    <input type="text" class="crayon2 datainput" name='Prenom' disabled
-                                        value=<?php if(!empty($resultat[0][1])){ echo $resultat[0][1];}?>>
+                                    <input type="text" class="crayon2 datainput" name='Prenom' disabled value=<?php if (!empty($resultat[0][1])) {
+                                                                                                                    echo $resultat[0][1];
+                                                                                                                } ?>>
                                 </div>
                                 <div class="inputImage">
-                                    <button type="button" class="crayon2" onclick="modificationInformations(this)"> <img alt="crayon pour modifier"
-                                            src="images/crayon2.png">
+                                    <button type="button" class="crayon2" onclick="modificationInformations(this)"> <img alt="crayon pour modifier" src="images/crayon2.png">
                                     </button>
                                 </div>
                             </div>
@@ -113,12 +115,12 @@
 
                             <div class="topic-right2">
                                 <div class="topic-meta">
-                                    <input type="text" class="crayon3 datainput" name='Email' disabled
-                                        value=<?php if(!empty($resultat[0][2])){ echo $resultat[0][2];}?>>
+                                    <input type="text" class="crayon3 datainput" name='Email' disabled value=<?php if (!empty($resultat[0][2])) {
+                                                                                                                    echo $resultat[0][2];
+                                                                                                                } ?>>
                                 </div>
                                 <div class="inputImage">
-                                    <button type="button" class="crayon3" onclick="modificationInformations(this)"> <img alt="crayon pour modifier"
-                                            src="images/crayon2.png">
+                                    <button type="button" class="crayon3" onclick="modificationInformations(this)"> <img alt="crayon pour modifier" src="images/crayon2.png">
                                     </button>
                                 </div>
                             </div>
@@ -135,12 +137,12 @@
                             <div class="topic-right2">
                                 <div class="topic-meta">
 
-                                    <input type="date" class="crayon4 datainput" name='dateDeNaissance' disabled
-                                        value=<?php if(!empty($resultat2[0][0])){ echo $resultat2[0][0];}?>>
+                                    <input type="date" class="crayon4 datainput" name='dateDeNaissance' disabled value=<?php if (!empty($resultat2[0][0])) {
+                                                                                                                            echo $resultat2[0][0];
+                                                                                                                        } ?>>
                                 </div>
                                 <div class="inputImage">
-                                    <button type="button" class="crayon4" onclick="modificationInformations(this)"> <img alt="crayon pour modifier"
-                                            src="images/crayon2.png">
+                                    <button type="button" class="crayon4" onclick="modificationInformations(this)"> <img alt="crayon pour modifier" src="images/crayon2.png">
                                     </button>
                                 </div>
                             </div>
@@ -155,12 +157,11 @@
                             </div>
                             <div class="topic-right2">
                                 <div class="topic-meta">
-                                    <input type="password" class="crayon5 datainput" name='motDePasse' disabled
-                                        value="***************">
+                                    <input type="password" class="crayon5 datainput" name='motDePasse' disabled value="***************">
                                 </div>
                                 <div class="inputImage">
                                     <button type="button" class="crayon5" onclick="redirectionDataPage3()">
-                                        <img alt="crayon pour modifier"  src="images/crayon2.png">
+                                        <img alt="crayon pour modifier" src="images/crayon2.png">
                                     </button>
                                 </div>
                             </div>
@@ -171,8 +172,7 @@
 
                     <div class="data-button">
                         <div>
-                            <input type="submit" onclick="ActiveInputDataPage()" name="dataPageChange"
-                                value="Enregistrer" class="button">
+                            <input type="submit" onclick="ActiveInputDataPage()" name="dataPageChange" value="Enregistrer" class="button">
                         </div>
                         <div>
                             <a href="myData.php" class="button">

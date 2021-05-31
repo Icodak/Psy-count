@@ -60,8 +60,10 @@ include "contact_Fonction.php";
                     </div>
 
                     <div class="form_group">
-                        <button class="form_button" type="submit" name="submit"> Envoyer </button>
-                        <button class="form_button" type="reset" onclick="return confirm('Voulez-vous vraiment annuler votre message ?')"> Annuler </button>
+                        <div class="form-button">
+                            <button class="button" type="submit" name="submit"> Envoyer </button>
+                            <button class="button" type="reset" onclick="return confirm('Voulez-vous vraiment annuler votre message ?')"> Annuler </button>
+                        </div>
                     </div>
                 </form>
 

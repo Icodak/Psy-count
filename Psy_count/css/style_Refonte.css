@@ -225,9 +225,6 @@ button[name=X] {
     width: 100%;
 }
 
-.flex-colW:first-of-type {
-    /*margin-right: 2%;*/
-}
 
 a {
     word-break: break-word;
@@ -244,5 +241,11 @@ a {
 .form-button{
 padding-top: 10px;
     display: flex;
+    justify-content: space-around;
+}
+
+.nicer-box {
+    display: flex;
+    width: 100%;
     justify-content: space-around;
 }
