@@ -120,7 +120,7 @@ input::placeholder, textarea::placeholder {
 
 input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active {
     background-color: #f9f0f0;
-
+}
   
 textarea, .text-content {
     transition: all 0.3s ease 0s;
