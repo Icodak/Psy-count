@@ -15,7 +15,7 @@ h2 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-image: url("images_css/Placement_Area_ASSETheroSIZEDe.png");
+  background-image: url("images_css/Placement_Area_ASSETheroSIZEDe.jpg");
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
@@ -69,7 +69,7 @@ h2 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0px 0px 50px 0px;
+  margin: 0px 50px 50px 50px;
 }
 
 .section-1-column>* {

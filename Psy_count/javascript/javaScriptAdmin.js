@@ -15,18 +15,22 @@ function create(q_txt, a_txt, id_faq) {
     var div_question = document.getElementById("question-container");
 
     edit.src = "images/crayon2.png";
+    edit.alt = "edit button";
     edit.title = "Edit";
     edit.style.margin = "0px 20px";
 
     del.src = "images/cross.png";
+    del.alt = "Delete button";
     del.title = "Delete";
 
     confirm.src = "images/confirm.png";
+    confirm.alt = "confirm button";
     confirm.style.position = "absolute";
     confirm.style.right = "20px";
     confirm.title = "Confirm";
 
     arrow.src = "images/flecheBottom.png";
+    arrow.alt = "display/hide answer"
     answr.style.display = "none";
 
     contain.className = "container white-background";

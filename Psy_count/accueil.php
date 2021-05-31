@@ -4,6 +4,7 @@
 <head>
 	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Accueil</title>
+	<meta name="description" content="Page d'accueil de Psy-fi">
 	<link rel="icon" type="image/png" href="images/psy-fi.png" />
 	<link rel="stylesheet" href="css/styleAccueil.css">
 	<link rel="stylesheet" href="css/style.css">
@@ -43,7 +44,7 @@
 		<hr>
 		<div class="section-1-main">
 			<div class="section-1-column">
-				<img src="images/Placement_Area_ASSETsmallSIZED.png" alt="Photographie santé" />
+				<img src="images/Placement_Area_ASSETsmallSIZED.jpg" width="688" height="468" alt="Photographie santé" />
 				<h2>Bilan de santé </h2>
 				<p> Lorem ipsum dolor sit amet, consectetur<br>
 					adipiscing elit, sed do eiusmod tempor incididunt <br>
@@ -52,7 +53,7 @@
 				<div><button class="button">En savoir plus</button></div>
 			</div>
 			<div class="section-1-column">
-				<img src="images/Placement_Area_ASSETsmallSIZED_di.png" alt="Photographie hôpital" />
+				<img src="images/Placement_Area_ASSETsmallSIZED_di.jpg" width="688" height="468" alt="Photographie hôpital" />
 				<h2>Soutien des hopitaux</h2>
 				<p> Lorem ipsum dolor sit amet, consectetur<br>
 					adipiscing elit, sed do eiusmod tempor incididunt <br>
@@ -61,7 +62,7 @@
 				<div><button class="button">En savoir plus</button></div>
 			</div>
 			<div class="section-1-column">
-				<img src="images/Placement_Area_ASSETsmallSIZED_dy.png" alt="Photographie seniors heureux" />
+				<img src="images/Placement_Area_ASSETsmallSIZED_dy.jpg" width="688" height="468" alt="Photographie seniors heureux" />
 				<h2>Suivi des seniors</h2>
 				<p> Lorem ipsum dolor sit amet, consectetur<br>
 					adipiscing elit, sed do eiusmod tempor incididunt <br>
@@ -74,7 +75,7 @@
 
 	<section class="section-2">
 
-		<video class="section-2-video" controls poster="images/Placement_Area_ASSETpanelSTATE@2x.png" src="video/SEP_V0_P1.mp4" type="video/mp4"></video>
+		<video class="section-2-video" controls poster="images/Placement_Area_ASSETpanelSTATE@2x.jpg" src="video/SEP_V0_P1.mp4" type="video/mp4"></video>
 
 	</section>
 
@@ -103,29 +104,29 @@
 			<div class="psy-fi-creator-section">
 				<div class="psy-fi-creator-group">
 					<div class="psy-fi-creator-description">
-						<img class="psy-fi-creator-picture" src="images/nicolas.jpg" alt="Nicolas profil">
+						<img class="psy-fi-creator-picture" width="300" height="300" src="images/nicolas.jpg" alt="Nicolas profil">
 						<p>Nicolas</p>
 					</div>
 					<div class="psy-fi-creator-description">
-						<img class="psy-fi-creator-picture" src="images/victoria.jpg" alt="Victoria profil">
+						<img class="psy-fi-creator-picture" width="300" height="300" src="images/victoria.jpg" alt="Victoria profil">
 						<p>Victoria</p>
 					</div>
 					<div class="psy-fi-creator-description">
-						<img class="psy-fi-creator-picture" src="images/justin.jpg" alt="Justin profil">
+						<img class="psy-fi-creator-picture" width="300" height="300" src="images/justin.jpg" alt="Justin profil">
 						<p>Justin</p>
 					</div>
 				</div>
 				<div class="psy-fi-creator-group">
 					<div class="psy-fi-creator-description">
-						<img class="psy-fi-creator-picture" src="images/amanda.jpg" alt="Amanda profil">
+						<img class="psy-fi-creator-picture" width="300" height="300" src="images/amanda.jpg" alt="Amanda profil">
 						<p>Amanda</p>
 					</div>
 					<div class="psy-fi-creator-description">
-						<img class="psy-fi-creator-picture" src="images/arsene.jpg" alt="Arsène profil">
+						<img class="psy-fi-creator-picture" width="300" height="300" src="images/arsene.jpg" alt="Arsène profil">
 						<p>Arsène</p>
 					</div>
 					<div class="psy-fi-creator-description">
-						<img class="psy-fi-creator-picture" src="images/thibault.jpg" alt="Thibault profil">
+						<img class="psy-fi-creator-picture" width="300" height="300" src="images/thibault.jpg" alt="Thibault profil">
 						<p>Thibault</p>
 					</div>
 				</div>

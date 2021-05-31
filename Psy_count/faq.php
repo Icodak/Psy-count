@@ -3,24 +3,22 @@ session_start();
 ?>
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
+    <title>FAQ</title>
     <meta name="description" content="FAQ">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style_faq.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" async defer></script>
 
     <?php
     error_reporting(E_ERROR | E_WARNING | E_PARSE);
-    if (isset($_SESSION['type'])) {
-        if ($_SESSION['type'] == 'Admin') {
-            echo "<script type=\"text/javascript\" src=\"javaScript/javaScriptAdmin.js\"></script>";
-        } 
+    if (isset($_SESSION['type']) && $_SESSION['type'] == 'Admin') {
+        echo "<script type=\"text/javascript\" src=\"javaScript/javaScriptAdmin.js\"></script>";
     } else {
         echo "<script type=\"text/javascript\" src=\"javaScript/javaScriptCode.js\"></script>";
     }

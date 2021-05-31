@@ -1,6 +1,6 @@
 @font-face {
     font-family: "poppins";
-    src: url("/fonts/POPPINS-LIGHT.TTF") format("truetype"), url("../fonts/POPPINS-REGULAR.TTF") format("truetype"), url("../fonts/POPPINS-BOLD.TTF") format("truetype"), url("../fonts/POPPINS-EXTRABOLD.TTF") format("truetype");
+    src: url("fonts/POPPINS-LIGHT.TTF") format("truetype"), url("fonts/POPPINS-REGULAR.TTF") format("truetype"), url("fonts/POPPINS-BOLD.TTF") format("truetype"), url("fonts/POPPINS-EXTRABOLD.TTF") format("truetype");
     font-weight: lighter, normal, bold, bolder;
 }
 
@@ -25,8 +25,32 @@ a {
     color: white;
 }
 
+.lighter {
+    font-weight: lighter;
+}
+
+.normal {
+    font-weight: normal;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.bolder {
+    font-weight: bolder;
+}
+
 .black-text {
     color: black;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.anti-italic {
+    font-style: normal;
 }
 
 h1, .important-text {
@@ -70,7 +94,7 @@ hr {
     margin: 20px 0px;
 }
 
-input {
+input, textarea, .text-content {
     font-family: "poppins", sans-serif, monospace;
     background-color: #f9f0f0;
     color: #6d2339;
@@ -81,20 +105,29 @@ input {
     align-items: center;
     width: 100%;
     font-size: 3.5vw;
+    height: auto;
 }
 
-input[type=button]:hover{
+input:hover, textarea:hover, .text-content:hover {
+    border-bottom: 2px solid #6d2339;
     cursor: pointer;
 }
 
-input::placeholder {
+input::placeholder, textarea::placeholder {
     color: rgb(82, 82, 82);
-    background-color: white;
     border: none;
 }
 
 input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active {
     background-color: #f9f0f0;
+
+  
+textarea, .text-content {
+    transition: all 0.3s ease 0s;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    resize: none;
+
 }
 
 select {
@@ -233,10 +266,24 @@ option {
     background-color: #cca7a7;
 }
 
+.anti-underline {
+    text-decoration: none;
+}
+
+.dark-link {
+    text-decoration: none;
+    color: black;
+}
+
+.dark-link:hover {
+    color: rgb(36, 36, 36);
+}
+
 /* Media queries*/
 
 @media (min-width: 550px) {
-    input, p, a, .button, select {
+
+    input, p, a, li, .button, select, textarea, .text-content {
         font-size: 3vw;
     }
     nav p, nav a, nav .button {
@@ -245,7 +292,7 @@ option {
 }
 
 @media (min-width: 900px) {
-    input, p, a, .button, select {
+    input, p, a, li, .button, select, textarea, .text-content {
         font-size: 2vw;
     }
     nav p, nav a, nav .button {
@@ -254,7 +301,78 @@ option {
 }
 
 @media (min-width: 1200px) {
-    input, p, a, .button, nav p, nav a, nav .button, select {
+    input, p, a, li, .button, nav p, nav a, nav .button, select, textarea, .text-content {
         font-size: 20px;
     }
+}
+
+.left-text, .left-text * {
+    text-align: left;
+}
+
+.right-text, .right-text * {
+    text-align: right;
+}
+
+.center-text, .center-text * {
+    text-align: center;
+}
+
+.icon {
+    display: flex;
+    width: 16px;
+    height: 16px;
+    font-size: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-content {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.button-content>* {
+    margin: 1px;
+    border-radius: 2px;
+    background-color: #b6a4a4;
+}
+
+.search-bar {
+    display: flex;
+}
+
+.search-div {
+    position: relative;
+    display: flex;
+}
+
+.search-list {
+    position: absolute;
+    top: 100%;
+}
+
+ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    
+}
+
+li {
+    padding: 5px;
+}
+
+
+li:nth-child(even) {
+    background-color: #f8e6e6;
+}
+li:nth-child(odd) {
+    background-color: #ecdbdb;
+}
+
+li:hover {
+    background-color: #cca7a7;
 }
