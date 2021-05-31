@@ -131,7 +131,6 @@ function verificationSignUp(){
 
 // fonction signup-Medecin
 function formVerificationMedecin(){
-   changement= !changement;
 
     var ici =  document.forms[0];
     var code = ici['codePostal'].value;
@@ -144,18 +143,12 @@ function formVerificationMedecin(){
   
     if( tableau[0]&&tableau[1]&&tableau[2]&&tableau[3]&&tableau[4])
         {
-           var result2 = true;
+           result2 = true;
         }else{
-           var result2 = false;
+           result2 = false;
         }
-
-  
-    
-    return(
-        result1
-        &&
-        result2
-    )
+        
+    return(result2 && result1);
 }
 
 
