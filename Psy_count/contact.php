@@ -1,5 +1,5 @@
 <?php
-$msg_envoi = false;
+/*$msg_envoi = false;
 
 try {
     if (isset($_POST['submit']) && isset($_POST["mail_Cct"]) && $_POST["mail_Cct"] != '') { //Check if we have an email
@@ -26,10 +26,8 @@ try {
     }
 } catch (Exception $e) {
     echo "Erreur :", $e->getMessage(), "\n";
-}
+}*/
 ?>
-
-
 
 <!doctype html>
 <html lang="fr">
@@ -38,9 +36,8 @@ try {
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
     <link rel="icon" type="image/png" href="images/psy-fi.png" />
-    <link rel="stylesheet" href="css/styles_fonts.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style_Refonte.css">
-
 </head>
 
 <header>
@@ -50,31 +47,24 @@ try {
     </div>
 </header>
 
+
+<?php
+include "contact_Fonction2.php";
+?>
+
 <body>
-    <div class="background"></div>
-    <!--Faire un truc plus clean avec du JS
-    <//?php
-        if (isset($_POST['submit']) && $msg_filled != true) { 
-        if (empty($visitorEmail) || empty($visitorFirstName) || empty($visitorLastName) || empty($visitorMsgSubject) || empty($visitorMsg)) {
-        ?>
-            <div id="form">
-                <h3 id="headerText"> Vous n'avez pas complété tous les champs ! </h3>
-            </div>
-    <//?php 
-    }
-    } 
-    ?>
--->
-    <?php
+<?php
     if ($msg_envoi) :
     ?>
         <div>
-            <h3 class="headerText"> Message bien reçu. Nous vous recontacterons prochainement.</h2>
+            <h3 class="headerText"> Message bien envoyé. Nous vous recontacterons prochainement.</br>
+                Vous allez être redirigé vers la page de contact dans 5 secondes.
+            </h3>
         </div>
     <?php
+        header("Refresh: 5;URL=contact.php");
     else :
     ?>
-
 
         <div class="flex_column">
             <div class="form">
@@ -101,7 +91,6 @@ try {
                     <div class="form_field">
                         <div class="form_group">
                             <label class="form_label" for="text"> Sujet du message </label>
-                            <!--Faire un menu déroulant ?-->
                             <input class="form_content" required  minlength="1" type="text" name="msgSubject_Cct" placeholder="ex : Contact avec l'administrateur PSY-fi..."> </label>
                         </div>
                     </div>
@@ -114,7 +103,7 @@ try {
                     <div class="form_field">
                         <div class="form_group">
                             <button class="form_button" type="submit" name="submit"> Envoyer </button>
-                            <button class="form_button" onClick="javascript:window.location.href='accueil.php'" type="reset"> Annuler </button>
+                            <button class="form_button" type="reset"> Annuler </button>
                         </div>
                     </div>
                 </form>

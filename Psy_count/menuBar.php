@@ -48,18 +48,26 @@ session_start();
 
     <?php
     if (isset($_SESSION['connexion']) && $_SESSION['connexion'] == 1) {
-      //Le formulaire de Contact normal est utilisable par les visiteurs
-      //sinon il s'agit de la messagerie interne accessible par d'autres pages du site
+      if ($_SESSION['type'] == 'patient') {
     ?>
-      <a href="msg_interne.php" class="menuText"> Messagerie (en test) </a>
+      <a href="msg_internePatient.php" class="menuText"> Messagerie </a>
     <?php
     }
+    if ($_SESSION['type'] == 'Medecin') {
     ?>
+      <a href="msg_interneMedecin.php" class="menuText"> Messagerie </a>
+    <?php
+    }
+    if ($_SESSION['type'] == 'Admin') {
+    ?>
+      <a href="msg_interneAdmin.php" class="menuText"> Messagerie </a>
+  <?php
+    }
+  }
+  ?>
 
     <?php
     if (!isset($_SESSION['connexion']) || $_SESSION['connexion'] != 1) {
-      //Le formulaire de Contact normal est utilisable par les visiteurs
-      //sinon il s'agit de la messagerie interne accessible par d'autres pages du site
     ?>
       <a href="contact.php" class="menuText"> Contact </a>
     <?php
@@ -70,7 +78,17 @@ session_start();
     if (isset($_SESSION['type']) && (isset($_SESSION['connexion']) || $_SESSION['connexion'] = 1)) {
       if ($_SESSION['type'] == 'patient') {
     ?>
-        <a href="contactPatient.php" class="menuText"> Consulter </a>
+        <a href="contactPatient.php" class="menuText"> Contact </a>
+      <?php
+      }
+      if ($_SESSION['type'] == 'Medecin') {
+      ?>
+        <a href="contactMedecin.php" class="menuText"> Contact </a>
+      <?php
+      }
+      if ($_SESSION['type'] == 'Admin') {
+      ?>
+        <a href="contactAdmin.php" class="menuText"> Contact </a>
     <?php
       }
     }
@@ -107,10 +125,10 @@ session_start();
 
 
 
-                           
-       
-                          
-   
+
+
+
+
 
 
 

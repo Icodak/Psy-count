@@ -88,7 +88,7 @@
                 <div class="graph">
                     <h1>Tonalité</h1>
 
-                    <img class="responsive" src="images/voice.jpg">
+                    <a href="myData_Tonalite.php"><img class="responsive" src="images/voice.jpg"></a>
 
                 </div>
 
@@ -105,7 +105,7 @@
                 <div class="graph">
                     <h1>Réaction</h1>
 
-                    <img class="responsive" src="images//reaction2.jpg">
+                    <a href="myData_Reflexes.php"><img class="responsive" src="images//reaction2.jpg"></a>
 
                 </div>
             </div>

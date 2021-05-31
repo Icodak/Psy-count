@@ -21,6 +21,7 @@ input{
 
 #hide{
 	display: none;
+	padding: 0% 20%;
 }
 
 .container{
@@ -30,6 +31,9 @@ input{
 table,
 td {
     border: 1px solid #333;
+	width: 100%;
+    text-align: center;
+    margin: 5% auto;
 }
 
 thead,
