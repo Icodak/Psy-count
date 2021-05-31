@@ -186,6 +186,7 @@ option {
     align-items: center;
     font-size: 15px;
     min-width: 150px;
+    border-radius: 5px;
 }
 
 
@@ -361,18 +362,6 @@ ul {
     
 }
 
-li {
-    padding: 5px;
-}
-
-
-li:nth-child(even) {
-    background-color: #f8e6e6;
-}
-li:nth-child(odd) {
-    background-color: #ecdbdb;
-}
-
-li:hover {
-    background-color: #cca7a7;
+#pieChart * , #lineChart *{
+    font-family: "poppins", sans-serif, monospace;
 }

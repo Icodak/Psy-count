@@ -102,8 +102,10 @@ include "contact_Fonction2.php";
                     </div>
                     <div class="form_field">
                         <div class="form_group">
-                            <button class="form_button" type="submit" name="submit"> Envoyer </button>
-                            <button class="form_button" type="reset"> Annuler </button>
+                        <div class="form-button">
+                            <button class="button" type="submit" name="submit"> Envoyer </button>
+                            <button class="button" type="reset"> Annuler </button>
+                            </div>
                         </div>
                     </div>
                 </form>

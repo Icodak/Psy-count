@@ -87,7 +87,7 @@
                 <img class='upload-image' alt='icone de telechargement' src='images/dowload.png'> Télécharger<br> mon compte rendu</a>" ?>
 
 
-                <button class="button2" onclick="dataModification()"> Modifier mes données </button>
+                <button class="button2" onclick="dataModification()" style="height: 70px;"> Modifier mes données </button>
             </div>
         </div>
 
