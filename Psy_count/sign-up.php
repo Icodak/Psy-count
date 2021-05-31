@@ -16,6 +16,8 @@
     <script type="text/javascript" src="javaScript/javaScriptCodeVerification.js" async defer></script>
     <script type="text/javascript" src="javascript/javaScriptEmailCode.js"></script>
     <script type="text/javascript" src="javascript/javaScriptFonctionAlertBox.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="la page d'inscription des patients">
 </head>
 
 <body class="gray-background">

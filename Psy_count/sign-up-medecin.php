@@ -12,6 +12,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script type="text/javascript" src="javaScript/javaScriptCode.js" async defer></script>
     <script type="text/javascript" src="javaScript/javaScriptCodeVerification.js" async defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="la page d'inscription des medecins">
 </head>
 
 <body class="gray-background">

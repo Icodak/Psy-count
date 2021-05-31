@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="css/style_Sign.css">
     <link rel="stylesheet" href="css/style.css">
     <script type="text/javascript" src="javaScript/javaScriptCode.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="la page de connexion">
 </head>
 
 <body class="gray-background">

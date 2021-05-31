@@ -52,9 +52,10 @@
 
          </div>
             <div>
-
-    <input type="submit" class='button2' name="typeId7" value="Modifier">
-    <input type="submit" class='button2' name="typeId6" value="annuler">
+            <div class="form-button">
+    <input type="submit" class='button' name="typeId7" value="Modifier">
+    <input type="submit" class='button' name="typeId6" value="annuler">
+            </div>
 </div>
 </div>
 

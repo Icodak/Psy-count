@@ -82,7 +82,7 @@
                             <th class="text2" align="left" colspan="1">Nom</th>
                             <th class="text2" align="left" colspan="1">Prénom</th>
                             <th class="text2 responsiveTable" align="left" colspan="1">Email</th>
-                            <th class="text2 responsiveTable2" align="left" colspan="1">Permission</th>
+                            <th class="text2 responsiveTable" align="left" colspan="1">Permission</th>
 
                         </tr>
                     </thead>
@@ -105,7 +105,7 @@
                             <td class="text2" align="left"> <?php echo  $resultat3[$i][1] ?> </td>
                             <td class="text2" align="left"> <?php echo  $resultat3[$i][2] ?> </td>
                             <td class="text2 responsiveTable" align="left"> <?php echo  $resultat3[$i][3] ?> </td>
-                            <td class="text2 responsiveTable2" align="left"> <?php echo  $resultat3[$i][4] ?> </td>
+                            <td class="text2 responsiveTable" align="left"> <?php echo  $resultat3[$i][4] ?> </td>
 
                         </tr>
                     </tbody>

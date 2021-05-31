@@ -179,4 +179,11 @@ ul{
 	height:320px;
 }
 
+.consultButton{
+	flex-direction: column;
+}
+.button2{
+	margin-bottom: 2%;
+}
+
 }

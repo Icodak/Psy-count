@@ -78,7 +78,7 @@
             <label for="diagnostic-text"><h1>Mon diagnostic</h1></label>
             <div>
         
-                <textarea class="patient-Diagnostic"  id="diagnostic-text"  maxlength="1234"><?php echo $diagnosticText['diagnostic']?></textarea>
+                <textarea class="patient-Diagnostic" disabled id="diagnostic-text"  maxlength="1234"><?php echo $diagnosticText['diagnostic']?></textarea>
 
             </div>
 
