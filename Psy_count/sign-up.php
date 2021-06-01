@@ -42,9 +42,9 @@
             <div class="custom-chexbox">
                 <p>Sexe*</p>
                <div class="radio-choice">
-                    <input type="radio" name="genre" class="manWoman Man" id="radio1-up" checked>
+                    <input type="radio" name="genre" class="manWoman Man" id="radio1-up" value="Homme" checked>
                     <label for="radio1-up">Homme</label>
-                    <input type="radio" name="genre" class="manWoman Woman" id="radio2-up">
+                    <input type="radio" name="genre" class="manWoman Woman"  value="Femme" id="radio2-up">
                     <label for="radio2-up">Femme</label>
                 </div>
             </div>
