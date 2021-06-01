@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
-
+<?php
+session_start();
+?>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,7 +21,7 @@
 
         <div class="select-menu">
             <ul>
-                <li><a href="sign-in.php" class="underline-link underline">S'identifier</a></li>
+                <li><a href="sign-In.php" class="underline-link underline">S'identifier</a></li>
                 <li><a href="sign-up-medecin.php" class="underline-link ">S'inscrire comme médecin</a></li>
                 <li><a href="sign-up.php" class="underline-link ">S'inscrire</a></li>
             </ul>
@@ -41,7 +43,7 @@
             <div><input class="button" type="submit" name="submit" id="signInbutton" value="Connexion"></div>
             <div><input class="button" type="button" onclick="locationAccueil()" name="submit" id="quitterbutton" value="Quitter"></div>
         </div>
-        <div class="white-color">
+        <div class="white-color" style="text-align: center;">
             <?php if (!empty($_SESSION['message2'])) {
                 echo $_SESSION['message2'];
             } ?>

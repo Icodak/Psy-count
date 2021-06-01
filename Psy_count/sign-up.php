@@ -25,7 +25,7 @@
     <form class="card white-background shadow" action="getInformation.php" id="form1" method="post">
         <div class="select-menu">
             <ul>
-                <li><a href="sign-in.php" class="underline-link">S'identifier</a></li>
+                <li><a href="sign-In.php" class="underline-link">S'identifier</a></li>
                 <li><a href="sign-up-medecin.php" class="underline-link">S'inscrire comme médecin</a></li>
                 <li><a href="sign-up.php" class="underline-link underline">S'inscrire</a></li>
             </ul>
@@ -89,8 +89,8 @@
             <input class="button" type="button" onclick="locationAccueil()" value="Quitter">
         </div>
         <div class="white-color">
-            <?php if (!empty($_SESSION['message'])) {
-                echo $_SESSION['message'];
+            <?php if (!empty($_SESSION['message2'])) {
+                echo $_SESSION['message2'];
             } ?>
         </div>
     </form>

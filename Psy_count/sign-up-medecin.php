@@ -21,7 +21,7 @@
     <form class="card white-background shadow" action="getInformation.php" method="post" onsubmit="return formVerificationMedecin()">
         <div class="select-menu">
             <ul>
-                <li><a href="sign-in.php" class="underline-link">S'identifier</a></li>
+                <li><a href="sign-In.php" class="underline-link">S'identifier</a></li>
                 <li><a href="sign-up-medecin.php" class="underline-link underline">S'inscrire comme médecin</a></li>
                 <li><a href="sign-up.php" class="underline-link ">S'inscrire</a></li>
             </ul>

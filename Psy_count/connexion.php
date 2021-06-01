@@ -4,7 +4,7 @@ session_start();
 
 
 if ( isset( $_POST['submit'] ) ) {
-  //  Récupération de l'utilisateur et de son pass hashé
+  //  Récupération de l'utilisateur et de son mot de  passe hashé
   $Email = $_POST['Email'];
   $Password = $_POST['Password'];
 
@@ -44,7 +44,7 @@ try{
       if (!$resultat)
       {
          $_SESSION['message2']='identifiant ou mot de passe incorrect!';
-         header('Location: sign-in.php');
+         header('Location: sign-In.php');
 
       }
       //  si le mot de passe est correct récupérer les informations de l'utilisateur
@@ -65,6 +65,7 @@ try{
         $_SESSION['connexion']='1';
         $_SESSION['ID']=$resultat2['ID_Utilisateur'];
         $_SESSION['image']=$resultat2['images'];
+        $_SESSION['message2']= '';
         header('Location: accueil.php');
       }
       else {

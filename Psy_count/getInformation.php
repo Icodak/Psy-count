@@ -68,6 +68,7 @@ session_start(); // On démarre la session AVANT toute chose
                 $dbco->exec($sql);
 
               }
+              $_SESSION['message2']= '';
               header('Location: sign-In.php');
                 }
               }
