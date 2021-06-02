@@ -24,7 +24,7 @@
     <section class="section-gestion-utilisateurs">
     <div class="main">
 
-        <?php include_once("gestionDesUtilisateursFonctionSql.php") ?>
+        <?php include_once("gestion_des_utilisateurs/gestionDesUtilisateursFonctionSql.php") ?>
 
 
 
@@ -51,8 +51,8 @@
         <div id="gestionUtilisateur" class="shadow2">
 
             <h1>Gestion des Utilisateurs</h1>
-            <?php include_once("popUpGestion.php") ?>
-            <?php include_once("popUpGestion2.php") ?>
+            <?php include_once("gestion_des_utilisateurs/popUpGestion.php") ?>
+            <?php include_once("gestion_des_utilisateurs/popUpGestion2.php") ?>
     
             <?php
         if (!isset($_SESSION["hidde"]) || $_SESSION["hidde"] == 'false') {
@@ -117,7 +117,7 @@
 
                 </table>
 
-                <?php include("pagination.php") ?>
+                <?php include("gestion_des_utilisateurs/pagination.php") ?>
             </div>
 
         </div>
