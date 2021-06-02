@@ -20,7 +20,7 @@
     <header>
         <?php 
               include("menuBar.php") ;
-              include("gestion_des_patients/loadDataMedecin.php");    
+              include("mes_donnes_medecin/loadDataMedecin.php");    
               $outPut = selectInformationsMedecin();
               $resultat =  $outPut[0];
               $resultat2 = $outPut[1];
