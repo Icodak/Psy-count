@@ -19,11 +19,11 @@
 
     <header>
         <?php include("menuBar.php");
-         include("myDataFonction.php") ;
+         include("mes_donnes_patients/loadDataPatient.php") ;
          $informations = selectInformationsPatient()[0];
          $diagnosticText = selectInformationsPatient()[2];
          $compteRendu = selectInformationsPatient()[3]; 
-         $informationsMedecin=  selectInformationsMyMedecin($_SESSION['ID']);  
+         $informationsMedecin= selectInformationsMyMedecin($_SESSION['ID']);  
         ?>
     </header>
 
@@ -36,33 +36,34 @@
         <div id="doctorPage">
             <h1>Mon medecin</h1>
             <div class="doctorData">
-                
-                <?php if($informationsMedecin[0][3]==NULL){
+
+            <?php if(empty($informationsMedecin[0][3])){
                                echo  "<img alt='image du patient' src=images/default-user.png>";                       
                   }else{                                     
                         echo "<img  alt='image du patient' src='images_utilisateurs/".$informationsMedecin[0][3] ."?rand=". rand() ."'>";     
                   }              
                 ?>
+            
                 <div class="doctorLabel">
                     <ul>
                         <li>
                             <?php
 							 
-							  echo $informationsMedecin[0][2];
+							  if(!empty($informationsMedecin[0][2])){ echo $informationsMedecin[0][2];}
 							  ?>
                             <hr size=3 class="sepator1">
 
                         </li>
                         <li>
                             <?php
-							  echo $informationsMedecin[0][0];
+							    if(!empty($informationsMedecin[0][0])){ echo $informationsMedecin[0][0];}
 							  ?>
                             <hr size=3 class="sepator1">
 
                         </li>
                         <li>
                             <?php
-							  echo $informationsMedecin[0][1];
+							  if(!empty($informationsMedecin[0][1])){ echo $informationsMedecin[0][1];}
 							  ?>
                             <hr size=3 class="sepator1">
                         </li>

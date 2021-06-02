@@ -9,7 +9,7 @@
        
 ?>
 
-<form method="post" action="gestionFonction.php">
+<form method="post" action="gestion_des_patients/changeDataUsers.php">
     <div id="add">
         <div>
            <table>

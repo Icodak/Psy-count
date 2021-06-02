@@ -9,7 +9,7 @@ if (isset($_SESSION["hidde"]) && $_SESSION["hidde"] == 'true') {
 
 
 
-        <form method="post" action="gestionFonction.php">
+        <form method="post" action="gestion_des_Utilisateur/selectType.php">
             <div class="form-perm">
                 <select name="permission" id="pet-select" placeholder="spécialité">
                     <option value="" selected disabled hidden id="placeholderType2">niveau de permission</option>
@@ -39,7 +39,7 @@ if (isset($_SESSION["hidde"]) && $_SESSION["hidde"] == 'true') {
 
 
     ?>
-            <form method="post" action="gestionFonction.php">
+            <form method="post" action="gestion_des_patients/gestionFonction.php">
                 <div id="add">
                     <div>
                         <table>
@@ -103,7 +103,7 @@ if (isset($_SESSION["hidde"]) && $_SESSION["hidde"] == 'true') {
 
 
     ?>
-            <form method="post" action="gestionFonction.php">
+            <form method="post" action="gestion_des_patients/gestionFonction.php">
                 <div id="add">
                     <div>
                         <table>

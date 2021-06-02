@@ -4,14 +4,13 @@
     var formData = new FormData();
     formData.append('file',$('#file')[0].files[0])
        $.ajax({
-        url : 'myDataFonction.php',
+        url : 'changeImage/changeImage.php',
         type : 'POST',
         processData: false, 
         contentType: false,  
         data : formData,      
         success : function(code_html, statut){
-            location.reload();
-         
+            location.reload();       
         },
         error : function(resultat, statut, erreur){       
         },

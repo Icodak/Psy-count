@@ -1,26 +1,31 @@
 <!doctype html>
 <html lang="fr">
 
-<head>
+<head >
     <meta charset="utf-8">
     <title>Mes Patients</title>
     <link rel="icon" type="image/png" href="images/psy-fi.png" />
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style_myPatient.css">
     <link rel="stylesheet" href="css/style_alert_box.css">
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />     
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        
     <script type="text/javascript" src="javascript/javaScriptCode.js"></script>
     <script type="text/javascript" src="javascript/javaScriptFonctionAlertBox.js"></script>
     <script type="text/javascript" src="javascript/javaScriptCodePatient.js"></script>
+    
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="la page de gestion des Medecins de psy-fi">
 </head>
 
 <body>
+
+ 
+
     <header id="logicpage">
         <?php include("menuBar.php") ;
-        include("myPatientFonction.php");
+        include("gestion_des_patients/creationTable.php");
 
         // On détermine sur quelle page on se trouve
         if(isset($_GET['page']) && !empty($_GET['page'])) {$currentPage = (int) strip_tags($_GET['page']);
@@ -53,7 +58,7 @@
                         <option value="non">patients sans Medecin</option>
                         <option value="oui">Mes patients</option>
                     </select>
-                    <?php include("searchbar.php");  ?>
+                    <?php include("gestion_des_patients/searchbar.php");  ?>
                 </div>
             </div>
             <div id="tableau">

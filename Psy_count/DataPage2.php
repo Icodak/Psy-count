@@ -18,7 +18,7 @@
     <header>
         <?php
         include("menuBar.php");
-        include("myDataFonction.php");
+        include("mes_donnes_patients/loadDataPatient.php");
         $outPut = selectInformationsPatient();
         $resultat =  $outPut[0];
         $resultat2 = $outPut[1];
@@ -28,7 +28,7 @@
 
     <div class="wrapper">
         <div class="main">
-            <form method="post" action="myDataFonction.php" enctype="multipart/form-data" onsubmit=" return formDataVerificationPatient()">
+            <form method="post" action="mes_donnes_patients/changeDataPatient.php" enctype="multipart/form-data" onsubmit=" return formDataVerificationPatient()">
                 <div class="frame-header">
                     <div>
                         <div class="User-image">

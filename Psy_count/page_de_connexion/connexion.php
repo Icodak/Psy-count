@@ -44,7 +44,7 @@ try{
       if (!$resultat)
       {
          $_SESSION['message2']='identifiant ou mot de passe incorrect!';
-         header('Location: sign-In.php');
+         header('Location: ../sign-In.php');
 
       }
       //  si le mot de passe est correct récupérer les informations de l'utilisateur
@@ -58,7 +58,7 @@ try{
 
           if(count($resultat4)!=0){
             $_SESSION['message2']= 'votre compte est banni contactez un administrateur';
-            header('Location: sign-In.php');
+            header('Location: ../sign-In.php');
           }else{
       if ($isPasswordCorrect) {
         $_SESSION['type']=$resultat3['permission_lvl'];
@@ -66,11 +66,11 @@ try{
         $_SESSION['ID']=$resultat2['ID_Utilisateur'];
         $_SESSION['image']=$resultat2['images'];
         $_SESSION['message2']= '';
-        header('Location: accueil.php');
+        header('Location: ../accueil.php');
       }
       else {
         $_SESSION['message2']= 'mot de passe ou Email incorrect';
-        header('Location: sign-In.php');
+        header('Location: ../sign-In.php');
       }
       }
     }

@@ -20,8 +20,7 @@
     <header>
         <?php 
               include("menuBar.php") ;
-              include("myDataFonction.php"); 
-              include("myPatientFonction.php");    
+              include("gestion_des_patients/loadDataMedecin.php");    
               $outPut = selectInformationsMedecin();
               $resultat =  $outPut[0];
               $resultat2 = $outPut[1];
@@ -30,10 +29,9 @@
 
 
 
-
     <div class="wrapper">
         <div class="main">
-            <form method="post" action="myDataFonction.php" enctype="multipart/form-data">
+            <form method="post" action="mes_donnes_medecin/changeDataMedecin.php" enctype="multipart/form-data">
                 <div class="frame-header">
 
 

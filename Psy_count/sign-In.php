@@ -17,7 +17,7 @@ session_start();
 </head>
 
 <body class="gray-background">
-    <form action="connexion.php" method="post" class="card white-background shadow">
+    <form action="page_de_connexion/connexion.php" method="post" class="card white-background shadow">
 
         <div class="select-menu">
             <ul>

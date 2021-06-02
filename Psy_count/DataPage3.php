@@ -21,7 +21,7 @@
 
     <div class="wrapper2">
         <div class="main">
-            <form method="post" action="myDataFonction.php" onsubmit="return formDataVerificationPasswordChange()">
+            <form method="post" action="mes_donnes_patients/changeMdpPatient.php" onsubmit="return formDataVerificationPasswordChange()">
                 <div class="frame-header shadow2">
                     <div>
                         <h1>

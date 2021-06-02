@@ -5,7 +5,7 @@ $(document).ready(function(){
         if(document.getElementById("file3").disabled==true){
         var text = document.getElementsByClassName("patient-Diagnostic")[0].value;
             $.ajax({
-                url : 'myPatientFonction.php',
+                url : 'gestion_des_patients/saveDiagnostic.php',
                 type : 'POST',
                 data : "patientText=" + text,
                 success : function(code_html, statut){
@@ -30,7 +30,7 @@ $(document).ready(function(){
     var formData = new FormData();
     formData.append('file',$('#file2')[0].files[0])
        $.ajax({
-        url : 'myPatientFonction.php',
+        url : 'gestion_des_patients/uploadCompteRendu.php',
         type : 'POST',
         processData: false, 
         contentType: false,  

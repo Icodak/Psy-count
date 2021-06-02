@@ -21,7 +21,7 @@
     <header>
         <?php 
         include("menuBar.php");
-        include("myPatientFonction.php");        
+        include("gestion_des_patients/seeDataPatient.php");        
 	    $information = initialisationPatient($_POST['patientProfil']);
         $_SESSION['addUser']=$_POST['patientProfil'];  
         $text = SelectPatientText($_SESSION['addUser']); 

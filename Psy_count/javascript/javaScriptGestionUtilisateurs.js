@@ -1,16 +1,3 @@
-
-function unlockSearchInput() {
-    $('#tableau').load('myPatient.php #tableau');
-    var inputToUnlock = document.getElementsByClassName("search-div");
-    for (let pas = 0; pas < inputToUnlock.length; pas++) {
-        inputToUnlock[pas].childNodes[0].disabled = false;
-    }
-    document.getElementById("searchButton").disabled = false;
-
-}
-
-
-
 function allSelect(source) {
     checkboxes = document.getElementsByName('checkBoxGestion');
     for (var i = 0, n = checkboxes.length; i < n; i++) {
@@ -20,7 +7,6 @@ function allSelect(source) {
 }
 
 function checkboxcheckGestionsUtilisateurs() {
-
     var element = document.getElementsByClassName("checkBoxUtilisateurs");
     var button = document.getElementsByClassName("buttonAction");
 
@@ -46,7 +32,6 @@ function checkboxcheckGestionsUtilisateurs() {
         button[0].style.backgroundColor = "grey";
     }
 }
-
 
 function verifyZeroCheckBox() {
     var count = 0;
@@ -81,10 +66,7 @@ function verifyOneCheckBox() {
 
 
 $(document).ready(function () {
-
     $("#SuppButton").click(function () {
-
-
                 checkboxes = document.getElementsByName('checkBoxGestion');
                 var tableau = new Array(checkboxes.length);
                 if (confirm("Voulez vous vraiment supprimer ces utilisateurs ?")) {
@@ -92,7 +74,7 @@ $(document).ready(function () {
                         if (checkboxes[i].checked == true) {
                             tableau[i] = checkboxes[i].id;
                             $.ajax({
-                                url: 'gestionFonction.php',
+                                url: 'gestion_des_utilisateur/supprimerUsers.php',
                                 type: 'POST',
                                 data: "idTable=" + tableau[i],
                                 success: function (code_html, statut) {
@@ -134,7 +116,7 @@ $(document).ready(function () {
                         for (var i = 0, n = checkboxes.length; i < n; i++) {
                             if (checkboxes[i].checked == true) {
                                 $.ajax({
-                                    url: 'gestionFonction.php',
+                                    url: 'gestion_des_utilisateur/showModificationPage.php',
                                     type: 'POST',
                                     data: "ModificationButton=" + checkboxes[i].id,
                                     success: function (code_html, statut) {
@@ -160,37 +142,14 @@ $(document).ready(function () {
 });
 
 
-$(document).ready(function () {
-    $('#select1').change(function () {
-        var selection = document.getElementById("select1");
-        $.ajax({
-            url: 'myPatientFonction.php',
-            type: 'POST',
-            data: "choice=" + selection.value,
-            success: function (code_html, statut) {
-                unlockSearchInput();
-            },
 
-            error: function (resultat, statut, erreur) {
-
-            },
-
-            complete: function (resultat, statut) {
-
-            }
-
-        });
-
-    });
-
-});
 
 $(document).ready(function () {
     $('#AjouterButton').click(function () {
         var selection = document.getElementById("AjouterButton");
 
         $.ajax({
-            url: 'gestionFonction.php',
+            url: 'gestion_des_utilisateur/showAddPage.php',
             type: 'POST',
             data: "Ajouter=" + selection.value,
             success: function (code_html, statut) {
