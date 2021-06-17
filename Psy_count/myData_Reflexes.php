@@ -30,6 +30,8 @@
     <div class="form">
         <h1>Test</h1>
         <p>Veuillez cliquer sur le choix d'affichage qui vous convient le mieux :</p>
+        <button class="button" id="sendTrame">Envoyer une trame</button></br>
+
         <input type="button" onclick="display('hide')" value="Voir mes données sous forme de tableau">
         <div id="hide">
             <table>
@@ -49,6 +51,13 @@
 
         <input type="button" onclick="lineChart()" value="Voir mes données sous forme de courbe d'évolution">
         <div id="lineChart"></div>
+
+        <input type="button" onclick="display('trame')" value="Voir mes données sous forme de trames">
+        <div id="trame">
+            <?php
+            include("testTrame.php");
+            ?>
+        </div>
     </div>
 
     <?php include("footer.php") ?>

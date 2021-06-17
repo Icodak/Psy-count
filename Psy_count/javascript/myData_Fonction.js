@@ -103,13 +103,13 @@ function lineChart() {
         success: function (result) {
             console.log(result);
 
-            var array_data = result.split(';'); 
+            var array_data = result.split(';');
             array_data.pop();
             console.log(array_data);
 
             var size = 2; var arrayOfArrays = [];
             for (var i = 0; i < array_data.length; i += size) {
-                arrayOfArrays.push(array_data.slice(i, i + size)); 
+                arrayOfArrays.push(array_data.slice(i, i + size));
             }
             console.log(arrayOfArrays);
 
@@ -130,7 +130,7 @@ function lineChart() {
                 data.addRow([array_dataDate[i], array_dataValue[i]]);
 
             var options = {
-                title: "Courbe de l'évolution de" + msgGraphe,  
+                title: "Courbe de l'évolution de" + msgGraphe,
                 curveType: 'function',
                 legend: {
                     position: 'bottom'
@@ -162,3 +162,22 @@ function display(id) {
         table.style.display = "";
     }
 }
+
+$(function () {
+    $("#refresh").click(function () {
+        $("#trame").load("testTrame.php");
+    });
+});
+
+$(function () {
+    $("#sendTrame").click(function () {
+        $.ajax({
+            url: 'sendTrame.php',
+            data: { send: 'on' },
+            type: 'post',
+            success: function (output) {
+                console.log(output);
+            }
+        });
+    });
+});

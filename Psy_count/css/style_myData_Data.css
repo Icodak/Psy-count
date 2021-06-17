@@ -24,6 +24,10 @@ input{
 	padding: 0% 20%;
 }
 
+#trame{
+	display: none;
+}
+
 .container{
 	border: 1px  solid #470022;
 }
