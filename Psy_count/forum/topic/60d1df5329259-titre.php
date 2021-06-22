@@ -4,11 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>bonjour-</title>
-    <meta name="description" content="OUI !">
+    <title>titre</title>
+    <meta name="description" content="message">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta topicID = "60b4eb91d8d64">
-    <meta UAID = "21">
+    <meta topicID = "60d1df5329259">
+    <meta UAID = "15">
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/style_footer.css">
     <link rel="stylesheet" href="../../css/style_forum.css">
@@ -16,13 +16,13 @@
     <script type="text/javascript" src="../../javaScript/javaScriptForum.js" async defer></script>
 </head>
 
-<body onload="loadMessageUsers('60b4eb91d8d64')">
+<body onload="loadMessageUsers('60d1df5329259')">
     <?php include("../../menubar.php") ?>
 
     <section class="forum-background gray-background">
         <div class="forum-container shadow white-background">
             <div class="forum-title">
-                <h1>bonjour-</h1>
+                <h1>titre</h1>
                 </div>
                 <div class="forum-messages" id="forum-messages">
     

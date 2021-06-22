@@ -64,7 +64,7 @@ function sendTrame()
     $trame = $tra.$obj.$req.$typ.$num.$val.$tim.$chk;
     echo("Trame envoyée = ".$trame."</br>");*/
 
-    $trame = "1G10D1301002B01251B";
+    $trame = "1G10D1501000001251B";
 
     $url = "http://projets-tomcat.isep.fr:8080/appService/?ACTION=COMMAND&TEAM=G10D&TRAME=" . $trame;
     $ch = curl_init();
