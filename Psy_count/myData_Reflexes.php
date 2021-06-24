@@ -21,7 +21,7 @@
         $dbData = new PDO("mysql:host=localhost;dbname=serveur_psy_fi", 'root', '');
         $dbData->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $dataType = 'Reflexes';
+        $dataType = 'Ref_visuel';
         include "myData_Fonction.php";
         $values = getData($dbData, $dataType);
         $_SESSION['dataType'] = $dataType;
@@ -29,8 +29,11 @@
     </header>
     <div class="form">
         <h1>Test</h1>
+        <div class="trameButton">
+            <button class="button" id="sendTrame">Allumer une LED</button></br>
+            <button class="button" id="sendTrameOff">Eteindre une LED</button></br>
+        </div>
         <p>Veuillez cliquer sur le choix d'affichage qui vous convient le mieux :</p>
-        <button class="button" id="sendTrame">Envoyer une trame</button></br>
 
         <input type="button" onclick="display('hide')" value="Voir mes données sous forme de tableau">
         <div id="hide">

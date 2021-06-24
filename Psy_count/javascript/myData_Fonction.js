@@ -163,17 +163,34 @@ function display(id) {
     }
 }
 
+//Display Trame de projet-tomcat
+/*
 $(function () {
     $("#refresh").click(function () {
         $("#trame").load("testTrame.php");
     });
 });
+*/
 
+//Allumer/Eteindre LED
 $(function () {
     $("#sendTrame").click(function () {
         $.ajax({
             url: 'sendTrame.php',
             data: { send: 'on' },
+            type: 'post',
+            success: function (output) {
+                console.log(output);
+            }
+        });
+    });
+});
+
+$(function () {
+    $("#sendTrameOff").click(function () {
+        $.ajax({
+            url: 'sendTrame.php',
+            data: { send: 'off' },
             type: 'post',
             success: function (output) {
                 console.log(output);

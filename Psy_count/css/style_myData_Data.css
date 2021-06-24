@@ -46,3 +46,10 @@ tfoot {
     color: #fff;
 }
 
+#sendTrame{
+	margin-right: 2%;
+}
+
+.trameButton{
+	display: flex;
+}

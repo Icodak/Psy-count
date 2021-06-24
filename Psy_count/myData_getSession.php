@@ -13,7 +13,7 @@ if (isset($_SESSION['dataType']) && !empty($_SESSION['dataType'])) {
         if ($_SESSION['dataType'] == "Tonalite") {
             echo "; scores des tests de Tonalité.";
         }
-        if ($_SESSION['dataType'] == "Reflexes") {
+        if ($_SESSION['dataType'] == "Ref_visuel") {
             echo "; scores des tests de Réflexes.";
         }
     }

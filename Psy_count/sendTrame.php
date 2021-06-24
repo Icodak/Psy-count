@@ -12,7 +12,7 @@ function ascii2hex($ascii){
     return $arr;
 }
 
-function sendTrame()
+function sendTrame($isOn)
 {
     /*
     //Envoyer des données
@@ -64,7 +64,10 @@ function sendTrame()
     $trame = $tra.$obj.$req.$typ.$num.$val.$tim.$chk;
     echo("Trame envoyée = ".$trame."</br>");*/
 
-    $trame = "1G10D1501000001251B";
+    $trame = "1G10D1401000001251B";
+    if($isOn){
+        $trame = "1G10D1401000101251B";
+    }
 
     $url = "http://projets-tomcat.isep.fr:8080/appService/?ACTION=COMMAND&TEAM=G10D&TRAME=" . $trame;
     $ch = curl_init();
@@ -77,5 +80,10 @@ function sendTrame()
 
 if (isset($_POST['send']) && !empty($_POST['send'])) {
     $send = $_POST['send'];
-    sendTrame();
+    if($send == "on"){
+        sendTrame(true);
+    }
+    if($send == "off"){
+        sendTrame(false);
+    }
 }
